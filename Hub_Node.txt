@@ -1,0 +1,14 @@
+Hub 
+java -jar /Users/vsandesara/Desktop/tauckBE/selenium-server-standalone-3.11.0.jar -port 4444 -role hub
+
+Node
+java -Dwebdriver.chrome.driver="/Users/vsandesara/Desktop/tauckBE/src/DriverExe/chromedriver" -jar /Users/vsandesara/Desktop/tauckBE/selenium-server-standalone-3.11.0.jar -port 5001 -role node -hub http://192.168.0.102:4444/grid/register -browser "browserName=chrome,maxInstances=15"
+
+Console
+http://192.168.0.102:4444/grid/console
+
+Remotewebdriver url
+http://169.254.225.5:4444/wd/hub
+
+To quit running hub and node in terminal
+Command (window icon) + Z 

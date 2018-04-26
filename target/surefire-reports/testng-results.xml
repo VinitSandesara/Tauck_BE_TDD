@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="SiteCore" duration-ms="32667" started-at="2018-04-09T01:19:16Z" finished-at="2018-04-09T01:19:49Z">
+    <groups>
+      <group name="Editorial">
+        <method signature="testEditorial.add_TextCopyFolderComponent_Inside_EditorialTemplate()[pri:0, instance:Template.testEditorial@6108b2d7]" name="add_TextCopyFolderComponent_Inside_EditorialTemplate" class="Template.testEditorial"/>
+        <method signature="testEditorial.testAnother()[pri:0, instance:Template.testEditorial@6108b2d7]" name="testAnother" class="Template.testEditorial"/>
+      </group> <!-- Editorial -->
+    </groups>
+    <test name="Editorial" duration-ms="32667" started-at="2018-04-09T01:19:16Z" finished-at="2018-04-09T01:19:49Z">
+      <class name="Template.testEditorial">
+        <test-method status="PASS" signature="createEditorialTemplate()[pri:0, instance:Template.testEditorial@6108b2d7]" name="createEditorialTemplate" is-config="true" duration-ms="18573" started-at="2018-04-08T20:19:16Z" finished-at="2018-04-08T20:19:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createEditorialTemplate -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:Template.testEditorial@6108b2d7]" name="beforeMethod" is-config="true" duration-ms="632" started-at="2018-04-08T20:19:35Z" finished-at="2018-04-08T20:19:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.testEditorial.add_TextCopyFolderComponent_Inside_EditorialTemplate() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="add_TextCopyFolderComponent_Inside_EditorialTemplate()[pri:0, instance:Template.testEditorial@6108b2d7]" name="add_TextCopyFolderComponent_Inside_EditorialTemplate" duration-ms="8133" started-at="2018-04-08T20:19:35Z" finished-at="2018-04-08T20:19:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_TextCopyFolderComponent_Inside_EditorialTemplate -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:Template.testEditorial@6108b2d7]" name="beforeMethod" is-config="true" duration-ms="618" started-at="2018-04-08T20:19:43Z" finished-at="2018-04-08T20:19:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.testEditorial.testAnother() throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Template.testEditorial@6108b2d7]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-04-08T20:19:43Z" finished-at="2018-04-08T20:19:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=add_TextCopyFolderComponent_Inside_EditorialTemplate status=SUCCESS method=testEditorial.add_TextCopyFolderComponent_Inside_EditorialTemplate()[pri:0, instance:Template.testEditorial@6108b2d7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="testAnother()[pri:0, instance:Template.testEditorial@6108b2d7]" name="testAnother" duration-ms="4703" started-at="2018-04-08T20:19:44Z" finished-at="2018-04-08T20:19:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAnother -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:Template.testEditorial@6108b2d7]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-04-08T20:19:49Z" finished-at="2018-04-08T20:19:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testAnother status=SUCCESS method=testEditorial.testAnother()[pri:0, instance:Template.testEditorial@6108b2d7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:Template.testEditorial@6108b2d7]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-04-08T20:19:49Z" finished-at="2018-04-08T20:19:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:Template.testEditorial@6108b2d7]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-04-08T20:19:49Z" finished-at="2018-04-08T20:19:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- Template.testEditorial -->
+    </test> <!-- Editorial -->
+  </suite> <!-- SiteCore -->
+</testng-results>
