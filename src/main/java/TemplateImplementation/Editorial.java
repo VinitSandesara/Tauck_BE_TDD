@@ -3,24 +3,28 @@ package TemplateImplementation;
 import Locators.CommonLocators;
 import NodeAndComponentConfig.navigateToNode;
 import Util.Config;
-import Util.utility;
-import mapDataSourceWithFE.mapControlWithDataSource;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
-import java.util.Arrays;
+import java.io.IOException;
 import java.util.List;
 
 public class Editorial extends globalTemplateImplementation {
 
-    public Editorial(WebDriver driver) {
-        super(driver);
+    public Editorial(WebDriver driver, ExtentTest test) {
+        super(driver, test);
     }
 
     @FindBy(xpath = CommonLocators.TABLE)
     public List<WebElement> _table;
+
+    @FindBy(xpath = CommonLocators.CONTAINER_OF_CONTENT)
+    public WebElement _contentArea;
 
     @FindBy(xpath = CommonLocators.TEXTAREA_TEXTBOX)
     public WebElement _textAreaTextBox;
@@ -43,18 +47,39 @@ public class Editorial extends globalTemplateImplementation {
     @FindBy(linkText = CommonLocators.SAVE_CONTENT_CHANGE)
     public WebElement _save;
 
-    public Editorial editorialHero_content_HeroSettings(String inputData) throws InterruptedException {
+    public Editorial editorialHero_content_HeroSettings(String inputData) throws InterruptedException, IOException {
 
-        Thread.sleep(3000);
-        fillContentFields(_table, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
-        _save.click();
-        navigateToWhichTauckNode(navigateToNode.EDITORIAL);
+        try {
+            Thread.sleep(3000);
+         // Before filling content screenshot
+            scrollToElement(_table.get(_table.size()-1));
+            highlightElement(_contentArea);
+            test.addScreenCaptureFromPath(captureScreen());
 
-       /* mapControlWithDataSource mapDataSource = new mapControlWithDataSource(driver);
-        PageFactory.initElements(driver, mapDataSource);
-        return mapDataSource;*/
+            fillContentFields(_table, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
+            _save.click();
+            navigateToWhichTauckNode(navigateToNode.EDITORIAL);
 
-       return this;
+         // After Filling content screenshot
+            highlightElement(_contentArea);
+            test.addScreenCaptureFromPath(captureScreen());
+
+        } catch (ElementNotVisibleException env) {
+            captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
+
+        } catch (NoSuchElementException ne) {
+            captureErrorWithScreenShotForReporting("*****The element could not be located on the page.*****" + ne.getMessage());
+        } catch (StaleElementReferenceException se) {
+            captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+            Assert.fail();
+        }
+
+
+        return this;
     }
 
     public Editorial headerMedia_content_HeaderMediaSettings(String inputData) throws InterruptedException {
@@ -68,15 +93,15 @@ public class Editorial extends globalTemplateImplementation {
         PageFactory.initElements(driver, mapDataSource);
         return mapDataSource;*/
 
-       return this;
+        return this;
     }
 
     public Editorial textCopyFolder_Content_SingleRichText(String inputData) throws InterruptedException {
 
-       // Thread.sleep(2000);
+        // Thread.sleep(2000);
         waitForPageLoad(20);
         _editHtmlLink.click();
-      //  Thread.sleep(2000);
+        //  Thread.sleep(2000);
         waitForPageLoad(20);
         switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
         _htmlEditorTextArea.sendKeys(inputData);
@@ -110,7 +135,6 @@ public class Editorial extends globalTemplateImplementation {
         _save.click();
         return this;
     }
-
 
 
     public Editorial gridMediaFolder_content_GridMedia(String inputData) throws InterruptedException {
@@ -154,13 +178,21 @@ public class Editorial extends globalTemplateImplementation {
         return this;
     }
 
-    public Editorial mediaCarousel_content_CarouselCards(List<String> value) throws InterruptedException {
+    public Editorial mediaCarouselAndHalfWidthMedia_content_MultiListSelection(List<String> value) throws InterruptedException {
+
+      /*  List<String> multiListValue = new ArrayList<String>();
+
+        for(int c=0;c<value.size();c++) {
+            multiListValue.add(value.get(c));
+        }*/
+
 
         Actions actionOne = new Actions(driver);
-        for(int i=0;i<value.size();i++) {
+        for (int i = 0; i < value.size(); i++) {
             WebElement element = driver.findElement(By.xpath("//option[text() = '" + value.get(i) + "']"));
             element.click();
             actionOne.doubleClick(element).perform();
+            Thread.sleep(3000);
         }
         _save.click();
         return this;
@@ -191,12 +223,12 @@ public class Editorial extends globalTemplateImplementation {
     public WebElement _childFrameTextbox;
 
 
-    public Editorial launchSitecore() {
+    public EditorialTemplate launchSitecore() {
         driver.get(Config.getEnvDetails().get("url"));
         return this;
     }
 
-    public Editorial login() throws InterruptedException {
+    public EditorialTemplate login() throws InterruptedException {
         waitForPageLoad(30);
         _username.sendKeys("vinit");
         _password.sendKeys("vinit");
@@ -204,13 +236,13 @@ public class Editorial extends globalTemplateImplementation {
         return this;
     }
 
-    public Editorial goToContentEditor() throws InterruptedException {
+    public EditorialTemplate goToContentEditor() throws InterruptedException {
         waitForPageLoad(30);
         _contentEditor.click();
         return this;
     }
 
-    public Editorial navigateToTemplateOrTemplateComponent() throws InterruptedException {
+    public EditorialTemplate navigateToTemplateOrTemplateComponent() throws InterruptedException {
         waitForPageLoad(30);
         _searchTextBox.sendKeys(navigateToTemplateOrComponent.NAVIGATE_TO_HOME_TEMPLATE);
         _searchTextBox.sendKeys(Keys.ENTER);
@@ -219,7 +251,7 @@ public class Editorial extends globalTemplateImplementation {
         return this;
     }
 
-    public Editorial homeInsertEditorial() {
+    public EditorialTemplate homeInsertEditorial() {
 
         waitForElementToBeVisible(_newPaneList);
         List<WebElement> listofComponent = _newPaneList.findElements(By.tagName("a"));
@@ -236,7 +268,7 @@ public class Editorial extends globalTemplateImplementation {
 
     }
 
-    public Editorial switchToFrame() {
+    public EditorialTemplate switchToFrame() {
 
         try {
             waitForFrame(10,Config.CHILD_FRAME);
@@ -251,7 +283,7 @@ public class Editorial extends globalTemplateImplementation {
         return this;
     }
 
-    public Editorial createEditorialTemplateAndComponentInside() {
+    public EditorialTemplate createEditorialTemplateAndComponentInside() {
 
         _childFrameTextbox.sendKeys(navigateToTemplateOrComponent.NAME_IT_EDITORIAL_TEMPLATE);
         _childFrameTextbox.sendKeys(Keys.ENTER);
@@ -260,5 +292,4 @@ public class Editorial extends globalTemplateImplementation {
     }  */
 
 
-
-} // Editorial class is closing
+} // EditorialTemplate class is closing

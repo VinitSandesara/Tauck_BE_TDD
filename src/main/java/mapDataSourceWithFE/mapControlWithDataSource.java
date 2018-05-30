@@ -5,6 +5,7 @@ import Locators.MapDataSourceWithFEControl.mapDataSourceWithControlLocators;
 import TemplateImplementation.Editorial;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,8 +17,8 @@ import java.util.List;
 public class mapControlWithDataSource extends globalTemplateImplementation {
 
 
-    public mapControlWithDataSource(WebDriver driver) {
-        super(driver);
+    public mapControlWithDataSource(WebDriver driver, ExtentTest test) {
+        super(driver, test);
     }
 
 
@@ -107,7 +108,7 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
         waitForElementToBeVisible(_deviceEditorControls);
         _deviceEditorControls.click();
 
-        editorialTemplateControls editorialControls = new editorialTemplateControls(driver);
+        editorialTemplateControls editorialControls = new editorialTemplateControls(driver, test);
         PageFactory.initElements(driver, editorialControls);
         return editorialControls;
 
@@ -149,7 +150,7 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
         driver.switchTo().defaultContent();
         switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME_THREE);
 
-        editorialTemplateControls editorialControls = new editorialTemplateControls(driver);
+        editorialTemplateControls editorialControls = new editorialTemplateControls(driver, test);
         PageFactory.initElements(driver, editorialControls);
         return editorialControls;
 

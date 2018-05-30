@@ -12,6 +12,15 @@ public class navigateToNode {
 
     public static final String EDITORIAL = "/sitecore/content/Tauck/Home/automation-editorial";
 
+    public static final String EDITORIAL_ONLY_WITH_TAUCK = "/sitecore/content/Tauck/Home/editorial_onlywithtauck";
+    public static final String EDITORIAL_MEDIA_CENTER = "/sitecore/content/Tauck/Home/editorial_mediacenter";
+    public static final String EDITORIAL_THE_TAUCK_STORY = "/sitecore/content/Tauck/Home/editorial_thetuackstory";
+    public static final String EDITORIAL_WHY_WE_TRAVEL =  "/sitecore/content/Tauck/Home/editorial_whywetravel";
+    public static final String EDITORIAL_PADF11 = "/sitecore/content/Tauck/Home/editorial_pdf11";
+    public static final String EDITORIAL_PADF34 = "/sitecore/content/Tauck/Home/editorial_pdf34";
+    public static final String EDITORIAL_PADF64 = "/sitecore/content/Tauck/Home/editorial_pdf64";
+    public static final String EDITORIAL_PADF71 = "/sitecore/content/Tauck/Home/editorial_pdf71";
+
     public static final String AUTHOR_PROFILES = "/sitecore/content/Tauck/Home/automation-editorial/author-profiles";
 
     public static final String EDITORIAL_QUOTES = "/sitecore/content/Tauck/Home/automation-editorial/editorial-quotes";
@@ -32,6 +41,15 @@ public class navigateToNode {
 
     public static final String HALF_WIDTH_MEDIA = "/sitecore/content/Tauck/Home/automation-editorial/half-width-media-module";
 
+
+    /*  Mega Menus  */
+
+    public static final String HEADER = "/sitecore/content/Tauck/Global/navigation/header";
+    public static final String MEGA_MENU ="/sitecore/content/Tauck/Global/navigation/header/megamenu";
+
+
+
+    /*  Mega Menus Ends */
 
 
 

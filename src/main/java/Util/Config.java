@@ -19,19 +19,19 @@ public class Config {
 
     // URLs-prod
     public static final String DEV_HOMEPAGE_URL = "http://dev2017.tauck.com/sitecore/login";
-    public static final String DEV_USERNAME = "vinit";
-    public static final String DEV_PASSWORD = "vinit";
+    public static final String DEV_USERNAME = "v";
+    public static final String DEV_PASSWORD = "v";
 
     // URLs-uat
     public static final String QA_HOMEPAGE_URL = "http://qa2017.tauck.com/sitecore/login";
-    public static final String QA_USERNAME = "admin";
-    public static final String QA_PASSWORD = "b";
+    public static final String QA_USERNAME = "vinit";
+    public static final String QA_PASSWORD = "vinit";
 
 
-    public static final String ENV = "QA"; //PROD, UAT,SAT
+    public static final String ENV = "DEV"; //PROD, UAT,SAT
 
-
-    public static final String REPORTS_PATH = "/Users/vsandesara/Desktop/tauck/Reports/";
+    public static final String REPORTS_PATH = System.getProperty("user.dir") + "/src/Reports/";
+    //public static final String REPORTS_PATH = "/Users/vsandesara/Desktop/tauck/Reports/";
 
 
     public static Hashtable<String, String> table;

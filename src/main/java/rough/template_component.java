@@ -40,7 +40,7 @@ public class template_component {
         driver.findElement(By.id("Password")).sendKeys(Keys.ENTER);
 
         try {
-            driver.findElement(By.linkText("Content Editor")).click();
+            driver.findElement(By.linkText("FeedContent Editor")).click();
 
         }catch (Throwable t) {
 
@@ -69,7 +69,7 @@ public class template_component {
             Thread.sleep(2000);
             driver.findElement(By.xpath("//button[@data-sc-id='KickButton']")).click();
 
-           // driver.findElement(By.linkText("Content Editor")).click();
+           // driver.findElement(By.linkText("FeedContent Editor")).click();
         }
 
         WebElement searchTextbox = driver.findElement(By.id("TreeSearch"));
@@ -77,10 +77,10 @@ public class template_component {
 
         navigateToTemplateOrTemplateComponent(searchTextbox, "/sitecore/content/Tauck/Home",searchResultCloseIcon);
 
-        panList("Editorial");
+        panList("EditorialTemplate");
 
         switchToFrame("jqueryModalDialogsFrame", "scContentIframeId0");
-        componentName("Automation Editorial", "Value");
+        componentName("Automation EditorialTemplate", "Value");
 
         panList("Header Media");
 

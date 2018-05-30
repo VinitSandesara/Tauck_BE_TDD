@@ -1,6 +1,7 @@
 package Util;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
@@ -12,14 +13,140 @@ public class DataUtil {
 
         //System.out.println(filename);
         Xls_Reader xls = null;
-        xls = new Xls_Reader("/Users/vsandesara/Desktop/tauckBEActualDataSourceImplementation/src/Data/TestData.xlsx");
+        xls = new Xls_Reader("/Users/vsandesara/Desktop/TauckSitecore/src/Data/TestData.xlsx");
 
         //System.out.println("Yes or Nt :-  " + isTestExecutable(xls,"LoginTest"));
 
-      getControlDatasourcePlaceholderValueFromXls(xls, "AuthorProfiles", "Editorial");
+        grabControlListForMapping(xls, "MediaCarousel", "Editorial_WhyWeTravel");
 
 
     }
+
+
+
+
+    public static List<String> grabControlListForMapping(Xls_Reader xls, String testCaseName, String sheetName) {
+
+        int testStartRowNum = 1;
+        int dataStartRowNum;
+        int colStartRowNum;
+        System.out.println("Value is - " + xls.getCellData(sheetName, 0, testStartRowNum));
+        if (testCaseName != null) {
+            while (!xls.getCellData(sheetName, 0, testStartRowNum).equals(testCaseName)) {
+                testStartRowNum++;
+            }
+        }
+        System.out.println("Test starts from row - " + testStartRowNum);
+
+        if (testCaseName != null) {
+            colStartRowNum = testStartRowNum + 1;
+        } else {
+            colStartRowNum = 1;
+        }
+
+        if (testCaseName != null) {
+            dataStartRowNum = testStartRowNum + 2;
+        } else {
+            dataStartRowNum = testStartRowNum + 1;
+        }
+
+        // calculate rows of data
+        int rows = 0;
+        while (!xls.getCellData(sheetName, 0, dataStartRowNum + rows).equals("")) {
+            rows++;
+        }
+        System.out.println("Total rows are  - " + rows);
+
+        //calculate total cols
+        int cols = 0;
+        while (!xls.getCellData(sheetName, cols, colStartRowNum).equals("")) {
+            cols++;
+        }
+        System.out.println("Total cols are  - " + cols);
+
+        Hashtable<String, String> data = new Hashtable<String, String>();
+        List<String> listOfComponentToMapwith = new ArrayList<String>();
+
+        for (int rNum = dataStartRowNum; rNum < dataStartRowNum + rows; rNum++) {
+
+            String key = xls.getCellData(sheetName, 0, rNum);
+            String value = xls.getCellData(sheetName, 1, rNum);
+
+            Boolean isITblank = value.isEmpty();
+
+            if (key.equalsIgnoreCase("Y")) {
+                //data.put(key, value);
+                listOfComponentToMapwith.add(value);
+            }
+
+        }
+
+        return listOfComponentToMapwith;
+    }
+
+
+    public static Hashtable<String, String> readSpecificTestDataFromExcel(Xls_Reader xls, String testCaseName, String sheetName, String colName) {
+
+        int testStartRowNum = 1;
+        int dataStartRowNum;
+        int colStartRowNum;
+        System.out.println("Value is - " + xls.getCellData(sheetName, 0, testStartRowNum));
+        if (testCaseName != null) {
+            while (!xls.getCellData(sheetName, 0, testStartRowNum).equals(testCaseName)) {
+                testStartRowNum++;
+            }
+        }
+        System.out.println("Test starts from row - " + testStartRowNum);
+
+        if (testCaseName != null) {
+            colStartRowNum = testStartRowNum + 1;
+        } else {
+            colStartRowNum = 1;
+        }
+
+        if (testCaseName != null) {
+            dataStartRowNum = testStartRowNum + 2;
+        } else {
+            dataStartRowNum = testStartRowNum + 1;
+        }
+
+        // calculate rows of data
+        int rows = 0;
+        while (!xls.getCellData(sheetName, 0, dataStartRowNum + rows).equals("")) {
+            rows++;
+        }
+        System.out.println("Total rows are  - " + rows);
+
+        //calculate total cols
+        int cols = 0;
+        while (!xls.getCellData(sheetName, cols, colStartRowNum).equals("")) {
+            cols++;
+        }
+        System.out.println("Total cols are  - " + cols);
+
+        Hashtable<String, String> data = new Hashtable<String, String>();
+
+        for (int rNum = dataStartRowNum; rNum < dataStartRowNum + rows; rNum++) {
+
+            for (int cNum = 0; cNum < cols; cNum++) {
+                String key = xls.getCellData(sheetName, cNum, colStartRowNum);
+                String value = xls.getCellData(sheetName, cNum, rNum);
+
+                Boolean isITblank = value.isEmpty();
+
+                if (value.isEmpty() != true) {
+                    if (key.equalsIgnoreCase(colName)) {
+                        data.put(key, value);
+                    }
+                }
+
+            }
+
+        }
+
+        return data;
+    }
+
 
     public static Hashtable<String, String> getControlDatasourcePlaceholderValueFromXls(Xls_Reader xls, String testCaseName, String sheetName) {
 
@@ -201,7 +328,6 @@ public class DataUtil {
 
         return splitDoubleORstring;
     }
-
 
 
 }

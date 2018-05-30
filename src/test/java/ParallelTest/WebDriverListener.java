@@ -1,9 +1,15 @@
 package ParallelTest;
 
+import ExtentReport.ExtentManager;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import org.openqa.selenium.WebDriver;
 import org.testng.*;
 
-public class WebDriverListener implements IInvokedMethodListener, ITestListener {
+public class WebDriverListener implements IInvokedMethodListener, ITestListener, ISuiteListener {
+
+   // public static ExtentReports extent;
+   public static ExtentReports extent = ExtentManager.getExtent();
 
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
@@ -37,6 +43,10 @@ public class WebDriverListener implements IInvokedMethodListener, ITestListener 
                 driver.quit();
             }
         }
+
+        extent.flush();
+        System.out.print("\nEND TEST: " + testResult.getName());
+
     }
 
 
@@ -68,12 +78,40 @@ public class WebDriverListener implements IInvokedMethodListener, ITestListener 
     @Override
     public void onStart(ITestContext iTestContext) {
 
-
-
     }
 
     @Override
     public void onFinish(ITestContext iTestContext) {
 
     }
+
+
+    @Override
+    public void onStart(ISuite iSuite) {
+
+       // ExtentReports extent = ExtentManager.getExtent();
+
+      /*  ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("Reports/extent.html");
+        htmlReporter.loadXMLConfig("Reports/ReportsConfig.xml");
+
+        extent = new ExtentReports();
+        extent.attachReporter(htmlReporter);
+
+        // display the Environment details to the extent report Dashboard
+        extent.setSystemInfo("Application URL", "http://qa2017.tauck.com/");
+        extent.setSystemInfo("Browser", "Chrome");*/
+
+    }
+
+    @Override
+    public void onFinish(ISuite iSuite) {
+
+    }
+
+
+
+
+
+
+
 }

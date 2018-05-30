@@ -5,6 +5,7 @@ import Locators.MapDataSourceWithFEControl.mapDataSourceWithControlLocators;
 import Util.DataUtil;
 import Util.Xls_Reader;
 import Util.excelConfig;
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,8 +18,8 @@ import java.util.List;
 
 public class editorialTemplateControls extends mapControlWithDataSource {
 
-    public editorialTemplateControls(WebDriver driver) {
-        super(driver);
+    public editorialTemplateControls(WebDriver driver, ExtentTest test) {
+        super(driver, test);
     }
 
     @FindBy(linkText = editorial_FE_Control.HEADER_MODULE)
@@ -46,7 +47,7 @@ public class editorialTemplateControls extends mapControlWithDataSource {
         waitForElementToBeVisible(_okButton);
         _okButton.click();
 
-        mapControlWithDataSource mapControls = new mapControlWithDataSource(driver);
+        mapControlWithDataSource mapControls = new mapControlWithDataSource(driver , test);
         PageFactory.initElements(driver, mapControls);
         return mapControls;
 

@@ -1,13 +1,20 @@
 package TemplateImplementation;
 
+import FeedContent.feedContent;
 import Locators.CommonLocators;
 import Util.Config;
 import Util.utility;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import mapDataSourceWithFE.mapControlWithDataSource;
+import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +24,8 @@ public class globalTemplateImplementation extends utility {
     int maxTimeInSeconds = 10;
 
 
-    public globalTemplateImplementation(WebDriver driver) {
-        super(driver);
+    public globalTemplateImplementation(WebDriver driver, ExtentTest test) {
+        super(driver, test);
     }
 
     @FindBy(id = CommonLocators.USERNAME)
@@ -51,15 +58,37 @@ public class globalTemplateImplementation extends utility {
     @FindBy(id = CommonLocators.HTML_EDITOR_ACCEPT_BUTTON)
     public WebElement _htmlEditorAcceptButton;
 
+    @FindBy(id = CommonLocators.TEMPLATE_NAME)
+    public WebElement _insertFromTemplate_templateNmae;
+
+    @FindBy(id = CommonLocators.ITEM_NAME)
+    public WebElement _insertFromTemplate_itemNmae;
+
     @FindBy(xpath = CommonLocators.HTML_EDITOR_TEXT_AREA)
     public WebElement _htmlEditorTextArea;
 
     @FindBy(linkText = CommonLocators.EDIT_HTML_LINK)
     public WebElement _editHtmlLink;
 
+    @FindBy(xpath = CommonLocators.LAUNCHPAD_ICON)
+    public List<WebElement> _lunchPadIcon;
+
     public globalTemplateImplementation launchSitecore() {
         driver.get(Config.getEnvDetails().get("url"));
         return this;
+    }
+
+    public globalTemplateImplementation insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(String templateName, String itemName) throws InterruptedException {
+
+        Thread.sleep(3000);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value ='';", _insertFromTemplate_templateNmae);
+        _insertFromTemplate_templateNmae.sendKeys(templateName);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value ='';", _insertFromTemplate_itemNmae);
+        _insertFromTemplate_itemNmae.sendKeys(itemName);
+        _insertFromTemplate_itemNmae.sendKeys(Keys.ENTER);
+
+        return this;
+
     }
 
 
@@ -73,21 +102,26 @@ public class globalTemplateImplementation extends utility {
 
     public globalTemplateImplementation goToContentEditorIfNotKickOffUser() throws InterruptedException {
 
-        try {
 
-            waitForPageLoad(30);
-            _contentEditor.click();
-            return this;
+        try {
+            if(isElementPresent(_lunchPadIcon)!=true) {
+                waitForPageLoad(30);
+                _contentEditor.click();
+            }
 
         } catch (Throwable t) {
             kickOffUser();
             waitForPageLoad(30);
-            _contentEditor.click();
-            return this;
+            try {
+                _contentEditor.click();
+            }catch (Exception e) {
+
+            }
 
         }
 
 
+        return this;
     }
 
     public globalTemplateImplementation goToContentEditor() throws InterruptedException {
@@ -103,12 +137,63 @@ public class globalTemplateImplementation extends utility {
         _searchResultCloseIcon.click();
         _searchTextBox.clear();
 
-        /*Editorial editorial = new Editorial(driver);
+        /*EditorialTemplate editorial = new EditorialTemplate(driver);
         PageFactory.initElements(driver, editorial);
         return editorial;*/
 
         return this;
     }
+
+    // This overloaded method is implemented for editoial sub-templates.
+    public feedContent navigateToWhichTauckNode(String nodeName, String nameOfPreFeededComponentName) throws InterruptedException {
+        waitForPageLoad(30);
+        _searchTextBox.sendKeys(nodeName+nameOfPreFeededComponentName);
+        _searchTextBox.sendKeys(Keys.ENTER);
+        _searchResultCloseIcon.click();
+        _searchTextBox.clear();
+
+        feedContent feedcontent = new feedContent(driver,test);
+        PageFactory.initElements(driver, feedcontent);
+        return feedcontent;
+
+
+    }
+
+
+    public globalTemplateImplementation verifyPreFeededSubComponent(String nodeToRedirect, List<String> listOfPreFeededNodes) throws InterruptedException, IOException {
+
+
+        try {
+            for (int i = 0; i < listOfPreFeededNodes.size(); i++) {
+
+                navigateToWhichTauckNode(nodeToRedirect + "/" + listOfPreFeededNodes.get(i));
+
+                WebElement element = driver.findElement(By.linkText(listOfPreFeededNodes.get(i)));
+                String actualText = element.getText();
+
+                verifyAssertEquals(actualText, listOfPreFeededNodes.get(i), "Pre feeded component inside Sub-template");
+
+                highlightElement(element);
+                test.addScreenCaptureFromPath(captureScreen());
+            }
+        } catch (ElementNotVisibleException env) {
+            captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
+
+        } catch (NoSuchElementException ne) {
+            captureErrorWithScreenShotForReporting("*****The element could not be located on the page.*****" + ne.getMessage());
+        } catch (StaleElementReferenceException se) {
+            captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+            Assert.fail();
+        }
+
+
+        return this;
+    }
+
 
     public mapControlWithDataSource navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(String nodeName) throws InterruptedException {
         waitForPageLoad(30);
@@ -117,7 +202,7 @@ public class globalTemplateImplementation extends utility {
         _searchResultCloseIcon.click();
         _searchTextBox.clear();
 
-        mapControlWithDataSource mapDataSource = new mapControlWithDataSource(driver);
+        mapControlWithDataSource mapDataSource = new mapControlWithDataSource(driver, test);
         PageFactory.initElements(driver, mapDataSource);
         return mapDataSource;
 
@@ -170,17 +255,38 @@ public class globalTemplateImplementation extends utility {
         driver.switchTo().defaultContent();
 
         if (className.equalsIgnoreCase("testEditorial")) {
-            Editorial editorial = new Editorial(driver);
+            Editorial editorial = new Editorial(driver, test);
             PageFactory.initElements(driver, editorial);
             return editorial;
         } else if (className.equalsIgnoreCase("mapControlWithDataSource")) {
-            mapControlWithDataSource mapControls = new mapControlWithDataSource(driver);
+            mapControlWithDataSource mapControls = new mapControlWithDataSource(driver, test);
             PageFactory.initElements(driver, mapControls);
             return mapControls;
         }
 
         return this;
     }
+
+
+
+
+    public feedContent createTemplateOrTemplateComponent(String templateOrComponentName ) throws InterruptedException {
+
+
+        Thread.sleep(3000);
+        _childFrameTextbox.sendKeys(templateOrComponentName);
+        _childFrameTextbox.sendKeys(Keys.ENTER);
+        driver.switchTo().defaultContent();
+
+
+        feedContent feedcontent = new feedContent(driver, test);
+        PageFactory.initElements(driver, feedcontent);
+        return feedcontent;
+
+
+
+    }
+
 
     public void fillContentFields(List<WebElement> parentTable, String col, String row, String input, String _textAreaTextBox, String inputData) throws InterruptedException {
 

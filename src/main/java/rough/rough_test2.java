@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 public class rough_test2 {
@@ -30,30 +31,33 @@ public class rough_test2 {
 
         driver = new ChromeDriver(options);
 
-        driver.get("http://qa2017.tauck.com/sitecore/login");
+        driver.get("http://dev2017.tauck.com/sitecore/login");
 
         driver.findElement(By.id("UserName")).sendKeys("admin");
         driver.findElement(By.id("Password")).sendKeys("b");
         driver.findElement(By.id("Password")).sendKeys(Keys.ENTER);
-        driver.findElement(By.linkText("Content Editor")).click();
+        driver.findElement(By.linkText("FeedContent Editor")).click();
 
         // Tempo
 
-        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/automation-editorial/half-width-media-module");
+        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/editorial_onlywithtauck");
         driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);
         driver.findElement(By.xpath("//div[@id='SearchHeader']/div[1]/a")).click();
         driver.findElement(By.id("TreeSearch")).clear();
 
+        String preFeededValue = "EditorialTemplate Title|Header Hero|Half Width Media Module 1|Half Width Media Module 2|Text Copy Folder";
+        List<String> listOfValue= Arrays.asList(preFeededValue.split("\\|"));
+
+        for(int i=0;i<listOfValue.size();i++) {
+
+            driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/editorial_onlywithtauck/"+listOfValue.get(i)+"");
+            driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);
+            driver.findElement(By.xpath("//div[@id='SearchHeader']/div[1]/a")).click();
+            driver.findElement(By.id("TreeSearch")).clear();
 
 
 
-        Actions actionOne = new Actions(driver);
-
-       WebElement main =  driver.findElement(By.xpath("//div[@class='scScrollbox scContentControlTree']"));
-       main.findElement(By.linkText("Media Segment One")).click();
-
-
-     //   actionOne.doubleClick(element).perform();
+        }
 
 
         // Tempo end
@@ -70,17 +74,17 @@ public class rough_test2 {
 
         // WebElement menu = driver.findElement(By.xpath("//span[text() = 'Home']"));
 
-        panList("Editorial");
+        panList("EditorialTemplate");
 
         switchToFrame("jqueryModalDialogsFrame", "scContentIframeId0");
-        driver.findElement(By.id("Value")).sendKeys("Automation Editorial");
+        driver.findElement(By.id("Value")).sendKeys("Automation EditorialTemplate");
         driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
         driver.switchTo().defaultContent();
 
-        panList("Editorial Hero");
+        panList("EditorialTemplate Hero");
 
         switchToFrame("jqueryModalDialogsFrame", "scContentIframeId0");
-        driver.findElement(By.id("Value")).sendKeys("Editorial Hero");
+        driver.findElement(By.id("Value")).sendKeys("EditorialTemplate Hero");
         driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
         driver.switchTo().defaultContent();
 

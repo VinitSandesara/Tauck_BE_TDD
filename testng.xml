@@ -1,10 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="SiteCore" parallel="methods" thread-count="2">
+<suite name="SiteCore" parallel="classes" thread-count="2">
 
     <listeners>
         <listener class-name="Listener.RetryListener"/>
         <listener class-name="Listener.TestListener"/>
+        <listener class-name="base.testBase"/>
         <listener class-name="ParallelTest.WebDriverListener"></listener>
     </listeners>
 
@@ -12,7 +13,7 @@
     <test name="Test">
         <parameter name="browserName" value="chrome"></parameter>
         <classes>
-            <class name="Template.testEditorial" />
+            <class name="Template.MegaMenu" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

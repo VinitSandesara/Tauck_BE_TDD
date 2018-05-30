@@ -24,11 +24,10 @@ public class WaitUtil extends excelDataUtil {
     private static WaitUtil Wait;
 
 
-    ExtentTest test;
     String maxTimeOut = "25";
 
-    public WaitUtil(WebDriver driver){
-        super(driver);
+    public WaitUtil(WebDriver driver, ExtentTest test){
+        super(driver, test);
     }
 
 

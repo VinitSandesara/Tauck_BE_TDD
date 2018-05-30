@@ -26,7 +26,7 @@ public class mapDataSource {
         driver.findElement(By.id("UserName")).sendKeys("vinit");
         driver.findElement(By.id("Password")).sendKeys("vinit");
         driver.findElement(By.id("Password")).sendKeys(Keys.ENTER);
-        driver.findElement(By.linkText("Content Editor")).click();
+        driver.findElement(By.linkText("FeedContent Editor")).click();
 
         driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/automation-editorial");
         driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);

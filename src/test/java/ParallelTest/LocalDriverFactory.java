@@ -7,19 +7,23 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 class LocalDriverFactory {
+
+    static String browser = "chrome";
+
     static WebDriver createInstance(String browserName) {
         WebDriver driver = null;
-        if (browserName.toLowerCase().contains("firefox")) {
+        if (browser.toLowerCase().contains("firefox")) {
             driver = new FirefoxDriver();
             return driver;
         }
-        if (browserName.toLowerCase().contains("internet")) {
+        if (browser.toLowerCase().contains("internet")) {
             driver = new InternetExplorerDriver();
             return driver;
         }
-        if (browserName.toLowerCase().contains("chrome")) {
+        if (browser.toLowerCase().contains("chrome")) {
 
             String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/chromedriver";
+          //  String CHROME_DRIVER_EXE = "/Users/vsandesara/Desktop/TauckSitecore/src/DriverExe/chromedriver";
             System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
 
             ChromeOptions options = new ChromeOptions();
