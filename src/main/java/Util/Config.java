@@ -30,7 +30,7 @@ public class Config {
 
     public static final String ENV = "DEV"; //PROD, UAT,SAT
 
-    public static final String REPORTS_PATH = System.getProperty("user.dir") + "/src/Reports/";
+    public static final String REPORTS_PATH = System.getProperty("user.dir") + "/Reports/extent.html";
     //public static final String REPORTS_PATH = "/Users/vsandesara/Desktop/tauck/Reports/";
 
 
