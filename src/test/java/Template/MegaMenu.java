@@ -58,8 +58,8 @@ public class MegaMenu extends testBase {
 
 
 
-  /*  @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
-   // @Test(dataProvider = "readTestData")
+   //  @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+    @Test(dataProvider = "readTestData")
     public void add_Destinations_SubMenus_And_SubMenus_SubItems(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -91,8 +91,8 @@ public class MegaMenu extends testBase {
 
     }
 
- @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
-    //@Test(dataProvider = "readTestData")
+ // @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+    @Test(dataProvider = "readTestData")
     public void add_ToursAndCruises_SubMenus_And_SubMenus_SubItems(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -122,12 +122,12 @@ public class MegaMenu extends testBase {
 
         }
 
-    }*/
+    }
 
 
 
-    @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
-   // @Test(dataProvider = "readTestData")
+  //  @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+    @Test(dataProvider = "readTestData")
     public void add_WhyTauck_SubMenus(Hashtable<String, String> data) throws InterruptedException {
 
 
