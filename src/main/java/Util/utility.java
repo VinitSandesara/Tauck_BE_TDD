@@ -143,4 +143,10 @@ public class utility extends AssertUtil {
     }
 
 
+    public void clearTextboxPreFeededData(WebElement element) {
+
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value ='';", element);
+    }
+
+
 }

@@ -302,7 +302,7 @@ public class DataUtil {
     public static boolean isTestExecutable(Xls_Reader xls, String testCaseName) {
         int rows = xls.getRowCount(excelConfig.TESTSUITE_SHEET);
         for (int rNum = 2; rNum <= rows; rNum++) {
-            String tcid = xls.getCellData(excelConfig.TESTSUITE_SHEET, "TCID", rNum);
+            String tcid = xls.getCellData(excelConfig.TESTSUITE_SHEET, "TEMPLATE", rNum);
             if (tcid.equals(testCaseName)) {
                 String runmode = xls.getCellData(excelConfig.TESTSUITE_SHEET, "Runmode", rNum);
                 if (runmode.equals("Y"))

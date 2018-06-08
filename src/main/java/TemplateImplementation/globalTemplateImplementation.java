@@ -40,6 +40,9 @@ public class globalTemplateImplementation extends utility {
     @FindBy(xpath = CommonLocators.SEARCHRESULTCLOSEICON)
     public WebElement _searchResultCloseIcon;
 
+    @FindBy(xpath = CommonLocators.SEARCH_RESULT_NO_FOUND)
+    public WebElement _noSearchResultFound;
+
     @FindBy(linkText = CommonLocators.CONTENT_EDITOR)
     public WebElement _contentEditor;
 
@@ -73,8 +76,22 @@ public class globalTemplateImplementation extends utility {
     @FindBy(xpath = CommonLocators.LAUNCHPAD_ICON)
     public List<WebElement> _lunchPadIcon;
 
+    @FindBy(xpath = CommonLocators.DELETE_LINK)
+    public WebElement _deleteLink;
+
+    @FindBy(xpath = CommonLocators.DELETE_OK_BUTTON)
+    public WebElement _deleteOkButton;
+
+    @FindBy(xpath = CommonLocators.LOG_OUT)
+    public WebElement _logOut;
+
     public globalTemplateImplementation launchSitecore() {
         driver.get(Config.getEnvDetails().get("url"));
+        return this;
+    }
+
+    public globalTemplateImplementation logOut() {
+        _logOut.click();
         return this;
     }
 
@@ -91,6 +108,21 @@ public class globalTemplateImplementation extends utility {
 
     }
 
+    public feedContent insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(String templateName, String itemName, String className) throws InterruptedException {
+
+        Thread.sleep(3000);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value ='';", _insertFromTemplate_templateNmae);
+        _insertFromTemplate_templateNmae.sendKeys(templateName);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].value ='';", _insertFromTemplate_itemNmae);
+        _insertFromTemplate_itemNmae.sendKeys(itemName);
+        _insertFromTemplate_itemNmae.sendKeys(Keys.ENTER);
+
+        feedContent feedcontent = new feedContent(driver, test);
+        PageFactory.initElements(driver, feedcontent);
+        return feedcontent;
+
+    }
+
 
     public globalTemplateImplementation login() throws InterruptedException {
         waitForPageLoad(30);
@@ -104,7 +136,7 @@ public class globalTemplateImplementation extends utility {
 
 
         try {
-            if(isElementPresent(_lunchPadIcon)!=true) {
+            if (isElementPresent(_lunchPadIcon) != true) {
                 waitForPageLoad(30);
                 _contentEditor.click();
             }
@@ -114,7 +146,7 @@ public class globalTemplateImplementation extends utility {
             waitForPageLoad(30);
             try {
                 _contentEditor.click();
-            }catch (Exception e) {
+            } catch (Exception e) {
 
             }
 
@@ -134,6 +166,7 @@ public class globalTemplateImplementation extends utility {
         waitForPageLoad(30);
         _searchTextBox.sendKeys(nodeName);
         _searchTextBox.sendKeys(Keys.ENTER);
+
         _searchResultCloseIcon.click();
         _searchTextBox.clear();
 
@@ -144,15 +177,41 @@ public class globalTemplateImplementation extends utility {
         return this;
     }
 
+    public globalTemplateImplementation checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(String nodeName) throws InterruptedException {
+
+        waitForPageLoad(30);
+        _searchTextBox.sendKeys(nodeName);
+        _searchTextBox.sendKeys(Keys.ENTER);
+
+        try {
+            _noSearchResultFound.getText().equalsIgnoreCase("There are no matches.");
+            _searchResultCloseIcon.click();
+            _searchTextBox.clear();
+        } catch (Throwable t) {
+            _searchResultCloseIcon.click();
+            _searchTextBox.clear();
+            _deleteLink.click();
+            switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+            _deleteOkButton.click();
+        }
+
+        return this;
+    }
+
+
     // This overloaded method is implemented for editoial sub-templates.
     public feedContent navigateToWhichTauckNode(String nodeName, String nameOfPreFeededComponentName) throws InterruptedException {
         waitForPageLoad(30);
-        _searchTextBox.sendKeys(nodeName+nameOfPreFeededComponentName);
+        _searchTextBox.sendKeys(nodeName + nameOfPreFeededComponentName);
         _searchTextBox.sendKeys(Keys.ENTER);
-        _searchResultCloseIcon.click();
+
+        if (_noSearchResultFound.getText().equalsIgnoreCase("There are no matches."))
+
+
+            _searchResultCloseIcon.click();
         _searchTextBox.clear();
 
-        feedContent feedcontent = new feedContent(driver,test);
+        feedContent feedcontent = new feedContent(driver, test);
         PageFactory.initElements(driver, feedcontent);
         return feedcontent;
 
@@ -268,9 +327,7 @@ public class globalTemplateImplementation extends utility {
     }
 
 
-
-
-    public feedContent createTemplateOrTemplateComponent(String templateOrComponentName ) throws InterruptedException {
+    public feedContent createTemplateOrTemplateComponent(String templateOrComponentName) throws InterruptedException {
 
 
         Thread.sleep(3000);
@@ -282,7 +339,6 @@ public class globalTemplateImplementation extends utility {
         feedContent feedcontent = new feedContent(driver, test);
         PageFactory.initElements(driver, feedcontent);
         return feedcontent;
-
 
 
     }
@@ -316,15 +372,22 @@ public class globalTemplateImplementation extends utility {
 
             } catch (Throwable e) {
                 try {
-                    column.get(1).findElement(By.xpath(_textAreaTextBox)).sendKeys(temp.get(i));
+                    //column.get(1).findElement(By.xpath(_textAreaTextBox)).sendKeys(temp.get(i));
+                    // Note : Above line commented because it was not helping for home template - Text Area. Example - Travelling with tauck sections
+                    column.get(1).findElement(By.tagName("textarea")).sendKeys(temp.get(i));
                 } catch (Throwable t) {
-                    waitForPageLoad(20);
-                    _editHtmlLink.click();
-                    waitForPageLoad(20);
-                    switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
-                    _htmlEditorTextArea.sendKeys(temp.get(i));
-                    _htmlEditorAcceptButton.click();
-                    waitForPageLoad(20);
+
+                    try {
+                        waitForPageLoad(20);
+                        _editHtmlLink.click();
+                        waitForPageLoad(20);
+                        switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        _htmlEditorTextArea.sendKeys(temp.get(i));
+                        _htmlEditorAcceptButton.click();
+                        waitForPageLoad(20);
+                    }catch (Throwable t1) {
+                        continue;
+                    }
                 }
 
             }
@@ -341,6 +404,74 @@ public class globalTemplateImplementation extends utility {
         }
 
     }
+
+
+
+    public void clearAndFillContentFields(List<WebElement> parentTable, String col, String row, String input, String _textAreaTextBox, String inputData) throws InterruptedException {
+
+        List<String> temp = new ArrayList<String>();
+        if (!temp.isEmpty()) {
+            temp.clear();
+        }
+        List<String> inputDataList = Arrays.asList(inputData.split("\\|"));
+
+        for (int i = 0; i < inputDataList.size(); i++) {
+
+            temp.add(inputDataList.get(i));
+
+        }
+
+        for (int i = 0; i < parentTable.size(); i++) {
+
+            List<WebElement> column = parentTable.get(i).findElements(By.tagName(col));
+            System.out.println("Total Col are :- " + column.size());
+
+            List<WebElement> rows = parentTable.get(i).findElements(By.tagName(row));
+            System.out.println("Total rows are :- " + rows.size());
+
+            try {
+                //its input box
+                clearTextboxPreFeededData(column.get(1).findElement(By.tagName("input")));
+                column.get(1).findElement(By.tagName("input")).sendKeys(temp.get(i));
+
+            } catch (Throwable e) {
+                try {
+                    //column.get(1).findElement(By.xpath(_textAreaTextBox)).sendKeys(temp.get(i));
+                    // Note : Above line commented because it was not helping for home template - Text Area. Example - Travelling with tauck sections
+                    clearTextboxPreFeededData(column.get(1).findElement(By.tagName("textarea")));
+                    column.get(1).findElement(By.tagName("textarea")).sendKeys(temp.get(i));
+                } catch (Throwable t) {
+
+                    try {
+                        waitForPageLoad(20);
+                        _editHtmlLink.click();
+                        waitForPageLoad(20);
+                        switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        clearTextboxPreFeededData(_htmlEditorTextArea);
+                        _htmlEditorTextArea.sendKeys(temp.get(i));
+                        _htmlEditorAcceptButton.click();
+                        waitForPageLoad(20);
+                    }catch (Throwable t1) {
+                        continue;
+                    }
+                }
+
+            }
+
+
+          /*  if (column.get(1).findElements(By.tagName("input")).size() != 0) {
+                //its input box
+                column.get(1).findElement(By.tagName("input")).sendKeys(temp.get(i));
+            } else {
+                column.get(1).findElement(By.xpath(_textAreaTextBox)).sendKeys(temp.get(i));
+
+            }*/
+
+        }
+
+    }
+
+
 
     public globalTemplateImplementation textCopyFolder_Content_SingleRichText(String inputData) throws InterruptedException {
 

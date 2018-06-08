@@ -1,6 +1,7 @@
 package FeedContent;
 
 import Locators.CommonLocators;
+import Locators.HomePageLocators;
 import Locators.MapDataSourceWithFEControl.mapDataSourceWithControlLocators;
 import NodeAndComponentConfig.navigateToNode;
 import TemplateImplementation.Editorial;
@@ -50,6 +51,82 @@ public class feedContent extends globalTemplateImplementation {
 
     @FindBy(linkText = CommonLocators.SAVE_CONTENT_CHANGE)
     public WebElement _save;
+
+    @FindBy(xpath = HomePageLocators.CONTENT_SECTIONS_PANEL_TABLES)
+    public List<WebElement> _homePageContentSectionsPanelTables;
+
+    @FindBy(xpath = HomePageLocators.CONTENT_SECTIONS_PANEL_TABLES_ALTERNATIVE)
+    public List<WebElement> _homePageContentSectionsPanelTotalTables;
+
+
+
+
+    public feedContent feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
+
+        try {
+            Thread.sleep(3000);
+            List<WebElement> totalInput = _homePageContentSectionsPanelTables.get(counter).findElements(By.tagName("table"));
+
+            fillContentFields(totalInput, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
+            _save.click();
+
+            // After Filling content screenshot
+            highlightElement(_contentArea);
+            test.addScreenCaptureFromPath(captureScreen());
+
+        } catch (ElementNotVisibleException env) {
+            captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
+
+        } catch (NoSuchElementException ne) {
+            captureErrorWithScreenShotForReporting("*****The element could not be located on the page.*****" + ne.getMessage());
+        } catch (StaleElementReferenceException se) {
+            captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+            Assert.fail();
+        }
+
+        return this;
+
+    }
+
+    public feedContent clear_And_feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
+
+        try {
+            Thread.sleep(2000);
+
+            List<WebElement> totalInput = _homePageContentSectionsPanelTables.get(counter).findElements(By.tagName("table"));
+
+            clearAndFillContentFields(totalInput, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
+            _save.click();
+
+            // After Filling content screenshot
+            highlightElement(_contentArea);
+            test.addScreenCaptureFromPath(captureScreen());
+
+        } catch (ElementNotVisibleException env) {
+            captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
+
+        } catch (NoSuchElementException ne) {
+            captureErrorWithScreenShotForReporting("*****The element could not be located on the page.*****" + ne.getMessage());
+        } catch (StaleElementReferenceException se) {
+            captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+            Assert.fail();
+        }
+
+        return this;
+
+    }
+
+
+
+
 
 
 
@@ -107,7 +184,25 @@ public class feedContent extends globalTemplateImplementation {
         return this;
     }
 
+    public feedContent mediaCarouselAndHalfWidthMedia_content_MultiListSelection(List<String> value) throws InterruptedException {
 
+      /*  List<String> multiListValue = new ArrayList<String>();
+
+        for(int c=0;c<value.size();c++) {
+            multiListValue.add(value.get(c));
+        }*/
+
+
+        Actions actionOne = new Actions(driver);
+        for (int i = 0; i < value.size(); i++) {
+            WebElement element = driver.findElement(By.xpath("//option[text() = '" + value.get(i) + "']"));
+            element.click();
+            actionOne.doubleClick(element).perform();
+            Thread.sleep(3000);
+        }
+        _save.click();
+        return this;
+    }
 
 
 }

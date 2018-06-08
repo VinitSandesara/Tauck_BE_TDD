@@ -7,7 +7,9 @@ public class CommonLocators {
     public static final String PASSWORD = "Password";
     public static final String SEARCHTEXTBOX = "TreeSearch";
     public static final String SEARCHRESULTCLOSEICON = "//div[@id='SearchHeader']/div[1]/a";
+    public static final String SEARCH_RESULT_NO_FOUND = "//div[contains(text(),'There are no matches.')]";
     public static final String CONTENT_EDITOR = "FeedContent Editor";
+
 
     public static final String NEW_PANE_LIST = "NewPanelList";
 
@@ -35,11 +37,13 @@ public class CommonLocators {
     public static final String TEMPLATE_NAME = "TemplateName";
     public static final String ITEM_NAME = "ItemName";
 
+    public static final String DELETE_LINK = "//a[@title='Delete the item.']";
 
+    public static final String DELETE_OK_BUTTON = "//button[@id='OK']";
 
+    public static final String TEMPLATE_CONTENT_SECTIONS = "//div[@class='scEditorSections']/div";
 
-
-
+    public static final String LOG_OUT = "//span[@class='logout']";
 
 
 

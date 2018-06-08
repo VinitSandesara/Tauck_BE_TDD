@@ -103,6 +103,7 @@ public class Editorial extends globalTemplateImplementation {
         _editHtmlLink.click();
         //  Thread.sleep(2000);
         waitForPageLoad(20);
+        waitForPageLoad(20);
         switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
         _htmlEditorTextArea.sendKeys(inputData);
         _htmlEditorAcceptButton.click();

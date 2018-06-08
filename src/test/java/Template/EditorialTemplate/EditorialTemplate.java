@@ -1,36 +1,31 @@
 package Template.EditorialTemplate;
 
+import FeedContent.feedContent;
 import NodeAndComponentConfig.navigateToNode;
-import NodeAndComponentConfig.rightClickInsert;
-import NodeAndComponentConfig.whatIsTheComponentName;
-import TemplateImplementation.Editorial;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
 import Util.DataUtil;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
-import mapDataSourceWithFE.editorialTemplateControls;
 import mapDataSourceWithFE.mapControlWithDataSource;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Hashtable;
-import java.util.List;
 
 
 public class EditorialTemplate extends testBase {
 
-    String testSheetName = "EditorialTemplate";
+    String testSheetName = "Editorial";
     public mapControlWithDataSource mapcontrolWithDataSource;
 
 
-    @AfterClass
+   /* @AfterClass
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -84,9 +79,11 @@ public class EditorialTemplate extends testBase {
 
 
     }
+*/
 
-    @Test
-    public void createEditorialTemplate() throws Exception {
+
+  /*  @Test(dataProvider = "readTestData")
+    public void createEditorialTemplate(Hashtable<String, String> data) throws Exception {
 
         invokeBrowser();
 
@@ -99,12 +96,12 @@ public class EditorialTemplate extends testBase {
 
                 // Creating EditorialTemplate template
                 .navigateToWhichTauckNode(navigateToNode.HOME)
-                .rightClickInsertTemplateOrComponent(rightClickInsert.EDITORIAL_TEMPLATE)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
 
 
         // Delete pre-added FE Controls before mapping datasource.
-        Object mapControlswithDataSource = sitecore.createTemplateOrTemplateComponent(whatIsTheComponentName.EDITORIAL_TEMPLATE_NAME, mapControlWithDataSource.class.getSimpleName());
+        Object mapControlswithDataSource = sitecore.createTemplateOrTemplateComponent(data.get("TempalteName"), mapControlWithDataSource.class.getSimpleName());
         if (mapControlswithDataSource instanceof mapControlWithDataSource)
             ((mapControlWithDataSource) mapControlswithDataSource)
                     .clickPresentationLink()
@@ -117,8 +114,9 @@ public class EditorialTemplate extends testBase {
 
     }
 
-  /*  @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_AuthorProfiles_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+   // @Test(dataProvider = "readTestData")
+    public void add_AuthorProfiles_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -138,8 +136,11 @@ public class EditorialTemplate extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
                     // Author Profiles component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -152,23 +153,23 @@ public class EditorialTemplate extends testBase {
 
                 sitecore
                         // Creating sub component of author profiles
-                        .navigateToWhichTauckNode(navigateToNode.AUTHOR_PROFILES)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
+                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
-
-                Object editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-                    ((EditorialTemplate) editorial).authorProfiles_content_AuthorProfile(DataUtil.splitStringBasedOnUnderscore(data.get("Content_AuthorProfile")).get(i));
 
             }
 
         }
+
+        sitecore.logOut();
     }
 
-  /*  @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_FlexCard_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void add_FlexCard_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -183,13 +184,16 @@ public class EditorialTemplate extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
-        if (data.get("ComponentName").equalsIgnoreCase("EditorialTemplate Flex Cards")) {
+        if (data.get("ComponentName").equalsIgnoreCase("Editorial Flex Cards")) {
             sitecore
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
                     // Author Profiles component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -202,24 +206,24 @@ public class EditorialTemplate extends testBase {
 
                 sitecore
                         // Creating sub component of author profiles
-                        .navigateToWhichTauckNode(navigateToNode.FLEX_CARD)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
+                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
 
-                Object editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-                    ((EditorialTemplate) editorial).flexCard_Content_CardSettings(DataUtil.splitStringBasedOnUnderscore(data.get("Content_CardSettings")).get(i));
 
             }
 
         }
-    }
+        sitecore.logOut();
+    }*/
 
 
-    @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_CategoryCardModule_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+   // @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+     @Test(dataProvider = "readTestData")
+    public void add_CategoryCardModule_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -239,8 +243,12 @@ public class EditorialTemplate extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                     // Author Profiles component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -253,24 +261,23 @@ public class EditorialTemplate extends testBase {
 
                 sitecore
                         // Creating sub component of author profiles
-                        .navigateToWhichTauckNode(navigateToNode.CATEGORY_CARD)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
+                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
-
-                Object editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-                    ((EditorialTemplate) editorial).categoryCards_content_CategoryCardInfo(DataUtil.splitStringBasedOnUnderscore(data.get("Content_CategoryCardInfo")).get(i));
 
             }
 
         }
+        sitecore.logOut();
     }
 
 
 
-    @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+  /*  @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void add_HeaderMedia_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws Exception {
 
 
@@ -291,21 +298,22 @@ public class EditorialTemplate extends testBase {
                 .login()
                 .goToContentEditorIfNotKickOffUser()
 
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                 // Text copy folder component
-                .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
-        Object editorial = sitecore.createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
-
-        // Fill the content
-        if (editorial instanceof EditorialTemplate)
-            ((EditorialTemplate) editorial)
-                    .headerMedia_content_HeaderMediaSettings(data.get("Content_HeaderMediaSettings"));
-
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
+                .logOut();
 
     }
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void add_EditorialHero_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws Exception {
 
 
@@ -326,23 +334,26 @@ public class EditorialTemplate extends testBase {
                 .login()
                 .goToContentEditorIfNotKickOffUser()
 
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                 // Text copy folder component
-                .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
+                .logOut();
 
 
-        Object editorial = sitecore.createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
-
-        if (editorial instanceof EditorialTemplate)
-            ((EditorialTemplate) editorial)
-                    .editorialHero_content_HeroSettings(data.get("Content_HeroSettings"));
 
 
     }
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_TextCopyFolder_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    // @Test(dataProvider = "readTestData")
+    public void add_TextCopyFolder_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         globalTemplateImplementation sitecore;
 
@@ -364,8 +375,12 @@ public class EditorialTemplate extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                     // Text copy folder component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -377,24 +392,25 @@ public class EditorialTemplate extends testBase {
             for (int i = 0; i < DataUtil.splitStringBasedOnComma(data.get("ComponentName")).size(); i++) {
 
                 sitecore
-                        .navigateToWhichTauckNode(navigateToNode.TEXT_COPY_FOLDER)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
+                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
-                Object editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-                    ((EditorialTemplate) editorial).textCopyFolder_Content_SingleRichText(DataUtil.splitStringBasedOnUnderscore(data.get("Content_SingleRichText")).get(i));
 
             }
 
 
         }
 
+        sitecore.logOut();
+
     }
 
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void add_FeaturedContent_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -411,23 +427,30 @@ public class EditorialTemplate extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
-        if (data.get("RightClickInsert").equalsIgnoreCase("Featured FeedContent")) {
+        if (data.get("ComponentName").equalsIgnoreCase("Vertical and Horizontal featured content")) {
             sitecore
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                     // Text copy folder component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
         }
 
+        sitecore.logOut();
+
     }
 
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_Editorial_Quotes_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    // @Test(dataProvider = "readTestData")
+    public void add_Editorial_Quotes_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -442,13 +465,17 @@ public class EditorialTemplate extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
-        if (data.get("ComponentName").equalsIgnoreCase("EditorialTemplate Quotes")) {
+        if (data.get("ComponentName").equalsIgnoreCase("Editorial Quotes")) {
             sitecore
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                     // EditorialTemplate Quotes component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -463,26 +490,23 @@ public class EditorialTemplate extends testBase {
 
                 sitecore
                         // Creating Sub component of EditorialTemplate Quotess
-                        .navigateToWhichTauckNode(navigateToNode.EDITORIAL_QUOTES)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
+                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
-
-                Object editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-
-                    ((EditorialTemplate) editorial).editorialQuotes_content_Quotes(DataUtil.splitStringBasedOnUnderscore(data.get("Content_Quotes")).get(i));
 
 
             }
         }
-
+        sitecore.logOut();
 
     }
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_GridMediaFolder_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    // @Test(dataProvider = "readTestData")
+    public void add_GridMediaFolder_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -503,8 +527,11 @@ public class EditorialTemplate extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
                     // Grid Media Folder component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -520,28 +547,25 @@ public class EditorialTemplate extends testBase {
                 sitecore
 
                         // Creating Sub component of Grid Media Folder
-                        .navigateToWhichTauckNode(navigateToNode.GRID_MEDIA_FOLDER)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
-
-
-                Object editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-
-                    ((EditorialTemplate) editorial).gridMediaFolder_content_GridMedia(DataUtil.splitStringBasedOnUnderscore(data.get("Content_GridMedia")).get(i));
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
+                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
             }
         }
-
+        sitecore.logOut();
 
     }
 
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_HalfWidthMedia_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    // @Test(dataProvider = "readTestData")
+    public void add_HalfWidthMedia_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         Object editorial = null;
+        feedContent feedContent = null;
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -562,8 +586,12 @@ public class EditorialTemplate extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                     // Grid Media Folder component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -579,30 +607,29 @@ public class EditorialTemplate extends testBase {
                 sitecore
 
                         // Creating Sub component of Grid Media Folder
-                        .navigateToWhichTauckNode(navigateToNode.HALF_WIDTH_MEDIA)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                         .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
 
+                feedContent = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i));
+                feedContent.fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
-                 editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
 
-                if (editorial instanceof EditorialTemplate)
-
-                    ((EditorialTemplate) editorial).halfWidthMeida_Content_Segment(DataUtil.splitStringBasedOnUnderscore(data.get("Content_Segment")).get(i));
 
             }
-            sitecore
-                    .navigateToWhichTauckNode(navigateToNode.HALF_WIDTH_MEDIA);
-            ((EditorialTemplate) editorial).mediaCarouselAndHalfWidthMedia_content_MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
+
+            sitecore.navigateToWhichTauckNode(data.get("NavigateToNodePath"));
+            feedContent.mediaCarouselAndHalfWidthMedia_content_MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
 
         }
 
-
+        sitecore.logOut();
     }
 
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_FeaturedBrand_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    // @Test(dataProvider = "readTestData")
+    public void add_FeaturedBrand_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -623,8 +650,13 @@ public class EditorialTemplate extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                     // Grid Media Folder component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -640,28 +672,26 @@ public class EditorialTemplate extends testBase {
                 sitecore
 
                         // Creating Sub component of Grid Media Folder
-                        .navigateToWhichTauckNode(navigateToNode.FEATURED_BRAND)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
+                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
-
-                Object editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-
-                    ((EditorialTemplate) editorial).featuredBrand_Content_FeaturedBrandInfo(DataUtil.splitStringBasedOnUnderscore(data.get("Content_FeaturedBrandInfo")).get(i));
 
             }
         }
-
+        sitecore.logOut();
 
     }
 
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_MediaCarousel_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
+    // @Test(dataProvider = "readTestData")
+    public void add_MediaCarousel_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         Object editorial = null;
+       feedContent feedContent = null;
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -682,8 +712,12 @@ public class EditorialTemplate extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+
                     // Grid Media Folder component
-                    .navigateToWhichTauckNode(navigateToNode.EDITORIAL)
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"), this.getClass().getSimpleName());
@@ -699,25 +733,21 @@ public class EditorialTemplate extends testBase {
                 sitecore
 
                         // Creating Sub component of Grid Media Folder
-                        .navigateToWhichTauckNode(navigateToNode.MEIDA_CAROUSEL)
+                        .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                         .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                         .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
 
+                feedContent = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i));
+                feedContent.fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
 
-                editorial = sitecore.createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i), this.getClass().getSimpleName());
-
-                if (editorial instanceof EditorialTemplate)
-
-                  ((EditorialTemplate) editorial).mediaCarousel_content_CardSettings(DataUtil.splitStringBasedOnUnderscore(data.get("Content_CardSettings")).get(i));
 
             }
-            sitecore
-                    .navigateToWhichTauckNode(navigateToNode.MEIDA_CAROUSEL);
-                    ((EditorialTemplate) editorial).mediaCarouselAndHalfWidthMedia_content_MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
+            sitecore.navigateToWhichTauckNode(data.get("NavigateToNodePath"));
+            feedContent.mediaCarouselAndHalfWidthMedia_content_MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
 
         }
 
-
+        sitecore.logOut();
     }*/
 
 
@@ -726,8 +756,8 @@ public class EditorialTemplate extends testBase {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
-        if (method.getName().equals("add_AuthorProfiles_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
+        if (method.getName().equals("createEditorialTemplate")) {
+            return DataUtil.getData(xls, "EditorialTemplateName", testSheetName);
 
         } else if (method.getName().equals("add_TextCopyFolder_Component_Inside_EditorialTemplate")) {
             return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
@@ -756,15 +786,15 @@ public class EditorialTemplate extends testBase {
         } else if (method.getName().equals("add_FlexCard_Component_Inside_EditorialTemplate")) {
             return DataUtil.getData(xls, "FlexCard", testSheetName);
 
-        }else if (method.getName().equals("add_FeaturedBrand_Component_Inside_EditorialTemplate")) {
+        } else if (method.getName().equals("add_FeaturedBrand_Component_Inside_EditorialTemplate")) {
             return DataUtil.getData(xls, "FeaturedBrand", testSheetName);
 
-        }else if (method.getName().equals("add_HalfWidthMedia_Component_Inside_EditorialTemplate")) {
+        } else if (method.getName().equals("add_HalfWidthMedia_Component_Inside_EditorialTemplate")) {
             return DataUtil.getData(xls, "HalfWidthMedia", testSheetName);
+
+        } else if (method.getName().equals("add_AuthorProfiles_Component_Inside_EditorialTemplate")) {
+            return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
         }
-
-
-
 
 
         return null;
