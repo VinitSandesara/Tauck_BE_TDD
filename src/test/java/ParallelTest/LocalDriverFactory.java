@@ -22,7 +22,7 @@ class LocalDriverFactory {
         }
         if (browser.toLowerCase().contains("chrome")) {
 
-            String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/chromedriver.exe";
+            String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/MacChromeDriver/chromedriver";
           //  String CHROME_DRIVER_EXE = "/Users/vsandesara/Desktop/TauckSitecore/src/DriverExe/chromedriver";
             System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
 
