@@ -22,8 +22,14 @@ class LocalDriverFactory {
         }
         if (browser.toLowerCase().contains("chrome")) {
 
-            String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/MacChromeDriver/chromedriver";
-          //  String CHROME_DRIVER_EXE = "/Users/vsandesara/Desktop/TauckSitecore/src/DriverExe/chromedriver";
+
+        // Mac version
+          //  String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/MacChromeDriver/chromedriver";
+
+
+       // Window Version
+            String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/chromedriver.exe";
+
             System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
 
             ChromeOptions options = new ChromeOptions();
