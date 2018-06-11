@@ -27,12 +27,6 @@ public class MegaMenu extends testBase {
     public mapControlWithDataSource mapcontrolWithDataSource;
     String subMenuRightClickInsertFEControl = "/sitecore/templates/Project/Common/Content Types/Global Content Types/Menu Section";
 
-    @Test
-    public void dummyOne() {
-
-        invokeBrowser();
-    }
-
 
    @Test(dataProvider = "readTestData")
     public void create_MegaMenu_And_SubMenus(Hashtable<String, String> data) throws InterruptedException {
@@ -41,14 +35,22 @@ public class MegaMenu extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
+
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+                .goToContentEditorIfNotKickOffUser();
 
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .createTemplateOrTemplateComponent( data.get("MegaMenuName"));
+       // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
+       if(sitecore.checkWhetherParentNodeIsPresentOrNot(data.get("NavigateToNodePath")+"/"+data.get("MegaMenuName").replaceAll(" ", "-").toLowerCase())!=true) {
+           System.out.println("Parent Node already present please go ahead...");
+       }else {
+
+           sitecore
+                   .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                   .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                   .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                   .createTemplateOrTemplateComponent(data.get("MegaMenuName"));
+       }
 
 
       /*  for(int i=0;i<Arrays.asList(data.get("RightClickInsert").split("\\|")).size();i++) {
@@ -66,8 +68,8 @@ public class MegaMenu extends testBase {
 
 
 
-  //   @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
-    @Test(dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+  //  @Test(dataProvider = "readTestData")
     public void add_Destinations_SubMenus_And_SubMenus_SubItems(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -104,6 +106,10 @@ public class MegaMenu extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+
+
                     // Create Menu - sub Menus
 
                     .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
@@ -125,8 +131,8 @@ public class MegaMenu extends testBase {
 
     }
 
- // @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
-    @Test(dataProvider = "readTestData")
+  @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+  //  @Test(dataProvider = "readTestData")
     public void add_ToursAndCruises_SubMenus_And_SubMenus_SubItems(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -162,6 +168,9 @@ public class MegaMenu extends testBase {
                     .login()
                     .goToContentEditorIfNotKickOffUser()
 
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+
                     // Create Menu - sub Menus
 
                     .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
@@ -185,8 +194,8 @@ public class MegaMenu extends testBase {
 
 
 
-  //  @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
-    @Test(dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+  //  @Test(dataProvider = "readTestData")
     public void add_WhyTauck_SubMenus(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -224,6 +233,9 @@ public class MegaMenu extends testBase {
             sitecore
                     .login()
                     .goToContentEditorIfNotKickOffUser()
+
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
 
                     // Create Menu - sub Menus
 

@@ -198,6 +198,25 @@ public class globalTemplateImplementation extends utility {
         return this;
     }
 
+    public boolean checkWhetherParentNodeIsPresentOrNot(String nodeName) throws InterruptedException {
+
+        waitForPageLoad(30);
+        _searchTextBox.sendKeys(nodeName);
+        _searchTextBox.sendKeys(Keys.ENTER);
+
+        try {
+            _noSearchResultFound.getText().equalsIgnoreCase("There are no matches.");
+            _searchResultCloseIcon.click();
+            _searchTextBox.clear();
+            return true;
+        }catch (Throwable throwable) {
+            _searchResultCloseIcon.click();
+            _searchTextBox.clear();
+            return false;
+        }
+
+    }
+
 
     // This overloaded method is implemented for editoial sub-templates.
     public feedContent navigateToWhichTauckNode(String nodeName, String nameOfPreFeededComponentName) throws InterruptedException {
