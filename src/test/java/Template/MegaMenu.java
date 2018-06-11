@@ -49,7 +49,8 @@ public class MegaMenu extends testBase {
                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                   .createTemplateOrTemplateComponent(data.get("MegaMenuName"));
+                   .createTemplateOrTemplateComponent(data.get("MegaMenuName"))
+                   .logOut();
        }
 
 
@@ -98,7 +99,8 @@ public class MegaMenu extends testBase {
                     .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") );
+                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") )
+                    .logOut();
 
         } else {
 
@@ -125,8 +127,9 @@ public class MegaMenu extends testBase {
                         .rightClickInsertTemplateOrComponent(Arrays.asList(data.get("SubItemsRightClickInsert").split("\\|")).get(i))
                         .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                         .createTemplateOrTemplateComponent(Arrays.asList(data.get("SubItemsComponentName").split("\\|")).get(i), this.getClass().getSimpleName());
-
             }
+
+            sitecore.logOut();
         }
 
     }
@@ -160,7 +163,8 @@ public class MegaMenu extends testBase {
                     .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") );
+                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") )
+                    .logOut();
 
         } else {
 
@@ -188,6 +192,7 @@ public class MegaMenu extends testBase {
                         .createTemplateOrTemplateComponent(Arrays.asList(data.get("SubItemsComponentName").split("\\|")).get(i), this.getClass().getSimpleName());
 
             }
+            sitecore.logOut();
         }
 
     }
@@ -226,7 +231,8 @@ public class MegaMenu extends testBase {
                     .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") );
+                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") )
+                    .logOut();
 
         } else {
 
@@ -243,7 +249,8 @@ public class MegaMenu extends testBase {
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("SubMenuName"))
-                    .fill_Component_Content_With_Data(data.get("Content"));
+                    .fill_Component_Content_With_Data(data.get("Content"))
+                    .logOut();
         }
 
 
