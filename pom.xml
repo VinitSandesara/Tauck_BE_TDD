@@ -37,7 +37,7 @@
 
                         <property>
                             <name>listener</name>
-                            <value>src.main.Listener.RetryListener,src.main.Listener.TestListener,src.test.java.base.testBase,src.test.ParallelTest.WebDriverListener</value>
+                            <value>Listener.RetryListener,Listener.TestListener,base.testBase,ParallelTest.WebDriverListener</value>
                         </property>
 
                     </properties>
