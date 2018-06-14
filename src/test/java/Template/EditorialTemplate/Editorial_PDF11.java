@@ -27,11 +27,6 @@ public class Editorial_PDF11 extends testBase {
     String TemplateName;
     String topNodePath;
 
-    @Test
-    public void testMethod() {
-
-    }
-
 
     @AfterClass
     public void mapDataSourceWithFrontEndControls() throws Exception {
@@ -194,7 +189,7 @@ public class Editorial_PDF11 extends testBase {
                 .login()
                 .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
-                .fill_Component_Content_With_Data(data.get("Content"))
+                .fill_Component_Content_With_Data(data.get("preFeededComponentName"))
                 .logOut();
 
     }
