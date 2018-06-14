@@ -4,6 +4,7 @@ import ExtentReport.ExtentManager;
 import ExtentReport.ExtentTestManager;
 import ParallelTest.LocalDriverManager;
 import Util.*;
+import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -13,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -24,21 +26,22 @@ public class testBase extends TestListenerAdapter {
     public static WebDriver driver;
     public InheritableThreadLocal<ExtentTest> parentTest = new InheritableThreadLocal<ExtentTest>();
     public InheritableThreadLocal<ExtentTest> test = new InheritableThreadLocal<ExtentTest>();
+    public static ExtentReports extent = ExtentManager.getExtent(); // this is extra
 
     public Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
 
 
-    public void invokeBrowser() {
+   /* public void invokeBrowser() {
         System.out.println("Thread id = " + Thread.currentThread().getId());
         System.out.println("Hashcode of webDriver instance = " + LocalDriverManager.getDriver().hashCode());
         LocalDriverManager.getDriver().get(Config.getEnvDetails().get("url"));
         this.driver = LocalDriverManager.getDriver();
 
 
-    }
+    }*/
 
-   /*  public void invokeBrowser() {
+     public void invokeBrowser() {
         // Window Version
         String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "\\src\\DriverExe\\chromedriver.exe";
 
@@ -51,7 +54,7 @@ public class testBase extends TestListenerAdapter {
         driver.get(Config.getEnvDetails().get("url"));
 
 
-    }*/
+    }
 
 
 
@@ -83,6 +86,12 @@ public class testBase extends TestListenerAdapter {
 
     @AfterMethod
     public synchronized void afterMethod(ITestResult result) {
+
+         // this is extra
+        if (driver != null) {
+            driver.quit();
+        }
+
         if (result.getStatus() == ITestResult.FAILURE)
             test.get().log(Status.FAIL,"<b><font size=\"2\" color=\"red\"> &nbsp Test Failed </font></b> ");
 
@@ -95,6 +104,13 @@ public class testBase extends TestListenerAdapter {
     }
 
 
+    // this is extra
+    @AfterClass
+    public void killDriver() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
 
 } // Main class is closing
