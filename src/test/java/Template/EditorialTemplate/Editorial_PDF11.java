@@ -189,7 +189,7 @@ public class Editorial_PDF11 extends testBase {
                 .login()
                 .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
-                .fill_Component_Content_With_Data(data.get("preFeededComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
                 .logOut();
 
     }
