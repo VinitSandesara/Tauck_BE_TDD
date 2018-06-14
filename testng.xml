@@ -6,14 +6,14 @@
         <listener class-name="Listener.RetryListener"/>
         <listener class-name="Listener.TestListener"/>
         <listener class-name="base.testBase"/>
-        <listener class-name="ParallelTest.WebDriverListener"></listener>
-    </listeners>
+    <!--  <listener class-name="ParallelTest.WebDriverListener"></listener> -->
+  </listeners>
 
 
-    <test name="Test">
-        <parameter name="browserName" value="chrome"></parameter>
-        <classes>
-            <class name="Template.MegaMenu" />
-        </classes>
-    </test> <!-- Test -->
+  <test name="Test">
+      <parameter name="browserName" value="chrome"></parameter>
+      <classes>
+          <class name="Template.EditorialTemplate.Editorial_PDF11" />
+      </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

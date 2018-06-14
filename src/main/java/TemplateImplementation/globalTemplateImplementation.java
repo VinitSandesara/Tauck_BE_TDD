@@ -461,7 +461,7 @@ public class globalTemplateImplementation extends utility {
 
             try {
                 //its input box
-                clearTextboxPreFeededData(column.get(1).findElement(By.tagName("input che tari ma")));
+                clearTextboxPreFeededData(column.get(1).findElement(By.tagName("input")));
                 column.get(1).findElement(By.tagName("input")).sendKeys(temp.get(i));
 
             } catch (Throwable e) {

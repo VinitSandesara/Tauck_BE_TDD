@@ -42,8 +42,13 @@ public class testBase extends TestListenerAdapter {
     }*/
 
      public void invokeBrowser() {
-        // Window Version
-        String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "\\src\\DriverExe\\chromedriver.exe";
+
+         // Mac version
+         String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/MacChromeDriver/chromedriver";
+
+
+         // Window Version
+      //  String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "\\src\\DriverExe\\chromedriver.exe";
 
         System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
 
