@@ -29,14 +29,31 @@ public class testBase extends TestListenerAdapter {
 
 
 
-    public void invokeBrowser() {
+    /*public void invokeBrowser() {
         System.out.println("Thread id = " + Thread.currentThread().getId());
         System.out.println("Hashcode of webDriver instance = " + LocalDriverManager.getDriver().hashCode());
         LocalDriverManager.getDriver().get(Config.getEnvDetails().get("url"));
         this.driver = LocalDriverManager.getDriver();
 
 
+    }*/
+
+     public void invokeBrowser() {
+        // Window Version
+        String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "\\src\\DriverExe\\chromedriver.exe";
+
+        System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--incognito");
+        driver = new ChromeDriver(options);
+        driver.manage().deleteAllCookies();
+        driver.get(Config.getEnvDetails().get("url"));
+
+
     }
+
+
 
     public List<String> returnTestDataFetchedFromExcel(String testCaseName, String sheetName, String whichColName) {
 
