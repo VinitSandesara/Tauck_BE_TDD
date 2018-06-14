@@ -25,13 +25,11 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                    <!--
                     <suiteXmlFiles>
                         <suiteXmlFile>
                             ${suiteXmlFile}
                         </suiteXmlFile>
                     </suiteXmlFiles>
-                    -->
 
                     <properties>
 
@@ -59,20 +57,20 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- <suiteXmlFile>testng.xml</suiteXmlFile> -->
-     </properties>
+        <suiteXmlFile>testng.xml</suiteXmlFile>
+    </properties>
 
 
-     <dependencies>
+    <dependencies>
 
-         <dependency>
-             <groupId>org.apache.maven.plugins</groupId>
-             <artifactId>maven-compiler-plugin</artifactId>
-             <version>3.7.0</version>
-             <type>maven-plugin</type>
-         </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.7.0</version>
+            <type>maven-plugin</type>
+        </dependency>
 
-         <!--  Selenium  -->
+        <!--  Selenium  -->
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
