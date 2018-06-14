@@ -29,16 +29,16 @@ public class testBase extends TestListenerAdapter {
 
 
 
-    /*public void invokeBrowser() {
+    public void invokeBrowser() {
         System.out.println("Thread id = " + Thread.currentThread().getId());
         System.out.println("Hashcode of webDriver instance = " + LocalDriverManager.getDriver().hashCode());
         LocalDriverManager.getDriver().get(Config.getEnvDetails().get("url"));
         this.driver = LocalDriverManager.getDriver();
 
 
-    }*/
+    }
 
-     public void invokeBrowser() {
+   /*  public void invokeBrowser() {
         // Window Version
         String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "\\src\\DriverExe\\chromedriver.exe";
 
@@ -51,7 +51,7 @@ public class testBase extends TestListenerAdapter {
         driver.get(Config.getEnvDetails().get("url"));
 
 
-    }
+    }*/
 
 
 
