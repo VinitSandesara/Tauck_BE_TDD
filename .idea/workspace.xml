@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" afterPath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" afterPath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,11 +39,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Editorial_PDF11.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Editorial_PDF11.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="718">
-              <caret line="131" column="24" lean-forward="false" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
+            <state relative-caret-position="874">
+              <caret line="191" column="37" lean-forward="true" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="globalTemplateImplementation.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="858">
+              <caret line="466" column="35" lean-forward="true" selection-start-line="466" selection-start-column="35" selection-end-line="466" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -52,8 +62,8 @@
       <file leaf-file-name="feedContent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1295">
-              <caret line="176" column="45" lean-forward="true" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
+            <state relative-caret-position="608">
+              <caret line="172" column="32" lean-forward="false" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -155,7 +165,6 @@
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/EditorialSubTemplates.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" />
         <option value="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" />
@@ -175,6 +184,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
         <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
       </list>
     </option>
   </component>
@@ -997,14 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="198" column="17" lean-forward="true" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/Xls_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="404">
@@ -1223,18 +1225,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1295">
-          <caret line="176" column="45" lean-forward="true" selection-start-line="176" selection-start-column="45" selection-end-line="176" selection-end-column="45" />
+        <state relative-caret-position="874">
+          <caret line="191" column="37" lean-forward="true" selection-start-line="191" selection-start-column="37" selection-end-line="191" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="718">
-          <caret line="131" column="24" lean-forward="false" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
+        <state relative-caret-position="608">
+          <caret line="172" column="32" lean-forward="false" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="466" column="35" lean-forward="true" selection-start-line="466" selection-start-column="35" selection-end-line="466" selection-end-column="35" />
           <folding />
         </state>
       </provider>

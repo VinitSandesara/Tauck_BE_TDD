@@ -170,7 +170,7 @@ public class feedContent extends globalTemplateImplementation {
         //    highlightElement(_contentArea);
          //   test.addScreenCaptureFromPath(captureScreen());
 
-            clearAndFillContentFields(_table, "td", "tr", "input che", CommonLocators.TEXTAREA_TEXTBOX, inputData);
+            clearAndFillContentFields(_table, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
             _save.click();
 
             // After Filling content screenshot
