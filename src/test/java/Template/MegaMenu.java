@@ -49,9 +49,10 @@ public class MegaMenu extends testBase {
                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                   .createTemplateOrTemplateComponent(data.get("MegaMenuName"))
-                   .logOut();
+                   .createTemplateOrTemplateComponent(data.get("MegaMenuName"));
+
        }
+       sitecore.logOut();
 
 
       /*  for(int i=0;i<Arrays.asList(data.get("RightClickInsert").split("\\|")).size();i++) {
@@ -214,9 +215,6 @@ public class MegaMenu extends testBase {
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
-
-
-
 
 
         if (data.get("SubMenuName").equalsIgnoreCase("Why Tauck")) {

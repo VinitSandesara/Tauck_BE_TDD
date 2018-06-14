@@ -6,6 +6,7 @@ import TemplateImplementation.Editorial;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
 import com.aventstack.extentreports.ExtentTest;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,6 +34,7 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
 
     @FindBy(xpath = mapDataSourceWithControlLocators.EDITORIAL_LAYOUT)
     public List<WebElement> _editorialLayout;
+
 
     @FindBy(linkText = mapDataSourceWithControlLocators.DEVICE_EDITOR_CONTROLS)
     public WebElement _deviceEditorControls;
@@ -201,4 +203,23 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
         return this;
     }
 
-}
+    public mapControlWithDataSource checkAndRemovePreAddedControlsBeforeMappingIfPresent(List<String> listOfControls) {
+
+        for (int i = 0; i < listOfControls.size(); i++) {
+
+            for (int j = 0; j < _preAddedControls.size(); j++) {
+
+                String value = _preAddedControls.get(j).findElement(By.tagName("b")).getText();
+
+                if (_preAddedControls.get(j).findElement(By.tagName("b")).getText().equalsIgnoreCase(listOfControls.get(i))) {
+                    _preAddedControls.get(j).click();
+                   _deviceEditorControlsRemoveButton.click();
+                }
+            }
+        }
+
+        return this;
+    }
+
+
+} // Main class is closing...

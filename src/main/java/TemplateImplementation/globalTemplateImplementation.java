@@ -43,6 +43,9 @@ public class globalTemplateImplementation extends utility {
     @FindBy(xpath = CommonLocators.SEARCH_RESULT_NO_FOUND)
     public WebElement _noSearchResultFound;
 
+    @FindBy(xpath = CommonLocators.IF_COMPONENT_ALREADY_MAPED_IT_FURTHER_REQUIRED_DELETE)
+    public WebElement _breakingLinksDialog;
+
     @FindBy(linkText = CommonLocators.CONTENT_EDITOR)
     public WebElement _contentEditor;
 
@@ -193,6 +196,18 @@ public class globalTemplateImplementation extends utility {
             _deleteLink.click();
             switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
             _deleteOkButton.click();
+            try {
+                waitForPageLoad(30);
+                switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                _breakingLinksDialog.getText().equalsIgnoreCase("Breaking Links");
+                _deleteOkButton.click();
+                waitForPageLoad(30);
+                switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                _deleteOkButton.click();
+            }catch (Throwable throwable) {
+                System.out.println("The Component that you are trying to delete has not yet been mapped with FE Control....");
+            }
+
         }
 
         return this;
@@ -223,11 +238,7 @@ public class globalTemplateImplementation extends utility {
         waitForPageLoad(30);
         _searchTextBox.sendKeys(nodeName + nameOfPreFeededComponentName);
         _searchTextBox.sendKeys(Keys.ENTER);
-
-        if (_noSearchResultFound.getText().equalsIgnoreCase("There are no matches."))
-
-
-            _searchResultCloseIcon.click();
+        _searchResultCloseIcon.click();
         _searchTextBox.clear();
 
         feedContent feedcontent = new feedContent(driver, test);

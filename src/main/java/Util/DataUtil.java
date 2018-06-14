@@ -17,10 +17,12 @@ public class DataUtil {
 
         //System.out.println("Yes or Nt :-  " + isTestExecutable(xls,"LoginTest"));
 
-        grabControlListForMapping(xls, "MediaCarousel", "Editorial_WhyWeTravel");
+        grabControlListForMapping(xls, "MapControlWithDataSource", "Editorial_PDF11");
 
 
     }
+
+
 
 
 
@@ -145,6 +147,8 @@ public class DataUtil {
         }
 
         return data;
+
+
     }
 
 

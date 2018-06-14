@@ -30,52 +30,62 @@ public class EditorialTemplate extends testBase {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
-        invokeBrowser();
-        //editorialComponentList();
+       // if (DataUtil.readSpecificTestDataFromExcel(xls, "MapControlWithDataSource", testSheetName, "Runmode").get("Runmode").equalsIgnoreCase("Y")) {
 
-        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
-        PageFactory.initElements(driver, sitecore);
+            invokeBrowser();
 
-        editorialTemplateControls editorialtemplateControl = sitecore.launchSitecore()
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(navigateToNode.EDITORIAL)
+            editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
+            PageFactory.initElements(driver, controls);
 
-                .clickPresentationLink()
-                .clickDetailsLink()
-                .clickFinalLayoutTabInsideLayoutDetailsDialog()
-                .navigateToDeviceEditor()
-                .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
+            controls
+                    .launchSitecore()
+                    .login()
+                    .goToContentEditorIfNotKickOffUser()
+                    .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
 
-        List<String> listOfComponentToMapWithDataSource =  DataUtil.grabControlListForMapping(xls,testSheetName,"Template_Control");
-        for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
+                    .clickPresentationLink()
+                    .clickDetailsLink()
+                    .clickFinalLayoutTabInsideLayoutDetailsDialog()
+                    .navigateToDeviceEditor()
+                    .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
 
+            List<String> listOfComponentToMapWithDataSource = DataUtil.grabControlListForMapping(xls, testSheetName, "Template_Control");
 
-            Hashtable<String, String> data = DataUtil.getControlDatasourcePlaceholderValueFromXls(xls, listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+            for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
 
-            List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
-            List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
-            List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
+                //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
+                Hashtable<String, String> data = DataUtil.getControlDatasourcePlaceholderValueFromXls(xls, listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
 
-            for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
+                List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
+                List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
+                List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
 
-                mapcontrolWithDataSource = editorialtemplateControl
-                        .addNewControls()
-                        .selectWhichControlsToAdd()
-                        .addEditorialTemplateFEControl(splitControlString.get(innerloop))
-                        .openPropertyDialogBoxCheckbox()
-                        .clickSelectButton()
+                for (int i = 0; i < splitControlString.size(); i++) {
+                    controls
+                            // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                            .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
+                }
 
-                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), splitDatasourceString.get(innerloop));
+                for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
 
+                    controls
+                            .addNewControls()
+                            .selectWhichControlsToAdd()
+                            .addEditorialTemplateFEControl(splitControlString.get(innerloop))
+                            .openPropertyDialogBoxCheckbox()
+                            .clickSelectButton()
+
+                            .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), topNodePath + "/" + splitDatasourceString.get(innerloop));
+
+                }
 
             }
 
 
-        }
-
-        mapcontrolWithDataSource
-                .saveAndCloseDeviceEditorAndLayoutDetails();
+            controls
+                    .saveAndCloseDeviceEditorAndLayoutDetails()
+                    .logOut();
+       // }
 
 
     }

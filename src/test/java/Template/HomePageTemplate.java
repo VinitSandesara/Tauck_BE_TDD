@@ -32,6 +32,14 @@ public class HomePageTemplate extends testBase {
     @Test(dataProvider = "readTestData")
     public void createHomeTemplate(Hashtable<String, String> data) throws InterruptedException {
 
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
@@ -39,21 +47,37 @@ public class HomePageTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+                .goToContentEditorIfNotKickOffUser();
 
+        // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
+        if(sitecore.checkWhetherParentNodeIsPresentOrNot("/sitecore/content/Tauck" +"/"+data.get("TemplateName").replaceAll(" ", "-").toLowerCase())!=true) {
+            System.out.println("Parent Node already present please go ahead...");
+        }else {
 
-                .navigateToWhichTauckNode("/sitecore/content/Tauck")
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Page Types/HomePage" ,data.get("TemplateName"));
+            sitecore
+                    .navigateToWhichTauckNode("/sitecore/content/Tauck")
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert("/sitecore/templates/Project/Common/Page Types/HomePage", data.get("TemplateName"));
 
+        }
+        sitecore.logOut();
 
  }
+
 
 
     @Test(dataProvider = "readTestData")
     public void createTravellingWithTaucksFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
@@ -61,20 +85,35 @@ public class HomePageTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+                .goToContentEditorIfNotKickOffUser();
 
+        if(sitecore.checkWhetherParentNodeIsPresentOrNot(data.get("NavigateToNodePath") +"/"+data.get("FolderName").replaceAll(" ", "-").toLowerCase())!=true) {
+            System.out.println("Parent Node already present please go ahead...");
+        }else {
 
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .createTemplateOrTemplateComponent(data.get("FolderName"));
+            sitecore
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .createTemplateOrTemplateComponent(data.get("FolderName"));
+        }
+        sitecore .logOut();
 
 
     }
 
-    @Test(dataProvider = "readTestData")
+
+     @Test(dataProvider = "readTestData")
     public void createLeadGenerationFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
@@ -82,20 +121,27 @@ public class HomePageTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+                .goToContentEditorIfNotKickOffUser();
 
+        if(sitecore.checkWhetherParentNodeIsPresentOrNot(data.get("NavigateToNodePath") +"/"+data.get("FolderName").replaceAll(" ", "-").toLowerCase())!=true) {
+            System.out.println("Parent Node already present please go ahead...");
+        }else {
 
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Folder Types/Lean Generation CTA Folder" ,data.get("FolderName"));
+            sitecore
+                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert("/sitecore/templates/Project/Common/Content Types/Global Folder Types/Lean Generation CTA Folder", data.get("FolderName"));
+        }
+
+        sitecore.logOut();
 
 
     }
 
 
- //   @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
-    @Test(dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -125,8 +171,8 @@ public class HomePageTemplate extends testBase {
 
     }
 
-   //  @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
-    @Test(dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void fillTravellingWithTauck(Hashtable<String, String> data) throws Exception {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -157,7 +203,8 @@ public class HomePageTemplate extends testBase {
 
     }
 
-    @Test(dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -188,7 +235,8 @@ public class HomePageTemplate extends testBase {
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Content Types/Portrait Trip Image Card" ,data.get("CardsName"), this.getClass().getSimpleName())
                 .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content_PortraitTripImageCard"), 0)
-                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content_PortraitTripImageCardHoover"), 1);
+                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content_PortraitTripImageCardHoover"), 1)
+                .logOut();
 
 
     }
@@ -198,8 +246,8 @@ public class HomePageTemplate extends testBase {
 
 
 
- //   @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
-     @Test(dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void fillTauckExperienceComponent(Hashtable<String, String> data) throws Exception {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -232,8 +280,8 @@ public class HomePageTemplate extends testBase {
 
 
 
-    //   @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
-    @Test(dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void fillFeaturedContent(Hashtable<String, String> data) throws Exception {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -264,7 +312,8 @@ public class HomePageTemplate extends testBase {
 
     }
 
-    @Test(dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
     public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -294,7 +343,8 @@ public class HomePageTemplate extends testBase {
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("CardsName"))
-                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), 0);
+                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), 0)
+                .logOut();
 
 
     }

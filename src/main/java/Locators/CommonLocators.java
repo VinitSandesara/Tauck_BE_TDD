@@ -10,12 +10,15 @@ public class CommonLocators {
     public static final String SEARCH_RESULT_NO_FOUND = "//div[contains(text(),'There are no matches.')]";
     public static final String CONTENT_EDITOR = "FeedContent Editor";
 
+    public static final String IF_COMPONENT_ALREADY_MAPED_IT_FURTHER_REQUIRED_DELETE = "//div[contains(text(),'Breaking Links')]";
+
 
     public static final String NEW_PANE_LIST = "NewPanelList";
 
     public static final String CHILD_FRAME_TEXTBOX = "Value";
 
     public static final String TABLE = "//div[@class='scEditorSections']/table/tbody/tr/td/table";
+    public static final String MULTIPLE_TABLES = "//div[@class='scEditorSections']/table/tbody/tr/td";
     public static final String CONTAINER_OF_CONTENT = "//div[@class='scEditorSections']/table/tbody/tr/td";
 
     public static final String TEXTAREA_TEXTBOX = "//textarea[@class='scContentControlMemo']";

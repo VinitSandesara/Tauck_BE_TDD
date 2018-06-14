@@ -1,8 +1,6 @@
 package Template.EditorialTemplate;
 
 import NodeAndComponentConfig.navigateToNode;
-import NodeAndComponentConfig.rightClickInsert;
-import NodeAndComponentConfig.whatIsTheComponentName;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
 import Util.DataUtil;
@@ -19,7 +17,6 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
@@ -27,74 +24,92 @@ import java.util.List;
 public class Editorial_OnlyWithTauck extends testBase {
 
     String testSheetName = "Editorial_OnlyWithTauck";
-    public mapControlWithDataSource mapcontrolWithDataSource;
+   // public mapControlWithDataSource mapcontrolWithDataSource;
+    String TemplateName;
+    String topNodePath;
 
 
 
 
-     @AfterClass
+    @AfterClass
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
+        // if (DataUtil.readSpecificTestDataFromExcel(xls, "MapControlWithDataSource", testSheetName, "Runmode").get("Runmode").equalsIgnoreCase("Y")) {
+
         invokeBrowser();
-       // editorialComponentList();
 
-        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
-        PageFactory.initElements(driver, sitecore);
+        editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
+        PageFactory.initElements(driver, controls);
 
-        editorialTemplateControls editorialtemplateControl = sitecore.launchSitecore()
+        controls
+                .launchSitecore()
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(navigateToNode.EDITORIAL_ONLY_WITH_TAUCK)
+                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
 
                 .clickPresentationLink()
                 .clickDetailsLink()
                 .clickFinalLayoutTabInsideLayoutDetailsDialog()
                 .navigateToDeviceEditor()
                 .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
-        List<String> listOfComponentToMapWithDataSource =  DataUtil.grabControlListForMapping(xls,testSheetName,"Template_Control");
+
+        List<String> listOfComponentToMapWithDataSource = DataUtil.grabControlListForMapping(xls, testSheetName, "Template_Control");
 
         for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
 
-          //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
+            //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
             Hashtable<String, String> data = DataUtil.getControlDatasourcePlaceholderValueFromXls(xls, listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
 
             List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
             List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
             List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
 
+            for (int i = 0; i < splitControlString.size(); i++) {
+                controls
+                        // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                        .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
+            }
+
             for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
 
-                mapcontrolWithDataSource = editorialtemplateControl
+                controls
                         .addNewControls()
                         .selectWhichControlsToAdd()
                         .addEditorialTemplateFEControl(splitControlString.get(innerloop))
                         .openPropertyDialogBoxCheckbox()
                         .clickSelectButton()
 
-                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), splitDatasourceString.get(innerloop));
-
+                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), topNodePath + "/" + splitDatasourceString.get(innerloop));
 
             }
 
-
         }
 
-        mapcontrolWithDataSource
-                .saveAndCloseDeviceEditorAndLayoutDetails();
 
-
+        controls
+                .saveAndCloseDeviceEditorAndLayoutDetails()
+                .logOut();
+        // }
     }
 
 
 
+    @Test(dataProvider = "readTestData")
+    public void createEditorialSubTemplateOnlyWithTauck(Hashtable<String, String> data) throws Exception {
 
 
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
 
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
 
-    @Test
-    public void createEditorialSubTemplateOnlyWithTauck() throws Exception {
+        TemplateName = data.get("Templatename");
+        topNodePath = "/sitecore/content/Tauck/Home" + "/" + TemplateName.replaceAll(" ", "-").toLowerCase();
 
         invokeBrowser();
 
@@ -103,30 +118,38 @@ public class Editorial_OnlyWithTauck extends testBase {
 
         sitecore.launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+                .goToContentEditorIfNotKickOffUser();
 
-                // Creating EditorialTemplate template
-                .navigateToWhichTauckNode(navigateToNode.HOME)
-                .rightClickInsertTemplateOrComponent(rightClickInsert.EDITORIAL_SUB_TEMPLATE_ONLY_WITH_TAUCK)
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+        // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
+        if (sitecore.checkWhetherParentNodeIsPresentOrNot("/sitecore/content/Tauck/Home" + "/" + data.get("Templatename").replaceAll(" ", "-").toLowerCase()) != true) {
+            System.out.println("Parent Node already present please go ahead...");
+        } else {
+
+            // Creating EditorialTemplate template
+            sitecore
+                    .navigateToWhichTauckNode("/sitecore/content/Tauck/Home")
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
 
 
-        // Delete pre-added FE Controls before mapping datasource.
-        Object mapControlswithDataSource = sitecore.createTemplateOrTemplateComponent(whatIsTheComponentName.EDITORIAL_SUB_TEMPLATE_ONLY_WITH_TAUCK, mapControlWithDataSource.class.getSimpleName());
-        if (mapControlswithDataSource instanceof mapControlWithDataSource)
-            ((mapControlWithDataSource) mapControlswithDataSource)
-                    .clickPresentationLink()
-                    .clickDetailsLink()
-                    .clickFinalLayoutTabInsideLayoutDetailsDialog()
-                    .navigateToDeviceEditor()
-                    .clickControlsInsideDeviceEditor()
-                    .removePreAddedFEControls();
+            // Delete pre-added FE Controls before mapping datasource.
+            Object mapControlswithDataSource = sitecore.createTemplateOrTemplateComponent(data.get("Templatename"), mapControlWithDataSource.class.getSimpleName());
+            if (mapControlswithDataSource instanceof mapControlWithDataSource)
+                ((mapControlWithDataSource) mapControlswithDataSource)
+                        .clickPresentationLink()
+                        .clickDetailsLink()
+                        .clickFinalLayoutTabInsideLayoutDetailsDialog()
+                        .navigateToDeviceEditor()
+                        .clickControlsInsideDeviceEditor()
+                        .removePreAddedFEControls();
+        }
+        sitecore.logOut();
 
 
     }
 
 
-    @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
+   /* @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -141,15 +164,16 @@ public class Editorial_OnlyWithTauck extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
-            sitecore
-                    .login()
-                    .goToContentEditorIfNotKickOffUser()
-                    .verifyPreFeededSubComponent(navigateToNode.EDITORIAL_ONLY_WITH_TAUCK, Arrays.asList(data.get("CategoriesList").split("\\|")));
-
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .verifyPreFeededSubComponent(topNodePath , Arrays.asList(data.get("CategoriesList").split("\\|")))
+                .logOut();
     }
 
 
-    @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck", "verifyPreFeededSubCategoriesInsideTemplate"}, dataProvider = "readTestData")
+
+    @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
   // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
@@ -168,14 +192,14 @@ public class Editorial_OnlyWithTauck extends testBase {
         sitecore
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(navigateToNode.EDITORIAL_ONLY_WITH_TAUCK , "/" + data.get("preFeededComponentName"))
-                .fill_Component_Content_With_Data(data.get("Content"));
-
+                .navigateToWhichTauckNode(topNodePath , "/" + data.get("preFeededComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
+                .logOut();
 
     }
 
 
-    @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck", "verifyPreFeededSubCategoriesInsideTemplate"}, dataProvider = "readTestData")
+    @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
   // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Header_Hero_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
@@ -194,15 +218,16 @@ public class Editorial_OnlyWithTauck extends testBase {
         sitecore
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(navigateToNode.EDITORIAL_ONLY_WITH_TAUCK, "/" + data.get("preFeededComponentName"))
-                .fill_Component_Content_With_Data(data.get("Content"));
+                .navigateToWhichTauckNode(topNodePath , "/" + data.get("preFeededComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
+                .logOut();
 
 
     }
 
 
-     @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck", "verifyPreFeededSubCategoriesInsideTemplate"}, dataProvider = "readTestData")
-   // @Test( dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
+    // @Test( dataProvider = "readTestData")
     public void add_Half_Widht_Media_Segment_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
@@ -218,31 +243,43 @@ public class Editorial_OnlyWithTauck extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
+
         sitecore
                 .login()
                 .goToContentEditorIfNotKickOffUser();
 
-        for (int i = 0; i < DataUtil.splitStringBasedOnComma(data.get("ComponentName")).size(); i++) {
 
-                sitecore
-                        .navigateToWhichTauckNode(navigateToNode.EDITORIAL_ONLY_WITH_TAUCK, "/" +  data.get("preFeededComponentName"))
-                        .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
-                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
+        try {
+            // Before updating existing component you first need to move "Half width media segment" from left to right that is already moved from right to left or else
+            // it will force you to delete its link "Breaking links dialog".
+            sitecore
+                    .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
+                    .MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
+        } catch (Throwable throwable) {
 
         }
 
+        // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
         sitecore
-                .navigateToWhichTauckNode(navigateToNode.EDITORIAL_ONLY_WITH_TAUCK, "/" +  data.get("preFeededComponentName"))
-                .MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("preFeededComponentName") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"))
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
+
+                .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
+                .MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")))
+
+                .logOut();
 
 
     }
 
 
 
-    @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck", "verifyPreFeededSubCategoriesInsideTemplate"}, dataProvider = "readTestData")
+    @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
@@ -258,23 +295,23 @@ public class Editorial_OnlyWithTauck extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
+
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser();
+                .goToContentEditorIfNotKickOffUser()
 
-        for (int i = 0; i < DataUtil.splitStringBasedOnComma(data.get("ComponentName")).size(); i++) {
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("preFeededComponentName") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
 
-                sitecore
-                        .navigateToWhichTauckNode(navigateToNode.EDITORIAL_ONLY_WITH_TAUCK, "/" +  data.get("preFeededComponentName"))
-                        .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                        .createTemplateOrTemplateComponent(DataUtil.splitStringBasedOnComma(data.get("ComponentName")).get(i))
-                        .fill_Component_Content_With_Data(DataUtil.splitStringBasedOnUnderscore(data.get("Content")).get(i));
-
-        }
+                .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"))
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                .feedContent_Fields_With_Data(data.get("Content"), 2)
+                .logOut();
 
     }
-
+*/
 
     @DataProvider(name = "readTestData")
     public Object[][] getData(Method method) {
@@ -295,13 +332,14 @@ public class Editorial_OnlyWithTauck extends testBase {
 
         } else if (method.getName().equals("add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content")) {
             return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+
+        } else if (method.getName().equals("createEditorialSubTemplateOnlyWithTauck")) {
+            return DataUtil.getData(xls, "TemplateName", testSheetName);
         }
 
 
         return null;
     }
-
-
 
 
 } // Main class is closing

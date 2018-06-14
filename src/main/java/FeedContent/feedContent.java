@@ -28,6 +28,9 @@ public class feedContent extends globalTemplateImplementation {
     @FindBy(xpath = CommonLocators.TABLE)
     public List<WebElement> _table;
 
+    @FindBy(xpath = CommonLocators.MULTIPLE_TABLES)
+    public List<WebElement> _multipleTables;
+
     @FindBy(xpath = CommonLocators.CONTAINER_OF_CONTENT)
     public WebElement _contentArea;
 
@@ -71,8 +74,8 @@ public class feedContent extends globalTemplateImplementation {
             _save.click();
 
             // After Filling content screenshot
-            highlightElement(_contentArea);
-            test.addScreenCaptureFromPath(captureScreen());
+           // highlightElement(_contentArea);
+          //  test.addScreenCaptureFromPath(captureScreen());
 
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
@@ -103,8 +106,39 @@ public class feedContent extends globalTemplateImplementation {
             _save.click();
 
             // After Filling content screenshot
-            highlightElement(_contentArea);
-            test.addScreenCaptureFromPath(captureScreen());
+           // highlightElement(_contentArea);
+          //  test.addScreenCaptureFromPath(captureScreen());
+
+        } catch (ElementNotVisibleException env) {
+            captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
+
+        } catch (NoSuchElementException ne) {
+            captureErrorWithScreenShotForReporting("*****The element could not be located on the page.*****" + ne.getMessage());
+        } catch (StaleElementReferenceException se) {
+            captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+            Assert.fail();
+        }
+
+        return this;
+
+    }
+
+
+
+    public feedContent feedContent_Fields_With_Data (String inputData, int whichTable) throws IOException {
+
+        try {
+            Thread.sleep(3000);
+
+            List<WebElement> _tableWithPostition = _multipleTables.get(whichTable).findElements(By.tagName("table"));
+
+            clearAndFillContentFields(_tableWithPostition, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
+            _save.click();
+
 
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
@@ -127,24 +161,21 @@ public class feedContent extends globalTemplateImplementation {
 
 
 
-
-
-
     public feedContent fill_Component_Content_With_Data(String inputData) throws IOException {
 
         try {
             Thread.sleep(3000);
             // Before filling content screenshot
-            scrollToElement(_table.get(_table.size()-1));
-            highlightElement(_contentArea);
-            test.addScreenCaptureFromPath(captureScreen());
+          //  scrollToElement(_table.get(_table.size()-1));
+        //    highlightElement(_contentArea);
+         //   test.addScreenCaptureFromPath(captureScreen());
 
-            fillContentFields(_table, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
+            clearAndFillContentFields(_table, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
             _save.click();
 
             // After Filling content screenshot
-            highlightElement(_contentArea);
-            test.addScreenCaptureFromPath(captureScreen());
+         //   highlightElement(_contentArea);
+          //  test.addScreenCaptureFromPath(captureScreen());
 
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());

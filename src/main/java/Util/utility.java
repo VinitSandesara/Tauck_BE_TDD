@@ -113,7 +113,7 @@ public class utility extends AssertUtil {
 
 
         test.fail(MarkupHelper.createLabel(errorMsg, ExtentColor.RED));
-        test.addScreenCaptureFromPath(captureScreen());
+       // test.addScreenCaptureFromPath(captureScreen());
         Assert.fail();
 
     }
