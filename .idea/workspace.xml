@@ -3,249 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527879545358.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527879574333.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527879605208.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527879607315.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527895557249.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527895974867.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527895983343.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527895993137.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527896001155.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527896010814.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527896018892.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527909639243.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527909640665.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527909825547.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527909826946.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527909855676.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527909856997.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912034887.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912036259.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912064532.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912065851.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912203600.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912205040.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912233596.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527912234927.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527966687088.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527966688546.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527966706085.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527966709387.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527992840739.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527992841956.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527992851684.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527992852757.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993159631.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993160825.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993170562.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993171635.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993845244.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993853721.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993863520.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993871549.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993881351.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527993889456.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994326080.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994327850.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994337583.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994339392.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994349214.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994351051.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994360772.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994362567.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994751039.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994752532.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994962602.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527994964174.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995310454.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995318215.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995327954.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995336275.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995345992.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995355705.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995366467.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527995374574.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997079256.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997080696.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997090385.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997091883.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997809667.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997811320.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997821231.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997823513.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997833308.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997834778.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997844517.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527997845882.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998170751.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998179773.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998408313.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998417443.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998427454.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998436698.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998779121.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998788034.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998798043.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998807181.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998988309.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527998997458.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999007393.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999016378.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999296734.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999298091.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999307898.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999309045.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999318841.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999319705.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999329366.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999330260.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999340150.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999341005.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999350693.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999351561.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999765031.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999766547.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999776287.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999777739.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999787852.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1527999789312.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528087988120.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528129154539.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528132779107.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137699072.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137700290.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137710542.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137711616.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137743323.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137745059.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137754773.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137756524.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137766213.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137768116.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137777809.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137779594.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137798198.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137799664.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137831478.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137832823.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137842526.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137844004.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137875505.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137876325.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137894966.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137895755.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137914190.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137914959.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137981598.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137990222.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528137999908.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138008045.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138017774.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138026066.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138058092.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138059559.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138069349.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138070729.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138080432.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138081720.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138091582.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138092913.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138124609.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138133491.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138143295.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138152439.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138180160.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138181565.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138213245.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138214743.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138224593.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138225946.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138235645.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138236988.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138280394.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138288135.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138297898.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138306254.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138316032.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138325632.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138335475.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528138343601.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528142085849.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528142846843.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146314209.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146316061.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146325762.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146327552.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146337253.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146339103.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146348911.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146350680.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146520831.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146537211.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528146714301.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528147177364.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528147413254.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528147431333.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528148801654.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528156559688.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528168909552.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528169161104.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528208202898.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528208238516.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528208346664.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528208376827.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528208460415.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528212882508.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528213003391.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528213009779.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528213044355.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528213050654.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528233006610.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528233030058.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528673791534.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528673792919.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528673821838.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528673823179.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528674127921.png" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Reports/ScreenShots/1528674129315.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/Reports/extent.html" afterPath="$PROJECT_DIR$/Reports/extent.html" />
-      <change beforePath="$PROJECT_DIR$/src/Data/TestData.xlsx" afterPath="$PROJECT_DIR$/src/Data/TestData.xlsx" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" afterPath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" afterPath="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" afterPath="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" afterPath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" afterPath="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/utility.java" afterPath="$PROJECT_DIR$/src/main/java/Util/utility.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" afterPath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF34.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF34.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF64.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF64.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF71.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF71.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_WhyWeTravel.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_WhyWeTravel.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" afterPath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/FeedContent/feedContent.class" afterPath="$PROJECT_DIR$/target/classes/FeedContent/feedContent.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Locators/CommonLocators.class" afterPath="$PROJECT_DIR$/target/classes/Locators/CommonLocators.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" afterPath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/DataUtil.class" afterPath="$PROJECT_DIR$/target/classes/Util/DataUtil.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapDataSourceWithFE/mapControlWithDataSource.class" afterPath="$PROJECT_DIR$/target/classes/mapDataSourceWithFE/mapControlWithDataSource.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_MediaCenter.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_MediaCenter.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_OnlyWithTauck.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_OnlyWithTauck.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF11.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF11.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF34.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF34.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF64.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF64.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF71.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF71.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_TheTuackStory.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_TheTuackStory.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_WhyWeTravel.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_WhyWeTravel.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -280,7 +39,18 @@
     <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -365,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/test/java/Template/Home.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/HomePageLocators.java" />
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/EditorialSubTemplates.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
@@ -386,6 +155,7 @@
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/utility.java" />
         <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
       </list>
     </option>
   </component>
@@ -402,7 +172,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="253" />
     <option name="y" value="23" />
     <option name="width" value="2272" />
@@ -436,18 +206,7 @@
             <path>
               <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
               <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
-              <item name="Reports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
@@ -542,16 +301,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Template" type="462c0819:PsiDirectoryNode" />
-              <item name="EditorialTemplate" type="462c0819:PsiDirectoryNode" />
+              <item name="ParallelTest" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -938,7 +688,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="253" y="23" width="2272" height="1336" extended-state="1" />
+    <frame x="253" y="23" width="2272" height="1336" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285834" sideWeight="0.49838337" order="6" side_tool="false" content_ui="tabs" />
@@ -1144,14 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="33" column="44" lean-forward="false" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/WebDriverListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1172,14 +915,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="984">
           <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1284,14 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="248" column="79" lean-forward="true" selection-start-line="248" selection-start-column="79" selection-end-line="248" selection-end-column="79" />
           <folding />
         </state>
       </provider>
@@ -1430,6 +1157,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-286">
           <caret line="104" column="17" lean-forward="false" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="814">
+          <caret line="40" column="52" lean-forward="true" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
