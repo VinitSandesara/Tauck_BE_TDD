@@ -6,7 +6,7 @@
         <listener class-name="Listener.RetryListener"/>
         <listener class-name="Listener.TestListener"/>
         <listener class-name="base.testBase"/>
-    <!--  <listener class-name="ParallelTest.WebDriverListener"></listener> -->
+      <listener class-name="ParallelTest.WebDriverListener"></listener>
   </listeners>
 
 

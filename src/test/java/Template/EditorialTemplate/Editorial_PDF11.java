@@ -94,6 +94,8 @@ public class Editorial_PDF11 extends testBase {
     }
 
 
+
+
     @Test(dataProvider = "readTestData")
     public void createEditorialSubTemplate_PDF11(Hashtable<String, String> data) throws Exception {
 
@@ -209,6 +211,7 @@ public class Editorial_PDF11 extends testBase {
         }
 
         invokeBrowser();
+
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
@@ -253,10 +256,6 @@ public class Editorial_PDF11 extends testBase {
         } else if (method.getName().equals("fill_Content_Of_Header_Hero_Component")) {
             return DataUtil.getData(xls, "HeaderHero", testSheetName);
         }
-
-
-        DataUtil.getData(xls, "HeaderHero", testSheetName);
-
 
         return null;
     }

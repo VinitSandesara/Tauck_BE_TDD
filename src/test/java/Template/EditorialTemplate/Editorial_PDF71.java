@@ -3,6 +3,7 @@ package Template.EditorialTemplate;
 import NodeAndComponentConfig.navigateToNode;
 import NodeAndComponentConfig.rightClickInsert;
 import NodeAndComponentConfig.whatIsTheComponentName;
+import ParallelTest.LocalDriverManager;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
 import Util.DataUtil;
@@ -116,6 +117,7 @@ public class Editorial_PDF71 extends testBase {
         topNodePath = "/sitecore/content/Tauck/Home" + "/" + TemplateName.replaceAll(" ", "-").toLowerCase();
 
         invokeBrowser();
+
 
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
