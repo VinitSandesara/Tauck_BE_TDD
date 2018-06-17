@@ -147,8 +147,8 @@ public class Editorial_PDF11 extends testBase {
 
     }
 
-    @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
-    //@Test( dataProvider = "readTestData")
+  //  @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
+    @Test( dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -171,8 +171,8 @@ public class Editorial_PDF11 extends testBase {
     }
 
 
-    @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
-    // @Test( dataProvider = "readTestData")
+  //  @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
+     @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -196,9 +196,8 @@ public class Editorial_PDF11 extends testBase {
 
     }
 
-
-    @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
-    // @Test( dataProvider = "readTestData")
+    //@Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
+     @Test( dataProvider = "readTestData")
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
