@@ -32,7 +32,7 @@ public class Editorial_PDF34 extends testBase {
 
 
 
-    @AfterClass
+  /*  @AfterClass
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -95,7 +95,7 @@ public class Editorial_PDF34 extends testBase {
         // }
 
 
-    }
+    }*/
 
 
     @Test(dataProvider = "readTestData")
