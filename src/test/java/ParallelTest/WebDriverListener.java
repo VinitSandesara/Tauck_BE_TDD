@@ -16,8 +16,8 @@ public class WebDriverListener implements IInvokedMethodListener, ITestListener,
 
        if(method.isConfigurationMethod()) {
            System.out.println("Inside beforeInvocation isConfigurationMethod to initialize the driver");
-           WebDriver driver = LocalDriverFactory.createInstance("chrome");
-           LocalDriverManager.setWebDriver(driver);
+         //  WebDriver driver = LocalDriverFactory.createInstance("chrome");
+         //  LocalDriverManager.setWebDriver(driver);
        }
 
         if (method.isTestMethod()) {
