@@ -37,7 +37,7 @@ public class Editorial_WhyWeTravel extends testBase {
     }
 
 
-   @AfterClass
+   @Test
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
        Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
