@@ -17,7 +17,7 @@ public class CommonLocators {
 
     public static final String CHILD_FRAME_TEXTBOX = "Value";
 
-    public static final String TABLE = "//kem che yar div[@class='scEditorSections']/table/tbody/tr/td/table";
+    public static final String TABLE = "//div[@class='scEditorSections']/table/tbody/tr/td/table";
     public static final String MULTIPLE_TABLES = "//div[@class='scEditorSections']/table/tbody/tr/td";
     public static final String CONTAINER_OF_CONTENT = "//div[@class='scEditorSections']/table/tbody/tr/td";
 
