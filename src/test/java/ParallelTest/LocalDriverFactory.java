@@ -34,7 +34,6 @@ class LocalDriverFactory {
 
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--incognito");
-            options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
             driver.manage().deleteAllCookies();
 
