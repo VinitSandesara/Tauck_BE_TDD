@@ -44,7 +44,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jun 18, 2018 09:22:45 AM</span>
+                    <span class='label suite-start-time blue darken-3'>Jun 18, 2018 01:05:35 PM</span>
 				</a>
 			</li>
 			<li>
@@ -69,7 +69,8 @@
 					<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li class='divider'></li>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
 			</div>
@@ -119,7 +120,7 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>2</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
 					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
@@ -127,6 +128,20 @@
 			</div>
 		</div>
 		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
 		
 	</div>
 </div>
@@ -140,23 +155,51 @@
 				
 				<li class='test displayed active has-leaf pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Editorial_PDF11</span>
-						<span class='test-time'>Jun 18, 2018 09:22:46 AM</span>
+						<span class='test-name'>Editorial_MediaCenter</span>
+						<span class='test-time'>Jun 18, 2018 01:05:37 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jun 18, 2018 09:22:46 AM</span>
-	<span class='label end-time'>Jun 18, 2018 09:22:46 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+310ms</span>
+	<span class='label start-time'>Jun 18, 2018 01:05:37 PM</span>
+	<span class='label end-time'>Jun 18, 2018 01:06:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 28s+24ms</span>
 </div>
 	<div class='test-desc'>Sample Test </div>
 	<ul class='collapsible node-list' data-collapsible='accordion'>
 		
 				<li class='node level-1 leaf pass' status='pass' test-id='2'>
 					<div class='collapsible-header'>
-						<div class='node-name'>mapDataSourceWithFrontEndControls</div>						
-						<span class='node-time'>Jun 18, 2018 09:22:46 AM</span>
+						<div class='node-name'>create_EditorialSubTemplate_Media_Center</div>						
+						<span class='node-time'>Jun 18, 2018 01:05:37 PM</span>
+						<span class='node-duration'>0h 0m 27s+576ms</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+						<div class='collapsible-body'>
+								<div class='node-steps'>
+									<table class='bordered table-results'>
+										<thead>
+											<tr>
+												<th>Status</th>
+												<th>Timestamp</th>
+												<th>Details</th>
+											</tr>
+										</thead>
+										<tbody>
+												<tr class='log' status='pass'>
+													<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+													<td class='timestamp'>1:06:05 PM</td>
+													<td class='step-details'><span class='label white-text green'>Test passed</span></td>
+												</tr>
+										</tbody>
+									</table>
+								</div>
+						</div>
+				</li>
+				<li class='node level-1 leaf pass' status='pass' test-id='3'>
+					<div class='collapsible-header'>
+						<div class='node-name'>add_Flex_Cards_And_fill_Content</div>						
+						<span class='node-time'>Jun 18, 2018 01:06:05 PM</span>
 						<span class='node-duration'>0h 0m 0s+0ms</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
@@ -199,31 +242,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>2</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>0</div>
+					<div class='panel-lead'>1</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jun 18, 2018 09:22:45 AM</div>
+					<div class='panel-lead'>Jun 18, 2018 01:05:35 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jun 18, 2018 09:22:46 AM</div>
+			 		<div class='panel-lead'>Jun 18, 2018 01:06:05 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>1,937ms</div>
+					<div class='panel-lead'>29,389ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -260,7 +303,7 @@
 
 		<script>
 			var statusGroup = {
-				passParent: 1,
+				passParent: 2,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
@@ -268,7 +311,7 @@
 				skipParent: 0,
 				exceptionsParent: 0,
 				
-				passChild: 0,
+				passChild: 1,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,

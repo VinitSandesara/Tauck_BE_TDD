@@ -145,8 +145,8 @@ public class Editorial_MediaCenter extends testBase {
     }
 
 
-    // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
-    @Test( dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    // @Test( dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -170,8 +170,8 @@ public class Editorial_MediaCenter extends testBase {
     }
 
 
-    // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
-    @Test( dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -196,8 +196,8 @@ public class Editorial_MediaCenter extends testBase {
 
     }
 
-    // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
-    @Test( dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    // @Test( dataProvider = "readTestData")
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
@@ -233,8 +233,8 @@ public class Editorial_MediaCenter extends testBase {
 
 
 
-   // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
-    @Test( dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+   // @Test( dataProvider = "readTestData")
     public void add_Flex_Cards_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
