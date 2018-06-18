@@ -29,9 +29,7 @@ public class Editorial_OnlyWithTauck extends testBase {
     String topNodePath;
 
 
-
-
-    @AfterClass
+    @Test
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -149,7 +147,7 @@ public class Editorial_OnlyWithTauck extends testBase {
     }
 
 
-   /* @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
+   @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -311,7 +309,7 @@ public class Editorial_OnlyWithTauck extends testBase {
                 .logOut();
 
     }
-*/
+
 
     @DataProvider(name = "readTestData")
     public Object[][] getData(Method method) {
