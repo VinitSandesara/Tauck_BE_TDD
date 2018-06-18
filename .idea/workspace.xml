@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Data/TestData.xlsx" afterPath="$PROJECT_DIR$/src/Data/TestData.xlsx" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,31 +38,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Editorial_PDF11.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Editorial_PDF11.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+            <state relative-caret-position="1300">
+              <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feedContent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+      <file leaf-file-name="Editorial_MediaCenter.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="1672">
+              <caret line="167" column="26" lean-forward="true" selection-start-line="167" selection-start-column="26" selection-end-line="167" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -156,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" />
         <option value="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF64.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" />
@@ -175,6 +163,7 @@
         <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" />
       </list>
     </option>
   </component>
@@ -192,7 +181,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="285" />
+    <option name="x" value="437" />
     <option name="y" value="23" />
     <option name="width" value="2005" />
     <option name="height" value="1336" />
@@ -326,14 +315,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ParallelTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
@@ -735,7 +716,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="285" y="23" width="2005" height="1336" extended-state="0" />
+    <frame x="437" y="23" width="2005" height="1336" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1110,14 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="891">
-          <caret line="114" column="33" lean-forward="true" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/annotations/Test.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-228">
@@ -1199,8 +1172,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="49" column="39" lean-forward="true" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+        <state relative-caret-position="1300">
+          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1672">
+          <caret line="167" column="26" lean-forward="true" selection-start-line="167" selection-start-column="26" selection-end-line="167" selection-end-column="26" />
           <folding />
         </state>
       </provider>

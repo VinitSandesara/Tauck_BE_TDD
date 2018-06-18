@@ -28,7 +28,7 @@ public class Editorial_MediaCenter extends testBase {
     String TemplateName;
     String topNodePath;
 
-    @AfterClass
+    @Test
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -145,7 +145,8 @@ public class Editorial_MediaCenter extends testBase {
     }
 
 
-   /* @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    @Test( dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -169,8 +170,8 @@ public class Editorial_MediaCenter extends testBase {
     }
 
 
-    @Test( dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
-    // @Test( dataProvider = "readTestData")
+    // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -195,7 +196,8 @@ public class Editorial_MediaCenter extends testBase {
 
     }
 
-   @Test( dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    @Test( dataProvider = "readTestData")
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
@@ -222,7 +224,8 @@ public class Editorial_MediaCenter extends testBase {
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                .feedContent_Fields_With_Data(data.get("Content"), 2);
+                .feedContent_Fields_With_Data(data.get("Content"), 2)
+                .logOut();
 
 
 
@@ -230,8 +233,8 @@ public class Editorial_MediaCenter extends testBase {
 
 
 
-    @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
-    //@Test( dataProvider = "readTestData")
+   // @Test(dependsOnMethods = {"create_EditorialSubTemplate_Media_Center"}, dataProvider = "readTestData")
+    @Test( dataProvider = "readTestData")
     public void add_Flex_Cards_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
@@ -263,7 +266,7 @@ public class Editorial_MediaCenter extends testBase {
 
 
     }
-*/
+
 
     @DataProvider(name = "readTestData")
     public Object[][] getData(Method method) {
