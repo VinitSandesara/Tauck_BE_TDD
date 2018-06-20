@@ -74,6 +74,7 @@ public class testBase extends TestListenerAdapter {
     }
 
 
+
     @BeforeClass
     public synchronized void beforeClass() throws Exception {
         ExtentTest parent = ExtentTestManager.createTest(getClass().getSimpleName());

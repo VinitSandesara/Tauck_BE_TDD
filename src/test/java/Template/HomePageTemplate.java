@@ -8,6 +8,7 @@ import Util.DataUtil;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
+import mapDataSourceWithFE.editorialTemplateControls;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
@@ -16,7 +17,9 @@ import org.testng.annotations.Test;
 import javax.mail.Folder;
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
 
 import static TemplateImplementation.HomePage.counter;
 
@@ -27,6 +30,80 @@ public class HomePageTemplate extends testBase {
      */
 
     String testSheetName = "Home";
+    String TemplateName;
+    String topNodePath;
+    String TravellingWithTauckFolderName;
+    String TravellingWithTauckNodePath;
+    String LeadGenerationFolderName;
+    String LeadGenerationFolderNodePath;
+    String LeadGenerationCopyNodePath;
+    String LeadGenerationCopyFolderName;
+
+
+  /*  @Test
+    public void mapDataSourceWithFrontEndControls() throws Exception {
+
+        Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
+
+        // if (DataUtil.readSpecificTestDataFromExcel(xls, "MapControlWithDataSource", testSheetName, "Runmode").get("Runmode").equalsIgnoreCase("Y")) {
+
+        invokeBrowser();
+
+        editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
+        PageFactory.initElements(driver, controls);
+
+        controls
+                .launchSitecore()
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
+
+                .clickPresentationLink()
+                .clickDetailsLink()
+                .clickFinalLayoutTabInsideLayoutDetailsDialog()
+                .navigateToDeviceEditor()
+                .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
+
+        List<String> listOfComponentToMapWithDataSource = DataUtil.grabControlListForMapping(xls, testSheetName, "Template_Control");
+
+        for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
+
+            //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
+            Hashtable<String, String> data = DataUtil.getControlDatasourcePlaceholderValueFromXls(xls, listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+
+            List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
+            List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
+            List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
+
+            for (int i = 0; i < splitControlString.size(); i++) {
+                controls
+                        // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                        .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
+            }
+
+            for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
+
+                controls
+                        .addNewControls()
+                        .selectWhichControlsToAdd()
+                        .addEditorialTemplateFEControl(splitControlString.get(innerloop))
+                        .openPropertyDialogBoxCheckbox()
+                        .clickSelectButton()
+
+                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), topNodePath + "/" + splitDatasourceString.get(innerloop));
+
+            }
+
+        }
+
+
+        controls
+                .saveAndCloseDeviceEditorAndLayoutDetails()
+                .logOut();
+        // }
+
+    }*/
+
 
 
     @Test(dataProvider = "readTestData")
@@ -40,6 +117,9 @@ public class HomePageTemplate extends testBase {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
+        TemplateName = data.get("TemplateName");
+        topNodePath = "/sitecore/content/Tauck" + "/" + TemplateName.replaceAll(" ", "-").toLowerCase();
+
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
@@ -50,7 +130,7 @@ public class HomePageTemplate extends testBase {
                 .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
-        if(sitecore.checkWhetherParentNodeIsPresentOrNot("/sitecore/content/Tauck" +"/"+data.get("TemplateName").replaceAll(" ", "-").toLowerCase())!=true) {
+        if(sitecore.checkWhetherParentNodeIsPresentOrNot(topNodePath)!=true) {
             System.out.println("Parent Node already present please go ahead...");
         }else {
 
@@ -78,6 +158,9 @@ public class HomePageTemplate extends testBase {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
+        TravellingWithTauckFolderName = data.get("FolderName");
+        TravellingWithTauckNodePath = "/sitecore/content/Tauck/Global" + "/" + TravellingWithTauckFolderName.replaceAll(" ", "-").toLowerCase();
+
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
@@ -87,12 +170,12 @@ public class HomePageTemplate extends testBase {
                 .login()
                 .goToContentEditorIfNotKickOffUser();
 
-        if(sitecore.checkWhetherParentNodeIsPresentOrNot(data.get("NavigateToNodePath") +"/"+data.get("FolderName").replaceAll(" ", "-").toLowerCase())!=true) {
+        if(sitecore.checkWhetherParentNodeIsPresentOrNot(TravellingWithTauckNodePath)!=true) {
             System.out.println("Parent Node already present please go ahead...");
         }else {
 
             sitecore
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .navigateToWhichTauckNode("/sitecore/content/Tauck/Global")
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("FolderName"));
@@ -102,8 +185,46 @@ public class HomePageTemplate extends testBase {
 
     }
 
+    @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-     @Test(dataProvider = "readTestData")
+
+
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+        invokeBrowser();
+
+        HomePage homePage = new HomePage(driver, test.get());
+        PageFactory.initElements(driver, homePage);
+
+        homePage
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(TravellingWithTauckNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(TravellingWithTauckNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Content Types/Portrait Trip Image Card" ,data.get("CardsName"), this.getClass().getSimpleName())
+                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content_PortraitTripImageCard"), 0)
+                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content_PortraitTripImageCardHoover"), 1)
+                .logOut();
+
+
+    }
+
+
+    @Test(dataProvider = "readTestData")
     public void createLeadGenerationFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -114,6 +235,9 @@ public class HomePageTemplate extends testBase {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
+        LeadGenerationFolderName = data.get("FolderName");
+        LeadGenerationFolderNodePath = "/sitecore/content/Tauck/Global/lead-generation" + "/" + LeadGenerationFolderName.replaceAll(" ", "-").toLowerCase();
+
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
@@ -123,12 +247,12 @@ public class HomePageTemplate extends testBase {
                 .login()
                 .goToContentEditorIfNotKickOffUser();
 
-        if(sitecore.checkWhetherParentNodeIsPresentOrNot(data.get("NavigateToNodePath") +"/"+data.get("FolderName").replaceAll(" ", "-").toLowerCase())!=true) {
+        if(sitecore.checkWhetherParentNodeIsPresentOrNot(LeadGenerationFolderNodePath)!=true) {
             System.out.println("Parent Node already present please go ahead...");
         }else {
 
             sitecore
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .navigateToWhichTauckNode("/sitecore/content/Tauck/Global/lead-generation")
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert("/sitecore/templates/Project/Common/Content Types/Global Folder Types/Lean Generation CTA Folder", data.get("FolderName"));
@@ -139,6 +263,121 @@ public class HomePageTemplate extends testBase {
 
     }
 
+     @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
+
+
+
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+        invokeBrowser();
+
+        HomePage homePage = new HomePage(driver, test.get());
+        PageFactory.initElements(driver, homePage);
+
+        homePage
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(LeadGenerationFolderNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(LeadGenerationFolderNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("CardsName"))
+                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), 0)
+                .logOut();
+
+
+    }
+
+    @Test(dataProvider = "readTestData")
+    public void createLeadGenerationCopyFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
+
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+
+        LeadGenerationCopyFolderName = data.get("FolderName");
+        LeadGenerationCopyNodePath = "/sitecore/content/Tauck/Global/lead-generation" + "/" + LeadGenerationCopyFolderName.replaceAll(" ", "-").toLowerCase();
+
+        invokeBrowser();
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser();
+
+        if(sitecore.checkWhetherParentNodeIsPresentOrNot(LeadGenerationCopyNodePath)!=true) {
+            System.out.println("Parent Node already present please go ahead...");
+        }else {
+
+            sitecore
+                    .navigateToWhichTauckNode("/sitecore/content/Tauck/Global/lead-generation")
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert("/sitecore/templates/Project/Common/Content Types/Global Folder Types/Lead Generation Copy Folder", data.get("FolderName"));
+        }
+
+        sitecore.logOut();
+
+
+    }
+
+
+    @Test(dependsOnMethods = {"createLeadGenerationCopyFolderInsideGlobal"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void createLeadGenerationCopy(Hashtable<String, String> data) throws InterruptedException, IOException {
+
+
+
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+        invokeBrowser();
+
+        HomePage homePage = new HomePage(driver, test.get());
+        PageFactory.initElements(driver, homePage);
+
+        homePage
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(LeadGenerationCopyNodePath+"/"+data.get("CopyName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(LeadGenerationCopyNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("CopyName"))
+                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), 0)
+                .logOut();
+
+
+    }
 
     @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
@@ -161,7 +400,7 @@ public class HomePageTemplate extends testBase {
         homePage
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"));
+                .navigateToWhichTauckNode(topNodePath);
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -192,7 +431,7 @@ public class HomePageTemplate extends testBase {
         homePage
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"));
+                .navigateToWhichTauckNode(topNodePath);
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -202,48 +441,6 @@ public class HomePageTemplate extends testBase {
 
 
     }
-
-    @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
-    // @Test(dataProvider = "readTestData")
-    public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
-
-
-
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-
-        invokeBrowser();
-
-        HomePage homePage = new HomePage(driver, test.get());
-        PageFactory.initElements(driver, homePage);
-
-        homePage
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-
-                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
-
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Content Types/Portrait Trip Image Card" ,data.get("CardsName"), this.getClass().getSimpleName())
-                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content_PortraitTripImageCard"), 0)
-                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content_PortraitTripImageCardHoover"), 1)
-                .logOut();
-
-
-    }
-
-
-
-
 
 
     @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
@@ -267,7 +464,7 @@ public class HomePageTemplate extends testBase {
         homePage
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"));
+                .navigateToWhichTauckNode(topNodePath);
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -301,7 +498,7 @@ public class HomePageTemplate extends testBase {
         homePage
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"));
+                .navigateToWhichTauckNode(topNodePath);
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -312,42 +509,7 @@ public class HomePageTemplate extends testBase {
 
     }
 
-    @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
-    // @Test(dataProvider = "readTestData")
-    public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-
-
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-
-        invokeBrowser();
-
-        HomePage homePage = new HomePage(driver, test.get());
-        PageFactory.initElements(driver, homePage);
-
-        homePage
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-
-                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
-
-                .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .createTemplateOrTemplateComponent(data.get("CardsName"))
-                .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), 0)
-                .logOut();
-
-
-    }
 
 
 
@@ -382,6 +544,12 @@ public class HomePageTemplate extends testBase {
 
         }else if (method.getName().equals("createLeadGenerationCards")) {
             return DataUtil.getData(xls, "LeadGenerationCards", testSheetName);
+
+        }else if (method.getName().equals("createLeadGenerationCopyFolderInsideGlobal")) {
+            return DataUtil.getData(xls, "LeadGenerationCopyFolder", testSheetName);
+
+        }else if (method.getName().equals("createLeadGenerationCopy")) {
+            return DataUtil.getData(xls, "LeadGenerationCopy", testSheetName);
         }
 
 

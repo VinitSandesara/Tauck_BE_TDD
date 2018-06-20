@@ -28,7 +28,7 @@ public class Editorial_PDF11 extends testBase {
     String topNodePath;
 
 
-    @Test
+ /*   @Test
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -93,7 +93,7 @@ public class Editorial_PDF11 extends testBase {
 
     }
 
-
+*/
 
 
     @Test(dataProvider = "readTestData")

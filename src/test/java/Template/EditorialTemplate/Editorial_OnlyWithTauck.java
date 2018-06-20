@@ -29,7 +29,7 @@ public class Editorial_OnlyWithTauck extends testBase {
     String topNodePath;
 
 
-    @Test
+ /*   @Test
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -90,7 +90,7 @@ public class Editorial_OnlyWithTauck extends testBase {
                 .saveAndCloseDeviceEditorAndLayoutDetails()
                 .logOut();
         // }
-    }
+    }*/
 
 
 
@@ -147,7 +147,7 @@ public class Editorial_OnlyWithTauck extends testBase {
     }
 
 
-   @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
+ /*  @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
@@ -224,58 +224,6 @@ public class Editorial_OnlyWithTauck extends testBase {
     }
 
 
-    @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
-    // @Test( dataProvider = "readTestData")
-    public void add_Half_Widht_Media_Segment_And_fill_Content(Hashtable<String, String> data) throws
-            InterruptedException, IOException {
-
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-        invokeBrowser();
-        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
-        PageFactory.initElements(driver, sitecore);
-
-
-        sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
-
-
-        try {
-            // Before updating existing component you first need to move "Half width media segment" from left to right that is already moved from right to left or else
-            // it will force you to delete its link "Breaking links dialog".
-            sitecore
-                    .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
-                    .MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
-        } catch (Throwable throwable) {
-
-        }
-
-        // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-        sitecore
-                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("preFeededComponentName") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
-
-                .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"))
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                .fill_Component_Content_With_Data(data.get("Content"))
-
-                .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
-                .MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")))
-
-                .logOut();
-
-
-    }
-
-
 
     @Test( dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
@@ -309,6 +257,59 @@ public class Editorial_OnlyWithTauck extends testBase {
                 .logOut();
 
     }
+*/
+
+    @Test(dependsOnMethods = {"createEditorialSubTemplateOnlyWithTauck"}, dataProvider = "readTestData")
+    // @Test( dataProvider = "readTestData")
+    public void add_Half_Widht_Media_Segment_And_fill_Content(Hashtable<String, String> data) throws
+            InterruptedException, IOException {
+
+        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        invokeBrowser();
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser();
+
+
+        try {
+            // Before updating existing component you first need to move "Half width media segment" from left to right that is already moved from right to left or else
+            // it will force you to delete its link "Breaking links dialog".
+            sitecore.navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
+                    .MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")));
+        } catch (Throwable throwable) {
+
+        }
+
+        // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+        sitecore
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("preFeededComponentName") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"))
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
+
+                .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
+                .MultiListSelection(DataUtil.splitStringBasedOnComma(data.get("ComponentName")))
+
+                .logOut();
+
+
+    }
+
+
 
 
     @DataProvider(name = "readTestData")

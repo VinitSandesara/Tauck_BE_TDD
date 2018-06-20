@@ -196,6 +196,7 @@ public class globalTemplateImplementation extends utility {
             _deleteLink.click();
             switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
             _deleteOkButton.click();
+          //  switchBackIFrameToItsOriginalState();
             try {
                 waitForPageLoad(30);
                 switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
@@ -206,6 +207,7 @@ public class globalTemplateImplementation extends utility {
                 _deleteOkButton.click();
             }catch (Throwable throwable) {
                 System.out.println("The Component that you are trying to delete has not yet been mapped with FE Control....");
+                switchBackIFrameToItsOriginalState();
             }
 
         }
@@ -332,6 +334,11 @@ public class globalTemplateImplementation extends utility {
         } catch (NoSuchFrameException e) {
             System.out.println("Your result : - " + e.getMessage());
         }
+        return this;
+    }
+
+    public globalTemplateImplementation switchBackIFrameToItsOriginalState() {
+        driver.switchTo().defaultContent();
         return this;
     }
 

@@ -24,35 +24,44 @@ import java.util.List;
 public class MegaMenu extends testBase {
 
     String testSheetName = "MegaMenu";
-    public mapControlWithDataSource mapcontrolWithDataSource;
+   // public mapControlWithDataSource mapcontrolWithDataSource;
     String subMenuRightClickInsertFEControl = "/sitecore/templates/Project/Common/Content Types/Global Content Types/Menu Section";
+    //  public mapControlWithDataSource mapcontrolWithDataSource;
+    String TemplateName;
+    String topNodePath;
 
 
    @Test(dataProvider = "readTestData")
-    public void create_MegaMenu_And_SubMenus(Hashtable<String, String> data) throws InterruptedException {
+    public void create_MegaMenu_And_SubMenus(Hashtable<String, String> data) throws Exception {
+
+       TemplateName = data.get("MegaMenuName");
+       topNodePath = "/sitecore/content/Tauck/Global/navigation/header" + "/" + TemplateName.replaceAll(" ", "-").toLowerCase();
 
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
 
-        sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+       sitecore.launchSitecore()
+               .login()
+               .goToContentEditorIfNotKickOffUser();
 
        // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
-       if(sitecore.checkWhetherParentNodeIsPresentOrNot(data.get("NavigateToNodePath")+"/"+data.get("MegaMenuName").replaceAll(" ", "-").toLowerCase())!=true) {
+       if(sitecore.checkWhetherParentNodeIsPresentOrNot(topNodePath)!=true) {
            System.out.println("Parent Node already present please go ahead...");
        }else {
 
+           // Creating EditorialTemplate template
            sitecore
-                   .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                   .navigateToWhichTauckNode("/sitecore/content/Tauck/Global/navigation/header")
                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                    .createTemplateOrTemplateComponent(data.get("MegaMenuName"));
 
        }
        sitecore.logOut();
+
+
 
 
       /*  for(int i=0;i<Arrays.asList(data.get("RightClickInsert").split("\\|")).size();i++) {
@@ -70,10 +79,11 @@ public class MegaMenu extends testBase {
 
 
 
-     @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
   //  @Test(dataProvider = "readTestData")
     public void add_Destinations_SubMenus_And_SubMenus_SubItems(Hashtable<String, String> data) throws InterruptedException {
 
+         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"Destinations",testSheetName,"SubMenuName").get(0);
 
          if (!DataUtil.isTestExecutable(xls, testSheetName)) {
              throw new SkipException("Skipping the test as Rnumode is N");
@@ -95,9 +105,9 @@ public class MegaMenu extends testBase {
                     .goToContentEditorIfNotKickOffUser()
 
                     // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
 
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .navigateToWhichTauckNode(topNodePath)
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") )
@@ -110,12 +120,12 @@ public class MegaMenu extends testBase {
                     .goToContentEditorIfNotKickOffUser()
 
                     // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase() + "/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
 
 
                     // Create Menu - sub Menus
 
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .navigateToWhichTauckNode(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase())
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("SubMenuName"), this.getClass().getSimpleName());
@@ -124,7 +134,7 @@ public class MegaMenu extends testBase {
             for (int i = 0; i < Arrays.asList(data.get("SubItemsComponentName").split("\\|")).size(); i++) {
 
                 sitecore
-                        .navigateToWhichTauckNode(data.get("SubItemsNavigateToNodePath"))
+                        .navigateToWhichTauckNode(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase() + "/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
                         .rightClickInsertTemplateOrComponent(Arrays.asList(data.get("SubItemsRightClickInsert").split("\\|")).get(i))
                         .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                         .createTemplateOrTemplateComponent(Arrays.asList(data.get("SubItemsComponentName").split("\\|")).get(i), this.getClass().getSimpleName());
@@ -140,6 +150,8 @@ public class MegaMenu extends testBase {
     public void add_ToursAndCruises_SubMenus_And_SubMenus_SubItems(Hashtable<String, String> data) throws InterruptedException {
 
 
+      String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"Tours and Cruises",testSheetName,"SubMenuName").get(0);
+
       if (!DataUtil.isTestExecutable(xls, testSheetName)) {
           throw new SkipException("Skipping the test as Rnumode is N");
       }
@@ -148,61 +160,65 @@ public class MegaMenu extends testBase {
           throw new SkipException("Skipping the test as Rnumode is N");
       }
 
-        invokeBrowser();
-        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
-        PageFactory.initElements(driver, sitecore);
 
-        if (data.get("SubMenuName").equalsIgnoreCase("Tours and Cruises")) {
+      invokeBrowser();
+      globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+      PageFactory.initElements(driver, sitecore);
 
-            sitecore
-                    .login()
-                    .goToContentEditorIfNotKickOffUser()
+      if (data.get("SubMenuName").equalsIgnoreCase("Tours and Cruises")) {
 
-                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+          sitecore
+                  .login()
+                  .goToContentEditorIfNotKickOffUser()
 
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
-                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") )
-                    .logOut();
+                  // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                  .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
 
-        } else {
+                  .navigateToWhichTauckNode(topNodePath)
+                  .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                  .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                  .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") )
+                  .logOut();
 
-            sitecore
-                    .login()
-                    .goToContentEditorIfNotKickOffUser()
+      } else {
 
-                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+          sitecore
+                  .login()
+                  .goToContentEditorIfNotKickOffUser()
 
-                    // Create Menu - sub Menus
+                  // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                  .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase() + "/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
 
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
-                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .createTemplateOrTemplateComponent(data.get("SubMenuName"), this.getClass().getSimpleName());
 
-            // Create Sub Menus - Sub Items
-            for (int i = 0; i < Arrays.asList(data.get("SubItemsComponentName").split("\\|")).size(); i++) {
+                  // Create Menu - sub Menus
 
-                sitecore
-                        .navigateToWhichTauckNode(data.get("SubItemsNavigateToNodePath"))
-                        .rightClickInsertTemplateOrComponent(Arrays.asList(data.get("SubItemsRightClickInsert").split("\\|")).get(i))
-                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                        .createTemplateOrTemplateComponent(Arrays.asList(data.get("SubItemsComponentName").split("\\|")).get(i), this.getClass().getSimpleName());
+                  .navigateToWhichTauckNode(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase())
+                  .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                  .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                  .createTemplateOrTemplateComponent(data.get("SubMenuName"), this.getClass().getSimpleName());
 
-            }
-            sitecore.logOut();
-        }
+          // Create Sub Menus - Sub Items
+          for (int i = 0; i < Arrays.asList(data.get("SubItemsComponentName").split("\\|")).size(); i++) {
+
+              sitecore
+                      .navigateToWhichTauckNode(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase() + "/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+                      .rightClickInsertTemplateOrComponent(Arrays.asList(data.get("SubItemsRightClickInsert").split("\\|")).get(i))
+                      .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                      .createTemplateOrTemplateComponent(Arrays.asList(data.get("SubItemsComponentName").split("\\|")).get(i), this.getClass().getSimpleName());
+          }
+
+          sitecore.logOut();
+      }
 
     }
 
 
 
-    @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"create_MegaMenu_And_SubMenus"}, dataProvider = "readTestData")
   //  @Test(dataProvider = "readTestData")
     public void add_WhyTauck_SubMenus(Hashtable<String, String> data) throws InterruptedException, IOException {
+
+         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"WhyTauck",testSheetName,"SubMenuName").get(0);
 
         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -224,9 +240,9 @@ public class MegaMenu extends testBase {
                     .goToContentEditorIfNotKickOffUser()
 
                     // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
 
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .navigateToWhichTauckNode(topNodePath)
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(subMenuRightClickInsertFEControl ,data.get("SubMenuName") )
@@ -239,11 +255,11 @@ public class MegaMenu extends testBase {
                     .goToContentEditorIfNotKickOffUser()
 
                     // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(data.get("NavigateToNodePath")+"/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase() + "/"+data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
 
                     // Create Menu - sub Menus
 
-                    .navigateToWhichTauckNode(data.get("NavigateToNodePath"))
+                    .navigateToWhichTauckNode(topNodePath + "/"+ TopMostComponentName.replaceAll(" ", "-").toLowerCase())
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("SubMenuName"))
@@ -253,12 +269,6 @@ public class MegaMenu extends testBase {
 
 
     }
-
-
-
-
-
-
 
 
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="20404" started-at="2018-06-19T03:22:02Z" finished-at="2018-06-19T03:22:22Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="20404" started-at="2018-06-19T03:22:02Z" finished-at="2018-06-19T03:22:22Z">
+      <class name="Template.EditorialTemplate.EditorialTemplate">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="beforeClass" is-config="true" duration-ms="201" started-at="2018-06-18T22:22:02Z" finished-at="2018-06-18T22:22:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="32" started-at="2018-06-18T22:22:02Z" finished-at="2018-06-18T22:22:02Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.EditorialTemplate.EditorialTemplate.createEditorialTemplate(java.util.Hashtable) throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createEditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="createEditorialTemplate" duration-ms="19921" started-at="2018-06-18T22:22:02Z" data-provider="readTestData" finished-at="2018-06-18T22:22:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{TemplateName=Editorial_Thru_Automation, Runmode=Y, RightClickInsert=Editorial, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createEditorialTemplate -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="65" started-at="2018-06-18T22:22:22Z" finished-at="2018-06-18T22:22:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createEditorialTemplate on [EditorialTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=EditorialTemplate.createEditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- Template.EditorialTemplate.EditorialTemplate -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
