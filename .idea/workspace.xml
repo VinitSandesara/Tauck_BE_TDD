@@ -2,34 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Reports/extent.html" afterPath="$PROJECT_DIR$/Reports/extent.html" />
-      <change beforePath="$PROJECT_DIR$/src/Data/TestData.xlsx" afterPath="$PROJECT_DIR$/src/Data/TestData.xlsx" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" afterPath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" afterPath="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" afterPath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" afterPath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/base/testBase.java" afterPath="$PROJECT_DIR$/src/test/java/base/testBase.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" afterPath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Util/DataUtil.class" afterPath="$PROJECT_DIR$/target/classes/Util/DataUtil.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/ParallelTest/WebDriverListener.class" afterPath="$PROJECT_DIR$/target/test-classes/ParallelTest/WebDriverListener.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/EditorialTemplate.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/EditorialTemplate.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_MediaCenter.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_MediaCenter.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_OnlyWithTauck.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_OnlyWithTauck.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF11.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF11.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF34.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF34.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF64.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF64.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF71.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF71.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_TheTuackStory.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_TheTuackStory.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_WhyWeTravel.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_WhyWeTravel.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/base/testBase.class" afterPath="$PROJECT_DIR$/target/test-classes/base/testBase.class" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,11 +38,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EditorialTemplate.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
+      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-613">
-              <caret line="42" column="51" lean-forward="true" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+            <state relative-caret-position="816">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -170,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF71.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_WhyWeTravel.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/base/testBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
@@ -181,6 +153,7 @@
         <option value="$PROJECT_DIR$/testng.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Util/Config.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
       </list>
     </option>
   </component>
@@ -197,7 +170,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="175" />
     <option name="y" value="23" />
     <option name="width" value="2357" />
@@ -762,7 +735,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="175" y="23" width="2357" height="1336" extended-state="1" />
+    <frame x="175" y="23" width="2357" height="1336" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1103,14 +1076,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="26" column="33" lean-forward="false" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/base/testBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
@@ -1252,6 +1217,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-613">
           <caret line="42" column="51" lean-forward="true" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
