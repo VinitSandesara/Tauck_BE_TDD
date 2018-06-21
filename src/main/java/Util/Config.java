@@ -20,14 +20,14 @@ public class Config {
     // URLs-prod
    // public static final String DEV_HOMEPAGE_URL = "http://dev2017.tauck.com/sitecore/login";
     public static final String DEV_HOMEPAGE_URL = System.getProperty("env");
-    public static final String DEV_USERNAME = "v";
-    public static final String DEV_PASSWORD = "v";
+    public static final String DEV_USERNAME = System.getProperty("username");
+    public static final String DEV_PASSWORD = System.getProperty("password");
 
     // URLs-uat
   //  public static final String QA_HOMEPAGE_URL = "http://qa2017.tauck.com/sitecore/login";
     public static final String QA_HOMEPAGE_URL = System.getProperty("env");
-    public static final String QA_USERNAME = "vinit";
-    public static final String QA_PASSWORD = "vinit";
+    public static final String QA_USERNAME = System.getProperty("username");
+    public static final String QA_PASSWORD = System.getProperty("password");
 
 
     public static final String ENV = "DEV"; //PROD, UAT,SAT
