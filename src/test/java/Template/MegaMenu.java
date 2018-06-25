@@ -1,5 +1,6 @@
 package Template;
 
+import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import NodeAndComponentConfig.navigateToNode;
 import NodeAndComponentConfig.rightClickInsert;
 import NodeAndComponentConfig.whatIsTheComponentName;
@@ -85,9 +86,9 @@ public class MegaMenu extends testBase {
 
          String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"Destinations",testSheetName,"SubMenuName").get(0);
 
-         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
              throw new SkipException("Skipping the test as Rnumode is N");
-         }
+         }*/
 
          if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
              throw new SkipException("Skipping the test as Rnumode is N");
@@ -152,9 +153,9 @@ public class MegaMenu extends testBase {
 
       String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"Tours and Cruises",testSheetName,"SubMenuName").get(0);
 
-      if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+     /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
           throw new SkipException("Skipping the test as Rnumode is N");
-      }
+      }*/
 
       if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
           throw new SkipException("Skipping the test as Rnumode is N");
@@ -220,9 +221,9 @@ public class MegaMenu extends testBase {
 
          String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"WhyTauck",testSheetName,"SubMenuName").get(0);
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -274,21 +275,25 @@ public class MegaMenu extends testBase {
 
 
     @DataProvider(name = "readTestData")
-    public Object[][] getData(Method method) {
+    public Object[][] getData(Method method) throws IOException {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
         if (method.getName().equals("create_MegaMenu_And_SubMenus")) {
-            return DataUtil.getData(xls, "Menus", testSheetName);
+            //return DataUtil.getData(xls, "Menus", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Menus", testSheetName);
 
         }else if (method.getName().equals("add_Destinations_SubMenus_And_SubMenus_SubItems")) {
-            return DataUtil.getData(xls, "Destinations", testSheetName);
+           // return DataUtil.getData(xls, "Destinations", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Destinations", testSheetName);
 
         }else if (method.getName().equals("add_ToursAndCruises_SubMenus_And_SubMenus_SubItems")) {
-            return DataUtil.getData(xls, "Tours and Cruises", testSheetName);
+           // return DataUtil.getData(xls, "Tours and Cruises", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Tours and Cruises", testSheetName);
 
         }else if (method.getName().equals("add_WhyTauck_SubMenus")) {
-            return DataUtil.getData(xls, "WhyTauck", testSheetName);
+           // return DataUtil.getData(xls, "WhyTauck", testSheetName);
+            return GDriveSpreedSheetUtil.getData("WhyTauck", testSheetName);
         }
 
             return null;

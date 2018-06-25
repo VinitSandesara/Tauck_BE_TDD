@@ -32,46 +32,47 @@
                       </suiteXmlFiles>   -->
 
 
-                      <properties>
+                    <properties>
 
-                          <property>
-                              <name>listener</name>
-                              <value>Listener.RetryListener,Listener.TestListener,base.testBase,ParallelTest.WebDriverListener</value>
-                          </property>
+                        <property>
+                            <name>listener</name>
+                            <value>
+                                Listener.RetryListener,Listener.TestListener,base.testBase,ParallelTest.WebDriverListener
+                            </value>
+                        </property>
 
-                      </properties>
-
-
-                  </configuration>
-              </plugin>
+                    </properties>
 
 
-          </plugins>
-      </build>
+                </configuration>
+            </plugin>
 
 
-
-      <packaging>jar</packaging>
-
-      <name>tauck</name>
-      <url>http://maven.apache.org</url>
-
-      <properties>
-          <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-             <suiteXmlFile>testng.xml</suiteXmlFile>
-         </properties>
+        </plugins>
+    </build>
 
 
-         <dependencies>
+    <packaging>jar</packaging>
 
-             <dependency>
-                 <groupId>org.apache.maven.plugins</groupId>
-                 <artifactId>maven-compiler-plugin</artifactId>
-                 <version>3.7.0</version>
-                 <type>maven-plugin</type>
-             </dependency>
+    <name>tauck</name>
+    <url>http://maven.apache.org</url>
 
-             <!--  Selenium  -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <suiteXmlFile>testng.xml</suiteXmlFile>
+    </properties>
+
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.7.0</version>
+            <type>maven-plugin</type>
+        </dependency>
+
+        <!--  Selenium  -->
 
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -177,6 +178,26 @@
             <artifactId>mail</artifactId>
             <version>1.4</version>
         </dependency>
+
+
+        <!-- Google drive dependency -->
+
+        <dependency>
+            <groupId>com.google.api-client</groupId>
+            <artifactId>google-api-client</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.oauth-client</groupId>
+            <artifactId>google-oauth-client-jetty</artifactId>
+            <version>1.22.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-sheets</artifactId>
+            <version>v4-rev483-1.22.0</version>
+        </dependency>
+
 
 
     </dependencies>
