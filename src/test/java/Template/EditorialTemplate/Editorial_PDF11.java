@@ -1,5 +1,6 @@
 package Template.EditorialTemplate;
 
+import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
 import Util.DataUtil;
@@ -28,7 +29,7 @@ public class Editorial_PDF11 extends testBase {
     String topNodePath;
 
 
- /*   @Test
+    @Test
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -52,12 +53,12 @@ public class Editorial_PDF11 extends testBase {
                     .navigateToDeviceEditor()
                     .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
 
-            List<String> listOfComponentToMapWithDataSource = DataUtil.grabControlListForMapping(xls, testSheetName, "Template_Control");
+            List<String> listOfComponentToMapWithDataSource = GDriveSpreedSheetUtil.getListOfControlsForMapping(testSheetName, "Template_Control");
 
             for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
 
                 //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
-                Hashtable<String, String> data = DataUtil.getControlDatasourcePlaceholderValueFromXls(xls, listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+                Hashtable<String, String> data = GDriveSpreedSheetUtil.getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap(listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
 
                 List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
                 List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
@@ -93,15 +94,15 @@ public class Editorial_PDF11 extends testBase {
 
     }
 
-*/
+
 
 
     @Test(dataProvider = "readTestData")
     public void createEditorialSubTemplate_PDF11(Hashtable<String, String> data) throws Exception {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+          /*  if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -151,9 +152,9 @@ public class Editorial_PDF11 extends testBase {
    // @Test( dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+         /*  if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -175,9 +176,9 @@ public class Editorial_PDF11 extends testBase {
     // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+          /*  if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -201,9 +202,9 @@ public class Editorial_PDF11 extends testBase {
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+      /*  if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -233,27 +234,33 @@ public class Editorial_PDF11 extends testBase {
 
 
     @DataProvider(name = "readTestData")
-    public Object[][] getData(Method method) {
+    public Object[][] getData(Method method) throws IOException {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
         if (method.getName().equals("verifyPreFeededSubCategoriesInsideTemplate")) {
-            return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
+           // return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
+            return GDriveSpreedSheetUtil.getData("PreFeededSubCategories", testSheetName);
 
         } else if (method.getName().equals("fill_Content_Of_Editorial_Title_Component")) {
-            return DataUtil.getData(xls, "EditorialTitle", testSheetName);
+          //  return DataUtil.getData(xls, "EditorialTitle", testSheetName);
+            return GDriveSpreedSheetUtil.getData("EditorialTitle", testSheetName);
 
         } else if (method.getName().equals("add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content")) {
-            return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+           // return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TextCopyFolder", testSheetName);
 
         } else if (method.getName().equals("createEditorialSubTemplate_PDF11")) {
-            return DataUtil.getData(xls, "TemplateName", testSheetName);
+           // return DataUtil.getData(xls, "TemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TemplateName", testSheetName);
 
         } else if (method.getName().equals("add_Half_Widht_Media_Segment_And_fill_Content")) {
-            return DataUtil.getData(xls, "HalfWidthMedia", testSheetName);
+           // return DataUtil.getData(xls, "HalfWidthMedia", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HalfWidthMedia", testSheetName);
 
         } else if (method.getName().equals("fill_Content_Of_Header_Hero_Component")) {
-            return DataUtil.getData(xls, "HeaderHero", testSheetName);
+           // return DataUtil.getData(xls, "HeaderHero", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HeaderHero", testSheetName);
         }
 
         return null;
