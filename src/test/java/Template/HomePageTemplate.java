@@ -1,5 +1,6 @@
 package Template;
 
+import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import NodeAndComponentConfig.navigateToNode;
 import TemplateImplementation.HomePage;
 import TemplateImplementation.globalTemplateImplementation;
@@ -109,9 +110,9 @@ public class HomePageTemplate extends testBase {
     @Test(dataProvider = "readTestData")
     public void createHomeTemplate(Hashtable<String, String> data) throws InterruptedException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -150,9 +151,9 @@ public class HomePageTemplate extends testBase {
     @Test(dataProvider = "readTestData")
     public void createTravellingWithTaucksFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -191,9 +192,9 @@ public class HomePageTemplate extends testBase {
 
 
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -227,9 +228,9 @@ public class HomePageTemplate extends testBase {
     @Test(dataProvider = "readTestData")
     public void createLeadGenerationFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -269,9 +270,9 @@ public class HomePageTemplate extends testBase {
 
 
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -303,9 +304,9 @@ public class HomePageTemplate extends testBase {
     @Test(dataProvider = "readTestData")
     public void createLeadGenerationCopyFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -348,9 +349,9 @@ public class HomePageTemplate extends testBase {
 
 
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -383,9 +384,9 @@ public class HomePageTemplate extends testBase {
     // @Test(dataProvider = "readTestData")
     public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+         /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -414,9 +415,9 @@ public class HomePageTemplate extends testBase {
     // @Test(dataProvider = "readTestData")
     public void fillTravellingWithTauck(Hashtable<String, String> data) throws Exception {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+         /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -447,9 +448,9 @@ public class HomePageTemplate extends testBase {
     // @Test(dataProvider = "readTestData")
     public void fillTauckExperienceComponent(Hashtable<String, String> data) throws Exception {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+      /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -481,9 +482,9 @@ public class HomePageTemplate extends testBase {
     // @Test(dataProvider = "readTestData")
     public void fillFeaturedContent(Hashtable<String, String> data) throws Exception {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -514,42 +515,53 @@ public class HomePageTemplate extends testBase {
 
 
     @DataProvider(name = "readTestData")
-    public Object[][] getData(Method method) {
+    public Object[][] getData(Method method) throws IOException {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
         if (method.getName().equalsIgnoreCase("createHomeTemplate")) {
-            return DataUtil.getData(xls, "HomeTemplateName", testSheetName);
+           // return DataUtil.getData(xls, "HomeTemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HomeTemplateName", testSheetName);
 
         }else if (method.getName().equals("fillHeroSettings")) {
-            return DataUtil.getData(xls, "HeroSettings", testSheetName);
+           // return DataUtil.getData(xls, "HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HeroSettings", testSheetName);
 
         }else if (method.getName().equals("fillTravellingWithTauck")) {
-            return DataUtil.getData(xls, "TravellingWithTauck", testSheetName);
+           // return DataUtil.getData(xls, "TravellingWithTauck", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TravellingWithTauck", testSheetName);
 
         }else if (method.getName().equals("fillTauckExperienceComponent")) {
-            return DataUtil.getData(xls, "TauckExperienceComponent", testSheetName);
+            //return DataUtil.getData(xls, "TauckExperienceComponent", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TauckExperienceComponent", testSheetName);
 
         }else if (method.getName().equals("fillFeaturedContent")) {
-            return DataUtil.getData(xls, "FeaturedContent", testSheetName);
+           // return DataUtil.getData(xls, "FeaturedContent", testSheetName);
+            return GDriveSpreedSheetUtil.getData("FeaturedContent", testSheetName);
 
         }else if (method.getName().equals("createTravellingWithTauckPortraitCards")) {
-            return DataUtil.getData(xls, "TravellingWithTauckPortraitCards", testSheetName);
+          //  return DataUtil.getData(xls, "TravellingWithTauckPortraitCards", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TravellingWithTauckPortraitCards", testSheetName);
 
         }else if (method.getName().equals("createTravellingWithTaucksFolderInsideGlobal")) {
-            return DataUtil.getData(xls, "TravellingWithTauckPortraitCardsFolder", testSheetName);
+          //  return DataUtil.getData(xls, "TravellingWithTauckPortraitCardsFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TravellingWithTauckPortraitCardsFolder", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationFolderInsideGlobal")) {
-            return DataUtil.getData(xls, "LeadGenerationFolder", testSheetName);
+          //  return DataUtil.getData(xls, "LeadGenerationFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("LeadGenerationFolder", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationCards")) {
-            return DataUtil.getData(xls, "LeadGenerationCards", testSheetName);
+          //  return DataUtil.getData(xls, "LeadGenerationCards", testSheetName);
+            return GDriveSpreedSheetUtil.getData("LeadGenerationCards", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationCopyFolderInsideGlobal")) {
-            return DataUtil.getData(xls, "LeadGenerationCopyFolder", testSheetName);
+          //  return DataUtil.getData(xls, "LeadGenerationCopyFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("LeadGenerationCopyFolder", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationCopy")) {
-            return DataUtil.getData(xls, "LeadGenerationCopy", testSheetName);
+          //  return DataUtil.getData(xls, "LeadGenerationCopy", testSheetName);
+            return GDriveSpreedSheetUtil.getData("LeadGenerationCopy", testSheetName);
         }
 
 

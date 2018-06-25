@@ -1,5 +1,6 @@
 package Template.EditorialTemplate;
 
+import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import NodeAndComponentConfig.navigateToNode;
 import NodeAndComponentConfig.rightClickInsert;
 import NodeAndComponentConfig.whatIsTheComponentName;
@@ -105,9 +106,9 @@ public class Editorial_PDF71 extends testBase {
     @Test(dataProvider = "readTestData")
     public void createEditorialSubTemplate_PDF71(Hashtable<String, String> data) throws Exception {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+     /*   if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -158,9 +159,9 @@ public class Editorial_PDF71 extends testBase {
     @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF71"}, dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /*   if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -183,9 +184,9 @@ public class Editorial_PDF71 extends testBase {
   // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+      /*   if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -210,9 +211,9 @@ public class Editorial_PDF71 extends testBase {
   // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Header_Hero_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /*   if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -239,9 +240,9 @@ public class Editorial_PDF71 extends testBase {
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /*   if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -269,24 +270,29 @@ public class Editorial_PDF71 extends testBase {
 
 
     @DataProvider(name = "readTestData")
-    public Object[][] getData(Method method) {
+    public Object[][] getData(Method method) throws IOException {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
         if (method.getName().equals("verifyPreFeededSubCategoriesInsideTemplate")) {
-            return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
+            //return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
+            return GDriveSpreedSheetUtil.getData("PreFeededSubCategories", testSheetName);
 
         } else if (method.getName().equals("fill_Content_Of_Editorial_Title_Component")) {
-            return DataUtil.getData(xls, "EditorialTitle", testSheetName);
+          //  return DataUtil.getData(xls, "EditorialTitle", testSheetName);
+            return GDriveSpreedSheetUtil.getData("EditorialTitle", testSheetName);
 
         } else if (method.getName().equals("fill_Content_Of_Header_Hero_Component")) {
-            return DataUtil.getData(xls, "HeaderHero", testSheetName);
+           // return DataUtil.getData(xls, "HeaderHero", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HeaderHero", testSheetName);
 
         } else if (method.getName().equals("add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content")) {
-            return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+          //  return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TextCopyFolder", testSheetName);
 
         } else if (method.getName().equals("createEditorialSubTemplate_PDF71")) {
-            return DataUtil.getData(xls, "TemplateName", testSheetName);
+          //  return DataUtil.getData(xls, "TemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TemplateName", testSheetName);
         }
 
 

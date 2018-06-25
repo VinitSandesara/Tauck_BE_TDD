@@ -1,5 +1,6 @@
 package Template.EditorialTemplate;
 
+import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import NodeAndComponentConfig.navigateToNode;
 import NodeAndComponentConfig.rightClickInsert;
 import NodeAndComponentConfig.whatIsTheComponentName;
@@ -111,9 +112,9 @@ public class Editorial_WhyWeTravel extends testBase {
     @Test(dataProvider = "readTestData")
     public void create_EditorialSubTemplate_WhyWeTravel(Hashtable<String, String> data) throws Exception {
 
-       if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-           throw new SkipException("Skipping the test as Rnumode is N");
-       }
+       /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }*/
 
        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
            throw new SkipException("Skipping the test as Rnumode is N");
@@ -163,9 +164,9 @@ public class Editorial_WhyWeTravel extends testBase {
     @Test(dependsOnMethods = {"create_EditorialSubTemplate_WhyWeTravel"}, dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -189,9 +190,9 @@ public class Editorial_WhyWeTravel extends testBase {
     // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -216,9 +217,9 @@ public class Editorial_WhyWeTravel extends testBase {
     // @Test( dataProvider = "readTestData")
     public void fill_Content_Of_Header_Hero_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -244,9 +245,9 @@ public class Editorial_WhyWeTravel extends testBase {
     public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -281,9 +282,9 @@ public class Editorial_WhyWeTravel extends testBase {
     public void add_MediaCarouselCards_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-         if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-             throw new SkipException("Skipping the test as Rnumode is N");
-         }
+       /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }*/
 
          if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
              throw new SkipException("Skipping the test as Rnumode is N");
@@ -332,9 +333,9 @@ public class Editorial_WhyWeTravel extends testBase {
     public void add_GridMediaCards_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -367,9 +368,9 @@ public class Editorial_WhyWeTravel extends testBase {
     public void add_AuthorProfile_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -396,9 +397,9 @@ public class Editorial_WhyWeTravel extends testBase {
     public void add_EditorialQuote_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -429,9 +430,9 @@ public class Editorial_WhyWeTravel extends testBase {
     public void add_FeaturedBrand_And_fill_Content(Hashtable<String, String> data) throws
             InterruptedException, IOException {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /*if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -460,39 +461,49 @@ public class Editorial_WhyWeTravel extends testBase {
 
 
     @DataProvider(name = "readTestData")
-    public Object[][] getData(Method method) {
+    public Object[][] getData(Method method) throws IOException {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
         if (method.getName().equals("verifyPreFeededSubCategoriesInsideTemplate")) {
-            return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
+           // return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
+            return GDriveSpreedSheetUtil.getData("PreFeededSubCategories", testSheetName);
 
         } else if (method.getName().equals("fill_Content_Of_Editorial_Title_Component")) {
-            return DataUtil.getData(xls, "EditorialTitle", testSheetName);
+            //return DataUtil.getData(xls, "EditorialTitle", testSheetName);
+            return GDriveSpreedSheetUtil.getData("EditorialTitle", testSheetName);
 
         } else if (method.getName().equals("fill_Content_Of_Header_Hero_Component")) {
-            return DataUtil.getData(xls, "HeaderHero", testSheetName);
+           // return DataUtil.getData(xls, "HeaderHero", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HeaderHero", testSheetName);
 
         } else if (method.getName().equals("add_MediaCarouselCards_And_fill_Content")) {
-            return DataUtil.getData(xls, "MediaCarousel", testSheetName);
+           // return DataUtil.getData(xls, "MediaCarousel", testSheetName);
+            return GDriveSpreedSheetUtil.getData("MediaCarousel", testSheetName);
 
         } else if (method.getName().equals("add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content")) {
-            return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+           // return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TextCopyFolder", testSheetName);
 
         } else if (method.getName().equals("add_GridMediaCards_And_fill_Content")) {
-            return DataUtil.getData(xls, "GridMediaFolder", testSheetName);
+           // return DataUtil.getData(xls, "GridMediaFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("GridMediaFolder", testSheetName);
 
         } else if (method.getName().equals("add_AuthorProfile_And_fill_Content")) {
-            return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
+           // return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
+            return GDriveSpreedSheetUtil.getData("AuthorProfiles", testSheetName);
 
         } else if (method.getName().equals("add_EditorialQuote_And_fill_Content")) {
-            return DataUtil.getData(xls, "EditoriaQuotes", testSheetName);
+           // return DataUtil.getData(xls, "EditoriaQuotes", testSheetName);
+            return GDriveSpreedSheetUtil.getData("EditoriaQuotes", testSheetName);
 
         } else if (method.getName().equals("add_FeaturedBrand_And_fill_Content")) {
-            return DataUtil.getData(xls, "FeaturedBrand", testSheetName);
+          //  return DataUtil.getData(xls, "FeaturedBrand", testSheetName);
+            return GDriveSpreedSheetUtil.getData("FeaturedBrand", testSheetName);
 
         } else if (method.getName().equals("create_EditorialSubTemplate_WhyWeTravel")) {
-            return DataUtil.getData(xls, "TemplateName", testSheetName);
+           // return DataUtil.getData(xls, "TemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TemplateName", testSheetName);
         }
 
 

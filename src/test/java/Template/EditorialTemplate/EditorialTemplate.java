@@ -1,6 +1,7 @@
 package Template.EditorialTemplate;
 
 import FeedContent.feedContent;
+import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import NodeAndComponentConfig.navigateToNode;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
@@ -101,9 +102,9 @@ public class EditorialTemplate extends testBase {
     @Test(dataProvider = "readTestData")
     public void createEditorialTemplate(Hashtable<String, String> data) throws Exception {
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -155,9 +156,9 @@ public class EditorialTemplate extends testBase {
 
         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"AuthorProfiles",testSheetName,"ComponentName").get(0);
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -207,9 +208,9 @@ public class EditorialTemplate extends testBase {
 
         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"FlexCard",testSheetName,"ComponentName").get(0);
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -261,9 +262,9 @@ public class EditorialTemplate extends testBase {
 
         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"CategoryCardModule",testSheetName,"ComponentName").get(0);
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -315,9 +316,9 @@ public class EditorialTemplate extends testBase {
     public void add_HeaderMedia_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws Exception {
 
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -354,9 +355,9 @@ public class EditorialTemplate extends testBase {
     public void add_EditorialHero_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws Exception {
 
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -392,9 +393,9 @@ public class EditorialTemplate extends testBase {
 
        String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"TextCopyFolder",testSheetName,"ComponentName").get(0);
 
-       if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-           throw new SkipException("Skipping the test as Rnumode is N");
-       }
+      /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }*/
 
        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
            throw new SkipException("Skipping the test as Rnumode is N");
@@ -446,9 +447,9 @@ public class EditorialTemplate extends testBase {
     public void add_FeaturedContent_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException {
 
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -483,9 +484,9 @@ public class EditorialTemplate extends testBase {
 
         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"EditoriaQuotes",testSheetName,"ComponentName").get(0);
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -539,9 +540,9 @@ public class EditorialTemplate extends testBase {
 
         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"GridMediaFolder",testSheetName,"ComponentName").get(0);
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -594,9 +595,9 @@ public class EditorialTemplate extends testBase {
 
        String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"HalfWidthMedia",testSheetName,"ComponentName").get(0);
 
-       if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-           throw new SkipException("Skipping the test as Rnumode is N");
-       }
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }*/
 
        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
            throw new SkipException("Skipping the test as Rnumode is N");
@@ -659,9 +660,9 @@ public class EditorialTemplate extends testBase {
 
         String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"FeaturedBrand",testSheetName,"ComponentName").get(0);
 
-        if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
             throw new SkipException("Skipping the test as Rnumode is N");
-        }
+        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -713,9 +714,9 @@ public class EditorialTemplate extends testBase {
 
       String TopMostComponentName = DataUtil.returnTestDataForSpecificColumnFromSpecificSheet(xls,"MediaCarousel",testSheetName,"ComponentName").get(0);
 
-      if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-          throw new SkipException("Skipping the test as Rnumode is N");
-      }
+    /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }*/
 
       if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
           throw new SkipException("Skipping the test as Rnumode is N");
@@ -772,48 +773,61 @@ public class EditorialTemplate extends testBase {
 
 
     @DataProvider(name = "readTestData")
-    public Object[][] getData(Method method) {
+    public Object[][] getData(Method method) throws IOException {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
         if (method.getName().equals("createEditorialTemplate")) {
-            return DataUtil.getData(xls, "EditorialTemplateName", testSheetName);
+           // return DataUtil.getData(xls, "EditorialTemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getData("EditorialTemplateName", testSheetName);
 
         } else if (method.getName().equals("add_TextCopyFolder_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+          //  return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("TextCopyFolder", testSheetName);
 
         } else if (method.getName().equals("add_Editorial_Quotes_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "EditoriaQuotes", testSheetName);
+           // return DataUtil.getData(xls, "EditoriaQuotes", testSheetName);
+            return GDriveSpreedSheetUtil.getData("EditoriaQuotes", testSheetName);
 
         } else if (method.getName().equals("add_GridMediaFolder_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "GridMediaFolder", testSheetName);
+           // return DataUtil.getData(xls, "GridMediaFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("GridMediaFolder", testSheetName);
 
         } else if (method.getName().equals("add_HeaderMedia_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "HeaderMedia", testSheetName);
+           // return DataUtil.getData(xls, "HeaderMedia", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HeaderMedia", testSheetName);
 
         } else if (method.getName().equals("add_EditorialHero_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "EditorialHero", testSheetName);
+           // return DataUtil.getData(xls, "EditorialHero", testSheetName);
+            return GDriveSpreedSheetUtil.getData("EditorialHero", testSheetName);
 
         } else if (method.getName().equals("add_FeaturedContent_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "FeaturedContent", testSheetName);
+           // return DataUtil.getData(xls, "FeaturedContent", testSheetName);
+            return GDriveSpreedSheetUtil.getData("FeaturedContent", testSheetName);
 
         } else if (method.getName().equals("add_MediaCarousel_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "MediaCarousel", testSheetName);
+           // return DataUtil.getData(xls, "MediaCarousel", testSheetName);
+            return GDriveSpreedSheetUtil.getData("MediaCarousel", testSheetName);
 
         } else if (method.getName().equals("add_CategoryCardModule_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "CategoryCardModule", testSheetName);
+           // return DataUtil.getData(xls, "CategoryCardModule", testSheetName);
+            return GDriveSpreedSheetUtil.getData("CategoryCardModule", testSheetName);
 
         } else if (method.getName().equals("add_FlexCard_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "FlexCard", testSheetName);
+           // return DataUtil.getData(xls, "FlexCard", testSheetName);
+            return GDriveSpreedSheetUtil.getData("FlexCard", testSheetName);
 
         } else if (method.getName().equals("add_FeaturedBrand_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "FeaturedBrand", testSheetName);
+           // return DataUtil.getData(xls, "FeaturedBrand", testSheetName);
+            return GDriveSpreedSheetUtil.getData("FeaturedBrand", testSheetName);
 
         } else if (method.getName().equals("add_HalfWidthMedia_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "HalfWidthMedia", testSheetName);
+           // return DataUtil.getData(xls, "HalfWidthMedia", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HalfWidthMedia", testSheetName);
 
         } else if (method.getName().equals("add_AuthorProfiles_Component_Inside_EditorialTemplate")) {
-            return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
+           // return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
+            return GDriveSpreedSheetUtil.getData("AuthorProfiles", testSheetName);
         }
 
 
