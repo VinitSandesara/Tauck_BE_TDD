@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF34.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF34.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF64.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF64.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF71.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF71.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_WhyWeTravel.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_WhyWeTravel.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,11 +41,21 @@
       <file leaf-file-name="Editorial_SEM.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="303">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Editorial_PDF11.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -968,14 +970,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/base/testBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="79" column="52" lean-forward="false" selection-start-line="79" selection-start-column="52" selection-end-line="79" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ExtentReport/ExtentTestManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="744">
@@ -1171,18 +1165,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/base/testBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="745">
-          <caret line="171" column="5" lean-forward="true" selection-start-line="171" selection-start-column="5" selection-end-line="171" selection-end-column="5" />
+        <state relative-caret-position="660">
+          <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="303">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

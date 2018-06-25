@@ -20,7 +20,7 @@ import java.util.Hashtable;
 public class Editorial_SEM extends testBase {
 
 
-    String testSheetName = "Editorial_PDF71";
+    String testSheetName = "Editorial_SEM";
     // public mapControlWithDataSource mapcontrolWithDataSource;
     String TemplateName;
     String topNodePath;
