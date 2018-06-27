@@ -76,6 +76,9 @@ public class globalTemplateImplementation extends utility {
     @FindBy(linkText = CommonLocators.EDIT_HTML_LINK)
     public WebElement _editHtmlLink;
 
+    @FindBy(linkText = CommonLocators.EDIT_HTML_LINK)
+    public List<WebElement> _multipleEditHtmlLink;
+
     @FindBy(xpath = CommonLocators.LAUNCHPAD_ICON)
     public List<WebElement> _lunchPadIcon;
 
@@ -320,6 +323,7 @@ public class globalTemplateImplementation extends utility {
     public globalTemplateImplementation switchToContentIframeDialog(String parent, String child) throws InterruptedException {
 
 
+        Thread.sleep(2000);
         try {
 
             while ((maxTimeInSeconds) != 0) {
@@ -367,7 +371,7 @@ public class globalTemplateImplementation extends utility {
     public feedContent createTemplateOrTemplateComponent(String templateOrComponentName) throws InterruptedException {
 
 
-        Thread.sleep(3000);
+        Thread.sleep(2000);
         _childFrameTextbox.sendKeys(templateOrComponentName);
         _childFrameTextbox.sendKeys(Keys.ENTER);
         driver.switchTo().defaultContent();
@@ -446,6 +450,8 @@ public class globalTemplateImplementation extends utility {
 
     public void clearAndFillContentFields(List<WebElement> parentTable, String col, String row, String input, String _textAreaTextBox, String inputData) throws InterruptedException {
 
+        int totalEditLinks=0;
+
         List<String> temp = new ArrayList<String>();
         if (!temp.isEmpty()) {
             temp.clear();
@@ -481,7 +487,8 @@ public class globalTemplateImplementation extends utility {
 
                     try {
                         waitForPageLoad(20);
-                        _editHtmlLink.click();
+                        _multipleEditHtmlLink.get(totalEditLinks).click();
+                        totalEditLinks++;
                         waitForPageLoad(20);
                         switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
                         clearTextboxPreFeededData(_htmlEditorTextArea);

@@ -43,10 +43,11 @@ public class mapDataSourceWithControlLocators {
     // Control properties placeholder and data source xpath list
     public static final String PLACEHOLDER_DATASOURCE_OK_BUTTON = "//input[@value='OK']";
 
+    // Final layout default link
+    public static final String FINALLAYOUT_DEFAULT_LINK =   "//span[@title='Default']";
 
 
-
-
+    public static final String SEARCH_FOR_CONTROL_FOLDER = "Navigation";
 
 
 

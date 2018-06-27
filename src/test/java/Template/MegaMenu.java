@@ -10,6 +10,7 @@ import Util.DataUtil;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
+import mapDataSourceWithFE.editorialTemplateControls;
 import mapDataSourceWithFE.mapControlWithDataSource;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
@@ -30,6 +31,75 @@ public class MegaMenu extends testBase {
     //  public mapControlWithDataSource mapcontrolWithDataSource;
     String TemplateName;
     String topNodePath;
+
+
+
+   /* @Test
+    public void mapDataSourceWithFrontEndControls() throws Exception {
+
+
+        invokeBrowser();
+
+        editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
+        PageFactory.initElements(driver, controls);
+
+        controls
+                .launchSitecore()
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
+
+                .clickPresentationLink()
+                .clickDetailsLink()
+                .clickFinalLayoutTabInsideLayoutDetailsDialog()
+                .navigateToDeviceEditor()
+                .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
+
+        List<String> listOfComponentToMapWithDataSource = GDriveSpreedSheetUtil.getListOfControlsForMapping(testSheetName, "Template_Control");
+
+        for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
+
+            //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
+            Hashtable<String, String> data = GDriveSpreedSheetUtil.getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap(listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+
+            List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
+            List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
+            List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
+
+            for (int i = 0; i < splitControlString.size(); i++) {
+                controls
+                        // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                        .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
+            }
+
+            for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
+
+                controls
+                        .addNewControls()
+                        .selectWhichControlsToAdd()
+                        .addEditorialTemplateFEControl(splitControlString.get(innerloop))
+                        .openPropertyDialogBoxCheckbox()
+                        .clickSelectButton()
+
+                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), topNodePath + "/" + splitDatasourceString.get(innerloop));
+
+            }
+
+        }
+
+
+        controls
+                .saveAndCloseDeviceEditorAndLayoutDetails()
+                .logOut();
+        // }
+
+
+
+    }*/
+
+
+
+
 
 
    @Test(dataProvider = "readTestData")

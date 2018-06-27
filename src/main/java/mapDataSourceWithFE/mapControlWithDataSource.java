@@ -9,6 +9,7 @@ import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -35,6 +36,11 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
     @FindBy(xpath = mapDataSourceWithControlLocators.EDITORIAL_LAYOUT)
     public List<WebElement> _editorialLayout;
 
+    @FindBy(xpath = mapDataSourceWithControlLocators.FINALLAYOUT_DEFAULT_LINK)
+    public List<WebElement> _finalLayoutDefaultLink;
+
+    @FindBy(linkText = mapDataSourceWithControlLocators.SEARCH_FOR_CONTROL_FOLDER)
+    public WebElement _searchForControlFolder;
 
     @FindBy(linkText = mapDataSourceWithControlLocators.DEVICE_EDITOR_CONTROLS)
     public WebElement _deviceEditorControls;
@@ -89,8 +95,15 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
 
     public mapControlWithDataSource navigateToDeviceEditor() throws Exception {
         //waitForPageLoad(30);
-        waitForElementToBeVisible(_editorialLayout.get(1));
-        _editorialLayout.get(1).click();
+       /* waitForElementToBeVisible(_editorialLayout.get(1));
+        _editorialLayout.get(1).click();*/
+
+        waitForElementToBeVisible(_finalLayoutDefaultLink.get(1));
+        Actions actionOne = new Actions(driver);
+      //  _finalLayoutDefaultLink.get(1).click();
+        actionOne.doubleClick(_finalLayoutDefaultLink.get(1)).perform();
+
+
         return this;
 
     }
@@ -144,6 +157,11 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
 
     }
 
+    public mapControlWithDataSource searchForControlFolderAndClick() {
+
+        _searchForControlFolder.click();
+        return this;
+    }
 
 
 
