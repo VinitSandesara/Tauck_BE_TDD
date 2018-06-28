@@ -25,6 +25,9 @@ public class mapDataSourceWithControlLocators {
     // Device Editor Controls Remove button xpath
     public static final String DEVICE_EDITOR_CONTROLS_REMOVE_BUTTON =   "//button[@id='btnRemove']";
 
+    // Device Editor Controls Edit button xpath
+    public static final String DEVICE_EDITOR_CONTROLS_EDIT_BUTTON =   "//button[@id='btnEdit']";
+
     // Device Editor Controls Add button xpath
     public static final String DEVICE_EDITOR_CONTROLS_ADD_BUTTON =  "//button[@class='scButton']";
 
@@ -48,6 +51,18 @@ public class mapDataSourceWithControlLocators {
 
 
     public static final String SEARCH_FOR_CONTROL_FOLDER = "Navigation";
+
+
+    //ceckbox
+    public static final String SELECT_RENDERING_CHECKBOX =   "OpenProperties";
+
+    //ceckbox
+    public static final String SELECT_RENDERING_RENDERING_DIALOG =   "Renderings";
+
+    public static final String MAXIMIZE_SELECT_RENDERING_DIALOG = "//div[@class='ui-dialog-titlebar-buttonpane']";
+
+
+
 
 
 

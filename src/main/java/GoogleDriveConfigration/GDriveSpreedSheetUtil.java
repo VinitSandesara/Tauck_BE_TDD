@@ -91,7 +91,7 @@ public class GDriveSpreedSheetUtil {
                             Boolean isITblank = value.isEmpty();
 
                             if (value.isEmpty() != true) {
-                                if (key.equalsIgnoreCase("Control") || key.equalsIgnoreCase("PlaceHolder") || key.equalsIgnoreCase("DataSource")) {
+                                if (key.equalsIgnoreCase("Control") || key.equalsIgnoreCase("PlaceHolder") || key.equalsIgnoreCase("DataSource") || key.equalsIgnoreCase("ControlFolder")) {
                                     data.put(key, value);
                                 }
                             }

@@ -8,6 +8,7 @@ import Util.Config;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
+import mapDataSourceWithFE.editorialTemplateControls;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
@@ -30,6 +31,66 @@ public class Categroy_Collection_Template extends testBase {
 
     String PortraitHighlightIntraCopyPath;
     String LandScapeHighlightIntraCopyPath;
+
+
+    @Test(dependsOnMethods = {"Create_Category_Collection_Template"})
+    public void mapDataSourceWithFrontEndControls() throws Exception {
+
+
+        invokeBrowser();
+
+        editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
+        PageFactory.initElements(driver, controls);
+
+        controls
+                .launchSitecore()
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
+
+                .clickPresentationLink()
+                .clickDetailsLink()
+                .clickFinalLayoutTabInsideLayoutDetailsDialog()
+                .navigateToDeviceEditor()
+                .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
+
+        List<String> listOfComponentToMapWithDataSource = GDriveSpreedSheetUtil.getListOfControlsForMapping(testSheetName, "Template_Control");
+
+        for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
+
+            Hashtable<String, String> data = GDriveSpreedSheetUtil.getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap(listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+
+            List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
+            List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
+            List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
+            List<String> splitControlFolders = Arrays.asList(data.get("ControlFolder").split("\\/"));
+
+                controls
+                        // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                        .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
+
+            for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
+
+                controls
+                        .addNewControls()
+                        .searchForControlFolderAndSelectControlFromFolder(splitControlFolders, splitControlString.get(innerloop))
+
+                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), topNodePath + "/" + splitDatasourceString.get(innerloop));
+
+            }
+
+        }
+
+        controls
+                .saveAndCloseDeviceEditorAndLayoutDetails()
+                .logOut();
+
+    }
+
+
+
+
+
 
     @Test(dataProvider = "readTestData")
     public void Create_Category_Collection_Template(Hashtable<String, String> data) throws InterruptedException {
@@ -68,7 +129,7 @@ public class Categroy_Collection_Template extends testBase {
     }
 
 
-      @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
+   /*   @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
       // @Test(dataProvider = "readTestData")
       public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 
@@ -306,7 +367,7 @@ public class Categroy_Collection_Template extends testBase {
         }
 
 
-
+*/
 
 
 

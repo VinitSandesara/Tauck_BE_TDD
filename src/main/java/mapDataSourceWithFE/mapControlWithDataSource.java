@@ -51,6 +51,9 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
     @FindBy(xpath = mapDataSourceWithControlLocators.DEVICE_EDITOR_CONTROLS_REMOVE_BUTTON)
     public WebElement _deviceEditorControlsRemoveButton;
 
+    @FindBy(xpath = mapDataSourceWithControlLocators.DEVICE_EDITOR_CONTROLS_EDIT_BUTTON)
+    public WebElement _deviceEditorControlsEditButton;
+
     @FindBy(xpath = mapDataSourceWithControlLocators.DEVICE_EDITOR_CONTROLS_ADD_BUTTON)
     public WebElement _deviceEditorControlsAddButton;
 
@@ -68,6 +71,15 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
 
     @FindBy(xpath = mapDataSourceWithControlLocators.PLACEHOLDER_DATASOURCE_OK_BUTTON)
     public WebElement _placeHolderDataSourceOkButton;
+
+    @FindBy(id = mapDataSourceWithControlLocators.SELECT_RENDERING_CHECKBOX)
+    public WebElement _selectRenderingcheckbox;
+
+    @FindBy(id = mapDataSourceWithControlLocators.SELECT_RENDERING_RENDERING_DIALOG)
+    public WebElement _renderingDialog;
+
+    @FindBy(xpath = mapDataSourceWithControlLocators.MAXIMIZE_SELECT_RENDERING_DIALOG)
+    public List<WebElement> _maximizeSelectARenderingDialog;
 
 
     public mapControlWithDataSource clickPresentationLink() throws Exception {
@@ -187,7 +199,9 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
             _placeholderAndDataSource.get(i).sendKeys(splitPlaceHolderDataSource.get(i));
         }*/
 
+        clearTextboxPreFeededData(_placeholderAndDataSource.get(0));
         _placeholderAndDataSource.get(0).sendKeys(placeholder);
+        clearTextboxPreFeededData(_placeholderAndDataSource.get(1));
         _placeholderAndDataSource.get(1).sendKeys(datasource);
 
         _placeHolderDataSourceOkButton.click();
@@ -238,6 +252,59 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
 
         return this;
     }
+
+
+    public mapControlWithDataSource checkAndMapPreAddedControlsIfPresent(String listOfControls) {
+
+
+
+            for (int j = 0; j < _preAddedControls.size(); j++) {
+
+                String value = _preAddedControls.get(j).findElement(By.tagName("b")).getText();
+
+                if (_preAddedControls.get(j).findElement(By.tagName("b")).getText().equalsIgnoreCase(listOfControls)) {
+                    _preAddedControls.get(j).click();
+                    _deviceEditorControlsEditButton.click();
+                    return this;
+                }
+            }
+
+
+        return this;
+    }
+
+
+    public mapControlWithDataSource searchForControlFolderAndSelectControlFromFolder(List<String> listOfFolders, String nameOfControl) throws InterruptedException {
+
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(Config.PARENT_FRAME);
+
+        // this is required to maximize select a rendering dialog window or else it doesn't click on folder.
+        _maximizeSelectARenderingDialog.get(2).findElement(By.linkText("maximize")).click();
+        driver.switchTo().frame(Config.CHILD_FRAME_THREE);
+
+       // switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME_THREE);
+
+        if(listOfFolders.size()!=2) {
+            driver.findElement(By.linkText(listOfFolders.get(0))).click();
+        }else {
+            driver.findElement(By.linkText(listOfFolders.get(0))).click();
+            _renderingDialog.findElement(By.linkText(listOfFolders.get(1))).click();
+            _renderingDialog.findElement(By.linkText(nameOfControl)).click();
+        }
+
+        waitForElementToBeVisible(_selectRenderingcheckbox);
+        _selectRenderingcheckbox.click();
+
+        waitForElementToBeVisible(_deviceEditorOkButton);
+        _deviceEditorOkButton.click();
+
+
+        return this;
+    }
+
+
+
 
 
 } // Main class is closing...

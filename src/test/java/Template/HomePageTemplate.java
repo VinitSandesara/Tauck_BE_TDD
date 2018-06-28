@@ -41,12 +41,9 @@ public class HomePageTemplate extends testBase {
     String LeadGenerationCopyFolderName;
 
 
-  /*  @Test
+    @Test(dependsOnMethods = {"createHomeTemplate"})
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
-        Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
-
-        // if (DataUtil.readSpecificTestDataFromExcel(xls, "MapControlWithDataSource", testSheetName, "Runmode").get("Runmode").equalsIgnoreCase("Y")) {
 
         invokeBrowser();
 
@@ -65,46 +62,51 @@ public class HomePageTemplate extends testBase {
                 .navigateToDeviceEditor()
                 .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
 
-        List<String> listOfComponentToMapWithDataSource = DataUtil.grabControlListForMapping(xls, testSheetName, "Template_Control");
+        List<String> listOfComponentToMapWithDataSource = GDriveSpreedSheetUtil.getListOfControlsForMapping(testSheetName, "Template_Control");
 
         for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
 
-            //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
-            Hashtable<String, String> data = DataUtil.getControlDatasourcePlaceholderValueFromXls(xls, listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+            Hashtable<String, String> data = GDriveSpreedSheetUtil.getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap(listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
 
             List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
             List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
             List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
+            List<String> splitControlFolders = Arrays.asList(data.get("ControlFolder").split("\\/"));
 
-            for (int i = 0; i < splitControlString.size(); i++) {
-                controls
-                        // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
-                        .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
-            }
+            controls
+                    // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                    .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
 
             for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
 
                 controls
                         .addNewControls()
-                        .selectWhichControlsToAdd()
-                        .addEditorialTemplateFEControl(splitControlString.get(innerloop))
-                        .openPropertyDialogBoxCheckbox()
-                        .clickSelectButton()
+                        .searchForControlFolderAndSelectControlFromFolder(splitControlFolders, splitControlString.get(innerloop));
 
-                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), topNodePath + "/" + splitDatasourceString.get(innerloop));
+                        if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("TravellingWithTauckPortraitCards")) {
+                            controls
+                                    .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), TravellingWithTauckNodePath + "/" + splitDatasourceString.get(innerloop));
+
+                        } else {
+                            if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("LeadGenerationCards")) {
+                                controls
+                                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), LeadGenerationFolderNodePath + "/" + splitDatasourceString.get(innerloop));
+                            } else {
+                                controls
+                                        .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), LeadGenerationCopyNodePath + "/" + splitDatasourceString.get(innerloop));
+                            }
+                        }
+
 
             }
 
         }
 
-
         controls
                 .saveAndCloseDeviceEditorAndLayoutDetails()
                 .logOut();
-        // }
 
-    }*/
-
+    }
 
 
     @Test(dataProvider = "readTestData")
@@ -148,12 +150,10 @@ public class HomePageTemplate extends testBase {
 
 
 
-    @Test(dataProvider = "readTestData")
+ /* @Test(dataProvider = "readTestData")
     public void createTravellingWithTaucksFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
-        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -184,17 +184,15 @@ public class HomePageTemplate extends testBase {
         sitecore .logOut();
 
 
-    }
+    }*/
 
-    @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
+   /* @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
 
-        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -223,14 +221,12 @@ public class HomePageTemplate extends testBase {
 
 
     }
-
+*/
 
     @Test(dataProvider = "readTestData")
     public void createLeadGenerationFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
-       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -264,15 +260,13 @@ public class HomePageTemplate extends testBase {
 
     }
 
-     @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
+   /*  @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
 
-        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -299,14 +293,12 @@ public class HomePageTemplate extends testBase {
                 .logOut();
 
 
-    }
+    } */
 
     @Test(dataProvider = "readTestData")
     public void createLeadGenerationCopyFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
-        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -343,15 +335,13 @@ public class HomePageTemplate extends testBase {
     }
 
 
-    @Test(dependsOnMethods = {"createLeadGenerationCopyFolderInsideGlobal"}, dataProvider = "readTestData")
+ /*   @Test(dependsOnMethods = {"createLeadGenerationCopyFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createLeadGenerationCopy(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
 
-       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -380,13 +370,13 @@ public class HomePageTemplate extends testBase {
 
     }
 
-    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+
+
+ /*   @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 
-         /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -415,9 +405,7 @@ public class HomePageTemplate extends testBase {
     // @Test(dataProvider = "readTestData")
     public void fillTravellingWithTauck(Hashtable<String, String> data) throws Exception {
 
-         /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -448,9 +436,7 @@ public class HomePageTemplate extends testBase {
     // @Test(dataProvider = "readTestData")
     public void fillTauckExperienceComponent(Hashtable<String, String> data) throws Exception {
 
-      /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -482,9 +468,7 @@ public class HomePageTemplate extends testBase {
     // @Test(dataProvider = "readTestData")
     public void fillFeaturedContent(Hashtable<String, String> data) throws Exception {
 
-        /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -510,6 +494,7 @@ public class HomePageTemplate extends testBase {
 
     }
 
+    */
 
 
 

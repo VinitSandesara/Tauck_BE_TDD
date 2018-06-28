@@ -1,10 +1,12 @@
 package rough;
 
+import Util.Config;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,20 +17,20 @@ public class mapDataSource {
 
     public static void main(String arg[]) throws IOException, InterruptedException {
 
-        String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/chromedriver";
+        String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/MacChromeDriver/chromedriver";
 
 
         System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
         driver = new ChromeDriver();
 
-        driver.get("http://dev2017.tauck.com/sitecore/login");
+        driver.get("http://qa2017.tauck.com/sitecore/login");
 
         driver.findElement(By.id("UserName")).sendKeys("vinit");
         driver.findElement(By.id("Password")).sendKeys("vinit");
         driver.findElement(By.id("Password")).sendKeys(Keys.ENTER);
-        driver.findElement(By.linkText("FeedContent Editor")).click();
+      //  driver.findElement(By.linkText("FeedContent Editor")).click();
 
-        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/automation-editorial");
+        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/destinations/category_thru_automation");
         driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);
         driver.findElement(By.xpath("//div[@id='SearchHeader']/div[1]/a")).click();
         driver.findElement(By.id("TreeSearch")).clear();
@@ -48,9 +50,11 @@ public class mapDataSource {
 
         // EditorialLayout click
 
-        List<WebElement> editorialTemplateList = driver.findElements(By.xpath("//span[text() = 'EditorialLayout']"));
+        Actions actionOne = new Actions(driver);
 
-        editorialTemplateList.get(1).click();
+        List<WebElement> editorialTemplateList = driver.findElements(By.xpath("//span[@title='Default']"));
+
+        actionOne.doubleClick(editorialTemplateList.get(1)).perform();
 
         // Controls click
 
@@ -60,6 +64,43 @@ public class mapDataSource {
         driver.switchTo().frame("scContentIframeId1");
 
         driver.findElement(By.linkText("Controls")).click();
+
+        // add button
+
+        WebElement addBtn = driver.findElement(By.xpath("//button[@class='scButton']"));
+        addBtn.click();
+
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(Config.PARENT_FRAME);
+
+        List<WebElement> total = driver.findElements(By.xpath("//div[@class='ui-dialog-titlebar-buttonpane']"));
+        total.get(2).findElement(By.linkText("maximize")).click();
+
+     //   driver.switchTo().defaultContent();
+     //   driver.switchTo().frame(Config.PARENT_FRAME);
+        driver.switchTo().frame(Config.CHILD_FRAME_THREE);
+
+
+
+     //   driver.findElement(By.xpath("//span[text() = 'Common']")).click();
+
+        driver.findElement(By.linkText("Common")).click();
+
+
+        List<WebElement> totalLinks = driver.findElements(By.id("Renderings"));
+
+        int size = totalLinks.size();
+
+        totalLinks.get(0).findElement(By.linkText("Highlights")).click();
+
+        driver.findElement(By.linkText("Highlights Portrait Component")).click();
+
+
+
+
+
+
+
 
         // List of Controls
 
