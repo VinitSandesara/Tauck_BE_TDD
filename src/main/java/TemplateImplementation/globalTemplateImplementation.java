@@ -482,6 +482,8 @@ public class globalTemplateImplementation extends utility {
 
         for (int i = 0; i < parentTable.size(); i++) {
 
+            Thread.sleep(3000);
+
             List<WebElement> column = parentTable.get(i).findElements(By.tagName(col));
             System.out.println("Total Col are :- " + column.size());
 
