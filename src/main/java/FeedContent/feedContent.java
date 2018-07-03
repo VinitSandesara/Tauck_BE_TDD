@@ -102,8 +102,8 @@ public class feedContent extends globalTemplateImplementation {
             List<WebElement> totalInput = _homePageContentSectionsPanelTables.get(counter).findElements(By.tagName("table"));
 
             clearAndFillContentFields(totalInput, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
-            Thread.sleep(5000);
             _save.click();
+            Thread.sleep(5000);
 
             // After Filling content screenshot
             // highlightElement(_contentArea);
