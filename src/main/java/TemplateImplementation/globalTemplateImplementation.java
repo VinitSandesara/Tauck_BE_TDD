@@ -183,6 +183,22 @@ public class globalTemplateImplementation extends utility {
         return this;
     }
 
+    public HomePage navigateToWhichTauckNode_ForSectionInput(String nodeName) throws InterruptedException {
+        waitForPageLoad(30);
+        _searchTextBox.sendKeys(nodeName);
+        _searchTextBox.sendKeys(Keys.ENTER);
+
+        _searchResultCloseIcon.click();
+        _searchTextBox.clear();
+
+        HomePage homepage = new HomePage(driver, test);
+        PageFactory.initElements(driver, homepage);
+        return homepage;
+
+
+    }
+
+
     public globalTemplateImplementation checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(String nodeName) throws InterruptedException {
 
         waitForPageLoad(30);

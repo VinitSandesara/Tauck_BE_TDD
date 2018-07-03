@@ -150,7 +150,7 @@ public class HomePageTemplate extends testBase {
 
 
 
- /* @Test(dataProvider = "readTestData")
+  @Test(dataProvider = "readTestData")
     public void createTravellingWithTaucksFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -184,9 +184,9 @@ public class HomePageTemplate extends testBase {
         sitecore .logOut();
 
 
-    }*/
+    }
 
-   /* @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
@@ -221,7 +221,7 @@ public class HomePageTemplate extends testBase {
 
 
     }
-*/
+
 
     @Test(dataProvider = "readTestData")
     public void createLeadGenerationFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
@@ -260,7 +260,7 @@ public class HomePageTemplate extends testBase {
 
     }
 
-   /*  @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
@@ -293,7 +293,7 @@ public class HomePageTemplate extends testBase {
                 .logOut();
 
 
-    } */
+    }
 
     @Test(dataProvider = "readTestData")
     public void createLeadGenerationCopyFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
@@ -335,7 +335,7 @@ public class HomePageTemplate extends testBase {
     }
 
 
- /*   @Test(dependsOnMethods = {"createLeadGenerationCopyFolderInsideGlobal"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createLeadGenerationCopyFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createLeadGenerationCopy(Hashtable<String, String> data) throws InterruptedException, IOException {
 
@@ -372,7 +372,7 @@ public class HomePageTemplate extends testBase {
 
 
 
- /*   @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 
@@ -395,7 +395,8 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-                .expandHeroSettingsSection()
+                //.expandHeroSettingsSection()
+                .expandSections("Section_Hero_Settings")
                 .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), counter)
                 .logOut();
 
@@ -424,7 +425,8 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-                .expandTravellingWithTauckContentSection()
+              //  .expandTravellingWithTauckContentSection()
+                .expandSections("Section_Traveling_With_Tauck")
                 .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), counter)
                 .logOut();
 
@@ -455,7 +457,8 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-                .expandTauckExperienceComponentSection()
+              //  .expandTauckExperienceComponentSection()
+                .expandSections("Section_Tauck_Experience_Component")
                 .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), counter)
                 .logOut();
 
@@ -487,14 +490,15 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-                .expandFeaturedContentSection()
+              //  .expandFeaturedContentSection()
+                .expandSections("Section_Featured_Content")
                 .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), counter)
                 .logOut();
 
 
     }
 
-    */
+
 
 
 

@@ -48,6 +48,10 @@ public class CommonLocators {
 
     public static final String LOG_OUT = "//span[@class='logout']";
 
+    public static final String CONTENT_TREELIST = "//div[@class='scContentControl scContentControlTreelist']";
+
+    public static final String CONTENT_TREELIST_VALUES = "//span[@class='scContentTreeNodeTitle']";
+
 
 
 

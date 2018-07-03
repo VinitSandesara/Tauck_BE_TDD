@@ -178,7 +178,7 @@ public class GDriveSpreedSheetUtil {
 
     public static Object[][] getData(String testCaseName, String sheetName) throws IOException {
 
-        List<List<Object>> response = returnResponse(sheetName + "!A1:R").getValues();
+        List<List<Object>> response = returnResponse(sheetName + "!A1:Z").getValues();
 
 
         int testStartRowNum = 0;

@@ -2,9 +2,6 @@ package FeedContent;
 
 import Locators.CommonLocators;
 import Locators.HomePageLocators;
-import Locators.MapDataSourceWithFEControl.mapDataSourceWithControlLocators;
-import NodeAndComponentConfig.navigateToNode;
-import TemplateImplementation.Editorial;
 import TemplateImplementation.globalTemplateImplementation;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -30,6 +27,10 @@ public class feedContent extends globalTemplateImplementation {
 
     @FindBy(xpath = CommonLocators.MULTIPLE_TABLES)
     public List<WebElement> _multipleTables;
+
+    @FindBy(xpath = CommonLocators.CONTENT_TREELIST)
+    public List<WebElement> _contentTreeList;
+
 
     @FindBy(xpath = CommonLocators.CONTAINER_OF_CONTENT)
     public WebElement _contentArea;
@@ -62,8 +63,6 @@ public class feedContent extends globalTemplateImplementation {
     public List<WebElement> _homePageContentSectionsPanelTotalTables;
 
 
-
-
     public feedContent feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
 
         try {
@@ -74,8 +73,8 @@ public class feedContent extends globalTemplateImplementation {
             _save.click();
 
             // After Filling content screenshot
-           // highlightElement(_contentArea);
-          //  test.addScreenCaptureFromPath(captureScreen());
+            // highlightElement(_contentArea);
+            //  test.addScreenCaptureFromPath(captureScreen());
 
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
@@ -106,8 +105,8 @@ public class feedContent extends globalTemplateImplementation {
             _save.click();
 
             // After Filling content screenshot
-           // highlightElement(_contentArea);
-          //  test.addScreenCaptureFromPath(captureScreen());
+            // highlightElement(_contentArea);
+            //  test.addScreenCaptureFromPath(captureScreen());
 
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
@@ -128,8 +127,7 @@ public class feedContent extends globalTemplateImplementation {
     }
 
 
-
-    public feedContent feedContent_Fields_With_Data (String inputData, int whichTable) throws IOException {
+    public feedContent feedContent_Fields_With_Data(String inputData, int whichTable) throws IOException {
 
         try {
             Thread.sleep(3000);
@@ -159,23 +157,21 @@ public class feedContent extends globalTemplateImplementation {
     }
 
 
-
-
     public feedContent fill_Component_Content_With_Data(String inputData) throws IOException {
 
         try {
             Thread.sleep(3000);
             // Before filling content screenshot
-          //  scrollToElement(_table.get(_table.size()-1));
-        //    highlightElement(_contentArea);
-         //   test.addScreenCaptureFromPath(captureScreen());
+            //  scrollToElement(_table.get(_table.size()-1));
+            //    highlightElement(_contentArea);
+            //   test.addScreenCaptureFromPath(captureScreen());
 
             clearAndFillContentFields(_table, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
             _save.click();
 
             // After Filling content screenshot
-         //   highlightElement(_contentArea);
-          //  test.addScreenCaptureFromPath(captureScreen());
+            //   highlightElement(_contentArea);
+            //  test.addScreenCaptureFromPath(captureScreen());
 
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
@@ -231,6 +227,30 @@ public class feedContent extends globalTemplateImplementation {
             actionOne.doubleClick(element).perform();
             Thread.sleep(3000);
         }
+        _save.click();
+        return this;
+    }
+
+
+    public feedContent select_From_Content_TreeList(int index, List<String> treeListValues) {
+
+        List<WebElement> _contentTreeListValues = _contentTreeList.get(index).findElements(By.xpath(CommonLocators.CONTENT_TREELIST_VALUES));
+
+        for (int i = 0; i < treeListValues.size(); i++) {
+
+            for (int j = 0; j < _contentTreeListValues.size(); j++) {
+
+                if (_contentTreeListValues.get(j).getText().equalsIgnoreCase(treeListValues.get(i))) {
+
+                    Actions treeListAction = new Actions(driver);
+                    treeListAction.doubleClick(_contentTreeListValues.get(j)).perform();
+                    break;
+                }
+
+            }
+
+        }
+
         _save.click();
         return this;
     }

@@ -34,6 +34,9 @@ public class HomePage extends globalTemplateImplementation {
     @FindBy(xpath = HomePageLocators.CONTENT_FEATURED_CONTENT)
     public WebElement _contentFeaturedContent;
 
+    @FindBy(xpath = HomePageLocators.CONTENT_SHIP_SPECIFICATION)
+    public WebElement _contentShipSpecification;
+
     @FindBy(xpath = HomePageLocators.CONTENT_TRAVELLING_WITH_TAUCK)
     public WebElement _contentTravellingWithTauck;
 
@@ -157,7 +160,48 @@ public class HomePage extends globalTemplateImplementation {
 
     }
 
+    public feedContent expandShipSpecificationSection() throws InterruptedException {
 
+        counter = 0;
+
+        waitForPageLoad(10);
+        while(!_howManyContentSectionsPanelAreThere.get(counter).getAttribute("id").startsWith("Section_Specifications")) {
+            counter++;
+        }
+
+        if(_contentShipSpecification.getAttribute("class").equalsIgnoreCase("scEditorSectionCaptionCollapsed")) {
+            _contentShipSpecification.click();
+        }
+
+        feedContent feedcontent = new feedContent(driver, test);
+        PageFactory.initElements(driver, feedcontent);
+        return feedcontent;
+
+
+    }
+
+
+    public feedContent expandSections(String sectionName ) throws InterruptedException {
+
+        counter = 0;
+
+        waitForPageLoad(10);
+        while(!_howManyContentSectionsPanelAreThere.get(counter).getAttribute("id").startsWith(sectionName)) {
+            counter++;
+        }
+
+        WebElement element =  driver.findElement(By.xpath(" //div[starts-with(@id,'"+sectionName+"')] ")) ;
+
+        if(element.getAttribute("class").equalsIgnoreCase("scEditorSectionCaptionCollapsed")) {
+            element.click();
+        }
+
+        feedContent feedcontent = new feedContent(driver, test);
+        PageFactory.initElements(driver, feedcontent);
+        return feedcontent;
+
+
+    }
 
 
 

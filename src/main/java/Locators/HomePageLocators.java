@@ -20,5 +20,6 @@ public class HomePageLocators {
     public static final String ALREADY_EXPANDED_CONTENT_SECTIONS_PANEL = "//div[@class='scEditorSectionCaptionExpanded']";
 
 
+    public static final String CONTENT_SHIP_SPECIFICATION = "//div[starts-with(@id,'Section_Specifications')]";
 
 }

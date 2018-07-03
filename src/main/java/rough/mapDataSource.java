@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
 
 public class mapDataSource {
@@ -30,10 +31,35 @@ public class mapDataSource {
         driver.findElement(By.id("Password")).sendKeys(Keys.ENTER);
       //  driver.findElement(By.linkText("FeedContent Editor")).click();
 
-        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/destinations/category_thru_automation");
+        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/data/ships/le-boreal/decks/deck-2");
         driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);
         driver.findElement(By.xpath("//div[@id='SearchHeader']/div[1]/a")).click();
         driver.findElement(By.id("TreeSearch")).clear();
+
+        String value = "Deluxe Cabin,Deluxe Suite,Prestige Cabin,Prestige Suite,Superior Cabin";
+        List<String> inputSt = Arrays.asList(value.split(","));
+
+        List<WebElement> totalTreeList = driver.findElements(By.xpath("//div[@class='scContentControl scContentControlTreelist']"));
+
+        List<WebElement> totalTreeListAct1 = totalTreeList.get(0).findElements(By.xpath("//span[@class='scContentTreeNodeTitle']"));
+
+
+        for(int i=0;i<inputSt.size();i++) {
+
+            for(int j=0;j<totalTreeListAct1.size();j++) {
+
+                String linkValue2 = totalTreeListAct1.get(0).getText();
+                if(totalTreeListAct1.get(j).findElement(By.linkText("a")).toString().equalsIgnoreCase(inputSt.get(i))) {
+
+                    System.out.println("Matched : - " );
+
+                }
+
+            }
+
+        }
+
+
 
         // presentation click
         driver.findElement(By.xpath("//div[@class='scRibbonNavigatorButtonsGroupButtons']/a[text()='Presentation']")).click();

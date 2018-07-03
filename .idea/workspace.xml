@@ -4,19 +4,24 @@
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Reports/extent.html" afterPath="$PROJECT_DIR$/Reports/extent.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" afterPath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" afterPath="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" afterPath="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" afterPath="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Locators/HomePageLocators.java" afterPath="$PROJECT_DIR$/src/main/java/Locators/HomePageLocators.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java" afterPath="$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" afterPath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Util/Config.java" afterPath="$PROJECT_DIR$/src/main/java/Util/Config.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/rough/mapDataSource.java" afterPath="$PROJECT_DIR$/src/main/java/rough/mapDataSource.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" afterPath="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" afterPath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/FeedContent/feedContent.class" afterPath="$PROJECT_DIR$/target/classes/FeedContent/feedContent.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/GoogleDriveConfigration/GDriveSpreedSheetUtil.class" afterPath="$PROJECT_DIR$/target/classes/GoogleDriveConfigration/GDriveSpreedSheetUtil.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.class" afterPath="$PROJECT_DIR$/target/classes/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapDataSourceWithFE/mapControlWithDataSource.class" afterPath="$PROJECT_DIR$/target/classes/mapDataSourceWithFE/mapControlWithDataSource.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Locators/CommonLocators.class" afterPath="$PROJECT_DIR$/target/classes/Locators/CommonLocators.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Locators/HomePageLocators.class" afterPath="$PROJECT_DIR$/target/classes/Locators/HomePageLocators.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TemplateImplementation/HomePage.class" afterPath="$PROJECT_DIR$/target/classes/TemplateImplementation/HomePage.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" afterPath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Util/Config.class" afterPath="$PROJECT_DIR$/target/classes/Util/Config.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/rough/mapDataSource.class" afterPath="$PROJECT_DIR$/target/classes/rough/mapDataSource.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/Categroy_Collection_Template.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/Categroy_Collection_Template.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" />
       <change beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -42,7 +47,10 @@
     <SUITE FILE_PATH="coverage/tauckBE$testEditorial.coverage" NAME="testEditorial Coverage Results" MODIFIED="1523891263251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Template.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/TauckSitecore$testng.coverage" NAME="testng Coverage Results" MODIFIED="1530205702964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TauckSitecore$testng.coverage" NAME="testng Coverage Results" MODIFIED="1530648401690" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TauckSitecore$mapDataSource.coverage" NAME="mapDataSource Coverage Results" MODIFIED="1530630588924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>rough.*</FILTER>
+    </SUITE>
   </component>
   <component name="CoverageOptionsProvider">
     <option name="myAddOrReplace" value="2" />
@@ -53,21 +61,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+      <file leaf-file-name="ShipDetail.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="607">
+              <caret line="91" column="61" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="864">
-              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
+      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="936">
+              <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePage.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="517">
+              <caret line="147" column="120" lean-forward="false" selection-start-line="147" selection-start-column="96" selection-end-line="147" selection-end-column="120" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePageTemplate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -85,9 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>headerMedia_content_HeaderMediaSettings</find>
-      <find>editorialHero_content_HeroSettings</find>
-      <find>textCopyFolder_Content_SingleRichText</find>
       <find>editorialQuotes_content_Quotes</find>
       <find>gridMediaFolder_content_GridMedia</find>
       <find>halfWidthMeida_Content_Segment</find>
@@ -115,6 +152,9 @@
       <find>addEditorialTemplateFEControl</find>
       <find>DEVICE_EDITOR_OK_BUTTON</find>
       <find>CreateAndInputLandScapeHighlightIntroCopy</find>
+      <find>Create_Deck_Plans_Decks_Inside_Decks_Folder</find>
+      <find>Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder</find>
+      <find>//div[starts-with(@id,'Section_Specifications')]</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -128,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Util/WaitUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/editorialTemplateControls.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/AssertUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/Editorial_SubTemplate_OnlyWithTauck.java" />
@@ -146,13 +185,9 @@
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/Editorial.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/HomePage.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/Home.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Locators/HomePageLocators.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java" />
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/EditorialSubTemplates.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/utility.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/Editorial_PDF11.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParallelTest/WebDriverListener.java" />
         <option value="$PROJECT_DIR$/src/test/java/base/testBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/DataUtil.java" />
@@ -169,16 +204,21 @@
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" />
-        <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/rough/mapDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" />
         <option value="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Locators/HomePageLocators.java" />
+        <option value="$PROJECT_DIR$/src/main/java/rough/mapDataSource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/Config.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
       </list>
     </option>
   </component>
@@ -196,7 +236,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="136" />
+    <option name="x" value="133" />
     <option name="y" value="23" />
     <option name="width" value="2382" />
     <option name="height" value="1336" />
@@ -219,8 +259,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,7 +304,64 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="base" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ExtentReport" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="FeedContent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="GoogleDriveConfigration" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Listener" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Locators" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="Locators" type="462c0819:PsiDirectoryNode" />
+              <item name="MapDataSourceWithFEControl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mapDataSourceWithFE" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
@@ -287,6 +386,13 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
@@ -317,21 +423,10 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="Template" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="TauckSitecore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="Template" type="462c0819:PsiDirectoryNode" />
-              <item name="EditorialTemplate" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -508,7 +603,7 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
-    <configuration name="HomePageTemplate.createHomeTemplate" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="HomePageTemplate.fillHeroSettings" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="Template.EditorialTemplate.*" />
@@ -521,7 +616,7 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="Template" />
       <option name="MAIN_CLASS_NAME" value="Template.HomePageTemplate" />
-      <option name="METHOD_NAME" value="createHomeTemplate" />
+      <option name="METHOD_NAME" value="fillHeroSettings" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -540,10 +635,10 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="HomePageTemplate.fillHeroSettings" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="ShipDetail.input_Onboard_Experience_Section_Fields" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Template.EditorialTemplate.*" />
+          <option name="PATTERN" value="Template.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -552,8 +647,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="Template" />
-      <option name="MAIN_CLASS_NAME" value="Template.HomePageTemplate" />
-      <option name="METHOD_NAME" value="fillHeroSettings" />
+      <option name="MAIN_CLASS_NAME" value="Template.ShipDetail" />
+      <option name="METHOD_NAME" value="input_Onboard_Experience_Section_Fields" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="METHOD" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -636,18 +731,18 @@
       <item index="0" class="java.lang.String" itemvalue="Maven.Run Maven" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.testng" />
       <item index="2" class="java.lang.String" itemvalue="Application.DataUtil" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.HomePageTemplate.createHomeTemplate" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.HomePageTemplate.fillHeroSettings" />
-      <item index="5" class="java.lang.String" itemvalue="Application.GDriveSpreedSheetUtil" />
-      <item index="6" class="java.lang.String" itemvalue="Application.mapDataSource" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.HomePageTemplate.fillHeroSettings" />
+      <item index="4" class="java.lang.String" itemvalue="Application.GDriveSpreedSheetUtil" />
+      <item index="5" class="java.lang.String" itemvalue="Application.mapDataSource" />
+      <item index="6" class="java.lang.String" itemvalue="TestNG.ShipDetail.input_Onboard_Experience_Section_Fields" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.mapDataSource" />
-        <item index="1" class="java.lang.String" itemvalue="Application.GDriveSpreedSheetUtil" />
-        <item index="2" class="java.lang.String" itemvalue="Application.DataUtil" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.HomePageTemplate.fillHeroSettings" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.HomePageTemplate.createHomeTemplate" />
+        <item index="0" class="java.lang.String" itemvalue="TestNG.ShipDetail.input_Onboard_Experience_Section_Fields" />
+        <item index="1" class="java.lang.String" itemvalue="Application.mapDataSource" />
+        <item index="2" class="java.lang.String" itemvalue="Application.GDriveSpreedSheetUtil" />
+        <item index="3" class="java.lang.String" itemvalue="Application.DataUtil" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.HomePageTemplate.fillHeroSettings" />
       </list>
     </recent_temporary>
   </component>
@@ -668,34 +763,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="testng - 2018.06.28 at 13h 24m 34s.xml">
+    <history-entry file="ShipDetail_input_Onboard_Experience_Section_Fields - 2018.07.03 at 15h 04m 56s.xml">
+      <configuration name="ShipDetail.input_Onboard_Experience_Section_Fields" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="testng - 2018.07.03 at 12h 16m 20s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 13h 27m 32s.xml">
+    <history-entry file="testng - 2018.07.03 at 12h 23m 51s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 13h 34m 00s.xml">
+    <history-entry file="testng - 2018.07.03 at 12h 39m 44s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 13h 37m 53s.xml">
+    <history-entry file="testng - 2018.07.03 at 12h 53m 34s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 13h 41m 05s.xml">
+    <history-entry file="testng - 2018.07.03 at 13h 04m 35s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 15h 04m 18s.xml">
+    <history-entry file="testng - 2018.07.03 at 14h 46m 00s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 15h 08m 40s.xml">
+    <history-entry file="testng - 2018.07.03 at 14h 48m 30s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 15h 31m 23s.xml">
+    <history-entry file="testng - 2018.07.03 at 15h 06m 22s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.06.28 at 15h 44m 33s.xml">
-      <configuration name="testng" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="testng - 2018.06.28 at 15h 47m 29s.xml">
+    <history-entry file="testng - 2018.07.03 at 15h 07m 17s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -709,7 +804,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="136" y="23" width="2382" height="1336" extended-state="0" />
+    <frame x="133" y="23" width="2382" height="1336" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -724,11 +819,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957885" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28767124" sideWeight="0.49799398" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49838337" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24571429" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24529915" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32774517" sideWeight="0.49838337" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1957265" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2008547" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24975514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -812,7 +907,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/rough/mapDataSource.java</url>
-          <line>32</line>
+          <line>33</line>
           <properties />
           <option name="timeStamp" value="256" />
         </line-breakpoint>
@@ -823,13 +918,13 @@
           <option name="timeStamp" value="259" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java</url>
-          <line>79</line>
+          <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
+          <line>91</line>
           <properties />
-          <option name="timeStamp" value="260" />
+          <option name="timeStamp" value="268" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="261" />
+      <option name="time" value="269" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
@@ -842,114 +937,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/NodeAndComponentConfig/rightClickInsert.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="96" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/Editorial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-286">
-          <caret line="104" column="17" lean-forward="false" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tauckBE.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Listener/RetryListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Listener/TestListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/POMBackup/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/ThreadLocalDemo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="26" column="1" lean-forward="false" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/annotations/Test.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-228">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rough/kickoffuser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ExtentReport/ExtentTestManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="39" column="47" lean-forward="true" selection-start-line="39" selection-start-column="47" selection-end-line="39" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/WebDriverListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="11" column="56" lean-forward="true" selection-start-line="11" selection-start-column="56" selection-end-line="11" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/aventstack/extentreports/3.0.5/extentreports-3.0.5.jar!/com/aventstack/extentreports/ExtentReports.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Reports/ReportsConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="951">
-          <caret line="51" column="19" lean-forward="true" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ExtentReport/ExtentManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/Xls_Reader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -961,24 +948,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="77" lean-forward="true" selection-start-line="0" selection-start-column="77" selection-end-line="0" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1001">
-          <caret line="200" column="0" lean-forward="true" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GoogleSheetApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="90" column="20" lean-forward="true" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -999,19 +968,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="315" column="5" lean-forward="true" selection-start-line="315" selection-start-column="5" selection-end-line="315" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1272">
           <caret line="392" column="9" lean-forward="true" selection-start-line="392" selection-start-column="9" selection-end-line="392" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1019,14 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1018">
           <caret line="509" column="0" lean-forward="true" selection-start-line="509" selection-start-column="0" selection-end-line="509" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/base/testBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1044,14 +996,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2146">
-          <caret line="125" column="19" lean-forward="true" selection-start-line="125" selection-start-column="19" selection-end-line="125" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/ProductTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1063,31 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="719">
           <caret line="228" column="16" lean-forward="true" selection-start-line="228" selection-start-column="16" selection-end-line="228" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="404">
-          <caret line="27" column="31" lean-forward="false" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1589">
-          <caret line="134" column="0" lean-forward="true" selection-start-line="134" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,39 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-130">
           <caret line="144" column="70" lean-forward="true" selection-start-line="144" selection-start-column="70" selection-end-line="144" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="138" column="27" lean-forward="false" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
-          <caret line="476" column="33" lean-forward="false" selection-start-line="476" selection-start-column="33" selection-end-line="476" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/utility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1069">
-          <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="102" column="17" lean-forward="true" selection-start-line="102" selection-start-column="17" selection-end-line="102" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1135,14 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="77" column="41" lean-forward="false" selection-start-line="77" selection-start-column="41" selection-end-line="77" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/editorial_FE_Control.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1155,84 +1033,299 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="88" column="0" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4483">
+          <caret line="191" column="62" lean-forward="true" selection-start-line="191" selection-start-column="62" selection-end-line="191" selection-end-column="62" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/WebDriverListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/ThreadLocalDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="5" column="26" lean-forward="true" selection-start-line="5" selection-start-column="26" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-13">
+          <caret line="284" column="0" lean-forward="true" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/base/testBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="856">
+          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/Editorial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/AssertUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="8" column="36" lean-forward="true" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/WaitUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/excelDataUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="40" lean-forward="false" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/driverBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExtentReport/ExtentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="62" column="66" lean-forward="true" selection-start-line="62" selection-start-column="66" selection-end-line="62" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ExtentReport/ExtentTestManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GoogleSheetApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="848">
+          <caret line="72" column="47" lean-forward="true" selection-start-line="72" selection-start-column="47" selection-end-line="72" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="276" column="36" lean-forward="false" selection-start-line="276" selection-start-column="36" selection-end-line="276" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="201" column="0" lean-forward="true" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/Invoker.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="514" column="5" lean-forward="true" selection-start-line="514" selection-start-column="5" selection-end-line="514" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="514">
+          <caret line="488" column="35" lean-forward="true" selection-start-line="488" selection-start-column="35" selection-end-line="488" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testng.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/utility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/rough/mapDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="89" column="30" lean-forward="true" selection-start-line="89" selection-start-column="30" selection-end-line="89" selection-end-column="30" />
+        <state relative-caret-position="543">
+          <caret line="131" column="0" lean-forward="true" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="59" column="31" lean-forward="false" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+        <state relative-caret-position="383">
+          <caret line="21" column="49" lean-forward="true" selection-start-line="21" selection-start-column="49" selection-end-line="21" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/editorial_FE_Control.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rough/kickoffuser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/rough/mapDataSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1128">
+          <caret line="57" column="13" lean-forward="false" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="52" column="99" lean-forward="true" selection-start-line="52" selection-start-column="99" selection-end-line="52" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13396">
+          <caret line="625" column="48" lean-forward="false" selection-start-line="625" selection-start-column="48" selection-end-line="625" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4821">
+          <caret line="113" column="0" lean-forward="true" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2337">
+          <caret line="245" column="16" lean-forward="true" selection-start-line="245" selection-start-column="16" selection-end-line="245" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/MethodInvocationHelper.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="386" column="23" lean-forward="false" selection-start-line="386" selection-start-column="23" selection-end-line="386" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/HomePageLocators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/seleniumhq/selenium/selenium-api/3.8.1/selenium-api-3.8.1.jar!/org/openqa/selenium/WebElement.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="849">
+          <caret line="184" column="32" lean-forward="true" selection-start-line="184" selection-start-column="32" selection-end-line="184" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="91" column="61" lean-forward="true" selection-start-line="91" selection-start-column="13" selection-end-line="91" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="517">
+          <caret line="147" column="120" lean-forward="false" selection-start-line="147" selection-start-column="96" selection-end-line="147" selection-end-column="120" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1096">
-          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2020">
-          <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        <state relative-caret-position="408">
+          <caret line="39" column="38" lean-forward="true" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="864">
+          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="43" column="1" lean-forward="true" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
           <folding />
         </state>
       </provider>
