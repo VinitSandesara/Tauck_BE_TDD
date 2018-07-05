@@ -63,7 +63,7 @@ public class feedContent extends globalTemplateImplementation {
     public List<WebElement> _homePageContentSectionsPanelTotalTables;
 
 
-    public feedContent feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
+   /* public feedContent feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
 
         try {
             Thread.sleep(3000);
@@ -92,22 +92,23 @@ public class feedContent extends globalTemplateImplementation {
 
         return this;
 
-    }
+    }*/
 
-    public feedContent clear_And_feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
+
+    public feedContent input_Sections_Fields_Save_And_Logout(String inputData, int counter) throws IOException {
 
         try {
             Thread.sleep(2000);
 
-            List<WebElement> totalInput = _homePageContentSectionsPanelTables.get(counter).findElements(By.tagName("table"));
+            List<WebElement> totalInput = _multipleTables.get(counter).findElements(By.tagName("table"));
 
             clearAndFillContentFields(totalInput, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
-            _save.click();
-            Thread.sleep(5000);
 
-            // After Filling content screenshot
-            // highlightElement(_contentArea);
-            //  test.addScreenCaptureFromPath(captureScreen());
+            logOut();
+
+            Thread.sleep(2000);
+            new Actions(driver).sendKeys(Keys.RETURN).build().perform();
+
 
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());

@@ -152,7 +152,7 @@ public class Categroy_Collection_Template extends testBase {
           homePage
                   .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                   .expandHeroSettingsSection()
-                  .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), counter)
+                  .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
                   .logOut();
 
       }
@@ -182,7 +182,7 @@ public class Categroy_Collection_Template extends testBase {
           homePage
                   .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                   .expandFeaturedContentSection()
-                  .clear_And_feed_HomePage_Content_Sections_Panel(data.get("Content"), counter)
+                  .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
                   .logOut();
 
 

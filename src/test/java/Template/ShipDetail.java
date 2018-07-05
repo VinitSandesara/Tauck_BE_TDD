@@ -90,8 +90,8 @@ public class ShipDetail extends testBase {
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                 .expandSections("Section_Onboard_Experience")
-                .feedContent_Fields_With_Data(ContentString,7)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(ContentString,7);
+            //    .logOut();
 
     }
 
