@@ -153,7 +153,7 @@ public class Categroy_Collection_Template extends testBase {
                   .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                   .expandHeroSettingsSection()
                   .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
-                  .logOut();
+               //   .logOut();
 
       }
 
@@ -183,7 +183,7 @@ public class Categroy_Collection_Template extends testBase {
                   .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                   .expandFeaturedContentSection()
                   .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
-                  .logOut();
+               //   .logOut();
 
 
       }
