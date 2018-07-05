@@ -216,8 +216,8 @@ public class HomePageTemplate extends testBase {
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Content Types/Portrait Trip Image Card" ,data.get("CardsName"), this.getClass().getSimpleName())
                 .input_Sections_Fields_Save_And_Logout(data.get("Content_PortraitTripImageCard"), 0)
-                .input_Sections_Fields_Save_And_Logout(data.get("Content_PortraitTripImageCardHoover"), 1)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(data.get("Content_PortraitTripImageCardHoover"), 1);
+             //   .logOut();
 
 
     }
@@ -289,8 +289,8 @@ public class HomePageTemplate extends testBase {
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("CardsName"))
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), 0)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), 0);
+               // .logOut();
 
 
     }
@@ -364,8 +364,8 @@ public class HomePageTemplate extends testBase {
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("CopyName"))
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), 0)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), 0);
+            //    .logOut();
 
 
     }
@@ -397,8 +397,8 @@ public class HomePageTemplate extends testBase {
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                 //.expandHeroSettingsSection()
                 .expandSections("Section_Hero_Settings")
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
+               // .logOut();
 
     }
 
@@ -427,8 +427,8 @@ public class HomePageTemplate extends testBase {
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
               //  .expandTravellingWithTauckContentSection()
                 .expandSections("Section_Traveling_With_Tauck")
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
+               // .logOut();
 
 
     }
@@ -459,8 +459,8 @@ public class HomePageTemplate extends testBase {
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
               //  .expandTauckExperienceComponentSection()
                 .expandSections("Section_Tauck_Experience_Component")
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
+              //  .logOut();
 
 
     }
@@ -492,8 +492,8 @@ public class HomePageTemplate extends testBase {
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
               //  .expandFeaturedContentSection()
                 .expandSections("Section_Featured_Content")
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter)
-                .logOut();
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
+            //    .logOut();
 
 
     }
