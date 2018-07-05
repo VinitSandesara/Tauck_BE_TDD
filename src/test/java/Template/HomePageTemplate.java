@@ -184,43 +184,6 @@ public class HomePageTemplate extends testBase {
 
     }
 
-    @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
-    // @Test(dataProvider = "readTestData")
-    public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
-
-
-
-
-
-        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-
-        invokeBrowser();
-
-        HomePage homePage = new HomePage(driver, test.get());
-        PageFactory.initElements(driver, homePage);
-
-        homePage
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-
-                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(TravellingWithTauckNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
-
-                .navigateToWhichTauckNode(TravellingWithTauckNodePath)
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Content Types/Portrait Trip Image Card" ,data.get("CardsName"), this.getClass().getSimpleName())
-                .feedContent_Fields_With_Data(data.get("Content_PortraitTripImageCard"), 0)
-                .input_Sections_Fields_Save_And_Logout(data.get("Content_PortraitTripImageCardHoover"), 1);
-             //   .logOut();
-
-
-    }
-
-
     @Test(dataProvider = "readTestData")
     public void createLeadGenerationFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
@@ -254,41 +217,6 @@ public class HomePageTemplate extends testBase {
         }
 
         sitecore.logOut();
-
-
-    }
-
-     @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
-    // @Test(dataProvider = "readTestData")
-    public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
-
-
-
-
-
-        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-
-        invokeBrowser();
-
-        HomePage homePage = new HomePage(driver, test.get());
-        PageFactory.initElements(driver, homePage);
-
-        homePage
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-
-                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(LeadGenerationFolderNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
-
-                .navigateToWhichTauckNode(LeadGenerationFolderNodePath)
-                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                .createTemplateOrTemplateComponent(data.get("CardsName"))
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), 0);
-               // .logOut();
 
 
     }
@@ -331,6 +259,83 @@ public class HomePageTemplate extends testBase {
 
 
     }
+
+
+  /*  @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
+
+
+
+
+
+        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+        invokeBrowser();
+
+        HomePage homePage = new HomePage(driver, test.get());
+        PageFactory.initElements(driver, homePage);
+
+        homePage
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(TravellingWithTauckNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(TravellingWithTauckNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Content Types/Portrait Trip Image Card" ,data.get("CardsName"), this.getClass().getSimpleName())
+                .feedContent_Fields_With_Data(data.get("Content_PortraitTripImageCard"), 0)
+                .input_Sections_Fields_Save_And_Logout(data.get("Content_PortraitTripImageCardHoover"), 1);
+             //   .logOut();
+
+
+    }
+
+
+
+
+     @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
+
+
+
+
+
+        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+        invokeBrowser();
+
+        HomePage homePage = new HomePage(driver, test.get());
+        PageFactory.initElements(driver, homePage);
+
+        homePage
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(LeadGenerationFolderNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(LeadGenerationFolderNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("CardsName"))
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), 0);
+               // .logOut();
+
+
+    }
+
+
 
 
     @Test(dependsOnMethods = {"createLeadGenerationCopyFolderInsideGlobal"}, dataProvider = "readTestData")
@@ -496,7 +501,7 @@ public class HomePageTemplate extends testBase {
 
     }
 
-
+*/
 
 
 

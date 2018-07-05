@@ -23,7 +23,7 @@ public class Config {
     public static final String DEV_USERNAME = System.getProperty("username");
     public static final String DEV_PASSWORD = System.getProperty("password");
 
-    /* public static final String DEV_HOMEPAGE_URL = "http://qa2017.tauck.com/sitecore/login";
+   /*  public static final String DEV_HOMEPAGE_URL = "http://qa2017.tauck.com/sitecore/login";
     public static final String DEV_USERNAME = "v";
     public static final String DEV_PASSWORD = "v";*/
 

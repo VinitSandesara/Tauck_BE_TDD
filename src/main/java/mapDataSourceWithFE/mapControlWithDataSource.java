@@ -287,6 +287,7 @@ public class mapControlWithDataSource extends globalTemplateImplementation {
 
         if(listOfFolders.size()!=2) {
             driver.findElement(By.linkText(listOfFolders.get(0))).click();
+            _renderingDialog.findElement(By.linkText(nameOfControl)).click();
         }else {
             driver.findElement(By.linkText(listOfFolders.get(0))).click();
             _renderingDialog.findElement(By.linkText(listOfFolders.get(1))).click();
