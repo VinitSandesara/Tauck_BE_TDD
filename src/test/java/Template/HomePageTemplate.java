@@ -41,7 +41,7 @@ public class HomePageTemplate extends testBase {
     String LeadGenerationCopyFolderName;
 
 
-    @Test(dependsOnMethods = {"createHomeTemplate"})
+    @Test(dependsOnMethods = {"createHomeTemplate" , "createTravellingWithTaucksFolderInsideGlobal", "createLeadGenerationFolderInsideGlobal", "createLeadGenerationCopyFolderInsideGlobal"} )
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
 
@@ -112,9 +112,7 @@ public class HomePageTemplate extends testBase {
     @Test(dataProvider = "readTestData")
     public void createHomeTemplate(Hashtable<String, String> data) throws InterruptedException {
 
-       /* if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
+
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");

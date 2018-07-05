@@ -13,7 +13,7 @@
   <test name="Test">
       <parameter name="browserName" value="chrome"></parameter>
       <classes>
-          <class name="Template.ShipDetail" />
+          <class name="Template.HomePageTemplate" />
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -129,7 +129,7 @@ public class Categroy_Collection_Template extends testBase {
     }
 
 
-   /*   @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
+      @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
       // @Test(dataProvider = "readTestData")
       public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 
@@ -367,7 +367,7 @@ public class Categroy_Collection_Template extends testBase {
         }
 
 
-*/
+
 
 
 
