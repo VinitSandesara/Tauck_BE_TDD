@@ -9,6 +9,8 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 public class ExtentManager {
@@ -23,15 +25,23 @@ public class ExtentManager {
     }
 
     public synchronized static ExtentReports getExtent() {
+
         if (extent == null) {
+            Date date = new Date();
+
+            SimpleDateFormat ft =
+                    new SimpleDateFormat ("E MM.dd.yyyy 'at' hh:mm:ss a");
+
+
             extent = new ExtentReports();
             extent.attachReporter(getHtmlReporter());
 /*			if (System.getenv("ExtentX").equalsIgnoreCase("true")) {
         extent.attachReporter(getExtentXReporter());
 			}*/
-            extent.setSystemInfo("Selenium Java Version", "2.53.0");
-            extent.setSystemInfo("Environment", "Prod");
-            extent.setSystemInfo("AppiumVersion", "4.0.0");
+            extent.setSystemInfo("Date/Time", ft.format(date));
+            extent.setSystemInfo("Application", "Sitecore");
+            extent.setSystemInfo("Environment", System.getProperty("env"));
+            extent.setSystemInfo("User", System.getProperty("username"));
 
         }
 
