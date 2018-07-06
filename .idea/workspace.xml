@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" afterPath="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -44,8 +44,8 @@
       <file leaf-file-name="Categroy_Collection_Template.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="143" column="26" lean-forward="true" selection-start-line="143" selection-start-column="26" selection-end-line="143" selection-end-column="26" />
+            <state relative-caret-position="702">
+              <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -65,9 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mediaCarousel_content_CardSettings</find>
-      <find>add_FeaturedContent_Component_Inside_EditorialTemplate</find>
-      <find>_textAreaTextBox</find>
       <find>createLeadGenerationFolderInsideGlobal</find>
       <find>createTravellingWithTaucksFolderInsideGlobal</find>
       <find>navigateToWhichTauckNode</find>
@@ -95,6 +92,9 @@
       <find>&quot;//div[@class='scEditorSections']/table/tbody/tr/td&quot;</find>
       <find>createLeadGenerationCopy</find>
       <find>input_Sections_Fields_Save_And_Logout</find>
+      <find>fillHeroSettings</find>
+      <find>Feed_Featured_Content_Section_Fields</find>
+      <find>Feed_Hero_Module_Hero_Setttings_Section_Fields</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,7 +175,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="38" />
     <option name="y" value="23" />
     <option name="width" value="2382" />
@@ -752,7 +752,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="23" width="2382" height="1336" extended-state="0" />
+    <frame x="38" y="23" width="2382" height="1336" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1285,8 +1285,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="143" column="26" lean-forward="true" selection-start-line="143" selection-start-column="26" selection-end-line="143" selection-end-column="26" />
+        <state relative-caret-position="702">
+          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
