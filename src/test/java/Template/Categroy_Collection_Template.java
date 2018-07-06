@@ -133,6 +133,8 @@ public class Categroy_Collection_Template extends testBase {
       // @Test(dataProvider = "readTestData")
       public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 
+          test.get().assignCategory(data.get("TestReportTag")).assignAuthor("Implemented by"+"::"+ " Vinit");
+
 
           if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
               throw new SkipException("Skipping the test as Rnumode is N");
@@ -162,6 +164,7 @@ public class Categroy_Collection_Template extends testBase {
       // @Test(dataProvider = "readTestData")
       public void fillFeaturedContent(Hashtable<String, String> data) throws Exception {
 
+          test.get().assignCategory(data.get("TestReportTag")).assignAuthor("Implemented by"+"::"+ " Vinit");
 
 
           if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {

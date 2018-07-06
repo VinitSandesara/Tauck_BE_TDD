@@ -10,8 +10,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import static TemplateImplementation.HomePage.counter;
 
@@ -19,7 +20,19 @@ public class mapDataSource {
     public static WebDriver driver;
     static String maxTimeOut = "25";
 
-    public static void main(String arg[]) throws IOException, InterruptedException {
+    public static void main(String arg[]) throws IOException, InterruptedException, ParseException {
+
+
+        Date date1 = new Date();
+        System.out.println(date1);
+
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+// or pass in a command line arg: -Duser.timezone="UTC"
+
+        Date date2 = new Date();
+        System.out.println(date2);
+
+
 
         String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/MacChromeDriver/chromedriver";
 

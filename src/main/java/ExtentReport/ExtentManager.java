@@ -30,7 +30,7 @@ public class ExtentManager {
             Date date = new Date();
 
             SimpleDateFormat ft =
-                    new SimpleDateFormat ("E MM.dd.yyyy 'at' hh:mm:ss a");
+                    new SimpleDateFormat ("E MM/dd/yyyy 'at' hh:mm:ss a");
 
 
             extent = new ExtentReports();
