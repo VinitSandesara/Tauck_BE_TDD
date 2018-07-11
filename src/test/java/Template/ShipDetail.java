@@ -1,7 +1,6 @@
 package Template;
 
 import GoogleDriveConfigration.GDriveSpreedSheetUtil;
-import TemplateImplementation.HomePage;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
 import Util.Xls_Reader;
@@ -14,11 +13,7 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.Arrays;
 import java.util.Hashtable;
-import java.util.List;
-
-import static TemplateImplementation.HomePage.counter;
 
 /*
 
@@ -38,7 +33,6 @@ import static TemplateImplementation.HomePage.counter;
  */
 
 
-
 public class ShipDetail extends testBase {
 
     String testSheetName = "ShipDetail";
@@ -48,11 +42,13 @@ public class ShipDetail extends testBase {
     String deckPlansCabinCatNodePath;
     String deckPlansDeckNodePath;
     String PortraitHighlightIntraCopyPath;
+    String shipPartnersWithPartnersInsideNodePath;
+    String shipPartnersNodePath;
 
 
 
 
-    @Test(dataProvider = "readTestData")
+  /*  @Test(dataProvider = "readTestData")
     public void Create_Ship_Inside_Home_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -293,10 +289,12 @@ public class ShipDetail extends testBase {
                 .input_Sections_Fields_Save_And_Logout(bind_Content_Fields_In_One_String("Onboard_Experience", testSheetName),7);
 
     }
-
+*/
 
     @Test(dataProvider = "readTestData")
-    public void Create_Ship_Inside_Data_Folder(Hashtable<String, String> data) throws InterruptedException {
+    public void Create_Ship_Inside_Data_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
+
+        // GDriveSpreedSheetUtil.getTestDataFromExcel("Ship Partners", testSheetName);
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
@@ -315,9 +313,9 @@ public class ShipDetail extends testBase {
                 .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
-        if(sitecore.checkWhetherParentNodeIsPresentOrNot(dataShipNodePath)!=true) {
+        if (sitecore.checkWhetherParentNodeIsPresentOrNot(dataShipNodePath) != true) {
             System.out.println("Parent Node already present please go ahead...");
-        }else {
+        } else {
 
             sitecore
                     .navigateToWhichTauckNode("/sitecore/content/Tauck/data/ships")
@@ -332,7 +330,99 @@ public class ShipDetail extends testBase {
     }
 
 
-   @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
+    public void Create_Ship_Partners_Folders(Hashtable<String, String> data) throws Exception {
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+        invokeBrowser();
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser();
+
+        if (data.get("RightClickInsert").equalsIgnoreCase("Ship Partners Folder")) {
+
+            shipPartnersNodePath = dataShipNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase();
+
+            // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
+            if (sitecore.checkWhetherParentNodeIsPresentOrNot(shipPartnersNodePath) != true) {
+                System.out.println("Parent Node already present please go ahead...");
+            } else {
+
+                sitecore
+                        .navigateToWhichTauckNode(dataShipNodePath)
+                        .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(data.get("ComponentName"));
+            }
+
+        } else {
+
+            shipPartnersWithPartnersInsideNodePath = shipPartnersNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase();
+
+            // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
+            if (sitecore.checkWhetherParentNodeIsPresentOrNot(shipPartnersWithPartnersInsideNodePath) != true) {
+                System.out.println("Parent Node already present please go ahead...");
+            } else {
+
+                sitecore
+                        .navigateToWhichTauckNode(shipPartnersNodePath)
+                        .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                        .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                        .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                        .fill_Component_Content_With_Data(data.get("Content"));
+            }
+
+        }
+
+        sitecore.logOut();
+
+
+    }
+
+
+    @Test(dependsOnMethods = {"Create_Ship_Partners_Folders"}, dataProvider = "readTestData")
+    public void Create_Ship_Partners_Half_Width_Media_Segment(Hashtable<String, String> data) throws Exception {
+
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+
+        invokeBrowser();
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(shipPartnersWithPartnersInsideNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+                .navigateToWhichTauckNode(shipPartnersWithPartnersInsideNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"))
+                .logOut();
+
+
+    }
+
+
+
+
+
+
+ /*  @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
     public void input_Ship_Specification_Sections_Fields(Hashtable<String, String> data) throws Exception {
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -504,7 +594,7 @@ public class ShipDetail extends testBase {
                 .logOut();
 
     }
-
+*/
 
 
     @DataProvider(name = "readTestData")
@@ -555,15 +645,19 @@ public class ShipDetail extends testBase {
         } else if (method.getName().equals("Create_Portrait_Highlights_Cards")) {
             // return DataUtil.getData(xls, "HeroSettings", testSheetName);
             return GDriveSpreedSheetUtil.getData("Portrait Highlights Cards", testSheetName);
+
+        } else if (method.getName().equals("Create_Ship_Partners_Half_Width_Media_Segment")) {
+            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Ship Partners List Of Partners", testSheetName);
+
+        } else if (method.getName().equals("Create_Ship_Partners_Folders")) {
+            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Ship_Partners", testSheetName);
         }
-
-
 
 
         return null;
     }
-
-
 
 
 } // Main class is closing

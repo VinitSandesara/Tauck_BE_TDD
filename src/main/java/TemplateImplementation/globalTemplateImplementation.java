@@ -8,7 +8,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import mapDataSourceWithFE.mapControlWithDataSource;
-import net.bytebuddy.implementation.bytecode.Throw;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -216,7 +215,7 @@ public class globalTemplateImplementation extends utility {
             _deleteLink.click();
             switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
             _deleteOkButton.click();
-          //  switchBackIFrameToItsOriginalState();
+            //  switchBackIFrameToItsOriginalState();
             try {
                 waitForPageLoad(30);
                 switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
@@ -225,7 +224,7 @@ public class globalTemplateImplementation extends utility {
                 waitForPageLoad(30);
                 switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
                 _deleteOkButton.click();
-            }catch (Throwable throwable) {
+            } catch (Throwable throwable) {
                 System.out.println("The Component that you are trying to delete has not yet been mapped with FE Control....");
                 switchBackIFrameToItsOriginalState();
             }
@@ -246,7 +245,7 @@ public class globalTemplateImplementation extends utility {
             _searchResultCloseIcon.click();
             _searchTextBox.clear();
             return true;
-        }catch (Throwable throwable) {
+        } catch (Throwable throwable) {
             _searchResultCloseIcon.click();
             _searchTextBox.clear();
             return false;
@@ -443,7 +442,7 @@ public class globalTemplateImplementation extends utility {
                         _htmlEditorTextArea.sendKeys(temp.get(i));
                         _htmlEditorAcceptButton.click();
                         waitForPageLoad(20);
-                    }catch (Throwable t1) {
+                    } catch (Throwable t1) {
                         continue;
                     }
                 }
@@ -464,10 +463,9 @@ public class globalTemplateImplementation extends utility {
     }
 
 
-
     public void clearAndFillContentFields(List<WebElement> parentTable, String col, String row, String input, String _textAreaTextBox, String inputData) throws InterruptedException {
 
-        int totalEditLinks=0;
+        int totalEditLinks = 0;
 
         List<String> temp = new ArrayList<String>();
         if (!temp.isEmpty()) {
@@ -494,6 +492,12 @@ public class globalTemplateImplementation extends utility {
                 clearTextboxPreFeededData(column.get(1).findElement(By.tagName("input")));
                 column.get(1).findElement(By.tagName("input")).sendKeys(temp.get(i));
 
+    // Reason to enter here is for the scenario say you wanna click on "Edit HTML" link but before that feild there is a field where you need to input image path or any path
+    // in this case what happens is after you enter path you need to enter to reflect path value (image) before going on to next field and input or click. Example URL is
+    // "/sitecore/content/Tauck/data/ships/le-ponant/ship-partners/le-ponant-partners/ponant" (try in QA env) notice there is "Content" field right after "Logo" field
+
+                column.get(1).findElement(By.tagName("input")).sendKeys(Keys.ENTER);
+
             } catch (Throwable e) {
                 try {
                     //column.get(1).findElement(By.xpath(_textAreaTextBox)).sendKeys(temp.get(i));
@@ -512,7 +516,7 @@ public class globalTemplateImplementation extends utility {
                         _htmlEditorTextArea.sendKeys(temp.get(i));
                         _htmlEditorAcceptButton.click();
                         waitForPageLoad(20);
-                    }catch (Throwable t1) {
+                    } catch (Throwable t1) {
                         continue;
                     }
                 }
@@ -533,7 +537,6 @@ public class globalTemplateImplementation extends utility {
     }
 
 
-
     public globalTemplateImplementation textCopyFolder_Content_SingleRichText(String inputData) throws InterruptedException {
 
         Thread.sleep(2000);
@@ -547,8 +550,6 @@ public class globalTemplateImplementation extends utility {
         _richTextEditorTextArea.sendKeys(inputData);
         return this;
     }
-
-
 
 
 } // Class ending here
