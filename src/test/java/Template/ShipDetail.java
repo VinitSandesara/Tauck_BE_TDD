@@ -52,7 +52,7 @@ public class ShipDetail extends testBase {
 
 
 
-    @Test(dataProvider = "readTestData")
+   /* @Test(dataProvider = "readTestData")
     public void Create_Ship_Inside_Home_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -293,7 +293,7 @@ public class ShipDetail extends testBase {
                 .input_Sections_Fields_Save_And_Logout(bind_Content_Fields_In_One_String("Onboard_Experience", testSheetName),7);
 
     }
-
+*/
 
     @Test(dataProvider = "readTestData")
     public void Create_Ship_Inside_Data_Folder(Hashtable<String, String> data) throws InterruptedException {
@@ -361,7 +361,7 @@ public class ShipDetail extends testBase {
 
 
 
-   @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
+  /* @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
     public void Create_Deck_Plans_Deck_Folder(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -504,7 +504,7 @@ public class ShipDetail extends testBase {
                 .logOut();
 
     }
-
+*/
 
 
     @DataProvider(name = "readTestData")
