@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" afterPath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" afterPath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -45,8 +44,8 @@
       <file leaf-file-name="ShipDetail.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="917">
-              <caret line="415" column="90" lean-forward="true" selection-start-line="415" selection-start-column="90" selection-end-line="415" selection-end-column="90" />
+            <state relative-caret-position="935">
+              <caret line="416" column="86" lean-forward="true" selection-start-line="416" selection-start-column="86" selection-end-line="416" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -57,8 +56,18 @@
       <file leaf-file-name="EditorialTemplate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1048">
-              <caret line="648" column="0" lean-forward="true" selection-start-line="648" selection-start-column="0" selection-end-line="648" selection-end-column="0" />
+            <state relative-caret-position="1063">
+              <caret line="649" column="8" lean-forward="true" selection-start-line="649" selection-start-column="8" selection-end-line="649" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -70,6 +79,18 @@
             <state relative-caret-position="638">
               <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="globalTemplateImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="257" column="78" lean-forward="false" selection-start-line="257" selection-start-column="78" selection-end-line="257" selection-end-column="78" />
+              <folding>
+                <element signature="e#16634#16642#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createEditorialSubTemplate_PDF11</find>
       <find>createEditorialSubTemplatePDF11</find>
       <find>createEditorialTemplate</find>
       <find>add_Editorial_Quotes_Component_Inside_EditorialTemplate</find>
@@ -128,6 +148,7 @@
       <find>Deselect_TreeList_Selected_Options_To_Reselect</find>
       <find>Ship_Specification</find>
       <find>Create_Ship_Inside_Data_Folder</find>
+      <find>navigateToWhichTauckNode</find>
       <find>fill_Component_Content_With_Data</find>
     </findStrings>
   </component>
@@ -919,7 +940,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>447</line>
+          <line>449</line>
           <properties />
           <option name="timeStamp" value="292" />
         </line-breakpoint>
@@ -1287,16 +1308,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="497" column="0" lean-forward="true" selection-start-line="497" selection-start-column="0" selection-end-line="497" selection-end-column="0" />
-          <folding>
-            <element signature="e#16634#16642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
@@ -1323,22 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1048">
-          <caret line="648" column="0" lean-forward="true" selection-start-line="648" selection-start-column="0" selection-end-line="648" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="899">
@@ -1350,10 +1345,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1063">
+          <caret line="649" column="8" lean-forward="true" selection-start-line="649" selection-start-column="8" selection-end-line="649" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="257" column="78" lean-forward="false" selection-start-line="257" selection-start-column="78" selection-end-line="257" selection-end-column="78" />
+          <folding>
+            <element signature="e#16634#16642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="917">
-          <caret line="415" column="90" lean-forward="true" selection-start-line="415" selection-start-column="90" selection-end-line="415" selection-end-column="90" />
+        <state relative-caret-position="935">
+          <caret line="416" column="86" lean-forward="true" selection-start-line="416" selection-start-column="86" selection-end-line="416" selection-end-column="86" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -413,6 +413,8 @@ public class ShipDetail extends testBase {
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("ComponentName"))
                 .fill_Component_Content_With_Data(data.get("Content"))
+
+                .navigateToWhichTauckNode(shipPartnersWithPartnersInsideNodePath, " ")
                 .Deselect_TreeList_Selected_Options_To_Reselect(data.get("ComponentName"))
                 .logOut();
 
