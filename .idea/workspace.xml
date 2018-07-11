@@ -44,8 +44,8 @@
       <file leaf-file-name="ShipDetail.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="416" column="86" lean-forward="true" selection-start-line="416" selection-start-column="86" selection-end-line="416" selection-end-column="86" />
+            <state relative-caret-position="440">
+              <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -940,7 +940,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>449</line>
+          <line>453</line>
           <properties />
           <option name="timeStamp" value="292" />
         </line-breakpoint>
@@ -952,7 +952,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>408</line>
+          <line>412</line>
           <properties />
           <option name="timeStamp" value="306" />
         </line-breakpoint>
@@ -1373,8 +1373,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="416" column="86" lean-forward="true" selection-start-line="416" selection-start-column="86" selection-end-line="416" selection-end-column="86" />
+        <state relative-caret-position="440">
+          <caret line="20" column="54" lean-forward="true" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

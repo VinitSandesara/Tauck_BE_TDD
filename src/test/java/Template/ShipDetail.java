@@ -1,6 +1,7 @@
 package Template;
 
 import GoogleDriveConfigration.GDriveSpreedSheetUtil;
+import TemplateImplementation.HomePage;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
 import Util.DataUtil;
@@ -14,7 +15,10 @@ import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
+import java.util.Arrays;
 import java.util.Hashtable;
+
+import static TemplateImplementation.HomePage.counter;
 
 /*
 
@@ -49,7 +53,7 @@ public class ShipDetail extends testBase {
 
 
 
-  /*  @Test(dataProvider = "readTestData")
+    @Test(dataProvider = "readTestData")
     public void Create_Ship_Inside_Home_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -290,7 +294,7 @@ public class ShipDetail extends testBase {
                 .input_Sections_Fields_Save_And_Logout(bind_Content_Fields_In_One_String("Onboard_Experience", testSheetName),7);
 
     }
-*/
+
 
     @Test(dataProvider = "readTestData")
     public void Create_Ship_Inside_Data_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
@@ -426,7 +430,7 @@ public class ShipDetail extends testBase {
 
 
 
- /*  @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
+   @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
     public void input_Ship_Specification_Sections_Fields(Hashtable<String, String> data) throws Exception {
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -565,7 +569,7 @@ public class ShipDetail extends testBase {
     //   and then it will start this method.
 
 
-                .select_From_Content_TreeList(0,Arrays.asList(data.get("Deck Cabin Category").split(",")))
+                .select_From_Content_TreeList(0, Arrays.asList(data.get("Deck Cabin Category").split(",")))
                 .logOut();
 
 
@@ -598,7 +602,7 @@ public class ShipDetail extends testBase {
                 .logOut();
 
     }
-*/
+
 
 
     @DataProvider(name = "readTestData")
