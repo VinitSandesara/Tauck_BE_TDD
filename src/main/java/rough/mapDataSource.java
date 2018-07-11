@@ -2,6 +2,7 @@ package rough;
 
 import FeedContent.feedContent;
 import Util.Config;
+import org.apache.commons.collections.list.TreeList;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -40,26 +41,80 @@ public class mapDataSource {
         System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
         driver = new ChromeDriver();
 
-        driver.get("http://dev2017.tauck.com/sitecore/login");
+        driver.get("http://qa2017.tauck.com/sitecore/login");
 
         driver.findElement(By.id("UserName")).sendKeys("v");
         driver.findElement(By.id("Password")).sendKeys("v");
         driver.findElement(By.id("Password")).sendKeys(Keys.ENTER);
       //  driver.findElement(By.linkText("FeedContent Editor")).click();
 
-        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/pdf11/Editorial Title");
+        driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/ships/leponant_thru_automation");
         driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);
         driver.findElement(By.xpath("//div[@id='SearchHeader']/div[1]/a")).click();
         driver.findElement(By.id("TreeSearch")).clear();
 
+//====================================================================================
+
+        List<WebElement> totalSelectedList;
+
+        List<WebElement> totalSelectedListBox = driver.findElements(By.xpath("//div[@class='scContentControlSelectedList']"));
+
+        totalSelectedList =   totalSelectedListBox.get(1).findElements(By.tagName("option"));
+
+        for(int i=totalSelectedList.size()-1;i>=0;i--) {
+
+            Actions actionOne = new Actions(driver);
+            actionOne.doubleClick(totalSelectedList.get(i)).perform();
+           totalSelectedList =   totalSelectedListBox.get(1).findElements(By.tagName("option"));
+        }
+
+
+        List<WebElement> totalTreeList = driver.findElements(By.xpath("//div[@class='scScrollbox scContentControlTree']"));
+
+        List<WebElement> TreeListValues = driver.findElements(By.xpath("//div[@class='scScrollbox scContentControlTree']//span[@class='scContentTreeNodeTitle']"));
+
+        List<WebElement> TreeListValuesTopNode = driver.findElements(By.xpath("//div[@class='scScrollbox scContentControlTree']//div[@class='scContentTreeNode']"));
+
+        for(int i=0;i< TreeListValues.size();i++) {
+
+
+            String value = TreeListValues.get(i).getText();
+
+            if(TreeListValues.get(i).getText().equalsIgnoreCase("Isabela II"))  {
+
+
+
+                TreeListValuesTopNode.get(i).findElements(By.className("scContentTreeNodeGlyph")).get(0).click();
+
+                WebElement element = TreeListValuesTopNode.get(i).findElements(By.className("scContentTreeNodeGlyph")).get(1);
+
+                element.click();
+
+
+
+                List<WebElement> totalDecks =  TreeListValuesTopNode.get(i).findElements(By.className("scContentTreeNode"));
+
+                List<WebElement> totalLinks = totalDecks.get(0).findElements(By.tagName("a"));
+
+                for(int j=1;j<totalLinks.size();j++) {
+
+                    String linkValue = totalLinks.get(j).getText();
+                    totalLinks.get(j).click();
+                    Actions actionOne = new Actions(driver);
+                    actionOne.doubleClick(totalLinks.get(j)).perform();
+                }
+
+            }
+
+
+        }
 
 
 
 
 
 
-
-
+//====================================================================================
         // presentation click
         driver.findElement(By.xpath("//div[@class='scRibbonNavigatorButtonsGroupButtons']/a[text()='Presentation']")).click();
 

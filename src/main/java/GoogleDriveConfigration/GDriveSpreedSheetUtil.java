@@ -1,6 +1,5 @@
 package GoogleDriveConfigration;
 
-import Util.Xls_Reader;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.model.ValueRange;
 
@@ -15,11 +14,10 @@ public class GDriveSpreedSheetUtil {
     public static void main(String arg[]) throws IOException {
 
 
-        getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap("EditorialTitle","Editorial_PDF11");
+        getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap("EditorialTitle", "Editorial_PDF11");
 
 
     }
-
 
 
     static String spreadsheetId = "1oqyfIYiCz1L12AtjpyXlfopaxxrKY2a6pOjoLZhlufA";
@@ -175,7 +173,6 @@ public class GDriveSpreedSheetUtil {
     }
 
 
-
     public static Object[][] getData(String testCaseName, String sheetName) throws IOException {
 
         List<List<Object>> response = returnResponse(sheetName + "!A1:Z").getValues();
@@ -249,4 +246,78 @@ public class GDriveSpreedSheetUtil {
     }
 
 
-}
+    public static List<String> getValueForListOfContentFields(String testCaseName, String sheetName) throws IOException {
+
+        List<List<Object>> response = returnResponse(sheetName + "!A1:R").getValues();
+
+
+        int testStartRowNum = 0;
+        int dataStartRowNum;
+        int colStartRowNum;
+        Object[][] data = null;
+
+        for (int i = 0; i < response.size(); i++) {
+            // String value = values.get(i).get(0).toString();
+            if (response.get(i).size() != 0) {
+
+                if (response.get(i).get(0).equals(testCaseName)) {
+                    testStartRowNum = i;
+                    System.out.println("Test starts from row - " + testStartRowNum);
+
+
+                    colStartRowNum = testStartRowNum + 1;
+                    System.out.println("Col starts from row - " + colStartRowNum);
+
+                    dataStartRowNum = testStartRowNum + 2;
+
+                    // calculate rows of data
+                    int rows = 0;
+                    int d = 0;
+                    while (response.get(dataStartRowNum + rows).size() != 0) {
+                        rows++;
+                        d = dataStartRowNum + rows;
+                        if (dataStartRowNum + rows == response.size()) {
+                            break;
+                        }
+                        // System.out.println("Your value is :- " +  values.get(dataStartRowNum+rows).get(0).toString());
+                    }
+
+                    System.out.println("Total rows are  - " + rows);
+
+                    //calculate total cols
+                    String temp = response.get(colStartRowNum + 1).get(0).toString();
+                    int cols = response.get(colStartRowNum + 1).size();
+                    System.out.println("Total cols are  - " + cols);
+
+                    List<String> listOfComponentToMapwith = new ArrayList<String>();
+
+
+                    for (int rNum = dataStartRowNum; rNum < dataStartRowNum + rows; rNum++) {
+
+                        for (int cNum = 0; cNum < response.get(rNum).size(); cNum++) {
+
+                            String key = response.get(colStartRowNum).get(cNum).toString();
+                            String value = response.get(rNum).get(cNum).toString();
+
+                            if (!(key.equalsIgnoreCase("Runmode") || key.equalsIgnoreCase("Browser") || key.equalsIgnoreCase("RightClickInsert") || key.equalsIgnoreCase("ComponentName") || key.equalsIgnoreCase("Control") || key.equalsIgnoreCase("PlaceHolder") || key.equalsIgnoreCase("ControlFolder") || key.equalsIgnoreCase("DataSource"))) {
+                                //data.put(key, value);
+                                listOfComponentToMapwith.add(value);
+                            }
+
+
+                        }
+
+                    }
+
+                    return listOfComponentToMapwith;
+                }
+            }
+        }
+        return null;
+
+    }
+
+
+
+
+} // main class is closing here

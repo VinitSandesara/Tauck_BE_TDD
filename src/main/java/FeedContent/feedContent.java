@@ -31,6 +31,8 @@ public class feedContent extends globalTemplateImplementation {
     @FindBy(xpath = CommonLocators.CONTENT_TREELIST)
     public List<WebElement> _contentTreeList;
 
+    @FindBy(xpath = CommonLocators.SELECTED_TREELIST_OPTIONS)
+    public List<WebElement> _selectedTreeListOptions;
 
     @FindBy(xpath = CommonLocators.CONTAINER_OF_CONTENT)
     public WebElement _contentArea;
@@ -56,11 +58,20 @@ public class feedContent extends globalTemplateImplementation {
     @FindBy(linkText = CommonLocators.SAVE_CONTENT_CHANGE)
     public WebElement _save;
 
+    @FindBy(xpath = CommonLocators.DROPDOWN)
+    public List<WebElement> _dropDown;
+
     @FindBy(xpath = HomePageLocators.CONTENT_SECTIONS_PANEL_TABLES)
     public List<WebElement> _homePageContentSectionsPanelTables;
 
     @FindBy(xpath = HomePageLocators.CONTENT_SECTIONS_PANEL_TABLES_ALTERNATIVE)
     public List<WebElement> _homePageContentSectionsPanelTotalTables;
+
+    @FindBy(xpath = CommonLocators.TREELIST_LIST_OF_VALUES)
+    public List<WebElement> _treeListValues;
+
+    @FindBy(xpath = CommonLocators.TREELIST_TOP_NODE)
+    public List<WebElement> _treeListTopNode;
 
 
    /* public feedContent feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
@@ -236,6 +247,9 @@ public class feedContent extends globalTemplateImplementation {
 
     public feedContent select_From_Content_TreeList(int index, List<String> treeListValues) {
 
+        //How this method works and can apply for similar scenario here is an example link "/sitecore/content/Tauck/data/ships" listed Ship inside Ships folder, click on any ship
+        // Say "Le Laperouse" - expand "Decks" - click on any listed deck inside Decks folder - "Deck Cabin Category" inside section "Deck Information" is an example for this scenario
+
         List<WebElement> _contentTreeListValues = _contentTreeList.get(index).findElements(By.xpath(CommonLocators.CONTENT_TREELIST_VALUES));
 
         for (int i = 0; i < treeListValues.size(); i++) {
@@ -251,6 +265,82 @@ public class feedContent extends globalTemplateImplementation {
 
             }
 
+        }
+
+        _save.click();
+        return this;
+    }
+
+    public feedContent Select_List_Option_From_Multi_Tree_List(String DataShipsShipName) throws InterruptedException {
+
+        //How this method works and can apply for similar scenario here is an example link "/sitecore/content/Tauck/Home/ships" listed ships inside Ships folder
+        // click on any ship say "Le Ponant" - Expand "Entity Reference" that's an example for this scenario
+
+        waitForPageLoad(10);
+
+        for(int i=0;i< _treeListValues.size();i++) {
+
+
+            String value = _treeListValues.get(i).getText();
+
+            if(_treeListValues.get(i).getText().equalsIgnoreCase(DataShipsShipName))  {
+
+             // Click on DataShipsShipName
+                _treeListTopNode.get(i).findElements(By.className("scContentTreeNodeGlyph")).get(0).click();
+
+                waitForPageLoad(10);
+             // Click on Decks which is inside  DataShipsShipName
+                _treeListTopNode.get(i).findElements(By.className("scContentTreeNodeGlyph")).get(1).click();
+
+                waitForPageLoad(10);
+                List<WebElement> totalDecks =  _treeListTopNode.get(i).findElements(By.className("scContentTreeNode"));
+
+                List<WebElement> totalLinks = totalDecks.get(0).findElements(By.tagName("a"));
+
+                for(int j=1;j<totalLinks.size();j++) {
+
+                    String linkValue = totalLinks.get(j).getText();
+                   // totalLinks.get(j).click();
+                    Actions actionOne = new Actions(driver);
+                    actionOne.doubleClick(totalLinks.get(j)).perform();
+
+                }
+
+                break;
+
+            }
+
+
+        }
+
+        _save.click();
+        return this;
+
+    }
+
+    public feedContent Select_Option_From_DropDown (int index, String nameOfOption) {
+
+        _dropDown.get(index).sendKeys(nameOfOption);
+
+        return this;
+
+    }
+
+
+    public feedContent Deselect_TreeList_Selected_Options_To_Reselect() throws InterruptedException {
+
+        //How this method works and can apply for similar scenario here is an example link "/sitecore/content/Tauck/Home/ships" listed ships inside Ships folder
+        // click on any ship say "Le Ponant" - Expand "Entity Reference" that's an example for this scenario
+
+        waitForPageLoad(10);
+        List<WebElement> totalSelectedList;
+        totalSelectedList =   _selectedTreeListOptions.get(1).findElements(By.tagName("option"));
+
+        for(int i=totalSelectedList.size()-1;i>=0;i--) {
+
+            Actions actionOne = new Actions(driver);
+            actionOne.doubleClick(totalSelectedList.get(i)).perform();
+            totalSelectedList =   _selectedTreeListOptions.get(1).findElements(By.tagName("option"));
         }
 
         _save.click();

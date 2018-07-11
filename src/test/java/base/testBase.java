@@ -2,7 +2,9 @@ package base;
 
 import ExtentReport.ExtentManager;
 import ExtentReport.ExtentTestManager;
+import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import ParallelTest.LocalDriverManager;
+import TemplateImplementation.globalTemplateImplementation;
 import Util.*;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -18,6 +20,8 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.*;
 
@@ -61,7 +65,26 @@ public class testBase extends TestListenerAdapter {
 
     }*/
 
+    public String bind_Content_Fields_In_One_String(String testCaseName, String sheetName) throws IOException {
 
+        String Value="";
+
+        List<String> listOfContentFieldsValues = new ArrayList<String>();
+
+        listOfContentFieldsValues = GDriveSpreedSheetUtil.getValueForListOfContentFields(testCaseName,sheetName);
+
+        for(int i=0;i< listOfContentFieldsValues.size();i++) {
+
+            if(i>=listOfContentFieldsValues.size()-1) {
+                Value =  Value + listOfContentFieldsValues.get(i);
+            }else {
+                Value = Value + listOfContentFieldsValues.get(i) + "|";
+            }
+        }
+
+        return Value;
+
+    }
 
     public List<String> returnTestDataFetchedFromExcel(String testCaseName, String sheetName, String whichColName) {
 

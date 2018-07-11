@@ -52,6 +52,14 @@ public class CommonLocators {
 
     public static final String CONTENT_TREELIST_VALUES = "//span[@class='scContentTreeNodeTitle']";
 
+    public static final String TREELIST_LIST_OF_VALUES = "//div[@class='scScrollbox scContentControlTree']//span[@class='scContentTreeNodeTitle']";
+
+    public static final String TREELIST_TOP_NODE = "//div[@class='scScrollbox scContentControlTree']//div[@class='scContentTreeNode']";
+
+    public static final String DROPDOWN = "//select[@class='scContentControl scCombobox']";
+
+    public static final String SELECTED_TREELIST_OPTIONS = "//div[@class='scContentControlSelectedList']";
+
 
 
 

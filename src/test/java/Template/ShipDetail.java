@@ -16,26 +16,51 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
+
+import static TemplateImplementation.HomePage.counter;
+
+/*
+
+- Here method "bind_Content_Fields_In_One_String("HeroSettings", testSheetName)" that can apply to only that Test where it has one row. In case of multiple rows it doesnt work.
+    Example :
+
+    ======== Valid ======
+
+            bind_Content_Fields_In_One_String("HeroSettings", testSheetName)
+
+    ======== In- Valid ======
+
+            bind_Content_Fields_In_One_String("Create_DeckPlans_Decks_Inside_Decks_folder", testSheetName)
+
+            Create_DeckPlans_Decks_Inside_Decks_folder : this test case has more then one rows in this case it doesnt work
+
+ */
+
+
 
 public class ShipDetail extends testBase {
 
     String testSheetName = "ShipDetail";
+    String ShipName;
     String homeShipNodePath;
     String dataShipNodePath;
     String deckPlansCabinCatNodePath;
     String deckPlansDeckNodePath;
+    String PortraitHighlightIntraCopyPath;
 
 
 
 
     @Test(dataProvider = "readTestData")
-    public void Create_Ship_Inside_Home_Folder(Hashtable<String, String> data) throws InterruptedException {
+    public void Create_Ship_Inside_Home_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
+        ShipName =  data.get("ShipName");
         homeShipNodePath = "/sitecore/content/Tauck/Home/ships" + "/" + data.get("ShipName").replaceAll(" ", "-").toLowerCase();
 
         invokeBrowser();
@@ -67,6 +92,184 @@ public class ShipDetail extends testBase {
 
 
     @Test(dependsOnMethods = {"Create_Ship_Inside_Home_Folder"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void Create_And_Input_Highlight_Intro_Copy(Hashtable<String, String> data) throws Exception {
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        PortraitHighlightIntraCopyPath = homeShipNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase();
+
+
+        invokeBrowser();
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser();
+
+
+        if (sitecore.checkWhetherParentNodeIsPresentOrNot(PortraitHighlightIntraCopyPath) != true) {
+            System.out.println("Parent Node already present please go ahead...");
+        } else {
+
+            sitecore
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(PortraitHighlightIntraCopyPath)
+
+                    .navigateToWhichTauckNode(homeShipNodePath)
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                    .fill_Component_Content_With_Data(bind_Content_Fields_In_One_String("Portrait Highlights and Introduction Copy", testSheetName));
+        }
+
+        sitecore.logOut();
+
+
+    }
+
+
+    @Test(dependsOnMethods = {"Create_And_Input_Highlight_Intro_Copy"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void Create_Portrait_Highlights_Cards(Hashtable<String, String> data) throws Exception {
+
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        invokeBrowser();
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser();
+
+        if(data.get("RightClickInsert").equalsIgnoreCase("HighlightImage")) {
+
+            String HighLightImage = data.get("Highlight Title") + "|" +
+                    data.get("Highlight Subtitle") + "|" +
+                    data.get("Highlight Image");
+
+            String PortraitOnly = data.get("Hover Title") + "|" +
+                    data.get("Hover Subtitle") + "|" +
+                    data.get("Hover Copy");
+
+            sitecore
+
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(PortraitHighlightIntraCopyPath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+                    .navigateToWhichTauckNode(PortraitHighlightIntraCopyPath)
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                    .feedContent_Fields_With_Data(HighLightImage, 0)
+                    .feedContent_Fields_With_Data(PortraitOnly, 2);
+
+        } else if(data.get("RightClickInsert").equalsIgnoreCase("HighlightQuote")) {
+
+            String TourHighlightQuote = data.get("Highlight Title") + "|" +
+                    data.get("Highlight Subtitle") + "|" +
+                    data.get("Profile Thumbnail");
+
+            sitecore
+
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(PortraitHighlightIntraCopyPath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+                    .navigateToWhichTauckNode(PortraitHighlightIntraCopyPath)
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                    .fill_Component_Content_With_Data(TourHighlightQuote);
+
+        } else {
+
+            String TourHighlightVideo = data.get("Highlight Title") + "|" +
+                    data.get("Highlight Subtitle") + "|" +
+                    data.get("Brightcove Video Id") + "|" +
+                    data.get("VideoImage");
+
+            sitecore
+
+                    // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                    .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(PortraitHighlightIntraCopyPath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+
+                    .navigateToWhichTauckNode(PortraitHighlightIntraCopyPath)
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                    .fill_Component_Content_With_Data(TourHighlightVideo);
+        }
+
+        sitecore.logOut();
+    }
+
+
+
+    @Test(dependsOnMethods = {"Create_Ship_Inside_Home_Folder"}, dataProvider = "readTestData")
+    // @Test(dataProvider = "readTestData")
+    public void input_Hero_Settings_Section_Fields_For_Hero_Module(Hashtable<String, String> data) throws Exception {
+
+        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        invokeBrowser();
+
+        HomePage homePage = new HomePage(driver, test.get());
+        PageFactory.initElements(driver, homePage);
+
+        homePage
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .navigateToWhichTauckNode(homeShipNodePath);
+
+        homePage
+                .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+                .expandSections("Section_Hero_Settings")
+                .input_Sections_Fields_Save_And_Logout(bind_Content_Fields_In_One_String("HeroSettings", testSheetName), counter);
+
+
+    }
+
+    // this test is dependents on "Create_Deck_Plans_Deck_Folder" is because if you dont have deck created there is no way you can select here, Again instead of keeping depends on method
+    // "Create_Deck_Plans_Decks_Inside_Decks_Folder" i kept "Create_Deck_Plans_Deck_Folder" because "Create_Deck_Plans_Decks_Inside_Decks_Folder" is depends on many other test so for this test
+    // will take more time to complete. One thing to keep in mind for this test to build from jenkins is before building this job you have to build "Create_Deck_Plans_Deck_Folder" and
+    // "Create_Deck_Plans_Decks_Inside_Decks_Folder" these2 first.
+
+    @Test(dependsOnMethods = {"Create_Deck_Plans_Deck_Folder"})
+    public void input_Entity_References_Section_Fields_To_Display_Decks() throws Exception {
+
+       invokeBrowser();
+
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+         sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .navigateToWhichTauckNode_ForSectionInput(homeShipNodePath)
+
+                .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+                .expandSections("Section_Entity_References")
+                .Select_Option_From_DropDown(1,ShipName)
+
+       // De select already selected tree list values if any before re selecting or else error will thrown
+                .Deselect_TreeList_Selected_Options_To_Reselect()
+
+                .Select_List_Option_From_Multi_Tree_List(ShipName)
+                .logOut();
+
+    }
+
+
+    @Test(dependsOnMethods = {"Create_Ship_Inside_Home_Folder"}, dataProvider = "readTestData")
     public void input_Onboard_Experience_Section_Fields(Hashtable<String, String> data) throws Exception {
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -79,9 +282,6 @@ public class ShipDetail extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
-        String ContentString = data.get("Onboard Experience Header") + "|" +
-                data.get("Onboard Experience Content");
-
 
         sitecore
                 .login()
@@ -90,13 +290,12 @@ public class ShipDetail extends testBase {
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                 .expandSections("Section_Onboard_Experience")
-                .input_Sections_Fields_Save_And_Logout(ContentString,7);
-            //    .logOut();
+                .input_Sections_Fields_Save_And_Logout(bind_Content_Fields_In_One_String("Onboard_Experience", testSheetName),7);
 
     }
 
 
-  /*  @Test(dataProvider = "readTestData")
+    @Test(dataProvider = "readTestData")
     public void Create_Ship_Inside_Data_Folder(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -133,7 +332,7 @@ public class ShipDetail extends testBase {
     }
 
 
-  /*  @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
+   @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
     public void input_Ship_Specification_Sections_Fields(Hashtable<String, String> data) throws Exception {
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -146,24 +345,6 @@ public class ShipDetail extends testBase {
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
-        String ContentString = data.get("Maximum Passengers") + "|" +
-                data.get("Guests") + "|" +
-                data.get("Year Built") + "|" +
-                data.get("Year Renovated") + "|" +
-                data.get("Length") + "|" +
-                data.get("Crew Members") + "|" +
-                data.get("Key Features Abbrev") + "|" +
-                data.get("Draft") + "|" +
-                data.get("Beam") + "|" +
-                data.get("Tonnage") + "|" +
-                data.get("Cruising Speed") + "|" +
-                data.get("Air Conditioned") + "|" +
-                data.get("Elevator") + "|" +
-                data.get("Registry") + "|" +
-                data.get("Crew Nationality") + "|" +
-                data.get("Internet") + "|" +
-                data.get("Key Features") + "|" +
-                data.get("Amenities");
 
         sitecore
                 .login()
@@ -172,15 +353,15 @@ public class ShipDetail extends testBase {
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                 .expandShipSpecificationSection()
-                .feedContent_Fields_With_Data(ContentString,1)
+                .feedContent_Fields_With_Data(bind_Content_Fields_In_One_String("Ship_Specification", testSheetName),1)
                 .logOut();
 
     }
-*/
 
 
 
-   /* @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
+
+   @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
     public void Create_Deck_Plans_Deck_Folder(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -215,7 +396,7 @@ public class ShipDetail extends testBase {
 
     }
 
-    @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
     public void Create_Deck_Plans_CabinCategories_Folder(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -249,12 +430,12 @@ public class ShipDetail extends testBase {
         sitecore.logOut();
 
     }
-*/
 
-/* Here reason for adding alwaysRun = true what happen is if any dependent method fails or skip this method automatically fails and/or skips so to always run this method
- after dependent method ran.
- */
- /*   @Test(dependsOnMethods = {"Create_Deck_Plans_Deck_Folder", "Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder"}, dataProvider = "readTestData", alwaysRun = true)
+
+// Here reason for adding alwaysRun = true what happen is if any dependent method fails or skip this method automatically fails and/or skips so to always run this method
+// after dependent method ran.
+
+   @Test(dependsOnMethods = {"Create_Deck_Plans_Deck_Folder", "Create_Deck_Plans_CabinCategories_Folder"}, dataProvider = "readTestData", alwaysRun = true)
     public void Create_Deck_Plans_Decks_Inside_Decks_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -296,7 +477,7 @@ public class ShipDetail extends testBase {
 
     }
 
-    @Test(dependsOnMethods = {"Create_Deck_Plans_CabinCategories_Folder"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"Create_Deck_Plans_CabinCategories_Folder"}, dataProvider = "readTestData")
     public void Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -323,10 +504,10 @@ public class ShipDetail extends testBase {
                 .logOut();
 
     }
-*/
 
 
-        @DataProvider(name = "readTestData")
+
+    @DataProvider(name = "readTestData")
     public Object[][] getData(Method method) throws IOException {
 
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
@@ -362,8 +543,19 @@ public class ShipDetail extends testBase {
         } else if (method.getName().equals("input_Onboard_Experience_Section_Fields")) {
             // return DataUtil.getData(xls, "HeroSettings", testSheetName);
             return GDriveSpreedSheetUtil.getData("Onboard_Experience", testSheetName);
-        }
 
+        } else if (method.getName().equals("input_Hero_Settings_Section_Fields_For_Hero_Module")) {
+            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getData("HeroSettings", testSheetName);
+
+        } else if (method.getName().equals("Create_And_Input_Highlight_Intro_Copy")) {
+            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Portrait Highlights and Introduction Copy", testSheetName);
+
+        } else if (method.getName().equals("Create_Portrait_Highlights_Cards")) {
+            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Portrait Highlights Cards", testSheetName);
+        }
 
 
 
