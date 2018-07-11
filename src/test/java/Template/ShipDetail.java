@@ -3,6 +3,7 @@ package Template;
 import GoogleDriveConfigration.GDriveSpreedSheetUtil;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
+import Util.DataUtil;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
@@ -412,6 +413,7 @@ public class ShipDetail extends testBase {
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("ComponentName"))
                 .fill_Component_Content_With_Data(data.get("Content"))
+                .Deselect_TreeList_Selected_Options_To_Reselect(data.get("ComponentName"))
                 .logOut();
 
 

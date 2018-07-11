@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Reports/extent.html" afterPath="$PROJECT_DIR$/Reports/extent.html" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" afterPath="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" afterPath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Config.java" afterPath="$PROJECT_DIR$/src/main/java/Util/Config.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" afterPath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" afterPath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" afterPath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GoogleDriveConfigration/GDriveSpreedSheetUtil.class" afterPath="$PROJECT_DIR$/target/classes/GoogleDriveConfigration/GDriveSpreedSheetUtil.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/ShipDetail.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/ShipDetail.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ShipDetail.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ShipDetail.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="644">
-              <caret line="358" column="59" lean-forward="true" selection-start-line="358" selection-start-column="59" selection-end-line="358" selection-end-column="59" />
+            <state relative-caret-position="917">
+              <caret line="415" column="90" lean-forward="true" selection-start-line="415" selection-start-column="90" selection-end-line="415" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +54,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditorialTemplate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1048">
+              <caret line="648" column="0" lean-forward="true" selection-start-line="648" selection-start-column="0" selection-end-line="648" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="638">
@@ -71,12 +74,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+      <file leaf-file-name="feedContent.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="899">
+              <caret line="240" column="27" lean-forward="true" selection-start-line="240" selection-start-column="27" selection-end-line="240" selection-end-column="27" />
+              <folding>
+                <element signature="e#644#645#0" expanded="true" />
+                <element signature="e#679#680#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -179,14 +185,14 @@
         <option value="$PROJECT_DIR$/testng.xml" />
         <option value="$PROJECT_DIR$/src/main/java/rough/mapDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
         <option value="$PROJECT_DIR$/src/test/java/base/testBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/Config.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
       </list>
     </option>
   </component>
@@ -913,7 +919,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>445</line>
+          <line>447</line>
           <properties />
           <option name="timeStamp" value="292" />
         </line-breakpoint>
@@ -925,7 +931,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>407</line>
+          <line>408</line>
           <properties />
           <option name="timeStamp" value="306" />
         </line-breakpoint>
@@ -1219,22 +1225,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="625" column="75" lean-forward="false" selection-start-line="625" selection-start-column="75" selection-end-line="625" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="42" column="78" lean-forward="true" selection-start-line="42" selection-start-column="78" selection-end-line="42" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/rough/mapDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="604">
@@ -1307,17 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
-          <folding>
-            <element signature="e#644#645#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
@@ -1328,13 +1307,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="358" column="59" lean-forward="true" selection-start-line="358" selection-start-column="59" selection-end-line="358" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="638">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="877">
+          <caret line="60" column="104" lean-forward="true" selection-start-line="60" selection-start-column="60" selection-end-line="60" selection-end-column="104" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1346,11 +1331,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="1048">
+          <caret line="648" column="0" lean-forward="true" selection-start-line="648" selection-start-column="0" selection-end-line="648" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="899">
+          <caret line="240" column="27" lean-forward="true" selection-start-line="240" selection-start-column="27" selection-end-line="240" selection-end-column="27" />
+          <folding>
+            <element signature="e#644#645#0" expanded="true" />
+            <element signature="e#679#680#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="917">
+          <caret line="415" column="90" lean-forward="true" selection-start-line="415" selection-start-column="90" selection-end-line="415" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

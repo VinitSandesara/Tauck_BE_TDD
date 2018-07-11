@@ -224,6 +224,26 @@ public class feedContent extends globalTemplateImplementation {
         return this;
     }
 
+    public feedContent Deselect_TreeList_Selected_Options_To_Reselect(String value) throws InterruptedException {
+
+      /*  List<String> multiListValue = new ArrayList<String>();
+
+        for(int c=0;c<value.size();c++) {
+            multiListValue.add(value.get(c));
+        }*/
+
+
+        Actions actionOne = new Actions(driver);
+
+        WebElement element = driver.findElement(By.xpath("//option[text() = '" + value + "']"));
+        element.click();
+        actionOne.doubleClick(element).perform();
+        Thread.sleep(3000);
+
+        _save.click();
+        return this;
+    }
+
     public feedContent mediaCarouselAndHalfWidthMedia_content_MultiListSelection(List<String> value) throws InterruptedException {
 
       /*  List<String> multiListValue = new ArrayList<String>();
@@ -278,29 +298,29 @@ public class feedContent extends globalTemplateImplementation {
 
         waitForPageLoad(10);
 
-        for(int i=0;i< _treeListValues.size();i++) {
+        for (int i = 0; i < _treeListValues.size(); i++) {
 
 
             String value = _treeListValues.get(i).getText();
 
-            if(_treeListValues.get(i).getText().equalsIgnoreCase(DataShipsShipName))  {
+            if (_treeListValues.get(i).getText().equalsIgnoreCase(DataShipsShipName)) {
 
-             // Click on DataShipsShipName
+                // Click on DataShipsShipName
                 _treeListTopNode.get(i).findElements(By.className("scContentTreeNodeGlyph")).get(0).click();
 
                 waitForPageLoad(10);
-             // Click on Decks which is inside  DataShipsShipName
+                // Click on Decks which is inside  DataShipsShipName
                 _treeListTopNode.get(i).findElements(By.className("scContentTreeNodeGlyph")).get(1).click();
 
                 waitForPageLoad(10);
-                List<WebElement> totalDecks =  _treeListTopNode.get(i).findElements(By.className("scContentTreeNode"));
+                List<WebElement> totalDecks = _treeListTopNode.get(i).findElements(By.className("scContentTreeNode"));
 
                 List<WebElement> totalLinks = totalDecks.get(0).findElements(By.tagName("a"));
 
-                for(int j=1;j<totalLinks.size();j++) {
+                for (int j = 1; j < totalLinks.size(); j++) {
 
                     String linkValue = totalLinks.get(j).getText();
-                   // totalLinks.get(j).click();
+                    // totalLinks.get(j).click();
                     Actions actionOne = new Actions(driver);
                     actionOne.doubleClick(totalLinks.get(j)).perform();
 
@@ -318,7 +338,7 @@ public class feedContent extends globalTemplateImplementation {
 
     }
 
-    public feedContent Select_Option_From_DropDown (int index, String nameOfOption) {
+    public feedContent Select_Option_From_DropDown(int index, String nameOfOption) {
 
         _dropDown.get(index).sendKeys(nameOfOption);
 
@@ -334,13 +354,13 @@ public class feedContent extends globalTemplateImplementation {
 
         waitForPageLoad(10);
         List<WebElement> totalSelectedList;
-        totalSelectedList =   _selectedTreeListOptions.get(1).findElements(By.tagName("option"));
+        totalSelectedList = _selectedTreeListOptions.get(1).findElements(By.tagName("option"));
 
-        for(int i=totalSelectedList.size()-1;i>=0;i--) {
+        for (int i = totalSelectedList.size() - 1; i >= 0; i--) {
 
             Actions actionOne = new Actions(driver);
             actionOne.doubleClick(totalSelectedList.get(i)).perform();
-            totalSelectedList =   _selectedTreeListOptions.get(1).findElements(By.tagName("option"));
+            totalSelectedList = _selectedTreeListOptions.get(1).findElements(By.tagName("option"));
         }
 
         _save.click();
