@@ -507,19 +507,26 @@ public class globalTemplateImplementation extends utility {
                 } catch (Throwable t) {
 
                     try {
-                        waitForPageLoad(20);
-                        _multipleEditHtmlLink.get(totalEditLinks).click();
-                        totalEditLinks++;
-                        waitForPageLoad(20);
-                        switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
-                        clearTextboxPreFeededData(_htmlEditorTextArea);
-                        _htmlEditorTextArea.sendKeys(temp.get(i));
-                        _htmlEditorAcceptButton.click();
-                        waitForPageLoad(20);
-                    } catch (Throwable t1) {
-                        continue;
+                        column.get(1).findElement(By.tagName("select")).sendKeys(temp.get(i));
+
+                    }catch (Throwable b) {
+
+
+                        try {
+                            waitForPageLoad(20);
+                            _multipleEditHtmlLink.get(totalEditLinks).click();
+                            totalEditLinks++;
+                            waitForPageLoad(20);
+                            switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME);
+                            clearTextboxPreFeededData(_htmlEditorTextArea);
+                            _htmlEditorTextArea.sendKeys(temp.get(i));
+                            _htmlEditorAcceptButton.click();
+                            waitForPageLoad(20);
+                        } catch (Throwable t1) {
+                            continue;
+                        }
                     }
-                }
+                } //
 
             }
 

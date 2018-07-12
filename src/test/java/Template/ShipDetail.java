@@ -8,6 +8,7 @@ import Util.DataUtil;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
+import mapDataSourceWithFE.editorialTemplateControls;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
@@ -17,6 +18,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
 
 import static TemplateImplementation.HomePage.counter;
 
@@ -49,6 +51,76 @@ public class ShipDetail extends testBase {
     String PortraitHighlightIntraCopyPath;
     String shipPartnersWithPartnersInsideNodePath;
     String shipPartnersNodePath;
+
+
+
+    @Test(dependsOnMethods = {"Create_Ship_Inside_Home_Folder" , "Create_Ship_Inside_Data_Folder"} )
+    public void mapDataSourceWithFrontEndControls() throws Exception {
+
+
+        invokeBrowser();
+
+        editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
+        PageFactory.initElements(driver, controls);
+
+        controls
+                .launchSitecore()
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(homeShipNodePath)
+
+                .clickPresentationLink()
+                .clickDetailsLink()
+                .clickFinalLayoutTabInsideLayoutDetailsDialog()
+                .navigateToDeviceEditor()
+                .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
+
+        List<String> listOfComponentToMapWithDataSource = GDriveSpreedSheetUtil.getListOfControlsForMapping(testSheetName, "Template_Control");
+
+        for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
+
+            Hashtable<String, String> data = GDriveSpreedSheetUtil.getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap(listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+
+            List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
+            List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
+            List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
+            List<String> splitControlFolders = Arrays.asList(data.get("ControlFolder").split("\\/"));
+
+            controls
+                    // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                    .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
+
+            for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
+
+                controls
+                        .addNewControls()
+                        .searchForControlFolderAndSelectControlFromFolder(splitControlFolders, splitControlString.get(innerloop));
+
+                if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Portrait Highlights Cards")) {
+                    controls
+                            .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), homeShipNodePath + "/" + splitDatasourceString.get(innerloop));
+
+                } else {
+                    if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Ship_Partners")) {
+                        controls
+                                .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), dataShipNodePath + "/" + splitDatasourceString.get(innerloop));
+                    } else {
+
+                    }
+                }
+
+
+            }
+
+        }
+
+        controls
+                .saveAndCloseDeviceEditorAndLayoutDetails()
+                .logOut();
+
+    }
+
+
 
 
 
@@ -91,8 +163,46 @@ public class ShipDetail extends testBase {
 
     }
 
+    @Test(dataProvider = "readTestData")
+    public void Create_Ship_Inside_Data_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-    @Test(dependsOnMethods = {"Create_Ship_Inside_Home_Folder"}, dataProvider = "readTestData")
+        // GDriveSpreedSheetUtil.getTestDataFromExcel("Ship Partners", testSheetName);
+
+
+        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
+            throw new SkipException("Skipping the test as Rnumode is N");
+        }
+
+        dataShipNodePath = "/sitecore/content/Tauck/data/ships" + "/" + data.get("ShipName").replaceAll(" ", "-").toLowerCase();
+
+        invokeBrowser();
+        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
+        PageFactory.initElements(driver, sitecore);
+
+
+        sitecore
+                .login()
+                .goToContentEditorIfNotKickOffUser();
+
+        // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
+        if (sitecore.checkWhetherParentNodeIsPresentOrNot(dataShipNodePath) != true) {
+            System.out.println("Parent Node already present please go ahead...");
+        } else {
+
+            sitecore
+                    .navigateToWhichTauckNode("/sitecore/content/Tauck/data/ships")
+                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                    .createTemplateOrTemplateComponent(data.get("ShipName"));
+
+        }
+        sitecore.logOut();
+
+
+    }
+
+
+   @Test(dependsOnMethods = {"Create_Ship_Inside_Home_Folder"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void Create_And_Input_Highlight_Intro_Copy(Hashtable<String, String> data) throws Exception {
 
@@ -296,43 +406,7 @@ public class ShipDetail extends testBase {
     }
 
 
-    @Test(dataProvider = "readTestData")
-    public void Create_Ship_Inside_Data_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-        // GDriveSpreedSheetUtil.getTestDataFromExcel("Ship Partners", testSheetName);
-
-
-        if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
-
-        dataShipNodePath = "/sitecore/content/Tauck/data/ships" + "/" + data.get("ShipName").replaceAll(" ", "-").toLowerCase();
-
-        invokeBrowser();
-        globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
-        PageFactory.initElements(driver, sitecore);
-
-
-        sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
-
-        // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
-        if (sitecore.checkWhetherParentNodeIsPresentOrNot(dataShipNodePath) != true) {
-            System.out.println("Parent Node already present please go ahead...");
-        } else {
-
-            sitecore
-                    .navigateToWhichTauckNode("/sitecore/content/Tauck/data/ships")
-                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .createTemplateOrTemplateComponent(data.get("ShipName"));
-
-        }
-        sitecore.logOut();
-
-
-    }
 
 
     @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
@@ -455,9 +529,6 @@ public class ShipDetail extends testBase {
                 .logOut();
 
     }
-
-
-
 
    @Test(dependsOnMethods = {"Create_Ship_Inside_Data_Folder"}, dataProvider = "readTestData")
     public void Create_Deck_Plans_Deck_Folder(Hashtable<String, String> data) throws InterruptedException {
@@ -599,6 +670,8 @@ public class ShipDetail extends testBase {
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("CabinCatName"))
+             //   .Select_Option_From_DropDown(0,data.get("CabinCatName"))
+                .feedContent_Fields_With_Data(data.get("Content"), 0)
                 .logOut();
 
     }
@@ -636,7 +709,7 @@ public class ShipDetail extends testBase {
 
         } else if (method.getName().equals("Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder")) {
             // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Create_DeckPlans_CabinCategories_Inside_CabinCategories_folder", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_DeckPlans_CabinCategories_Inside_CabinCategories_folder", testSheetName);
 
         } else if (method.getName().equals("input_Onboard_Experience_Section_Fields")) {
             // return DataUtil.getData(xls, "HeroSettings", testSheetName);
