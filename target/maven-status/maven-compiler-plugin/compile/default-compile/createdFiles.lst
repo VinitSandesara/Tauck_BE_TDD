@@ -1,5 +1,6 @@
 Util/Config.class
 base/driverBase.class
+GoogleDriveConfigration/GoogleSheetApi.class
 mapDataSourceWithFE/mapControlWithDataSource.class
 NodeAndComponentConfig/navigateToNode.class
 Util/WaitUtil$3.class
@@ -11,6 +12,7 @@ Listener/RetryListener.class
 Util/excelConfig.class
 rough/template_component$1.class
 Util/WaitUtil$1.class
+GoogleDriveConfigration/GDriveSpreedSheetUtil.class
 rough/template_component.class
 Locators/MapDataSourceWithFEControl/editorial_FE_Control.class
 FeedContent/feedContent.class

@@ -7,11 +7,14 @@ ParallelTest/ThreadLocalDemo.class
 Template/EditorialTemplate/Editorial_TheTuackStory.class
 base/testBase.class
 Template/EditorialTemplate/Editorial_PDF34.class
+Template/EditorialTemplate/Editorial_SEM.class
 ParallelTest/LocalDriverFactory.class
+Template/Categroy_Collection_Template.class
 Template/EditorialTemplate/Editorial_PDF64.class
 Template/EditorialTemplate/Editorial_MediaCenter.class
 Template/EditorialTemplate/Editorial_PDF11.class
 ParallelTest/LocalDriverManager.class
+Template/ShipDetail.class
 Template/MegaMenu.class
 Template/EditorialTemplate/EditorialTemplate.class
 Template/HomePageTemplate.class

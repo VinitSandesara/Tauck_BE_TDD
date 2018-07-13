@@ -22,23 +22,6 @@ import java.util.List;
 
 import static TemplateImplementation.HomePage.counter;
 
-/*
-
-- Here method "bind_Content_Fields_In_One_String("HeroSettings", testSheetName)" that can apply to only that Test where it has one row. In case of multiple rows it doesnt work.
-    Example :
-
-    ======== Valid ======
-
-            bind_Content_Fields_In_One_String("HeroSettings", testSheetName)
-
-    ======== In- Valid ======
-
-            bind_Content_Fields_In_One_String("Create_DeckPlans_Decks_Inside_Decks_folder", testSheetName)
-
-            Create_DeckPlans_Decks_Inside_Decks_folder : this test case has more then one rows in this case it doesnt work
-
- */
-
 
 public class ShipDetail extends testBase {
 
@@ -96,12 +79,12 @@ public class ShipDetail extends testBase {
                         .addNewControls()
                         .searchForControlFolderAndSelectControlFromFolder(splitControlFolders, splitControlString.get(innerloop));
 
-                if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Portrait Highlights Cards")) {
+                if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Add_Portrait_Highlights_Cards_Sub_Component")) {
                     controls
                             .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), homeShipNodePath + "/" + splitDatasourceString.get(innerloop));
 
                 } else {
-                    if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Ship_Partners")) {
+                    if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Create_Ship_Partners_Node_Inside_Data_Ships_Ship_Node")) {
                         controls
                                 .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), dataShipNodePath + "/" + splitDatasourceString.get(innerloop));
                     } else {
@@ -234,7 +217,7 @@ public class ShipDetail extends testBase {
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                    .fill_Component_Content_With_Data(bind_Content_Fields_In_One_String("Portrait Highlights and Introduction Copy", testSheetName));
+                    .fill_Component_Content_With_Data(data.get("Content"));
         }
 
         sitecore.logOut();
@@ -247,6 +230,7 @@ public class ShipDetail extends testBase {
     // @Test(dataProvider = "readTestData")
     public void Create_Portrait_Highlights_Cards(Hashtable<String, String> data) throws Exception {
 
+// Here i am not using data.get("content") for filling content is because all 3 components are listed in one test case and each of them required different content fields.
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -344,7 +328,7 @@ public class ShipDetail extends testBase {
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                 .expandSections("Section_Hero_Settings")
-                .input_Sections_Fields_Save_And_Logout(bind_Content_Fields_In_One_String("HeroSettings", testSheetName), counter);
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
 
 
     }
@@ -401,7 +385,7 @@ public class ShipDetail extends testBase {
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                 .expandSections("Section_Onboard_Experience")
-                .input_Sections_Fields_Save_And_Logout(bind_Content_Fields_In_One_String("Onboard_Experience", testSheetName),7);
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"),7);
 
     }
 
@@ -525,7 +509,7 @@ public class ShipDetail extends testBase {
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
                 .expandShipSpecificationSection()
-                .feedContent_Fields_With_Data(bind_Content_Fields_In_One_String("Ship_Specification", testSheetName),1)
+                .feedContent_Fields_With_Data(data.get("Content"),1)
                 .logOut();
 
     }
@@ -611,10 +595,9 @@ public class ShipDetail extends testBase {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
-        String ContentString = data.get("Deck Name") + "|" +
+       /* String ContentString = data.get("Deck Name") + "|" +
                 data.get("Deck Image") + "|" +
-                data.get("Deck Number");
-
+                data.get("Deck Number");*/
 
         invokeBrowser();
 
@@ -632,7 +615,7 @@ public class ShipDetail extends testBase {
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("DecksName"))
-                .fill_Component_Content_With_Data(ContentString)
+                .fill_Component_Content_With_Data(data.get("Content"))
 
    // Reason for keeping this method dependent on "Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder" is because Deck Tree list selection need
     //   cabin categories first to be created, Since this method is dependent on many other methods, once you have all cabin categories created and on next run
@@ -685,55 +668,55 @@ public class ShipDetail extends testBase {
 
         if (method.getName().equalsIgnoreCase("Create_Ship_Inside_Home_Folder")) {
             // return DataUtil.getData(xls, "HomeTemplateName", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Home_Ships_Name", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Create_Ship_Node_Inside_Home_Ships_Node", testSheetName);
 
         } else if (method.getName().equals("Create_Ship_Inside_Data_Folder")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Data_Ships_Name", testSheetName);
+
+            return GDriveSpreedSheetUtil.getData("Create_Ship_Node_Inside_Data_Ships_Node", testSheetName);
 
         } else if (method.getName().equals("input_Ship_Specification_Sections_Fields")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Ship_Specification", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_Ship_Specification_Section_Fields", testSheetName);
 
         } else if (method.getName().equals("Create_Deck_Plans_Deck_Folder")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("DeckPlans_Decks", testSheetName);
+
+            return GDriveSpreedSheetUtil.getData("Create_Decks_Node_Inside_Data_Ships_Ship_Node", testSheetName);
 
         } else if (method.getName().equals("Create_Deck_Plans_Decks_Inside_Decks_Folder")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Create_DeckPlans_Decks_Inside_Decks_folder", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_Decks_Sub_Component", testSheetName);
 
         } else if (method.getName().equals("Create_Deck_Plans_CabinCategories_Folder")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("DeckPlans_CabinCategories", testSheetName);
+
+            return GDriveSpreedSheetUtil.getData("Create_CabinCategories_Node_Inside_Data_Ships_Ship_Node", testSheetName);
 
         } else if (method.getName().equals("Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_DeckPlans_CabinCategories_Inside_CabinCategories_folder", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_CabinCategories_Sub_Component", testSheetName);
 
         } else if (method.getName().equals("input_Onboard_Experience_Section_Fields")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Onboard_Experience", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_Onboard_Experience_Section_Fields", testSheetName);
 
         } else if (method.getName().equals("input_Hero_Settings_Section_Fields_For_Hero_Module")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("HeroSettings", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_HeroSettings_Section_Fields", testSheetName);
 
         } else if (method.getName().equals("Create_And_Input_Highlight_Intro_Copy")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Portrait Highlights and Introduction Copy", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_Portrait_Highlights_and_Introduction_Copy_Node_Inside_Home_Ships_Node", testSheetName);
 
         } else if (method.getName().equals("Create_Portrait_Highlights_Cards")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("Portrait Highlights Cards", testSheetName);
+
+            return GDriveSpreedSheetUtil.getData("Add_Portrait_Highlights_Cards_Sub_Component", testSheetName);
 
         } else if (method.getName().equals("Create_Ship_Partners_Half_Width_Media_Segment")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getTestDataFromExcel("Ship Partners List Of Partners", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_Ship_Partners_Sub_Component", testSheetName);
 
         } else if (method.getName().equals("Create_Ship_Partners_Folders")) {
-            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getTestDataFromExcel("Ship_Partners", testSheetName);
+
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_Ship_Partners_Node_Inside_Data_Ships_Ship_Node", testSheetName);
         }
 
 

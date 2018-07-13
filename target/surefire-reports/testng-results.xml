@@ -1,149 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="66461" started-at="2018-06-20T21:41:01Z" finished-at="2018-06-20T21:42:07Z">
+  <suite name="Surefire suite" duration-ms="34291" started-at="2018-07-12T22:52:58Z" finished-at="2018-07-12T22:53:32Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="66461" started-at="2018-06-20T21:41:01Z" finished-at="2018-06-20T21:42:07Z">
-      <class name="Template.EditorialTemplate.EditorialTemplate">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="beforeClass" is-config="true" duration-ms="208" started-at="2018-06-20T16:41:01Z" finished-at="2018-06-20T16:41:01Z">
+    <test name="Surefire test" duration-ms="34291" started-at="2018-07-12T22:52:58Z" finished-at="2018-07-12T22:53:32Z">
+      <class name="Template.ShipDetail">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeClass" is-config="true" duration-ms="207" started-at="2018-07-12T17:52:58Z" finished-at="2018-07-12T17:52:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="37" started-at="2018-06-20T16:41:01Z" finished-at="2018-06-20T16:41:01Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="36" started-at="2018-07-12T17:52:59Z" finished-at="2018-07-12T17:53:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.EditorialTemplate.EditorialTemplate.createEditorialTemplate(java.util.Hashtable) throws java.lang.Exception]]>
+                <![CDATA[public void Template.ShipDetail.Create_Ship_Inside_Home_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="createEditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="createEditorialTemplate" duration-ms="9876" started-at="2018-06-20T16:41:01Z" data-provider="readTestData" finished-at="2018-06-20T16:41:11Z">
+        <test-method status="PASS" signature="Create_Ship_Inside_Home_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Ship_Inside_Home_Folder" duration-ms="9809" started-at="2018-07-12T17:53:00Z" data-provider="readTestData" finished-at="2018-07-12T17:53:09Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{TemplateName=Editorial_Thru_Automation, Runmode=Y, RightClickInsert=Editorial, Browser=Chrome}]]>
+                <![CDATA[{Runmode=Y, RightClickInsert=ShipPage, ShipName=LePonant_Thru_Automation, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createEditorialTemplate -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="54" started-at="2018-06-20T16:41:11Z" finished-at="2018-06-20T16:41:11Z">
+        </test-method> <!-- Create_Ship_Inside_Home_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="60" started-at="2018-07-12T17:53:09Z" finished-at="2018-07-12T17:53:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createEditorialTemplate on [EditorialTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=EditorialTemplate.createEditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=Create_Ship_Inside_Home_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Ship_Inside_Home_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="26" started-at="2018-06-20T16:41:11Z" finished-at="2018-06-20T16:41:11Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="26" started-at="2018-07-12T17:53:10Z" finished-at="2018-07-12T17:53:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.EditorialTemplate.EditorialTemplate.add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
+                <![CDATA[public void Template.ShipDetail.input_Onboard_Experience_Section_Fields(java.util.Hashtable) throws java.lang.Exception]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="add_Editorial_Quotes_Component_Inside_EditorialTemplate" duration-ms="15318" started-at="2018-06-20T16:41:11Z" data-provider="readTestData" depends-on-methods="Template.EditorialTemplate.EditorialTemplate.createEditorialTemplate" finished-at="2018-06-20T16:41:26Z">
+        <test-method status="PASS" signature="input_Onboard_Experience_Section_Fields(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="input_Onboard_Experience_Section_Fields" duration-ms="22212" started-at="2018-07-12T17:53:10Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Ship_Inside_Home_Folder" finished-at="2018-07-12T17:53:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Content=, DataSource=editorial-quotes/forrest|editorial-quotes/winter, Runmode=Y, Control=Full Width Quote|Full Width Quote, RightClickInsert=Editorial Quotes, ComponentName=Editorial Quotes, PlaceHolder=main_editorial|/main_editorial/leftsidecolumn, Browser=Chrome}]]>
+                <![CDATA[{Content=Onboard Experience Header|Given her size, shallow draft and a design that is very open to the sea (with a large sundeck, an outdoor restaurant, and easy access to the sea for swimming from her marina), Le Ponant – PONANT’s symbolic flagship – gives passengers the feeling they are aboard a private yacht. Onboard, you’ll find four decks featuring a small library with a choice of books, cozy lounge with evening piano music, small boutique, and a full-service bar. Continental breakfast is served in your stateroom or at an American-style buffet in the outdoor panoramic restaurant; lunch is also served in the outdoor restaurant, buffet style; and dinner is served nightly in the window-lined restaurant. Staterooms (approximately 130 sq. ft.) are all outside on Le Ponant and include a private bathroom with shower, mini bar, multi-channel music system, individual climate control, and a telephone with world-wide satellite access.
+|, Runmode=Y, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- add_Editorial_Quotes_Component_Inside_EditorialTemplate -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="53" started-at="2018-06-20T16:41:27Z" finished-at="2018-06-20T16:41:27Z">
+        </test-method> <!-- input_Onboard_Experience_Section_Fields -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="51" started-at="2018-07-12T17:53:32Z" finished-at="2018-07-12T17:53:32Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=add_Editorial_Quotes_Component_Inside_EditorialTemplate on [EditorialTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=EditorialTemplate.add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="21" started-at="2018-06-20T16:41:27Z" finished-at="2018-06-20T16:41:27Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void Template.EditorialTemplate.EditorialTemplate.add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="add_Editorial_Quotes_Component_Inside_EditorialTemplate" duration-ms="18956" started-at="2018-06-20T16:41:27Z" data-provider="readTestData" depends-on-methods="Template.EditorialTemplate.EditorialTemplate.createEditorialTemplate" finished-at="2018-06-20T16:41:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Content=Winter is Coming|Eddard Stark|3 Tauck Tours|/Tauck/Editorial/Images/PonantLogo, DataSource=, Runmode=Y, Control=, RightClickInsert=Editorial Quote, ComponentName=Winter, PlaceHolder=, Browser=Chrome}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_Editorial_Quotes_Component_Inside_EditorialTemplate -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="44" started-at="2018-06-20T16:41:46Z" finished-at="2018-06-20T16:41:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=add_Editorial_Quotes_Component_Inside_EditorialTemplate on [EditorialTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=EditorialTemplate.add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=input_Onboard_Experience_Section_Fields on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.input_Onboard_Experience_Section_Fields(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="20" started-at="2018-06-20T16:41:46Z" finished-at="2018-06-20T16:41:46Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[public void Template.EditorialTemplate.EditorialTemplate.add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="add_Editorial_Quotes_Component_Inside_EditorialTemplate" duration-ms="21240" started-at="2018-06-20T16:41:46Z" data-provider="readTestData" depends-on-methods="Template.EditorialTemplate.EditorialTemplate.createEditorialTemplate" finished-at="2018-06-20T16:42:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{Content=The diversity and variation of things really made the tour something unexpectedly great|Jack Freeman|7 TAUCK TOURS|/Tauck/Editorial/Images/WindstarLogo, DataSource=, Runmode=Y, Control=, RightClickInsert=Editorial Quote, ComponentName=Forrest, PlaceHolder=, Browser=Chrome}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- add_Editorial_Quotes_Component_Inside_EditorialTemplate -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="51" started-at="2018-06-20T16:42:07Z" finished-at="2018-06-20T16:42:07Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=add_Editorial_Quotes_Component_Inside_EditorialTemplate on [EditorialTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=EditorialTemplate.add_Editorial_Quotes_Component_Inside_EditorialTemplate(java.util.Hashtable)[pri:0, instance:[EditorialTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- Template.EditorialTemplate.EditorialTemplate -->
+      </class> <!-- Template.ShipDetail -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>
