@@ -261,7 +261,7 @@ public class HomePageTemplate extends testBase {
     }
 
 
-  /*   @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
@@ -487,7 +487,7 @@ public class HomePageTemplate extends testBase {
 
     }
 
-*/
+
 
 
     @DataProvider(name = "readTestData")
