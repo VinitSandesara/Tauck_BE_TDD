@@ -120,7 +120,7 @@ public class feedContent extends globalTemplateImplementation {
 
             logOut();
 
-            Thread.sleep(2000);
+            Thread.sleep(5000);
             new Actions(driver).sendKeys(Keys.RETURN).build().perform();
 
 
