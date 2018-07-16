@@ -83,12 +83,12 @@ public class HomePageTemplate extends testBase {
                         .addNewControls()
                         .searchForControlFolderAndSelectControlFromFolder(splitControlFolders, splitControlString.get(innerloop));
 
-                        if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("TravellingWithTauckPortraitCards")) {
+                        if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Add_TravellingWithTauckPortraitCards_Sub_Component")) {
                             controls
                                     .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), TravellingWithTauckNodePath + "/" + splitDatasourceString.get(innerloop));
 
                         } else {
-                            if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("LeadGenerationCards")) {
+                            if(listOfComponentToMapWithDataSource.get(outerloop).equalsIgnoreCase("Add_LeadGeneration_Sub_Component")) {
                                 controls
                                         .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), LeadGenerationFolderNodePath + "/" + splitDatasourceString.get(innerloop));
                             } else {
@@ -109,7 +109,7 @@ public class HomePageTemplate extends testBase {
     }
 
 
-    @Test(dataProvider = "readTestData")
+   @Test(dataProvider = "readTestData")
     public void createHomeTemplate(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -221,7 +221,7 @@ public class HomePageTemplate extends testBase {
 
     }
 
-    @Test(dataProvider = "readTestData")
+   @Test(dataProvider = "readTestData")
     public void createLeadGenerationCopyFolderInsideGlobal(Hashtable<String, String> data) throws InterruptedException {
 
 
@@ -261,12 +261,20 @@ public class HomePageTemplate extends testBase {
     }
 
 
-  /*  @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
+  /*   @Test(dependsOnMethods = {"createTravellingWithTaucksFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createTravellingWithTauckPortraitCards(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
 
+        String PortraitImageCard = data.get("Card Title") + "|" +
+                data.get("Card Subtitle") + "|" +
+                data.get("Card Image") + "|" +
+                data.get("Card Link");
+
+        String PortraitImageCardHoover = data.get("Hover Title") + "|" +
+                data.get("Hover Subtitle") + "|" +
+                data.get("Hover Copy");
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -290,8 +298,9 @@ public class HomePageTemplate extends testBase {
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(	"/sitecore/templates/Project/Common/Content Types/Global Content Types/Portrait Trip Image Card" ,data.get("CardsName"), this.getClass().getSimpleName())
-                .feedContent_Fields_With_Data(data.get("Content_PortraitTripImageCard"), 0)
-                .input_Sections_Fields_Save_And_Logout(data.get("Content_PortraitTripImageCardHoover"), 1);
+
+                .feedContent_Fields_With_Data(PortraitImageCard, 0)
+                .input_Sections_Fields_Save_And_Logout(PortraitImageCardHoover, 1);
              //   .logOut();
 
 
@@ -300,12 +309,9 @@ public class HomePageTemplate extends testBase {
 
 
 
-     @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createLeadGenerationFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createLeadGenerationCards(Hashtable<String, String> data) throws InterruptedException, IOException {
-
-
-
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -330,8 +336,6 @@ public class HomePageTemplate extends testBase {
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("CardsName"))
                 .input_Sections_Fields_Save_And_Logout(data.get("Content"), 0);
-               // .logOut();
-
 
     }
 
@@ -341,9 +345,6 @@ public class HomePageTemplate extends testBase {
     @Test(dependsOnMethods = {"createLeadGenerationCopyFolderInsideGlobal"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void createLeadGenerationCopy(Hashtable<String, String> data) throws InterruptedException, IOException {
-
-
-
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
@@ -375,16 +376,14 @@ public class HomePageTemplate extends testBase {
 
 
 
-    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
-    public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
-
+    public void input_Hero_Settings_Section_Fields_For_Hero_Module(Hashtable<String, String> data) throws Exception {
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
-
 
         invokeBrowser();
 
@@ -398,79 +397,69 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-                //.expandHeroSettingsSection()
                 .expandSections("Section_Hero_Settings")
                 .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
-               // .logOut();
+
 
     }
 
-    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+   @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void fillTravellingWithTauck(Hashtable<String, String> data) throws Exception {
 
 
+       if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+           throw new SkipException("Skipping the test as Rnumode is N");
+       }
 
-        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
+       invokeBrowser();
 
+       HomePage homePage = new HomePage(driver, test.get());
+       PageFactory.initElements(driver, homePage);
 
-        invokeBrowser();
+       homePage
+               .login()
+               .goToContentEditorIfNotKickOffUser()
+               .navigateToWhichTauckNode(topNodePath);
 
-        HomePage homePage = new HomePage(driver, test.get());
-        PageFactory.initElements(driver, homePage);
-
-        homePage
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(topNodePath);
-
-        homePage
-                .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-              //  .expandTravellingWithTauckContentSection()
-                .expandSections("Section_Traveling_With_Tauck")
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
-               // .logOut();
+       homePage
+               .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+               .expandSections("Section_Traveling_With_Tauck")
+               .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
 
 
-    }
+   }
 
 
-    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+   @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void fillTauckExperienceComponent(Hashtable<String, String> data) throws Exception {
 
 
+       if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+           throw new SkipException("Skipping the test as Rnumode is N");
+       }
 
-        if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }
+       invokeBrowser();
 
+       HomePage homePage = new HomePage(driver, test.get());
+       PageFactory.initElements(driver, homePage);
 
-        invokeBrowser();
+       homePage
+               .login()
+               .goToContentEditorIfNotKickOffUser()
+               .navigateToWhichTauckNode(topNodePath);
 
-        HomePage homePage = new HomePage(driver, test.get());
-        PageFactory.initElements(driver, homePage);
+       homePage
+               .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+               .expandSections("Section_Tauck_Experience_Component")
+               .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
 
-        homePage
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(topNodePath);
-
-        homePage
-                .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-              //  .expandTauckExperienceComponentSection()
-                .expandSections("Section_Tauck_Experience_Component")
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
-              //  .logOut();
-
-
-    }
+   }
 
 
 
-    @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"createHomeTemplate"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void fillFeaturedContent(Hashtable<String, String> data) throws Exception {
 
@@ -480,30 +469,25 @@ public class HomePageTemplate extends testBase {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
+         invokeBrowser();
 
-        invokeBrowser();
+         HomePage homePage = new HomePage(driver, test.get());
+         PageFactory.initElements(driver, homePage);
 
-        HomePage homePage = new HomePage(driver, test.get());
-        PageFactory.initElements(driver, homePage);
+         homePage
+                 .login()
+                 .goToContentEditorIfNotKickOffUser()
+                 .navigateToWhichTauckNode(topNodePath);
 
-        homePage
-                .login()
-                .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(topNodePath);
-
-        homePage
-                .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-              //  .expandFeaturedContentSection()
-                .expandSections("Section_Featured_Content")
-                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
-            //    .logOut();
+         homePage
+                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+                 .expandSections("Section_Featured_Content")
+                 .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
 
 
     }
 
 */
-
-
 
 
     @DataProvider(name = "readTestData")
@@ -515,45 +499,45 @@ public class HomePageTemplate extends testBase {
            // return DataUtil.getData(xls, "HomeTemplateName", testSheetName);
             return GDriveSpreedSheetUtil.getData("HomeTemplateName", testSheetName);
 
-        }else if (method.getName().equals("fillHeroSettings")) {
+        }else if (method.getName().equals("input_Hero_Settings_Section_Fields_For_Hero_Module")) {
            // return DataUtil.getData(xls, "HeroSettings", testSheetName);
-            return GDriveSpreedSheetUtil.getData("HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_HeroSettings_Section_Fields", testSheetName);
 
         }else if (method.getName().equals("fillTravellingWithTauck")) {
            // return DataUtil.getData(xls, "TravellingWithTauck", testSheetName);
-            return GDriveSpreedSheetUtil.getData("TravellingWithTauck", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_Travelling_With_Tauck_Section_Fields", testSheetName);
 
         }else if (method.getName().equals("fillTauckExperienceComponent")) {
             //return DataUtil.getData(xls, "TauckExperienceComponent", testSheetName);
-            return GDriveSpreedSheetUtil.getData("TauckExperienceComponent", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_Tauck_Experience_Component_Section_Fields", testSheetName);
 
         }else if (method.getName().equals("fillFeaturedContent")) {
            // return DataUtil.getData(xls, "FeaturedContent", testSheetName);
-            return GDriveSpreedSheetUtil.getData("FeaturedContent", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_Featured_Content_Section_Fields", testSheetName);
 
         }else if (method.getName().equals("createTravellingWithTauckPortraitCards")) {
           //  return DataUtil.getData(xls, "TravellingWithTauckPortraitCards", testSheetName);
-            return GDriveSpreedSheetUtil.getData("TravellingWithTauckPortraitCards", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_TravellingWithTauckPortraitCards_Sub_Component", testSheetName);
 
         }else if (method.getName().equals("createTravellingWithTaucksFolderInsideGlobal")) {
           //  return DataUtil.getData(xls, "TravellingWithTauckPortraitCardsFolder", testSheetName);
-            return GDriveSpreedSheetUtil.getData("TravellingWithTauckPortraitCardsFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Create_TravellingWithTauckPortraitCards_Node_Inside_Tauck_Node", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationFolderInsideGlobal")) {
           //  return DataUtil.getData(xls, "LeadGenerationFolder", testSheetName);
-            return GDriveSpreedSheetUtil.getData("LeadGenerationFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_LeadGeneration_Node_Inside_Tauck_Node", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationCards")) {
           //  return DataUtil.getData(xls, "LeadGenerationCards", testSheetName);
-            return GDriveSpreedSheetUtil.getData("LeadGenerationCards", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_LeadGeneration_Sub_Component", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationCopyFolderInsideGlobal")) {
           //  return DataUtil.getData(xls, "LeadGenerationCopyFolder", testSheetName);
-            return GDriveSpreedSheetUtil.getData("LeadGenerationCopyFolder", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_LeadGenerationCopy_Node_Inside_Global_LeadGeneration_Node", testSheetName);
 
         }else if (method.getName().equals("createLeadGenerationCopy")) {
           //  return DataUtil.getData(xls, "LeadGenerationCopy", testSheetName);
-            return GDriveSpreedSheetUtil.getData("LeadGenerationCopy", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_LeadGenerationCopy_Sub_Component", testSheetName);
         }
 
 

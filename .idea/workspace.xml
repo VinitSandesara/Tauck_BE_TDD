@@ -4,19 +4,18 @@
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/Reports/extent.html" afterPath="$PROJECT_DIR$/Reports/extent.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Config.java" afterPath="$PROJECT_DIR$/src/main/java/Util/Config.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" afterPath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" afterPath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
       <change beforePath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" afterPath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.html" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/Surefire suite/Surefire test.xml" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-Template.EditorialTemplate.EditorialTemplate.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Template.EditorialTemplate.EditorialTemplate.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-Template.ShipDetail.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Template.ShipDetail.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" afterPath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" afterPath="$PROJECT_DIR$/target/surefire-reports/index.html" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-Template.EditorialTemplate.EditorialTemplate.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-Template.ShipDetail.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/classes.html" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/methods-not-run.html" />
@@ -25,7 +24,10 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/Surefire suite/toc.html" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" afterPath="$PROJECT_DIR$/target/surefire-reports/old/index.html" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/Template/ShipDetail.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/ShipDetail.class" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" afterPath="$PROJECT_DIR$/testng.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,7 +52,7 @@
     <SUITE FILE_PATH="coverage/tauckBE$testEditorial.coverage" NAME="testEditorial Coverage Results" MODIFIED="1523891263251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>Template.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/TauckSitecore$testng.coverage" NAME="testng Coverage Results" MODIFIED="1531367869525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/TauckSitecore$testng.coverage" NAME="testng Coverage Results" MODIFIED="1531770994616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/TauckSitecore$mapDataSource.coverage" NAME="mapDataSource Coverage Results" MODIFIED="1530630588924" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>rough.*</FILTER>
     </SUITE>
@@ -64,14 +66,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ShipDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
+      <file leaf-file-name="MegaMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="937">
-              <caret line="723" column="5" lean-forward="true" selection-start-line="723" selection-start-column="5" selection-end-line="723" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="682">
+              <caret line="383" column="5" lean-forward="true" selection-start-line="383" selection-start-column="5" selection-end-line="383" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,8 +79,8 @@
       <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+            <state relative-caret-position="672">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,8 +89,8 @@
       <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="528">
+              <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -108,25 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>input_Sections_Fields_Save_And_Logout</find>
-      <find>fillHeroSettings</find>
-      <find>Feed_Featured_Content_Section_Fields</find>
-      <find>Feed_Hero_Module_Hero_Setttings_Section_Fields</find>
-      <find>bind_Content_Fields_In_One_String</find>
-      <find>Deselect_TreeList_Selected_Options_To_Reselect</find>
-      <find>Create_Ship_Inside_Data_Folder</find>
-      <find>fill_Component_Content_With_Data</find>
-      <find>navigateToWhichTauckNode</find>
-      <find>Create_Ship_Partners_Half_Width_Media_Segment</find>
-      <find>Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder</find>
-      <find>Create_Portrait_Highlights_Cards</find>
-      <find>Create_Deck_Plans_Decks_Inside_Decks_Folder</find>
-      <find>input_Ship_Specification_Sections_Fields</find>
-      <find>input_Hero_Settings_Section_Fields_For_Hero_Moduleinput_Hero_Settings_Section_Fields_For_Hero_Module</find>
-      <find>input_Hero_Settings_Section_Fields_For_Hero_Module</find>
-      <find>Create_And_Input_Highlight_Intro_Copy</find>
-      <find>input_Onboard_Experience_Section_Fields</find>
-      <find>Data_Ships_Name</find>
       <find>Ship_Specification</find>
       <find>DeckPlans_Decks</find>
       <find>Create_DeckPlans_Decks_Inside_Decks_folder</find>
@@ -138,6 +119,25 @@
       <find>Portrait Highlights Cards</find>
       <find>Ship_Partners</find>
       <find>Ship Partners List Of Partners</find>
+      <find>Create_Portrait_Highlights_Cards</find>
+      <find>Create_Tours_and_Cruises_SubMenus</find>
+      <find>fillHeroSettings</find>
+      <find>TravellingWithTauck</find>
+      <find>fillTauckExperienceComponent</find>
+      <find>FeaturedContent</find>
+      <find>TravellingWithTauckPortraitCards</find>
+      <find>LeadGenerationFolder</find>
+      <find>LeadGenerationCards</find>
+      <find>createLeadGenerationFolderInsideGlobal</find>
+      <find>createLeadGenerationCards</find>
+      <find>Hero</find>
+      <find>LeadGenerationCopyFolder</find>
+      <find>createLeadGenerationCopyFolderInsideGlobal</find>
+      <find>createLeadGenerationCopy</find>
+      <find>createTravellingWithTaucksFolderInsideGlobal</find>
+      <find>createHomeTemplate</find>
+      <find>fillTravellingWithTauck</find>
+      <find>create_MegaMenu_And_SubMenus</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/MapDataSourceWithFEControl/mapDataSourceWithControlLocators.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/HomePageLocators.java" />
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java" />
@@ -191,15 +190,16 @@
         <option value="$PROJECT_DIR$/src/main/java/mapDataSourceWithFE/mapControlWithDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/ExtentReport/ExtentManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" />
-        <option value="$PROJECT_DIR$/testng.xml" />
         <option value="$PROJECT_DIR$/src/main/java/rough/mapDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
         <option value="$PROJECT_DIR$/src/test/java/base/testBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
+        <option value="$PROJECT_DIR$/testng.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
         <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Util/Config.java" />
       </list>
@@ -219,9 +219,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="272" />
+    <option name="x" value="173" />
     <option name="y" value="23" />
-    <option name="width" value="2114" />
+    <option name="width" value="2495" />
     <option name="height" value="1336" />
   </component>
   <component name="ProjectLevelVcsManager">
@@ -754,34 +754,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="testng - 2018.07.11 at 22h 25m 16s.xml">
+    <history-entry file="testng - 2018.07.16 at 10h 42m 06s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.11 at 22h 42m 55s.xml">
+    <history-entry file="testng - 2018.07.16 at 11h 11m 32s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.11 at 22h 48m 27s.xml">
+    <history-entry file="testng - 2018.07.16 at 11h 27m 09s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.11 at 22h 52m 54s.xml">
+    <history-entry file="testng - 2018.07.16 at 12h 07m 21s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.11 at 22h 58m 59s.xml">
+    <history-entry file="testng - 2018.07.16 at 13h 33m 47s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.12 at 09h 34m 08s.xml">
+    <history-entry file="testng - 2018.07.16 at 13h 49m 18s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.12 at 09h 36m 33s.xml">
+    <history-entry file="testng - 2018.07.16 at 13h 56m 51s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.12 at 09h 39m 45s.xml">
+    <history-entry file="testng - 2018.07.16 at 13h 58m 52s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.12 at 09h 44m 42s.xml">
+    <history-entry file="testng - 2018.07.16 at 14h 56m 30s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="testng - 2018.07.12 at 09h 49m 30s.xml">
+    <history-entry file="testng - 2018.07.16 at 14h 58m 27s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -795,7 +795,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="272" y="23" width="2114" height="1336" extended-state="0" />
+    <frame x="173" y="23" width="2495" height="1336" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -810,11 +810,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957885" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28767124" sideWeight="0.49799398" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49838337" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24524485" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24500611" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32774517" sideWeight="0.49838337" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2027027" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17121892" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24975514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -885,12 +885,6 @@
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java</url>
-          <line>245</line>
-          <properties />
-          <option name="timeStamp" value="235" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java</url>
           <line>145</line>
           <properties />
@@ -928,7 +922,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>511</line>
+          <line>503</line>
           <properties />
           <option name="timeStamp" value="292" />
         </line-breakpoint>
@@ -940,24 +934,36 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>470</line>
+          <line>462</line>
           <properties />
           <option name="timeStamp" value="306" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>649</line>
+          <line>641</line>
           <properties />
           <option name="timeStamp" value="307" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java</url>
-          <line>617</line>
+          <line>609</line>
           <properties />
           <option name="timeStamp" value="310" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java</url>
+          <line>202</line>
+          <properties />
+          <option name="timeStamp" value="312" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java</url>
+          <line>309</line>
+          <properties />
+          <option name="timeStamp" value="313" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="311" />
+      <option name="time" value="314" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
@@ -1133,14 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="182" column="85" lean-forward="true" selection-start-line="182" selection-start-column="85" selection-end-line="182" selection-end-column="85" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/ProductTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
@@ -1281,54 +1279,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="492" column="71" lean-forward="true" selection-start-line="492" selection-start-column="71" selection-end-line="492" selection-end-column="71" />
-          <folding>
-            <element signature="e#16634#16642#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/Invoker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="476" column="0" lean-forward="false" selection-start-line="476" selection-start-column="0" selection-end-line="476" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-          <folding>
-            <element signature="e#10889#10897#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="951">
           <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3956">
-          <caret line="327" column="0" lean-forward="true" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1341,36 +1295,84 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="179" column="64" lean-forward="true" selection-start-line="179" selection-start-column="64" selection-end-line="179" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="388" column="68" lean-forward="true" selection-start-line="388" selection-start-column="68" selection-end-line="388" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="398" column="0" lean-forward="true" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/Invoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="506" column="46" lean-forward="true" selection-start-line="506" selection-start-column="46" selection-end-line="506" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="937">
-          <caret line="723" column="5" lean-forward="true" selection-start-line="723" selection-start-column="5" selection-end-line="723" selection-end-column="5" />
+        <state relative-caret-position="740">
+          <caret line="593" column="24" lean-forward="false" selection-start-line="593" selection-start-column="24" selection-end-line="593" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="414" column="23" lean-forward="true" selection-start-line="414" selection-start-column="23" selection-end-line="414" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/MegaMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="383" column="5" lean-forward="true" selection-start-line="383" selection-start-column="5" selection-end-line="383" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="528">
+          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="27" column="53" lean-forward="true" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
+        <state relative-caret-position="672">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>

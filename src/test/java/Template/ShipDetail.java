@@ -230,7 +230,6 @@ public class ShipDetail extends testBase {
     // @Test(dataProvider = "readTestData")
     public void Create_Portrait_Highlights_Cards(Hashtable<String, String> data) throws Exception {
 
-// Here i am not using data.get("content") for filling content is because all 3 components are listed in one test case and each of them required different content fields.
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
@@ -245,6 +244,8 @@ public class ShipDetail extends testBase {
                 .goToContentEditorIfNotKickOffUser();
 
         if(data.get("RightClickInsert").equalsIgnoreCase("HighlightImage")) {
+
+     // This is the only component where i have not used data.get("content") because it required 2 different inputs for 2 different sections
 
             String HighLightImage = data.get("Highlight Title") + "|" +
                     data.get("Highlight Subtitle") + "|" +
@@ -268,10 +269,6 @@ public class ShipDetail extends testBase {
 
         } else if(data.get("RightClickInsert").equalsIgnoreCase("HighlightQuote")) {
 
-            String TourHighlightQuote = data.get("Highlight Title") + "|" +
-                    data.get("Highlight Subtitle") + "|" +
-                    data.get("Profile Thumbnail");
-
             sitecore
 
                     // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
@@ -281,15 +278,10 @@ public class ShipDetail extends testBase {
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                    .fill_Component_Content_With_Data(TourHighlightQuote);
+                    .fill_Component_Content_With_Data(data.get("Content"));
 
         } else {
 
-            String TourHighlightVideo = data.get("Highlight Title") + "|" +
-                    data.get("Highlight Subtitle") + "|" +
-                    data.get("Brightcove Video Id") + "|" +
-                    data.get("VideoImage");
-
             sitecore
 
                     // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
@@ -299,7 +291,7 @@ public class ShipDetail extends testBase {
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                    .fill_Component_Content_With_Data(TourHighlightVideo);
+                    .fill_Component_Content_With_Data(data.get("Content"));
         }
 
         sitecore.logOut();
@@ -708,7 +700,7 @@ public class ShipDetail extends testBase {
 
         } else if (method.getName().equals("Create_Portrait_Highlights_Cards")) {
 
-            return GDriveSpreedSheetUtil.getData("Add_Portrait_Highlights_Cards_Sub_Component", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_Portrait_Highlights_Cards_Sub_Component", testSheetName);
 
         } else if (method.getName().equals("Create_Ship_Partners_Half_Width_Media_Segment")) {
 

@@ -1,84 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="34291" started-at="2018-07-12T22:52:58Z" finished-at="2018-07-12T22:53:32Z">
+  <suite name="Surefire suite" duration-ms="124226" started-at="2018-07-16T19:46:27Z" finished-at="2018-07-16T19:48:32Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="34291" started-at="2018-07-12T22:52:58Z" finished-at="2018-07-12T22:53:32Z">
-      <class name="Template.ShipDetail">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeClass" is-config="true" duration-ms="207" started-at="2018-07-12T17:52:58Z" finished-at="2018-07-12T17:52:58Z">
+    <test name="Surefire test" duration-ms="124226" started-at="2018-07-16T19:46:27Z" finished-at="2018-07-16T19:48:32Z">
+      <class name="Template.HomePageTemplate">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeClass" is-config="true" duration-ms="237" started-at="2018-07-16T14:46:27Z" finished-at="2018-07-16T14:46:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="36" started-at="2018-07-12T17:52:59Z" finished-at="2018-07-12T17:53:00Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="31" started-at="2018-07-16T14:46:29Z" finished-at="2018-07-16T14:46:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.ShipDetail.Create_Ship_Inside_Home_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
+                <![CDATA[public void Template.HomePageTemplate.createHomeTemplate(java.util.Hashtable) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="Create_Ship_Inside_Home_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Ship_Inside_Home_Folder" duration-ms="9809" started-at="2018-07-12T17:53:00Z" data-provider="readTestData" finished-at="2018-07-12T17:53:09Z">
+        <test-method status="PASS" signature="createHomeTemplate(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createHomeTemplate" duration-ms="9882" started-at="2018-07-16T14:46:29Z" data-provider="readTestData" finished-at="2018-07-16T14:46:39Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Runmode=Y, RightClickInsert=ShipPage, ShipName=LePonant_Thru_Automation, Browser=Chrome}]]>
+                <![CDATA[{TemplateName=Home_Thru_Automation, Runmode=Y, RightClickInsert=Insert from Template, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Create_Ship_Inside_Home_Folder -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="60" started-at="2018-07-12T17:53:09Z" finished-at="2018-07-12T17:53:10Z">
+        </test-method> <!-- createHomeTemplate -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="55" started-at="2018-07-16T14:46:39Z" finished-at="2018-07-16T14:46:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=Create_Ship_Inside_Home_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Ship_Inside_Home_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=createHomeTemplate on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createHomeTemplate(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="26" started-at="2018-07-12T17:53:10Z" finished-at="2018-07-12T17:53:10Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="26" started-at="2018-07-16T14:46:40Z" finished-at="2018-07-16T14:46:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.ShipDetail.input_Onboard_Experience_Section_Fields(java.util.Hashtable) throws java.lang.Exception]]>
+                <![CDATA[public void Template.HomePageTemplate.createLeadGenerationCopyFolderInsideGlobal(java.util.Hashtable) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="input_Onboard_Experience_Section_Fields(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="input_Onboard_Experience_Section_Fields" duration-ms="22212" started-at="2018-07-12T17:53:10Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Ship_Inside_Home_Folder" finished-at="2018-07-12T17:53:32Z">
+        <test-method status="PASS" signature="createLeadGenerationCopyFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createLeadGenerationCopyFolderInsideGlobal" duration-ms="9315" started-at="2018-07-16T14:46:40Z" data-provider="readTestData" finished-at="2018-07-16T14:46:50Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Content=Onboard Experience Header|Given her size, shallow draft and a design that is very open to the sea (with a large sundeck, an outdoor restaurant, and easy access to the sea for swimming from her marina), Le Ponant – PONANT’s symbolic flagship – gives passengers the feeling they are aboard a private yacht. Onboard, you’ll find four decks featuring a small library with a choice of books, cozy lounge with evening piano music, small boutique, and a full-service bar. Continental breakfast is served in your stateroom or at an American-style buffet in the outdoor panoramic restaurant; lunch is also served in the outdoor restaurant, buffet style; and dinner is served nightly in the window-lined restaurant. Staterooms (approximately 130 sq. ft.) are all outside on Le Ponant and include a private bathroom with shower, mini bar, multi-channel music system, individual climate control, and a telephone with world-wide satellite access.
-|, Runmode=Y, Browser=Chrome}]]>
+                <![CDATA[{FolderName=Lead Generation Copy Folder Thru Automation, Runmode=Y, RightClickInsert=Insert from Template, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- input_Onboard_Experience_Section_Fields -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="51" started-at="2018-07-12T17:53:32Z" finished-at="2018-07-12T17:53:32Z">
+        </test-method> <!-- createLeadGenerationCopyFolderInsideGlobal -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="49" started-at="2018-07-16T14:46:50Z" finished-at="2018-07-16T14:46:50Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=input_Onboard_Experience_Section_Fields on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.input_Onboard_Experience_Section_Fields(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=createLeadGenerationCopyFolderInsideGlobal on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createLeadGenerationCopyFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- Template.ShipDetail -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="22" started-at="2018-07-16T14:46:50Z" finished-at="2018-07-16T14:46:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.HomePageTemplate.createLeadGenerationFolderInsideGlobal(java.util.Hashtable) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createLeadGenerationFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createLeadGenerationFolderInsideGlobal" duration-ms="8836" started-at="2018-07-16T14:46:50Z" data-provider="readTestData" finished-at="2018-07-16T14:46:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{FolderName=Lead Generation Thru Automation, Runmode=Y, RightClickInsert=Insert from Template, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createLeadGenerationFolderInsideGlobal -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="45" started-at="2018-07-16T14:46:59Z" finished-at="2018-07-16T14:46:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createLeadGenerationFolderInsideGlobal on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createLeadGenerationFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="19" started-at="2018-07-16T14:47:00Z" finished-at="2018-07-16T14:47:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.HomePageTemplate.createTravellingWithTaucksFolderInsideGlobal(java.util.Hashtable) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="createTravellingWithTaucksFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createTravellingWithTaucksFolderInsideGlobal" duration-ms="8954" started-at="2018-07-16T14:47:00Z" data-provider="readTestData" finished-at="2018-07-16T14:47:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{FolderName=Traveling With Tauck Cards Folder, Runmode=Y, RightClickInsert=Traveling With Tauck Cards Folder, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTravellingWithTaucksFolderInsideGlobal -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="44" started-at="2018-07-16T14:47:09Z" finished-at="2018-07-16T14:47:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createTravellingWithTaucksFolderInsideGlobal on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createTravellingWithTaucksFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="20" started-at="2018-07-16T14:47:09Z" finished-at="2018-07-16T14:47:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.HomePageTemplate.mapDataSourceWithFrontEndControls() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="37" started-at="2018-07-16T14:47:28Z" finished-at="2018-07-16T14:47:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=mapDataSourceWithFrontEndControls on [HomePageTemplate passed=0 failed=0 skipped=0] status=FAILURE method=HomePageTemplate.mapDataSourceWithFrontEndControls()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="17" started-at="2018-07-16T14:47:28Z" finished-at="2018-07-16T14:47:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.HomePageTemplate.mapDataSourceWithFrontEndControls() throws java.lang.Exception]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="mapDataSourceWithFrontEndControls()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="mapDataSourceWithFrontEndControls" duration-ms="63488" started-at="2018-07-16T14:47:28Z" depends-on-methods="Template.HomePageTemplate.createLeadGenerationCopyFolderInsideGlobal, Template.HomePageTemplate.createTravellingWithTaucksFolderInsideGlobal, Template.HomePageTemplate.createLeadGenerationFolderInsideGlobal, Template.HomePageTemplate.createHomeTemplate" finished-at="2018-07-16T14:48:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mapDataSourceWithFrontEndControls -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="40" started-at="2018-07-16T14:48:32Z" finished-at="2018-07-16T14:48:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=mapDataSourceWithFrontEndControls on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.mapDataSourceWithFrontEndControls()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- Template.HomePageTemplate -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>
