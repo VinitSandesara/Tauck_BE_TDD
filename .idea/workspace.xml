@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" afterPath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="925">
-              <caret line="400" column="37" lean-forward="true" selection-start-line="400" selection-start-column="37" selection-end-line="400" selection-end-column="37" />
+              <caret line="400" column="32" lean-forward="false" selection-start-line="400" selection-start-column="32" selection-end-line="400" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -55,8 +54,8 @@
       <file leaf-file-name="feedContent.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
-              <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+            <state relative-caret-position="735">
+              <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1319,14 +1318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="925">
-          <caret line="400" column="37" lean-forward="true" selection-start-line="400" selection-start-column="37" selection-end-line="400" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-751">
@@ -1335,10 +1326,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="400" column="32" lean-forward="false" selection-start-line="400" selection-start-column="32" selection-end-line="400" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
-          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+        <state relative-caret-position="735">
+          <caret line="122" column="0" lean-forward="true" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
           <folding />
         </state>
       </provider>

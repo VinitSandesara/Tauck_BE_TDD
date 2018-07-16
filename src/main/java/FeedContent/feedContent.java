@@ -115,13 +115,14 @@ public class feedContent extends globalTemplateImplementation {
 
             clearAndFillContentFields(totalInput, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
 
-            Thread.sleep(2000);
-            _save.click();
 
+            _save.click();
+            Thread.sleep(2000);
+            new Actions(driver).sendKeys(Keys.RETURN).build().perform();
             logOut();
 
-            Thread.sleep(5000);
-            new Actions(driver).sendKeys(Keys.RETURN).build().perform();
+           // Thread.sleep(5000);
+          //  new Actions(driver).sendKeys(Keys.RETURN).build().perform();
 
 
         } catch (ElementNotVisibleException env) {
