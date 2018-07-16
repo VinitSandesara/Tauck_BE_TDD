@@ -115,13 +115,16 @@ public class feedContent extends globalTemplateImplementation {
 
             clearAndFillContentFields(totalInput, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
 
+            /* While saving inputted content for 2 different sections in 2 different browser you might get "Do you want to override this changes - Yes or No"
+            if you press Yes it will override 1 section data and will save another one. To avoid this i have saved both the sections and if test fails it will run test
+            again and pass. Here nothing i can do since its from application side that it doesn't allow to save content at the same time on 2 different browser.
+             */
 
+            Thread.sleep(5000);
             _save.click();
-            Thread.sleep(2000);
-            new Actions(driver).sendKeys(Keys.RETURN).build().perform();
             logOut();
 
-           // Thread.sleep(5000);
+          //  Thread.sleep(5000);
           //  new Actions(driver).sendKeys(Keys.RETURN).build().perform();
 
 
