@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" afterPath="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,11 +41,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HomePageTemplate.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HomePageTemplate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="873">
-              <caret line="489" column="0" lean-forward="true" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
+            <state relative-caret-position="925">
+              <caret line="400" column="37" lean-forward="true" selection-start-line="400" selection-start-column="37" selection-end-line="400" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="feedContent.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="776">
+              <caret line="124" column="0" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -148,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/main/java/rough/mapDataSource.java" />
         <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
         <option value="$PROJECT_DIR$/src/test/java/base/testBase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
         <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
@@ -157,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Util/Config.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java" />
       </list>
     </option>
   </component>
@@ -1180,14 +1190,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/base/testBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="685">
@@ -1250,26 +1252,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="179" column="64" lean-forward="true" selection-start-line="179" selection-start-column="64" selection-end-line="179" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GoogleDriveConfigration/GDriveSpreedSheetUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="868">
           <caret line="388" column="68" lean-forward="true" selection-start-line="388" selection-start-column="68" selection-end-line="388" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="687">
-          <caret line="398" column="0" lean-forward="true" selection-start-line="398" selection-start-column="0" selection-end-line="398" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1295,7 +1281,7 @@
         <state relative-caret-position="740">
           <caret line="593" column="24" lean-forward="false" selection-start-line="593" selection-start-column="24" selection-end-line="593" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1324,10 +1310,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2628">
+          <caret line="168" column="22" lean-forward="true" selection-start-line="168" selection-start-column="22" selection-end-line="168" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="873">
-          <caret line="489" column="0" lean-forward="true" selection-start-line="489" selection-start-column="0" selection-end-line="489" selection-end-column="0" />
+        <state relative-caret-position="925">
+          <caret line="400" column="37" lean-forward="true" selection-start-line="400" selection-start-column="37" selection-end-line="400" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-751">
+          <caret line="465" column="16" lean-forward="false" selection-start-line="465" selection-start-column="16" selection-end-line="465" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="776">
+          <caret line="124" column="0" lean-forward="true" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
           <folding />
         </state>
       </provider>
