@@ -115,12 +115,12 @@ public class feedContent extends globalTemplateImplementation {
 
             clearAndFillContentFields(totalInput, "td", "tr", "input", CommonLocators.TEXTAREA_TEXTBOX, inputData);
 
-
-            _save.click();
             Thread.sleep(2000);
+            _save.click();
+
             logOut();
 
-            Thread.sleep(2000);
+            Thread.sleep(9000);
             new Actions(driver).sendKeys(Keys.RETURN).build().perform();
 
 
