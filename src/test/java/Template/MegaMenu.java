@@ -226,13 +226,15 @@ public class MegaMenu extends testBase {
 
                 feedcontent.feedContent_Fields_With_Data(Content, 1);
 
-            } else {
+            } else if (Arrays.asList(data.get("SubMenu_SubComponent").split("\\|")).get(i).equalsIgnoreCase("Featured Tours")) {
 
                 String Content = data.get("Menu Featured Title") + "|" +
                         data.get("Menu Featured Tours All");
 
                 feedcontent.feedContent_Fields_With_Data(Content, 1);
 
+            } else {
+                feedcontent.feedContent_Fields_With_Data(data.get("Content"), 1);
             }
 
 
