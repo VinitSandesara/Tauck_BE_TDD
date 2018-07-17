@@ -135,11 +135,9 @@ public class Categroy_Collection_Template extends testBase {
 
          // test.get().assignCategory(data.get("TestReportTag")).assignAuthor("Implemented by"+"::"+ " Vinit");
 
-
           if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
               throw new SkipException("Skipping the test as Rnumode is N");
           }
-
 
           invokeBrowser();
 
@@ -153,40 +151,38 @@ public class Categroy_Collection_Template extends testBase {
 
           homePage
                   .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-                  .expandHeroSettingsSection()
+                  .expandSections("Section_Hero_Settings")
                   .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
-               //   .logOut();
+
 
       }
 
 
-      @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
       // @Test(dataProvider = "readTestData")
       public void fillFeaturedContent(Hashtable<String, String> data) throws Exception {
 
        //   test.get().assignCategory(data.get("TestReportTag")).assignAuthor("Implemented by"+"::"+ " Vinit");
 
+         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
+             throw new SkipException("Skipping the test as Rnumode is N");
+         }
 
-          if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
-              throw new SkipException("Skipping the test as Rnumode is N");
-          }
+         invokeBrowser();
 
+         HomePage homePage = new HomePage(driver, test.get());
+         PageFactory.initElements(driver, homePage);
 
-          invokeBrowser();
+         homePage
+                 .login()
+                 .goToContentEditorIfNotKickOffUser()
+                 .navigateToWhichTauckNode(topNodePath);
 
-          HomePage homePage = new HomePage(driver, test.get());
-          PageFactory.initElements(driver, homePage);
+         homePage
+                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+                 .expandSections("Section_Featured_Content")
+                 .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
 
-          homePage
-                  .login()
-                  .goToContentEditorIfNotKickOffUser()
-                  .navigateToWhichTauckNode(topNodePath);
-
-          homePage
-                  .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
-                  .expandFeaturedContentSection()
-                  .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
-               //   .logOut();
 
 
       }
@@ -238,6 +234,7 @@ public class Categroy_Collection_Template extends testBase {
     public void CreatePortraitHighlightsCards(Hashtable<String, String> data) throws Exception {
 
 
+
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
@@ -252,7 +249,15 @@ public class Categroy_Collection_Template extends testBase {
 
         if(data.get("RightClickInsert").equalsIgnoreCase("HighlightImage")) {
 
-            List<String> HighlightImagesAndPortraitOnlyData = Arrays.asList(data.get("Content").split("\\_"));
+            // This is the only component where i have not used data.get("content") because it required 2 different inputs for 2 different sections
+
+            String HighLightImage = data.get("Highlight Title") + "|" +
+                    data.get("Highlight Subtitle") + "|" +
+                    data.get("Highlight Image");
+
+            String PortraitOnly = data.get("Hover Title") + "|" +
+                    data.get("Hover Subtitle") + "|" +
+                    data.get("Hover Copy");
 
             sitecore
 
@@ -263,8 +268,8 @@ public class Categroy_Collection_Template extends testBase {
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                    .feedContent_Fields_With_Data(HighlightImagesAndPortraitOnlyData.get(0), 0)
-                    .feedContent_Fields_With_Data(HighlightImagesAndPortraitOnlyData.get(1), 2);
+                    .feedContent_Fields_With_Data(HighLightImage, 0)
+                    .feedContent_Fields_With_Data(PortraitOnly, 2);
 
         } else if(data.get("RightClickInsert").equalsIgnoreCase("HighlightQuote")) {
 
@@ -293,12 +298,14 @@ public class Categroy_Collection_Template extends testBase {
                     .fill_Component_Content_With_Data(data.get("Content"));
         }
 
-            sitecore.logOut();
+        sitecore.logOut();
+
+
     }
 
 
 
-    @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
     // @Test(dataProvider = "readTestData")
     public void CreateAndInputLandScapeHighlightIntroCopy(Hashtable<String, String> data) throws Exception {
 
@@ -347,11 +354,17 @@ public class Categroy_Collection_Template extends testBase {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
+        String HighLightImage = data.get("Highlight Title") + "|" +
+                data.get("Highlight Subtitle") + "|" +
+                data.get("Highlight Image");
+
+        String PortraitOnly = data.get("Hover Title") + "|" +
+                data.get("Hover Subtitle") + "|" +
+                data.get("Hover Copy");
+
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
-
-        List<String> HighlightImagesAndPortraitOnlyData = Arrays.asList(data.get("Content").split("\\_"));
 
         sitecore
                     .login()
@@ -364,8 +377,8 @@ public class Categroy_Collection_Template extends testBase {
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                    .feedContent_Fields_With_Data(HighlightImagesAndPortraitOnlyData.get(0), 0)
-                    .feedContent_Fields_With_Data(HighlightImagesAndPortraitOnlyData.get(1), 1);
+                    .feedContent_Fields_With_Data(HighLightImage, 0)
+                    .feedContent_Fields_With_Data(PortraitOnly, 2);
 
         }
 
@@ -381,31 +394,31 @@ public class Categroy_Collection_Template extends testBase {
 
         if (method.getName().equals("Create_Category_Collection_Template")) {
 
-            return GDriveSpreedSheetUtil.getData("TemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("TemplateName", testSheetName);
 
         } else if (method.getName().equals("fillHeroSettings")) {
 
-            return GDriveSpreedSheetUtil.getData("HeroSettings", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_HeroSettings_Section_Fields", testSheetName);
 
         } else if (method.getName().equals("fillFeaturedContent")) {
 
-            return GDriveSpreedSheetUtil.getData("FeaturedContent", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Input_Featured_Content_Section_Fields", testSheetName);
 
         } else if (method.getName().equals("CreateAndInputHighlightIntroCopy")) {
 
-            return GDriveSpreedSheetUtil.getData("Portrait Highlights and Introduction Copy", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_Portrait_Highlights_and_Introduction_Copy_Node_Inside_Home_Destinations_Node", testSheetName);
 
         } else if (method.getName().equals("CreatePortraitHighlightsCards")) {
 
-            return GDriveSpreedSheetUtil.getData("Portrait Highlights Cards", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_Portrait_Highlights_Cards_Sub_Component", testSheetName);
 
         } else if (method.getName().equals("CreateAndInputLandScapeHighlightIntroCopy")) {
 
-            return GDriveSpreedSheetUtil.getData("Landscape Highlights and Introduction Copy", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_Landscape_Highlights_and_Introduction_Copy_Node_Inside_Home_Destinations_Node", testSheetName);
 
         } else if (method.getName().equals("CreateLandScapeHighlightsCards")) {
 
-            return GDriveSpreedSheetUtil.getData("Landscape Highlights Cards", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel("Add_Landscape_Highlights_Cards_Sub_Component", testSheetName);
         }
 
 
