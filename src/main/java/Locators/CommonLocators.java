@@ -60,7 +60,9 @@ public class CommonLocators {
 
     public static final String SELECTED_TREELIST_OPTIONS = "//div[@class='scContentControlSelectedList']";
 
+    public static final String SELECT_ALL_TREELIST_OPTION = "Select all";
 
+    public static final String DE_SELECT_ALL_TREELIST_OPTION = "Deselect all";
 
 
 

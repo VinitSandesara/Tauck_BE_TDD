@@ -13,7 +13,7 @@
   <test name="Test">
       <parameter name="browserName" value="chrome"></parameter>
       <classes>
-          <class name="Template.Categroy_Collection_Template" />
+          <class name="Template.EditorialTemplate.EditorialTemplate" />
       </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

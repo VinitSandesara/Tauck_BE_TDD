@@ -73,6 +73,13 @@ public class feedContent extends globalTemplateImplementation {
     @FindBy(xpath = CommonLocators.TREELIST_TOP_NODE)
     public List<WebElement> _treeListTopNode;
 
+    @FindBy(linkText = CommonLocators.SELECT_ALL_TREELIST_OPTION)
+    public WebElement _selectAllTreeListOptions;
+
+    @FindBy(linkText = CommonLocators.DE_SELECT_ALL_TREELIST_OPTION)
+    public WebElement _deSelectAllTreeListOptions;
+
+
 
    /* public feedContent feed_HomePage_Content_Sections_Panel(String inputData, int counter) throws IOException {
 
@@ -373,6 +380,23 @@ public class feedContent extends globalTemplateImplementation {
         _save.click();
         return this;
     }
+
+    public feedContent SelectAll_TreeList_Options() {
+
+        _selectAllTreeListOptions.click();
+
+        _save.click();
+        return this;
+    }
+
+    public feedContent DeSelectAll_TreeList_Options() {
+
+        _deSelectAllTreeListOptions.click();
+        _save.click();
+        return this;
+    }
+
+
 
 
 }

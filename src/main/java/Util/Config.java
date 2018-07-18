@@ -19,7 +19,7 @@ public class Config {
 
     // URLs-prod
 
-   public static final String DEV_HOMEPAGE_URL = System.getProperty("env");
+    public static final String DEV_HOMEPAGE_URL = System.getProperty("env");
     public static final String DEV_USERNAME = System.getProperty("username");
     public static final String DEV_PASSWORD = System.getProperty("password");
 
