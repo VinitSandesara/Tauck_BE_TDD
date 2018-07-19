@@ -29,70 +29,67 @@ public class Editorial_PDF11 extends testBase {
     String topNodePath;
 
 
-    @Test
+    @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"})
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
-        Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
+        invokeBrowser();
 
-       // if (DataUtil.readSpecificTestDataFromExcel(xls, "MapControlWithDataSource", testSheetName, "Runmode").get("Runmode").equalsIgnoreCase("Y")) {
+        editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
+        PageFactory.initElements(driver, controls);
 
-            invokeBrowser();
+        controls
+                .launchSitecore()
+                .login()
+                .goToContentEditorIfNotKickOffUser()
+                .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
 
-            editorialTemplateControls controls = new editorialTemplateControls(driver, test.get());
-            PageFactory.initElements(driver, controls);
+                .clickPresentationLink()
+                .clickDetailsLink()
+                .clickFinalLayoutTabInsideLayoutDetailsDialog()
+                .navigateToDeviceEditor()
+                .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
+
+
+        List<String> listOfComponentToMapWithDataSource = GDriveSpreedSheetUtil.getListOfControlsForMapping(testSheetName, "Template_Control");
+
+        for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
+
+            Hashtable<String, String> data = GDriveSpreedSheetUtil.getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap(listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
+
+            List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
+            List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
+            List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
+            List<String> splitControlFolders = Arrays.asList(data.get("ControlFolder").split("\\/"));
 
             controls
-                    .launchSitecore()
-                    .login()
-                    .goToContentEditorIfNotKickOffUser()
-                    .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
+                    // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
+                    .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
 
-                    .clickPresentationLink()
-                    .clickDetailsLink()
-                    .clickFinalLayoutTabInsideLayoutDetailsDialog()
-                    .navigateToDeviceEditor()
-                    .clickControlsInsideDeviceEditorForMappingDataSourceSequentially();
+            for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
 
-            List<String> listOfComponentToMapWithDataSource = GDriveSpreedSheetUtil.getListOfControlsForMapping(testSheetName, "Template_Control");
+                controls
+                        .addNewControls()
+                        .searchForControlFolderAndSelectControlFromFolder(splitControlFolders, splitControlString.get(innerloop));
 
-            for (int outerloop = 0; outerloop < listOfComponentToMapWithDataSource.size(); outerloop++) {
-
-                //  Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
-                Hashtable<String, String> data = GDriveSpreedSheetUtil.getFEControlDatasourceAndPlaceholderValueFromSpecificSheetToMap(listOfComponentToMapWithDataSource.get(outerloop), testSheetName);
-
-                List<String> splitControlString = Arrays.asList(data.get("Control").split("\\|"));
-                List<String> splitPlaceholderString = Arrays.asList(data.get("PlaceHolder").split("\\|"));
-                List<String> splitDatasourceString = Arrays.asList(data.get("DataSource").split("\\|"));
-
-                for (int i = 0; i < splitControlString.size(); i++) {
+                // Here i am checking if datasource whose value is empty like an example for "Text Size Component" whose value is empty for that i dont need to input  topNodePath, it should be left blank
+                if (splitDatasourceString.get(innerloop).equalsIgnoreCase(" ")) {
                     controls
-                            // This function wll check and remove pre-feeded controls, this is required when if any updates made in specific component later and run the script.
-                            .checkAndRemovePreAddedControlsBeforeMappingIfPresent(splitControlString);
-                }
-
-                for (int innerloop = 0; innerloop < splitControlString.size(); innerloop++) {
-
+                            .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), splitDatasourceString.get(innerloop));
+                } else {
                     controls
-                            .addNewControls()
-                            .selectWhichControlsToAdd()
-                            .addEditorialTemplateFEControl(splitControlString.get(innerloop))
-                            .openPropertyDialogBoxCheckbox()
-                            .clickSelectButton()
-
                             .inputPlaceHolderAndDataSource(splitPlaceholderString.get(innerloop), topNodePath + "/" + splitDatasourceString.get(innerloop));
-
                 }
 
             }
 
+        }
 
-            controls
-                    .saveAndCloseDeviceEditorAndLayoutDetails()
-                    .logOut();
-       // }
-
+        controls
+                .saveAndCloseDeviceEditorAndLayoutDetails()
+                .logOut();
 
     }
+
 
 
 
@@ -173,16 +170,13 @@ public class Editorial_PDF11 extends testBase {
 
 
     @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
-    // @Test( dataProvider = "readTestData")
-    public void fill_Content_Of_Editorial_Title_Component(Hashtable<String, String> data) throws InterruptedException, IOException {
+    public void Verify_And_Feed_EditorialTitle_Content_Section(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-          /*  if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
+
 
         invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
@@ -191,27 +185,23 @@ public class Editorial_PDF11 extends testBase {
         sitecore
                 .login()
                 .goToContentEditorIfNotKickOffUser()
-                .navigateToWhichTauckNode(topNodePath, "/" + data.get("preFeededComponentName"))
+
+                .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"), " ")
                 .fill_Component_Content_With_Data(data.get("Content"))
                 .logOut();
 
     }
 
     @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
-    // @Test( dataProvider = "readTestData")
-    public void add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content(Hashtable<String, String> data) throws
-            InterruptedException, IOException {
+    public void Verify_PreFeeded_TextCopyFolder_Add_SubComponent_And_Feed_Content_Section(Hashtable<String, String> data) throws InterruptedException, IOException {
 
-      /*  if (!DataUtil.isTestExecutable(xls, testSheetName)) {
-            throw new SkipException("Skipping the test as Rnumode is N");
-        }*/
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
 
-        invokeBrowser();
 
+        invokeBrowser();
         globalTemplateImplementation sitecore = new globalTemplateImplementation(driver, test.get());
         PageFactory.initElements(driver, sitecore);
 
@@ -220,48 +210,45 @@ public class Editorial_PDF11 extends testBase {
                 .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
-                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("preFeededComponentName") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath +  "/" + data.get("preFeededComponentName") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
 
                 .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"))
                 .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                 .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                 .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                .feedContent_Fields_With_Data(data.get("Content"), 2)
+                .feedContent_Fields_With_Data(data.get("Content"),2)
                 .logOut();
 
-
     }
+
+
+
+
+
 
 
     @DataProvider(name = "readTestData")
     public Object[][] getData(Method method) throws IOException {
 
-        Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
-
         if (method.getName().equals("verifyPreFeededSubCategoriesInsideTemplate")) {
-           // return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
-            return GDriveSpreedSheetUtil.getData("PreFeededSubCategories", testSheetName);
-
-        } else if (method.getName().equals("fill_Content_Of_Editorial_Title_Component")) {
-          //  return DataUtil.getData(xls, "EditorialTitle", testSheetName);
-            return GDriveSpreedSheetUtil.getData("EditorialTitle", testSheetName);
-
-        } else if (method.getName().equals("add_Rich_Text_Copy_Inside_Text_Copy_Folder_And_fill_Content")) {
-           // return DataUtil.getData(xls, "TextCopyFolder", testSheetName);
-            return GDriveSpreedSheetUtil.getData("TextCopyFolder", testSheetName);
+            // return DataUtil.getData(xls, "PreFeededSubCategories", testSheetName);
+            return GDriveSpreedSheetUtil.getData("Verify_PreFeeded_SubCategories", testSheetName);
 
         } else if (method.getName().equals("createEditorialSubTemplate_PDF11")) {
-           // return DataUtil.getData(xls, "TemplateName", testSheetName);
-            return GDriveSpreedSheetUtil.getData("TemplateName", testSheetName);
+            // return DataUtil.getData(xls, "TemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getData( "TemplateName", testSheetName);
 
-        } else if (method.getName().equals("add_Half_Widht_Media_Segment_And_fill_Content")) {
-           // return DataUtil.getData(xls, "HalfWidthMedia", testSheetName);
-            return GDriveSpreedSheetUtil.getData("HalfWidthMedia", testSheetName);
+        } else if (method.getName().equals("Verify_And_Feed_EditorialTitle_Content_Section")) {
+            // return DataUtil.getData(xls, "TemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel( "Verify_And_Feed_EditorialTitle_Content_Section", testSheetName);
 
-        } else if (method.getName().equals("fill_Content_Of_Header_Hero_Component")) {
-           // return DataUtil.getData(xls, "HeaderHero", testSheetName);
-            return GDriveSpreedSheetUtil.getData("HeaderHero", testSheetName);
+        } else if (method.getName().equals("Verify_PreFeeded_TextCopyFolder_Add_SubComponent_And_Feed_Content_Section")) {
+            // return DataUtil.getData(xls, "TemplateName", testSheetName);
+            return GDriveSpreedSheetUtil.getTestDataFromExcel( "Verify_PreFeeded_TextCopyFolder_Add_SubComponent_And_Feed_Content_Section", testSheetName);
+
         }
+
+
 
         return null;
     }
