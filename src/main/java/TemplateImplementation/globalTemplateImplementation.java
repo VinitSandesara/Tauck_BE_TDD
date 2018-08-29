@@ -2,6 +2,7 @@ package TemplateImplementation;
 
 import FeedContent.feedContent;
 import Locators.CommonLocators;
+import Locators.HomePageLocators;
 import Util.Config;
 import Util.utility;
 import com.aventstack.extentreports.ExtentTest;
@@ -21,7 +22,7 @@ import java.util.List;
 public class globalTemplateImplementation extends utility {
 
     int maxTimeInSeconds = 10;
-
+    public static int counter=0;
 
     public globalTemplateImplementation(WebDriver driver, ExtentTest test) {
         super(driver, test);
@@ -90,6 +91,12 @@ public class globalTemplateImplementation extends utility {
     @FindBy(xpath = CommonLocators.LOG_OUT)
     public WebElement _logOut;
 
+    @FindBy(xpath = CommonLocators.ALREADY_EXPANDED_CONTENT_SECTIONS_PANEL)
+    public List<WebElement> _collapsedAlreadyExpandedSections;
+
+    @FindBy(xpath = CommonLocators.TOTAL_CONTENT_SECTIONS_PANEL)
+    public List<WebElement> _howManyContentSectionsPanelAreThere;
+
     public globalTemplateImplementation launchSitecore() {
         driver.get(Config.getEnvDetails().get("url"));
         return this;
@@ -100,6 +107,42 @@ public class globalTemplateImplementation extends utility {
         _logOut.click();
         return this;
     }
+
+    public globalTemplateImplementation checkAndCollapsedAlreadyExpandedContentSectionsPanel() throws Exception {
+
+        waitForPageLoad(10);
+        // Note : Here i tried the loop thru i=0 but somehow it just collapsed 1st panel only but if i try this way it does collapsed all panels
+        for(int i=_collapsedAlreadyExpandedSections.size();i>0;i--) {
+            waitForPageLoad(10);
+            _collapsedAlreadyExpandedSections.get(i-1).click();
+        }
+
+        return this;
+    }
+
+    public feedContent expandSections(String sectionName ) throws InterruptedException {
+
+        counter = 0;
+
+        waitForPageLoad(10);
+        while(!_howManyContentSectionsPanelAreThere.get(counter).getAttribute("id").startsWith(sectionName)) {
+            counter++;
+        }
+
+        WebElement element =  driver.findElement(By.xpath(" //div[starts-with(@id,'"+sectionName+"')] ")) ;
+
+        if(element.getAttribute("class").equalsIgnoreCase("scEditorSectionCaptionCollapsed")) {
+            element.click();
+        }
+
+        feedContent feedcontent = new feedContent(driver, test);
+        PageFactory.initElements(driver, feedcontent);
+        return feedcontent;
+
+
+    }
+
+
 
     public globalTemplateImplementation insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(String templateName, String itemName) throws InterruptedException {
 

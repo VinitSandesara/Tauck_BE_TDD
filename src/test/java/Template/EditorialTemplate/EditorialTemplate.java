@@ -1,11 +1,8 @@
 package Template.EditorialTemplate;
 
-import FeedContent.feedContent;
 import GoogleDriveConfigration.GDriveSpreedSheetUtil;
-import NodeAndComponentConfig.navigateToNode;
 import TemplateImplementation.globalTemplateImplementation;
 import Util.Config;
-import Util.DataUtil;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
@@ -21,7 +18,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
-
+import static TemplateImplementation.globalTemplateImplementation.counter;
 
 public class EditorialTemplate extends testBase {
 
@@ -106,7 +103,6 @@ public class EditorialTemplate extends testBase {
 
     @Test(dataProvider = "readTestData")
     public void createEditorialTemplate(Hashtable<String, String> data) throws Exception {
-
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
@@ -500,29 +496,23 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser();
+                .goToContentEditorIfNotKickOffUser()
 
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
 
-        if (sitecore.checkWhetherParentNodeIsPresentOrNot(topNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase()) != true) {
-            System.out.println("Parent Node already present please go ahead...");
-        } else {
+                .navigateToWhichTauckNode(topNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
+                .fill_Component_Content_With_Data(data.get("Content"));
 
-            sitecore
-                    .navigateToWhichTauckNode(topNodePath)
-                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                    .fill_Component_Content_With_Data(data.get("Content"));
-
-        }
-
-        sitecore.logOut();
 
     }
 
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
-    public void add_EditorialHero_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
+    public void add_EditorialHero_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws Exception {
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
@@ -536,23 +526,21 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser();
+                .goToContentEditorIfNotKickOffUser()
 
+                // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
+                .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
 
-        if (sitecore.checkWhetherParentNodeIsPresentOrNot(topNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase()) != true) {
-            System.out.println("Parent Node already present please go ahead...");
-        } else {
+                .navigateToWhichTauckNode(topNodePath)
+                .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
+                .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
+                .createTemplateOrTemplateComponent(data.get("ComponentName"))
 
-            sitecore
-                    .navigateToWhichTauckNode(topNodePath)
-                    .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
-                    .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
-                    .createTemplateOrTemplateComponent(data.get("ComponentName"))
-                    .fill_Component_Content_With_Data(data.get("Content"));
+                .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+                .expandSections("Section_Hero_Settings")
 
-        }
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
 
-        sitecore.logOut();
 
     }
 
@@ -881,11 +869,11 @@ public class EditorialTemplate extends testBase {
         Xls_Reader xls = new Xls_Reader(excelConfig.TESTDATA_XLS_PATH);
 
         if (method.getName().equals("createEditorialTemplate")) {
-           // return DataUtil.getData(xls, "EditorialTemplateName", testSheetName);
+            // return DataUtil.getData(xls, "EditorialTemplateName", testSheetName);
             return GDriveSpreedSheetUtil.getData("EditorialTemplateName", testSheetName);
 
         } else if (method.getName().equals("add_AuthorProfiles_Component_Inside_EditorialTemplate")) {
-           // return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
+            // return DataUtil.getData(xls, "AuthorProfiles", testSheetName);
             return GDriveSpreedSheetUtil.getTestDataFromExcel("Create_AuthorProfiles_Node_Inside_Home_Editorial_Node", testSheetName);
 
         } else if (method.getName().equals("add_AuthorProfiles_SubComponent_Inside_AuthorProfiles")) {
@@ -975,15 +963,7 @@ public class EditorialTemplate extends testBase {
         }
 
 
-
-
-
-
-
-
-
-
-            return null;
+        return null;
     }
 
 

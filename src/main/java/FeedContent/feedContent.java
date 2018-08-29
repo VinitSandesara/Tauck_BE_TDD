@@ -131,10 +131,6 @@ public class feedContent extends globalTemplateImplementation {
             _save.click();
             logOut();
 
-          //  Thread.sleep(5000);
-          //  new Actions(driver).sendKeys(Keys.RETURN).build().perform();
-
-
         } catch (ElementNotVisibleException env) {
             captureErrorWithScreenShotForReporting("*****Element is present in DOM but not visible on the page*****" + env.getMessage());
 
@@ -144,9 +140,20 @@ public class feedContent extends globalTemplateImplementation {
             captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
 
         } catch (Exception e) {
-            e.printStackTrace();
-            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
-            Assert.fail();
+
+            try {
+                // This will make sure to close the dialog and logout in case while saving at 1st try if any dialog pops up
+                // this will take care of it and prevent to thrown an exception.
+                Thread.sleep(2000);
+                new Actions(driver).sendKeys(Keys.RETURN).build().perform();
+                logOut();
+
+            } catch (Exception e1) {
+
+                e.printStackTrace();
+                test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+                Assert.fail();
+            }
         }
 
         return this;
@@ -174,9 +181,19 @@ public class feedContent extends globalTemplateImplementation {
             captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
 
         } catch (Exception e) {
-            e.printStackTrace();
-            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
-            Assert.fail();
+            try {
+                // This will make sure to close the dialog and logout in case while saving at 1st try if any dialog pops up
+                // this will take care of it and prevent to thrown an exception.
+                Thread.sleep(2000);
+                new Actions(driver).sendKeys(Keys.RETURN).build().perform();
+                logOut();
+
+            } catch (Exception e1) {
+
+                e.printStackTrace();
+                test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+                Assert.fail();
+            }
         }
 
         return this;
@@ -209,9 +226,19 @@ public class feedContent extends globalTemplateImplementation {
             captureErrorWithScreenShotForReporting("*****Either the element has been deleted entirely or the element is no longer attached to DOM.*****" + se.getMessage());
 
         } catch (Exception e) {
-            e.printStackTrace();
-            test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
-            Assert.fail();
+            try {
+                // This will make sure to close the dialog and logout in case while saving at 1st try if any dialog pops up
+                // this will take care of it and prevent to thrown an exception.
+                Thread.sleep(2000);
+                new Actions(driver).sendKeys(Keys.RETURN).build().perform();
+                logOut();
+
+            } catch (Exception e1) {
+
+                e.printStackTrace();
+                test.fail(MarkupHelper.createLabel("***** Something went wrong with Hero Eyebrow text please check manually... *****", ExtentColor.RED));
+                Assert.fail();
+            }
         }
 
         return this;
@@ -395,8 +422,6 @@ public class feedContent extends globalTemplateImplementation {
         _save.click();
         return this;
     }
-
-
 
 
 }

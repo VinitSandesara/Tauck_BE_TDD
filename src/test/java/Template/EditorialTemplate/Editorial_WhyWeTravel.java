@@ -20,6 +20,8 @@ import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
+import static TemplateImplementation.globalTemplateImplementation.counter;
+
 public class Editorial_WhyWeTravel extends testBase {
 
     String testSheetName = "Editorial_WhyWeTravel";
@@ -193,7 +195,7 @@ public class Editorial_WhyWeTravel extends testBase {
 
 
     @Test(dependsOnMethods = {"create_EditorialSubTemplate_WhyWeTravel"}, dataProvider = "readTestData")
-    public void Verify_And_Feed_EditorialTitle_Content_Section(Hashtable<String, String> data) throws InterruptedException, IOException {
+    public void Verify_And_Feed_EditorialTitle_Content_Section(Hashtable<String, String> data) throws Exception {
 
 
         if (!data.get(excelConfig.RUNMODE_COL).equals("Y")) {
@@ -209,9 +211,12 @@ public class Editorial_WhyWeTravel extends testBase {
                 .login()
                 .goToContentEditorIfNotKickOffUser()
 
-                .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"), " ")
-                .fill_Component_Content_With_Data(data.get("Content"))
-                .logOut();
+                .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"))
+                .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
+                .expandSections("Section_Hero_Settings")
+
+                .input_Sections_Fields_Save_And_Logout(data.get("Content"), counter);
+
 
     }
 

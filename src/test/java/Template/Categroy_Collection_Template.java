@@ -11,6 +11,7 @@ import base.testBase;
 import mapDataSourceWithFE.editorialTemplateControls;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -31,6 +32,8 @@ public class Categroy_Collection_Template extends testBase {
 
     String PortraitHighlightIntraCopyPath;
     String LandScapeHighlightIntraCopyPath;
+
+
 
 
     @Test(dependsOnMethods = {"Create_Category_Collection_Template"})
@@ -129,7 +132,7 @@ public class Categroy_Collection_Template extends testBase {
     }
 
 
-      @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
+     @Test(dependsOnMethods = {"Create_Category_Collection_Template"}, dataProvider = "readTestData")
       // @Test(dataProvider = "readTestData")
       public void fillHeroSettings(Hashtable<String, String> data) throws Exception {
 

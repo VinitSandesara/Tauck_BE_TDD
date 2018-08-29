@@ -64,7 +64,8 @@ public class CommonLocators {
 
     public static final String DE_SELECT_ALL_TREELIST_OPTION = "Deselect all";
 
+    public static final String ALREADY_EXPANDED_CONTENT_SECTIONS_PANEL = "//div[@class='scEditorSectionCaptionExpanded']";
 
-
+    public static final String TOTAL_CONTENT_SECTIONS_PANEL = "//div[@class='scEditorSections']/div";
 
 }
