@@ -31,7 +31,7 @@ public class Editorial_PDF11 extends testBase {
     String topNodePath;
 
 
-  /*  @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"})
+    @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"})
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         invokeBrowser();
@@ -92,7 +92,7 @@ public class Editorial_PDF11 extends testBase {
 
     }
 
-*/
+
 
 
 
@@ -143,7 +143,7 @@ public class Editorial_PDF11 extends testBase {
 
     }
 
- /*   @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
    // @Test( dataProvider = "readTestData")
     public void verifyPreFeededSubCategoriesInsideTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
@@ -163,7 +163,7 @@ public class Editorial_PDF11 extends testBase {
                 .verifyPreFeededSubComponent(topNodePath, Arrays.asList(data.get("CategoriesList").split("\\|")))
                 .logOut();
     }
-*/
+
 
     @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
     public void Verify_And_Feed_EditorialTitle_Content_Section(Hashtable<String, String> data) throws Exception {
@@ -191,7 +191,7 @@ public class Editorial_PDF11 extends testBase {
 
     }
 
- /*   @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
+    @Test(dependsOnMethods = {"createEditorialSubTemplate_PDF11"}, dataProvider = "readTestData")
     public void Verify_PreFeeded_TextCopyFolder_Add_SubComponent_And_Feed_Content_Section(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -221,7 +221,7 @@ public class Editorial_PDF11 extends testBase {
     }
 
 
-*/
+
 
 
 

@@ -7,6 +7,7 @@ import Util.Config;
 import Util.Xls_Reader;
 import Util.excelConfig;
 import base.testBase;
+import mapDataSourceWithFE.editorialTemplateControls;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.SkipException;
 import org.testng.annotations.DataProvider;
@@ -16,6 +17,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Hashtable;
+import java.util.List;
 
 public class MegaMenu extends testBase {
 
@@ -30,7 +32,7 @@ public class MegaMenu extends testBase {
     String WhyTauckMenuNodePath;
 
 
-   /* @Test
+    @Test
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
 
@@ -91,7 +93,7 @@ public class MegaMenu extends testBase {
 
 
 
-    }*/
+    }
 
 
     @Test(dataProvider = "readTestData")
