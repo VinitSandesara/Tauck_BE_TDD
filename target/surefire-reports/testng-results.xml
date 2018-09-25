@@ -1,197 +1,248 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="124226" started-at="2018-07-16T19:46:27Z" finished-at="2018-07-16T19:48:32Z">
+  <suite name="Surefire suite" duration-ms="258285" started-at="2018-09-24T15:30:18Z" finished-at="2018-09-24T15:34:36Z">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="124226" started-at="2018-07-16T19:46:27Z" finished-at="2018-07-16T19:48:32Z">
-      <class name="Template.HomePageTemplate">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeClass" is-config="true" duration-ms="237" started-at="2018-07-16T14:46:27Z" finished-at="2018-07-16T14:46:28Z">
+    <test name="Surefire test" duration-ms="258285" started-at="2018-09-24T15:30:18Z" finished-at="2018-09-24T15:34:36Z">
+      <class name="Template.ShipDetail">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeClass" is-config="true" duration-ms="221" started-at="2018-09-24T10:30:18Z" finished-at="2018-09-24T10:30:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="31" started-at="2018-07-16T14:46:29Z" finished-at="2018-07-16T14:46:29Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="36" started-at="2018-09-24T10:30:20Z" finished-at="2018-09-24T10:30:20Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.HomePageTemplate.createHomeTemplate(java.util.Hashtable) throws java.lang.InterruptedException]]>
+                <![CDATA[public void Template.ShipDetail.Create_Ship_Inside_Data_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="createHomeTemplate(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createHomeTemplate" duration-ms="9882" started-at="2018-07-16T14:46:29Z" data-provider="readTestData" finished-at="2018-07-16T14:46:39Z">
+        <test-method status="PASS" signature="Create_Ship_Inside_Data_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Ship_Inside_Data_Folder" duration-ms="17896" started-at="2018-09-24T10:30:20Z" data-provider="readTestData" finished-at="2018-09-24T10:30:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{TemplateName=Home_Thru_Automation, Runmode=Y, RightClickInsert=Insert from Template, Browser=Chrome}]]>
+                <![CDATA[{Runmode=Y, RightClickInsert=Ship Entity, ShipName=LePonant_Thru_Automation, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createHomeTemplate -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="55" started-at="2018-07-16T14:46:39Z" finished-at="2018-07-16T14:46:40Z">
+        </test-method> <!-- Create_Ship_Inside_Data_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="59" started-at="2018-09-24T10:30:38Z" finished-at="2018-09-24T10:30:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createHomeTemplate on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createHomeTemplate(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=Create_Ship_Inside_Data_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Ship_Inside_Data_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="26" started-at="2018-07-16T14:46:40Z" finished-at="2018-07-16T14:46:40Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="23" started-at="2018-09-24T10:30:38Z" finished-at="2018-09-24T10:30:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.HomePageTemplate.createLeadGenerationCopyFolderInsideGlobal(java.util.Hashtable) throws java.lang.InterruptedException]]>
+                <![CDATA[public void Template.ShipDetail.Create_Deck_Plans_CabinCategories_Folder(java.util.Hashtable) throws java.lang.InterruptedException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="createLeadGenerationCopyFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createLeadGenerationCopyFolderInsideGlobal" duration-ms="9315" started-at="2018-07-16T14:46:40Z" data-provider="readTestData" finished-at="2018-07-16T14:46:50Z">
+        <test-method status="PASS" signature="Create_Deck_Plans_CabinCategories_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Deck_Plans_CabinCategories_Folder" duration-ms="17102" started-at="2018-09-24T10:30:38Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Ship_Inside_Data_Folder" finished-at="2018-09-24T10:30:55Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{FolderName=Lead Generation Copy Folder Thru Automation, Runmode=Y, RightClickInsert=Insert from Template, Browser=Chrome}]]>
+                <![CDATA[{Runmode=Y, RightClickInsert=Ship Cabin Category Folder, CabinCatFolderName=Cabin Categories, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createLeadGenerationCopyFolderInsideGlobal -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="49" started-at="2018-07-16T14:46:50Z" finished-at="2018-07-16T14:46:50Z">
+        </test-method> <!-- Create_Deck_Plans_CabinCategories_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="46" started-at="2018-09-24T10:30:55Z" finished-at="2018-09-24T10:30:55Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createLeadGenerationCopyFolderInsideGlobal on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createLeadGenerationCopyFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=Create_Deck_Plans_CabinCategories_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Deck_Plans_CabinCategories_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="22" started-at="2018-07-16T14:46:50Z" finished-at="2018-07-16T14:46:50Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="22" started-at="2018-09-24T10:30:56Z" finished-at="2018-09-24T10:30:56Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.HomePageTemplate.createLeadGenerationFolderInsideGlobal(java.util.Hashtable) throws java.lang.InterruptedException]]>
+                <![CDATA[public void Template.ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="createLeadGenerationFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createLeadGenerationFolderInsideGlobal" duration-ms="8836" started-at="2018-07-16T14:46:50Z" data-provider="readTestData" finished-at="2018-07-16T14:46:59Z">
+        <test-method status="PASS" signature="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder" duration-ms="33448" started-at="2018-09-24T10:30:56Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Deck_Plans_CabinCategories_Folder" finished-at="2018-09-24T10:31:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{FolderName=Lead Generation Thru Automation, Runmode=Y, RightClickInsert=Insert from Template, Browser=Chrome}]]>
+                <![CDATA[{CabinCatName=Deluxe Cabin, Content= | |Deluxe Cabin| | |Deluxe Cabin description here.|Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.| |, Runmode=Y, RightClickInsert=Ship Cabin Category, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createLeadGenerationFolderInsideGlobal -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="45" started-at="2018-07-16T14:46:59Z" finished-at="2018-07-16T14:46:59Z">
+        </test-method> <!-- Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="41" started-at="2018-09-24T10:31:29Z" finished-at="2018-09-24T10:31:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createLeadGenerationFolderInsideGlobal on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createLeadGenerationFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="19" started-at="2018-07-16T14:47:00Z" finished-at="2018-07-16T14:47:00Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="19" started-at="2018-09-24T10:31:29Z" finished-at="2018-09-24T10:31:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.HomePageTemplate.createTravellingWithTaucksFolderInsideGlobal(java.util.Hashtable) throws java.lang.InterruptedException]]>
+                <![CDATA[public void Template.ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="createTravellingWithTaucksFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="createTravellingWithTaucksFolderInsideGlobal" duration-ms="8954" started-at="2018-07-16T14:47:00Z" data-provider="readTestData" finished-at="2018-07-16T14:47:09Z">
+        <test-method status="PASS" signature="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder" duration-ms="49190" started-at="2018-09-24T10:31:29Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Deck_Plans_CabinCategories_Folder" finished-at="2018-09-24T10:32:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{FolderName=Traveling With Tauck Cards Folder, Runmode=Y, RightClickInsert=Traveling With Tauck Cards Folder, Browser=Chrome}]]>
+                <![CDATA[{CabinCatName=Deluxe Suite, Content= | |Deluxe Suite| | |Deluxe Suite description here.|Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.| |, Runmode=Y, RightClickInsert=Ship Cabin Category, Browser=Chrome}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createTravellingWithTaucksFolderInsideGlobal -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="44" started-at="2018-07-16T14:47:09Z" finished-at="2018-07-16T14:47:09Z">
+        </test-method> <!-- Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="44" started-at="2018-09-24T10:32:19Z" finished-at="2018-09-24T10:32:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createTravellingWithTaucksFolderInsideGlobal on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.createTravellingWithTaucksFolderInsideGlobal(java.util.Hashtable)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[[TestResult name=Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="20" started-at="2018-07-16T14:47:09Z" finished-at="2018-07-16T14:47:09Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="19" started-at="2018-09-24T10:32:19Z" finished-at="2018-09-24T10:32:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.HomePageTemplate.mapDataSourceWithFrontEndControls() throws java.lang.Exception]]>
+                <![CDATA[public void Template.ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="37" started-at="2018-07-16T14:47:28Z" finished-at="2018-07-16T14:47:28Z">
+        <test-method status="PASS" signature="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder" duration-ms="70027" started-at="2018-09-24T10:32:19Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Deck_Plans_CabinCategories_Folder" finished-at="2018-09-24T10:33:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=mapDataSourceWithFrontEndControls on [HomePageTemplate passed=0 failed=0 skipped=0] status=FAILURE method=HomePageTemplate.mapDataSourceWithFrontEndControls()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[{CabinCatName=Prestige Cabin, Content= | |Prestige Cabin| | |Prestige Cabin description here.|Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.| |, Runmode=Y, RightClickInsert=Ship Cabin Category, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="37" started-at="2018-09-24T10:33:29Z" finished-at="2018-09-24T10:33:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="17" started-at="2018-07-16T14:47:28Z" finished-at="2018-07-16T14:47:28Z">
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="20" started-at="2018-09-24T10:33:29Z" finished-at="2018-09-24T10:33:29Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void Template.HomePageTemplate.mapDataSourceWithFrontEndControls() throws java.lang.Exception]]>
+                <![CDATA[public void Template.ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="mapDataSourceWithFrontEndControls()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="mapDataSourceWithFrontEndControls" duration-ms="63488" started-at="2018-07-16T14:47:28Z" depends-on-methods="Template.HomePageTemplate.createLeadGenerationCopyFolderInsideGlobal, Template.HomePageTemplate.createTravellingWithTaucksFolderInsideGlobal, Template.HomePageTemplate.createLeadGenerationFolderInsideGlobal, Template.HomePageTemplate.createHomeTemplate" finished-at="2018-07-16T14:48:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- mapDataSourceWithFrontEndControls -->
-        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="40" started-at="2018-07-16T14:48:32Z" finished-at="2018-07-16T14:48:32Z">
+        <test-method status="PASS" signature="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder" duration-ms="34677" started-at="2018-09-24T10:33:29Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Deck_Plans_CabinCategories_Folder" finished-at="2018-09-24T10:34:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=mapDataSourceWithFrontEndControls on [HomePageTemplate passed=0 failed=0 skipped=0] status=SUCCESS method=HomePageTemplate.mapDataSourceWithFrontEndControls()[pri:0, instance:[HomePageTemplate passed=0 failed=0 skipped=0]] output={null}]]]>
+                <![CDATA[{CabinCatName=Prestige Suite, Content= | |Prestige Suite| | |Prestige Suite description here.|Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.| |, Runmode=Y, RightClickInsert=Ship Cabin Category, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="46" started-at="2018-09-24T10:34:04Z" finished-at="2018-09-24T10:34:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- Template.HomePageTemplate -->
+        <test-method status="PASS" signature="beforeMethod(java.lang.reflect.Method)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="beforeMethod" is-config="true" duration-ms="23" started-at="2018-09-24T10:34:04Z" finished-at="2018-09-24T10:34:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void Template.ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable) throws java.lang.InterruptedException,java.io.IOException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder" duration-ms="32589" started-at="2018-09-24T10:34:04Z" data-provider="readTestData" depends-on-methods="Template.ShipDetail.Create_Deck_Plans_CabinCategories_Folder" finished-at="2018-09-24T10:34:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{CabinCatName=Superior Cabin, Content= | |Superior Cabin| | |Superior Cabin description here.|Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.  Deluxe suite copy.| |, Runmode=Y, RightClickInsert=Ship Cabin Category, Browser=Chrome}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder -->
+        <test-method status="PASS" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]]" name="afterMethod" is-config="true" duration-ms="44" started-at="2018-09-24T10:34:36Z" finished-at="2018-09-24T10:34:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder on [ShipDetail passed=0 failed=0 skipped=0] status=SUCCESS method=ShipDetail.Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(java.util.Hashtable)[pri:0, instance:[ShipDetail passed=0 failed=0 skipped=0]] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- Template.ShipDetail -->
     </test> <!-- Surefire test -->
   </suite> <!-- Surefire suite -->
 </testng-results>

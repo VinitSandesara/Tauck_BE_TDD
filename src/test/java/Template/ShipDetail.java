@@ -624,6 +624,8 @@ public class ShipDetail extends testBase {
      @Test(dependsOnMethods = {"Create_Deck_Plans_CabinCategories_Folder"}, dataProvider = "readTestData")
     public void Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder(Hashtable<String, String> data) throws InterruptedException, IOException {
 
+        // Jenkins build for this test "ShipDetails_Create_CabinCategories_Inside_Data_Ships_Node" is blocked until issu "TAUCK-3946" is resolved
+
         if (!data.get(excelConfig.RUNMODE_COL).equalsIgnoreCase("Y")) {
             throw new SkipException("Skipping the test as Rnumode is N");
         }
