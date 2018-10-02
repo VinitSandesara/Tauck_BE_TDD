@@ -8,7 +8,7 @@ public class CommonLocators {
     public static final String SEARCHTEXTBOX = "TreeSearch";
     public static final String SEARCHRESULTCLOSEICON = "//div[@id='SearchHeader']/div[1]/a";
     public static final String SEARCH_RESULT_NO_FOUND = "//div[contains(text(),'There are no matches.')]";
-    public static final String CONTENT_EDITOR = "FeedContent Editor";
+    public static final String CONTENT_EDITOR = "Content Editor";
 
     public static final String IF_COMPONENT_ALREADY_MAPED_IT_FURTHER_REQUIRED_DELETE = "//div[contains(text(),'Breaking Links')]";
 

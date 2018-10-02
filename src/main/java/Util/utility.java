@@ -5,6 +5,7 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class utility extends AssertUtil {
 
@@ -21,7 +23,14 @@ public class utility extends AssertUtil {
         super(driver, test);
     }
 
-    public void kickOffUser() throws InterruptedException {
+    protected WebDriverWait getWait() {
+        WebDriverWait wait = new WebDriverWait(driver, 60);
+        wait.pollingEvery(250, TimeUnit.MILLISECONDS);
+        wait.ignoring(NoSuchElementException.class);
+        return wait;
+    }
+
+    public void kickOffUser(int userEndsWith) throws InterruptedException {
 
 
         List<WebElement> parentTable = new ArrayList<WebElement>();
@@ -38,7 +47,8 @@ public class utility extends AssertUtil {
 
         //  List<WebElement> parentTable = driver.findElements(By.xpath("//div[@class='mCSB_container']/table/tbody/tr"));
 
-        parentTable = driver.findElements(By.xpath("//td[text() = 'sitecore\\"+Config.getEnvDetails().get("username")+"']"));
+
+        parentTable = driver.findElements(By.xpath("//td[text() = 'sitecore\\"+Config.getEnvDetails().get("username")+userEndsWith+"']"));
 
         System.out.println("Total rows are :- " + parentTable.size());
         Random r = new Random();

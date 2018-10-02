@@ -3,12 +3,13 @@ package rough;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class kickoffuser {
 
     public static void main(String arg[]) throws IOException, InterruptedException {
 
-      String value =
+     /* String value =
 
               "\"Our Mission|Our Mission subtitle|WHO WE ARE|We are a leader in the creation of enriching travel experiences that enhance people’s lives by broadening their knowledge and fulfilling their dreams. We are a family company built on a timeless philosophy of integrity, innovation and respect. By exceeding customer expectations, we continually build a loyal and dedicated following._Tauck Address|Tauck Address subtitle|CORPORATE INFORMATION|\n" +
                       "Wilton Woods\n" +
@@ -24,8 +25,12 @@ public class kickoffuser {
 
 
 
-        List<String> splitDoubleORstring = Arrays.asList(value.split("\\_"));
+        List<String> splitDoubleORstring = Arrays.asList(value.split("\\_"));*/
 
+
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 6);
+
+        System.out.println("QA_Auto_Login_"+ randomNum);
 
     }
 

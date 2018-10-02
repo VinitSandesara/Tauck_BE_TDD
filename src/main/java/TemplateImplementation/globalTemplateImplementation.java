@@ -12,17 +12,20 @@ import mapDataSourceWithFE.mapControlWithDataSource;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class globalTemplateImplementation extends utility {
 
     int maxTimeInSeconds = 10;
-    public static int counter=0;
+    public static int counter = 0;
 
     public globalTemplateImplementation(WebDriver driver, ExtentTest test) {
         super(driver, test);
@@ -112,26 +115,26 @@ public class globalTemplateImplementation extends utility {
 
         waitForPageLoad(10);
         // Note : Here i tried the loop thru i=0 but somehow it just collapsed 1st panel only but if i try this way it does collapsed all panels
-        for(int i=_collapsedAlreadyExpandedSections.size();i>0;i--) {
+        for (int i = _collapsedAlreadyExpandedSections.size(); i > 0; i--) {
             waitForPageLoad(10);
-            _collapsedAlreadyExpandedSections.get(i-1).click();
+            _collapsedAlreadyExpandedSections.get(i - 1).click();
         }
 
         return this;
     }
 
-    public feedContent expandSections(String sectionName ) throws InterruptedException {
+    public feedContent expandSections(String sectionName) throws InterruptedException {
 
         counter = 0;
 
         waitForPageLoad(10);
-        while(!_howManyContentSectionsPanelAreThere.get(counter).getAttribute("id").startsWith(sectionName)) {
+        while (!_howManyContentSectionsPanelAreThere.get(counter).getAttribute("id").startsWith(sectionName)) {
             counter++;
         }
 
-        WebElement element =  driver.findElement(By.xpath(" //div[starts-with(@id,'"+sectionName+"')] ")) ;
+        WebElement element = driver.findElement(By.xpath(" //div[starts-with(@id,'" + sectionName + "')] "));
 
-        if(element.getAttribute("class").equalsIgnoreCase("scEditorSectionCaptionCollapsed")) {
+        if (element.getAttribute("class").equalsIgnoreCase("scEditorSectionCaptionCollapsed")) {
             element.click();
         }
 
@@ -141,7 +144,6 @@ public class globalTemplateImplementation extends utility {
 
 
     }
-
 
 
     public globalTemplateImplementation insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert(String templateName, String itemName) throws InterruptedException {
@@ -174,10 +176,34 @@ public class globalTemplateImplementation extends utility {
 
 
     public globalTemplateImplementation login() throws InterruptedException {
-        waitForPageLoad(30);
-        _username.sendKeys(Config.getEnvDetails().get("username"));
-        _password.sendKeys(Config.getEnvDetails().get("password"));
+        // waitForPageLoad(30);
+        WebDriverWait wait = getWait();
+        wait.until(ExpectedConditions.visibilityOf(_username));
+
+        int userEndsWith = ThreadLocalRandom.current().nextInt(1, 6);
+
+        _username.sendKeys(Config.getEnvDetails().get("username") + userEndsWith);
+        _password.sendKeys(Config.getEnvDetails().get("password") + userEndsWith);
         _password.sendKeys(Keys.ENTER);
+         test.info("Login with user :-- >" + Config.getEnvDetails().get("username") + userEndsWith);
+
+        try {
+            if (isElementPresent(_lunchPadIcon) != true) {
+                wait.until(ExpectedConditions.elementToBeClickable(_contentEditor));
+                _contentEditor.click();
+            }
+
+        } catch (Throwable t) {
+            kickOffUser(userEndsWith);
+            wait.until(ExpectedConditions.elementToBeClickable(_contentEditor));
+            try {
+                _contentEditor.click();
+            } catch (Exception e) {
+
+            }
+
+        }
+
         return this;
     }
 
@@ -191,7 +217,7 @@ public class globalTemplateImplementation extends utility {
             }
 
         } catch (Throwable t) {
-            kickOffUser();
+            kickOffUser(1);
             waitForPageLoad(30);
             try {
                 _contentEditor.click();
@@ -535,9 +561,9 @@ public class globalTemplateImplementation extends utility {
                 clearTextboxPreFeededData(column.get(1).findElement(By.tagName("input")));
                 column.get(1).findElement(By.tagName("input")).sendKeys(temp.get(i));
 
-    // Reason to enter here is for the scenario say you wanna click on "Edit HTML" link but before that feild there is a field where you need to input image path or any path
-    // in this case what happens is after you enter path you need to enter to reflect path value (image) before going on to next field and input or click. Example URL is
-    // "/sitecore/content/Tauck/data/ships/le-ponant/ship-partners/le-ponant-partners/ponant" (try in QA env) notice there is "Content" field right after "Logo" field
+                // Reason to enter here is for the scenario say you wanna click on "Edit HTML" link but before that feild there is a field where you need to input image path or any path
+                // in this case what happens is after you enter path you need to enter to reflect path value (image) before going on to next field and input or click. Example URL is
+                // "/sitecore/content/Tauck/data/ships/le-ponant/ship-partners/le-ponant-partners/ponant" (try in QA env) notice there is "Content" field right after "Logo" field
 
                 column.get(1).findElement(By.tagName("input")).sendKeys(Keys.ENTER);
 
@@ -552,7 +578,7 @@ public class globalTemplateImplementation extends utility {
                     try {
                         column.get(1).findElement(By.tagName("select")).sendKeys(temp.get(i));
 
-                    }catch (Throwable b) {
+                    } catch (Throwable b) {
 
 
                         try {
