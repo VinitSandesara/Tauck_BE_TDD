@@ -47,7 +47,7 @@ public class EditorialTemplate extends testBase {
         controls
                 .launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+           //     .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
 
                 .clickPresentationLink()
@@ -118,8 +118,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore.launchSitecore()
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if (sitecore.checkWhetherParentNodeIsPresentOrNot("/sitecore/content/Tauck/Home" + "/" + data.get("TemplateName").replaceAll(" ", "-").toLowerCase()) != true) {
@@ -165,8 +165,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(AuthorProfilesNodePath) != true) {
@@ -199,7 +199,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(AuthorProfilesNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -231,8 +231,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(FlexCardsNodePath) != true) {
@@ -265,7 +265,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(FlexCardsNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -298,8 +298,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(TextCopyFolderNodePath) != true) {
@@ -332,7 +332,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+               // .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(TextCopyFolderNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -364,8 +364,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+               // .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(EditorialQuotesNodePath) != true) {
@@ -398,7 +398,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+            //    .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(EditorialQuotesNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -431,8 +431,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+          //      .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(GridMediaFolderNodePath) != true) {
@@ -465,7 +465,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(GridMediaFolderNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -496,7 +496,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -526,7 +526,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+            //    .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -561,8 +561,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(topNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase()) != true) {
@@ -598,8 +598,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(MediaCarouselNodePath) != true) {
@@ -632,7 +632,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 .navigateToWhichTauckNode(MediaCarouselNodePath, " ")
                 .DeSelectAll_TreeList_Options()
@@ -671,8 +671,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+               // .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(CategoryCardModuleNodePath) != true) {
@@ -705,7 +705,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(CategoryCardModuleNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -738,8 +738,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(FeaturedBrandNodePath) != true) {
@@ -772,7 +772,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(FeaturedBrandNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -805,8 +805,8 @@ public class EditorialTemplate extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+            //    .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(HalfWidthMediaNodePath) != true) {
@@ -839,7 +839,7 @@ public class EditorialTemplate extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+            //    .goToContentEditorIfNotKickOffUser()
 
                 .navigateToWhichTauckNode(HalfWidthMediaNodePath, " ")
                 .DeSelectAll_TreeList_Options()

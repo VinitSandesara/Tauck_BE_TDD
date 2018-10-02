@@ -49,7 +49,7 @@ public class ShipDetail extends testBase {
         controls
                 .launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(homeShipNodePath)
 
                 .clickPresentationLink()
@@ -125,8 +125,8 @@ public class ShipDetail extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if(sitecore.checkWhetherParentNodeIsPresentOrNot(homeShipNodePath)!=true) {
@@ -164,8 +164,8 @@ public class ShipDetail extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(dataShipNodePath) != true) {
@@ -201,8 +201,8 @@ public class ShipDetail extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
 
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(PortraitHighlightIntraCopyPath) != true) {
@@ -240,8 +240,8 @@ public class ShipDetail extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         if(data.get("RightClickInsert").equalsIgnoreCase("HighlightImage")) {
 
@@ -314,7 +314,7 @@ public class ShipDetail extends testBase {
 
         homePage
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNode(homeShipNodePath);
 
         homePage
@@ -340,7 +340,7 @@ public class ShipDetail extends testBase {
 
          sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNode_ForSectionInput(homeShipNodePath)
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -372,7 +372,7 @@ public class ShipDetail extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNode_ForSectionInput(homeShipNodePath)
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -398,8 +398,8 @@ public class ShipDetail extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         if (data.get("RightClickInsert").equalsIgnoreCase("Ship Partners Folder")) {
 
@@ -457,7 +457,7 @@ public class ShipDetail extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+           //     .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(shipPartnersWithPartnersInsideNodePath + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())
@@ -496,7 +496,7 @@ public class ShipDetail extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNode_ForSectionInput(dataShipNodePath)
 
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -522,8 +522,8 @@ public class ShipDetail extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+           //     .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if(sitecore.checkWhetherParentNodeIsPresentOrNot(deckPlansDeckNodePath)!=true) {
@@ -557,8 +557,8 @@ public class ShipDetail extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+            //    .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if(sitecore.checkWhetherParentNodeIsPresentOrNot(deckPlansCabinCatNodePath)!=true) {
@@ -598,7 +598,7 @@ public class ShipDetail extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(deckPlansDeckNodePath+"/"+data.get("DecksName").replaceAll(" ", "-").toLowerCase())
@@ -638,7 +638,7 @@ public class ShipDetail extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(deckPlansCabinCatNodePath+"/"+data.get("CabinCatName").replaceAll(" ", "-").toLowerCase())

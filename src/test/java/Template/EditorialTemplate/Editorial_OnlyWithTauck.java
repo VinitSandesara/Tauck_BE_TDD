@@ -43,7 +43,7 @@ public class Editorial_OnlyWithTauck extends testBase {
         controls
                 .launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+          //      .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
 
                 .clickPresentationLink()
@@ -118,8 +118,8 @@ public class Editorial_OnlyWithTauck extends testBase {
         PageFactory.initElements(driver, sitecore);
 
         sitecore.launchSitecore()
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if (sitecore.checkWhetherParentNodeIsPresentOrNot("/sitecore/content/Tauck/Home" + "/" + data.get("Templatename").replaceAll(" ", "-").toLowerCase()) != true) {
@@ -168,7 +168,7 @@ public class Editorial_OnlyWithTauck extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
                 .verifyPreFeededSubComponent(topNodePath , Arrays.asList(data.get("CategoriesList").split("\\|")))
                 .logOut();
     }
@@ -190,7 +190,7 @@ public class Editorial_OnlyWithTauck extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
 
                 .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"), " ")
                 .fill_Component_Content_With_Data(data.get("Content"))
@@ -215,7 +215,7 @@ public class Editorial_OnlyWithTauck extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+            //    .goToContentEditorIfNotKickOffUser()
 
                 .navigateToWhichTauckNode(topNodePath + "/" + data.get("preFeededComponentName"))
                 .checkAndCollapsedAlreadyExpandedContentSectionsPanel()
@@ -241,7 +241,7 @@ public class Editorial_OnlyWithTauck extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
 
                 .navigateToWhichTauckNode(topNodePath +  "/" + data.get("preFeededComponentName"), " ")
                 .DeSelectAll_TreeList_Options()
@@ -278,7 +278,7 @@ public class Editorial_OnlyWithTauck extends testBase {
 
         sitecore
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+            //    .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(topNodePath +  "/" + data.get("preFeededComponentName") + "/" + data.get("ComponentName").replaceAll(" ", "-").toLowerCase())

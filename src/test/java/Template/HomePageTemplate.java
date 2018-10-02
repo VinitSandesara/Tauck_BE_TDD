@@ -53,7 +53,7 @@ public class HomePageTemplate extends testBase {
         controls
                 .launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
 
                 .clickPresentationLink()
@@ -127,8 +127,8 @@ public class HomePageTemplate extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if(sitecore.checkWhetherParentNodeIsPresentOrNot(topNodePath)!=true) {
@@ -166,8 +166,8 @@ public class HomePageTemplate extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
         if(sitecore.checkWhetherParentNodeIsPresentOrNot(TravellingWithTauckNodePath)!=true) {
             System.out.println("Parent Node already present please go ahead...");
@@ -202,8 +202,8 @@ public class HomePageTemplate extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
         if(sitecore.checkWhetherParentNodeIsPresentOrNot(LeadGenerationFolderNodePath)!=true) {
             System.out.println("Parent Node already present please go ahead...");
@@ -241,8 +241,8 @@ public class HomePageTemplate extends testBase {
 
 
         sitecore
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         if(sitecore.checkWhetherParentNodeIsPresentOrNot(LeadGenerationCopyNodePath)!=true) {
             System.out.println("Parent Node already present please go ahead...");
@@ -289,7 +289,7 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(TravellingWithTauckNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
@@ -326,7 +326,7 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(LeadGenerationFolderNodePath+"/"+data.get("CardsName").replaceAll(" ", "-").toLowerCase())
@@ -359,7 +359,7 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(LeadGenerationCopyNodePath+"/"+data.get("CopyName").replaceAll(" ", "-").toLowerCase())
@@ -392,7 +392,7 @@ public class HomePageTemplate extends testBase {
 
         homePage
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNode(topNodePath);
 
         homePage
@@ -419,7 +419,7 @@ public class HomePageTemplate extends testBase {
 
        homePage
                .login()
-               .goToContentEditorIfNotKickOffUser()
+             //  .goToContentEditorIfNotKickOffUser()
                .navigateToWhichTauckNode(topNodePath);
 
        homePage
@@ -447,7 +447,7 @@ public class HomePageTemplate extends testBase {
 
        homePage
                .login()
-               .goToContentEditorIfNotKickOffUser()
+             //  .goToContentEditorIfNotKickOffUser()
                .navigateToWhichTauckNode(topNodePath);
 
        homePage
@@ -476,7 +476,7 @@ public class HomePageTemplate extends testBase {
 
          homePage
                  .login()
-                 .goToContentEditorIfNotKickOffUser()
+              //   .goToContentEditorIfNotKickOffUser()
                  .navigateToWhichTauckNode(topNodePath);
 
          homePage

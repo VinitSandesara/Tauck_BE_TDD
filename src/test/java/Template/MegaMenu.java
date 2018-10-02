@@ -44,7 +44,7 @@ public class MegaMenu extends testBase {
         controls
                 .launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
                 .navigateToWhichTauckNodeForMappingDataSourceWithFrontEndControl(topNodePath)
 
                 .clickPresentationLink()
@@ -108,8 +108,8 @@ public class MegaMenu extends testBase {
 
 
         sitecore.launchSitecore()
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+             //   .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(topNodePath) != true) {
@@ -156,8 +156,8 @@ public class MegaMenu extends testBase {
 
 
         sitecore.launchSitecore()
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+            //    .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(destinationsMenuNodePath) != true) {
@@ -191,7 +191,7 @@ public class MegaMenu extends testBase {
 
         sitecore.launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(destinationsMenuNodePath + "/" + data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
@@ -262,8 +262,8 @@ public class MegaMenu extends testBase {
 
 
         sitecore.launchSitecore()
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(ToursandCruisesMenuNodePath) != true) {
@@ -298,7 +298,7 @@ public class MegaMenu extends testBase {
 
         sitecore.launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+              //  .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(ToursandCruisesMenuNodePath + "/" + data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
@@ -367,8 +367,8 @@ public class MegaMenu extends testBase {
 
 
         sitecore.launchSitecore()
-                .login()
-                .goToContentEditorIfNotKickOffUser();
+                .login();
+              //  .goToContentEditorIfNotKickOffUser();
 
         // Checking if parent node is present no need to create again, just move forward, if not it will create. This is required when there dependent method that is dependent on this test method.
         if (sitecore.checkWhetherParentNodeIsPresentOrNot(WhyTauckMenuNodePath) != true) {
@@ -403,7 +403,7 @@ public class MegaMenu extends testBase {
 
         sitecore.launchSitecore()
                 .login()
-                .goToContentEditorIfNotKickOffUser()
+             //   .goToContentEditorIfNotKickOffUser()
 
                 // This is required in case if user wants to update the data, in that case it will first delete the component and re add with new data.
                 .checkIsComponentOrSubComponentExistInsideTemplateIfSoDeleteIt(WhyTauckMenuNodePath + "/" + data.get("SubMenuName").replaceAll(" ", "-").toLowerCase())
