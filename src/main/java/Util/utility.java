@@ -33,6 +33,8 @@ public class utility extends AssertUtil {
     public void kickOffUser(int userEndsWith) throws InterruptedException {
 
 
+        System.out.println("============ Login user is when you are kickking off it ============ :--> " + Config.getEnvDetails().get("username") + userEndsWith);
+
         List<WebElement> parentTable = new ArrayList<WebElement>();
 
         waitForPageLoad(20);
@@ -50,11 +52,16 @@ public class utility extends AssertUtil {
 
         parentTable = driver.findElements(By.xpath("//td[text() = 'sitecore\\"+Config.getEnvDetails().get("username")+userEndsWith+"']"));
 
-        System.out.println("Total rows are :- " + parentTable.size());
-        Random r = new Random();
+        System.out.println("Total number of record found for kickoff user :- " + parentTable.size());
+
+        parentTable.get(0).click();
+
+     /*   Random r = new Random();
         int n = r.nextInt((5 - 1) + 1) + 1;
         System.out.println("Random number is : - -- " + n);
-        parentTable.get(n).click();
+        parentTable.get(n).click();*/
+
+
 
         Thread.sleep(2000);
         driver.findElement(By.xpath("//button[@data-sc-id='KickButton']")).click();

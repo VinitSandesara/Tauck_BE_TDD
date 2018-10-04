@@ -187,9 +187,11 @@ public class globalTemplateImplementation extends utility {
         _password.sendKeys(Keys.ENTER);
          test.info("Login with user :-- >" + Config.getEnvDetails().get("username") + userEndsWith);
 
+         System.out.println("============ Login user is ============ :--> " + Config.getEnvDetails().get("username") + userEndsWith);
+
         try {
             if (isElementPresent(_lunchPadIcon) != true) {
-                wait.until(ExpectedConditions.elementToBeClickable(_contentEditor));
+                Thread.sleep(2000);
                 _contentEditor.click();
             }
 

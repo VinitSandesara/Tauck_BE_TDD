@@ -2,19 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="18c5ba85-abaf-4cc4-b7c5-b14b22a74815" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" afterPath="$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/EditorialTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF34.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF34.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF64.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF64.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF71.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF71.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_SEM.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_TheTuackStory.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_WhyWeTravel.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_WhyWeTravel.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" afterPath="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" afterPath="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" afterPath="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Reports/extent.html" afterPath="$PROJECT_DIR$/Reports/extent.html" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" afterPath="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Util/Config.java" afterPath="$PROJECT_DIR$/src/main/java/Util/Config.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Util/utility.java" afterPath="$PROJECT_DIR$/src/main/java/Util/utility.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" afterPath="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" afterPath="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
+      <change beforePath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" afterPath="$PROJECT_DIR$/target/classes/TemplateImplementation/globalTemplateImplementation.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Util/Config.class" afterPath="$PROJECT_DIR$/target/classes/Util/Config.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/Categroy_Collection_Template.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/Categroy_Collection_Template.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/EditorialTemplate.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/EditorialTemplate.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_MediaCenter.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_MediaCenter.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_OnlyWithTauck.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_OnlyWithTauck.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF11.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF11.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF34.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF34.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF64.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF64.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF71.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_PDF71.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_SEM.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_SEM.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_TheTuackStory.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_TheTuackStory.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_WhyWeTravel.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/EditorialTemplate/Editorial_WhyWeTravel.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/HomePageTemplate.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/MegaMenu.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/Template/ShipDetail.class" afterPath="$PROJECT_DIR$/target/test-classes/Template/ShipDetail.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -53,12 +63,84 @@
     <option name="HIDE_WARNINGS" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ShipDetail.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
+    <leaf>
+      <file leaf-file-name="LocalDriverFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1374">
-              <caret line="674" column="36" lean-forward="false" selection-start-line="674" selection-start-column="36" selection-end-line="674" selection-end-column="36" />
+            <state relative-caret-position="960">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="40" column="65" lean-forward="false" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Editorial_PDF11.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testng.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testng.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="globalTemplateImplementation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="177" column="40" lean-forward="false" selection-start-line="177" selection-start-column="40" selection-end-line="177" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utility.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Util/utility.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="853">
+              <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+              <folding>
+                <element signature="e#1220#1232#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Invoker.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/Invoker.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="477" column="0" lean-forward="false" selection-start-line="477" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonLocators.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -76,7 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>LeadGenerationCopyFolder</find>
       <find>createLeadGenerationCopyFolderInsideGlobal</find>
       <find>createLeadGenerationCopy</find>
       <find>createTravellingWithTaucksFolderInsideGlobal</find>
@@ -106,6 +187,7 @@
       <find>input_Ship_Specification_Sections_Fields</find>
       <find>Create_Deck_Plans_CabinCategories_Folder</find>
       <find>Create_Deck_Plans_CabinCategories_Inside_CabinCategory_Folder</find>
+      <find>goToContentEditorIfNotKickOffUser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -151,12 +233,6 @@
         <option value="$PROJECT_DIR$/paralleltestng.xml" />
         <option value="$PROJECT_DIR$/src/main/java/rough/kickoffuser.java" />
         <option value="$PROJECT_DIR$/testng.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/utility.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
-        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Util/Config.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_MediaCenter.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_OnlyWithTauck.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF34.java" />
@@ -170,6 +246,12 @@
         <option value="$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/MegaMenu.java" />
         <option value="$PROJECT_DIR$/src/test/java/Template/ShipDetail.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java" />
+        <option value="$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Util/utility.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Util/Config.java" />
+        <option value="$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java" />
       </list>
     </option>
   </component>
@@ -187,7 +269,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="340" />
+    <option name="x" value="330" />
     <option name="y" value="23" />
     <option name="width" value="2199" />
     <option name="height" value="1337" />
@@ -257,7 +339,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="rough" type="462c0819:PsiDirectoryNode" />
+              <item name="FeedContent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TauckSitecore" type="b2602c69:ProjectViewProjectNode" />
@@ -317,10 +399,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -665,21 +747,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="_Users_vsandesara_Desktop_TauckSitecore_paralleltestng_xml - 2018.08.29 at 17h 50m 49s.xml">
-      <configuration name="/Users/vsandesara/Desktop/TauckSitecore/paralleltestng.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="_Users_vsandesara_Desktop_TauckSitecore_paralleltestng_xml - 2018.08.29 at 17h 51m 57s.xml">
-      <configuration name="/Users/vsandesara/Desktop/TauckSitecore/paralleltestng.xml" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="testng - 2018.10.01 at 17h 15m 55s.xml">
-      <configuration name="testng" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="testng - 2018.10.01 at 17h 17m 32s.xml">
-      <configuration name="testng" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="testng - 2018.10.01 at 17h 19m 36s.xml">
-      <configuration name="testng" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="testng - 2018.10.01 at 17h 19m 59s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
@@ -695,6 +762,21 @@
     <history-entry file="testng - 2018.10.01 at 17h 58m 31s.xml">
       <configuration name="testng" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="testng - 2018.10.04 at 11h 36m 22s.xml">
+      <configuration name="testng" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="testng - 2018.10.04 at 11h 38m 09s.xml">
+      <configuration name="testng" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="testng - 2018.10.04 at 11h 52m 17s.xml">
+      <configuration name="testng" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="testng - 2018.10.04 at 11h 55m 08s.xml">
+      <configuration name="testng" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="testng - 2018.10.04 at 11h 55m 59s.xml">
+      <configuration name="testng" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -706,7 +788,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="340" y="23" width="2199" height="1337" extended-state="0" />
+    <frame x="330" y="23" width="2199" height="1337" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -719,19 +801,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.50161666" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957885" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50402576" sideWeight="0.49799398" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.49838337" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.50402576" sideWeight="0.49799398" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32774517" sideWeight="0.49838337" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21372277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24524803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Google Cloud Storage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24975514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3599034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3599034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -855,8 +937,14 @@
           <properties />
           <option name="timeStamp" value="335" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java</url>
+          <line>114</line>
+          <properties />
+          <option name="timeStamp" value="339" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="339" />
+      <option name="time" value="340" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
@@ -869,13 +957,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/dummy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Listener/Retry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
@@ -905,24 +986,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/TestMethodWorker.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="570">
           <caret line="97" column="20" lean-forward="true" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/Invoker.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="488" column="22" lean-forward="true" selection-start-line="488" selection-start-column="22" selection-end-line="488" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -945,7 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1584">
           <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -953,7 +1019,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="678">
           <caret line="63" column="30" lean-forward="false" selection-start-line="63" selection-start-column="30" selection-end-line="63" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="101" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,26 +1077,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="841">
-          <caret line="188" column="25" lean-forward="true" selection-start-line="186" selection-start-column="12" selection-end-line="188" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1171">
           <caret line="203" column="10" lean-forward="false" selection-start-line="203" selection-start-column="10" selection-end-line="203" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="162" column="23" lean-forward="false" selection-start-line="162" selection-start-column="23" selection-end-line="162" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1049,7 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,14 +1132,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testng.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="57" lean-forward="false" selection-start-line="15" selection-start-column="57" selection-end-line="15" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Util/DataUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -1109,63 +1148,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/utility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="32" column="38" lean-forward="false" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
-          <folding>
-            <element signature="e#1057#1069#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/base/testBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
           <caret line="31" column="46" lean-forward="false" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
           <folding>
-            <element signature="e#1253#1265#0" expanded="true" />
+            <element signature="e#1253#1265#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="199" column="39" lean-forward="true" selection-start-line="199" selection-start-column="39" selection-end-line="199" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="977">
-          <caret line="251" column="0" lean-forward="true" selection-start-line="251" selection-start-column="0" selection-end-line="251" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="43" column="37" lean-forward="true" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1245,14 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="770">
-          <caret line="408" column="0" lean-forward="true" selection-start-line="408" selection-start-column="0" selection-end-line="408" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/HomePageTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="715">
@@ -1271,8 +1252,114 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Template/ShipDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1374">
-          <caret line="674" column="36" lean-forward="false" selection-start-line="674" selection-start-column="36" selection-end-line="674" selection-end-column="36" />
+        <state relative-caret-position="534">
+          <caret line="58" column="83" lean-forward="true" selection-start-line="58" selection-start-column="83" selection-end-line="58" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/Categroy_Collection_Template.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2449">
+          <caret line="355" column="61" lean-forward="true" selection-start-line="355" selection-start-column="61" selection-end-line="355" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/Editorial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3810">
+          <caret line="46" column="50" lean-forward="true" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/HomePage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="938">
+          <caret line="206" column="0" lean-forward="true" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/FeedContent/feedContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4678">
+          <caret line="189" column="0" lean-forward="true" selection-start-line="189" selection-start-column="0" selection-end-line="189" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testng.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="18" column="23" lean-forward="false" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.8/testng-6.8.jar!/org/testng/internal/Invoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="477" column="0" lean-forward="false" selection-start-line="477" selection-start-column="0" selection-end-line="477" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Locators/CommonLocators.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="37" column="31" lean-forward="false" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/utility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="853">
+          <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#1220#1232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Template/EditorialTemplate/Editorial_PDF11.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="114" column="19" lean-forward="true" selection-start-line="114" selection-start-column="19" selection-end-line="114" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/TemplateImplementation/globalTemplateImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="177" column="40" lean-forward="false" selection-start-line="177" selection-start-column="40" selection-end-line="177" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Util/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="40" column="65" lean-forward="false" selection-start-line="40" selection-start-column="65" selection-end-line="40" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/ParallelTest/LocalDriverFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
