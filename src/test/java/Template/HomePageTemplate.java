@@ -136,7 +136,14 @@ public class HomePageTemplate extends testBase {
         }else {
 
             sitecore
-                    .navigateToWhichTauckNode("/sitecore/content/Tauck")
+
+    /* Here instead of searching thru  /sitecore/content/Tauck i have to search thru Tauck folder ID which is 5AC6CF7A-26B8-47A1-A326-8CD790317BE0
+       just because if i try to search thru "/sitecore/content/Tauck"" i am getting 2 search and it navigates to whichever is first and here 1st it come
+       up as "flex Module" which is wrong redirection. If you come across a scenario like this then FYI ID will be unqiue across all folders.
+      Another FYI this ID will remain uqique for all environment here i am talking about Dev, QA and Staging env.
+     */
+                   // .navigateToWhichTauckNode("/sitecore/content/Tauck")
+                    .navigateToWhichTauckNode("5AC6CF7A-26B8-47A1-A326-8CD790317BE0")
                     .rightClickInsertTemplateOrComponent(data.get("RightClickInsert"))
                     .switchToContentIframeDialog(Config.PARENT_FRAME, Config.CHILD_FRAME)
                     .insertFromTemplateWhenComponentIsNotPresentOnRightClickInsert("/sitecore/templates/Project/Common/Page Types/HomePage", data.get("TemplateName"));

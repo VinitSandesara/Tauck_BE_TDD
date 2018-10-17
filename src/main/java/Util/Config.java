@@ -36,7 +36,7 @@ public class Config {
     public static final String DEV_USERNAME = System.getProperty("username");
     public static final String DEV_PASSWORD = System.getProperty("password");
 
-    /* public static final String DEV_HOMEPAGE_URL = "http://qa2017.tauck.com/sitecore/login";
+   /*  public static final String DEV_HOMEPAGE_URL = "http://qa2017.tauck.com/sitecore/login";
     public static final String DEV_USERNAME = "QA_Auto_Login_";
     public static final String DEV_PASSWORD = "QA_Auto_Login_";*/
 
