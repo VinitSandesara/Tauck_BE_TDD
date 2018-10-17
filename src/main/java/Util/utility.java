@@ -50,8 +50,9 @@ public class utility extends AssertUtil {
         //  List<WebElement> parentTable = driver.findElements(By.xpath("//div[@class='mCSB_container']/table/tbody/tr"));
 
 
-        parentTable = driver.findElements(By.xpath("//td[text() = 'sitecore\\"+Config.getEnvDetails().get("username")+userEndsWith+"']"));
+      //  parentTable = driver.findElements(By.xpath("//td[text() = 'sitecore\\"+Config.getEnvDetails().get("username")+userEndsWith+"']"));
 
+        parentTable = driver.findElements(By.xpath("//td[contains(text(), 'sitecore\\QA_Auto_Login')]"));
         System.out.println("Total number of record found for kickoff user :- " + parentTable.size());
 
         parentTable.get(0).click();

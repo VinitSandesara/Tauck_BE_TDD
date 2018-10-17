@@ -1,12 +1,17 @@
 package rough;
 
+import TemplateImplementation.globalTemplateImplementation;
+import Util.Config;
 import base.driverBase;
+import com.aventstack.extentreports.ExtentTest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,11 +19,13 @@ public class rough_test2 {
 
     public static WebDriver driver;
 
+
+
     // to run this on stand alone
     public static void main(String arg[]) throws IOException, InterruptedException {
 
 
-        String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/chromedriver";
+        String CHROME_DRIVER_EXE = System.getProperty("user.dir") + "/src/DriverExe/MacChromeDriver/chromedriver";
 
 
         System.setProperty("webdriver.chrome.driver", CHROME_DRIVER_EXE);
@@ -31,12 +38,18 @@ public class rough_test2 {
 
         driver = new ChromeDriver(options);
 
-        driver.get("http://dev2017.tauck.com/sitecore/login");
+        driver.get("http://qa2017.tauck.com/sitecore/login");
 
-        driver.findElement(By.id("UserName")).sendKeys("admin");
-        driver.findElement(By.id("Password")).sendKeys("b");
+        driver.findElement(By.id("UserName")).sendKeys("QA_Auto_Login_2");
+        driver.findElement(By.id("Password")).sendKeys("QA_Auto_Login_2");
         driver.findElement(By.id("Password")).sendKeys(Keys.ENTER);
-        driver.findElement(By.linkText("FeedContent Editor")).click();
+
+        kickOffUser(1);
+
+
+
+        driver.quit();
+    /*    driver.findElement(By.linkText("FeedContent Editor")).click();
 
         // Tempo
 
@@ -68,13 +81,13 @@ public class rough_test2 {
         driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);
         driver.findElement(By.xpath("//div[@id='SearchHeader']/div[1]/a")).click();
         driver.findElement(By.id("TreeSearch")).clear();
-
+*/
       /*  driver.findElement(By.id("Tree_Glyph_0DE95AE441AB4D019EB067441B7C2450")).click();
         driver.findElement(By.id("Tree_Glyph_5AC6CF7A26B847A1A3268CD790317BE0")).click();*/
 
         // WebElement menu = driver.findElement(By.xpath("//span[text() = 'Home']"));
 
-        panList("EditorialTemplate");
+     /*   panList("EditorialTemplate");
 
         switchToFrame("jqueryModalDialogsFrame", "scContentIframeId0");
         driver.findElement(By.id("Value")).sendKeys("Automation EditorialTemplate");
@@ -86,7 +99,7 @@ public class rough_test2 {
         switchToFrame("jqueryModalDialogsFrame", "scContentIframeId0");
         driver.findElement(By.id("Value")).sendKeys("EditorialTemplate Hero");
         driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
-        driver.switchTo().defaultContent();
+        driver.switchTo().defaultContent();*/
 
        /* driver.findElement(By.id("TreeSearch")).sendKeys("/sitecore/content/Tauck/Home/automation-editorial");
         driver.findElement(By.id("TreeSearch")).sendKeys(Keys.ENTER);
@@ -108,7 +121,7 @@ public class rough_test2 {
 
 //        tableData(parentTable, "td", "tr", "input");
 
-        WebElement menu = driver.findElement(By.xpath("//span[text() = 'Home']"));
+     /*   WebElement menu = driver.findElement(By.xpath("//span[text() = 'Home']"));
 
 
         try {
@@ -176,7 +189,7 @@ public class rough_test2 {
                     + e.getStackTrace());
         }
 
-
+*/
     }
 
 
@@ -233,6 +246,46 @@ public class rough_test2 {
 
         }
 
+
+    }
+
+
+    public static void kickOffUser(int userEndsWith) throws InterruptedException {
+
+
+   //     System.out.println("============ Login user is when you are kickking off it ============ :--> " + Config.getEnvDetails().get("username") + userEndsWith);
+
+        List<WebElement> parentTable = new ArrayList<WebElement>();
+
+        Thread.sleep(2000);
+        WebElement kickOffbutton = driver.findElement(By.xpath("//button[@data-sc-id='KcikUserButton']"));
+        kickOffbutton.click();
+
+        // List<WebElement> parentTable = driver.findElements(By.xpath("//div[@class='mCSB_container']/table/tbody"));
+
+        //waitForElementToBeVisible(By.xpath("//button[@data-sc-id='KickButton']"));
+
+        Thread.sleep(3000);
+
+        //  List<WebElement> parentTable = driver.findElements(By.xpath("//div[@class='mCSB_container']/table/tbody/tr"));
+
+
+      //  parentTable = driver.findElements(By.xpath("//td[contains(text(), 'sitecore\\QA_Auto_Login_"+userEndsWith+"')]"));
+        parentTable = driver.findElements(By.xpath("//td[contains(text(), 'sitecore\\QA_Auto_Login')]"));
+
+        System.out.println("Total number of record found for kickoff user :- " + parentTable.size());
+
+        parentTable.get(0).click();
+
+     /*   Random r = new Random();
+        int n = r.nextInt((5 - 1) + 1) + 1;
+        System.out.println("Random number is : - -- " + n);
+        parentTable.get(n).click();*/
+
+
+
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//button[@data-sc-id='KickButton']")).click();
 
     }
 
