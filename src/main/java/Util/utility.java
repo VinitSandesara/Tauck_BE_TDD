@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;
 
 public class utility extends AssertUtil {
@@ -55,7 +56,9 @@ public class utility extends AssertUtil {
         parentTable = driver.findElements(By.xpath("//td[contains(text(), 'sitecore\\QA_Auto_Login')]"));
         System.out.println("Total number of record found for kickoff user :- " + parentTable.size());
 
-        parentTable.get(0).click();
+        int randomSelectionOfUserToKickOff = ThreadLocalRandom.current().nextInt(1, parentTable.size());
+
+        parentTable.get(randomSelectionOfUserToKickOff).click();
 
      /*   Random r = new Random();
         int n = r.nextInt((5 - 1) + 1) + 1;
