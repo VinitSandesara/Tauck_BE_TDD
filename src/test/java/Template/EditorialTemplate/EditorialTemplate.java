@@ -36,7 +36,7 @@ public class EditorialTemplate extends testBase {
     String FeaturedBrandNodePath;
     String HalfWidthMediaNodePath;
 
-    @Test(dependsOnMethods = {"createEditorialTemplate"})
+   /* @Test(dependsOnMethods = {"createEditorialTemplate"})
     public void mapDataSourceWithFrontEndControls() throws Exception {
 
         invokeBrowser();
@@ -98,7 +98,7 @@ public class EditorialTemplate extends testBase {
 
 
     }
-
+*/
 
 
     @Test(dataProvider = "readTestData")
@@ -149,7 +149,7 @@ public class EditorialTemplate extends testBase {
 
     }
 
-    @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+ /*   @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
     public void add_AuthorProfiles_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -720,7 +720,7 @@ public class EditorialTemplate extends testBase {
     }
 
 
-
+*/
 
     @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
     public void add_FeaturedBrand_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
@@ -789,7 +789,7 @@ public class EditorialTemplate extends testBase {
 
 
 
-    @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
+  /*  @Test(dependsOnMethods = {"createEditorialTemplate"}, dataProvider = "readTestData")
     public void add_HalfWidthMedia_Component_Inside_EditorialTemplate(Hashtable<String, String> data) throws InterruptedException, IOException {
 
 
@@ -859,7 +859,7 @@ public class EditorialTemplate extends testBase {
 
     }
 
-
+*/
 
 
 
